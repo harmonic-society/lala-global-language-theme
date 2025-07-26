@@ -1,0 +1,218 @@
+<?php
+/**
+ * LaLa Global Language Theme Customizer
+ *
+ * @package LaLa_Global_Language
+ */
+
+/**
+ * Add postMessage support for site title and description for the Theme Customizer.
+ *
+ * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+ */
+function lala_global_language_customize_register( $wp_customize ) {
+    $wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
+    $wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
+    $wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+
+    if ( isset( $wp_customize->selective_refresh ) ) {
+        $wp_customize->selective_refresh->add_partial(
+            'blogname',
+            array(
+                'selector'        => '.site-title a',
+                'render_callback' => 'lala_global_language_customize_partial_blogname',
+            )
+        );
+        $wp_customize->selective_refresh->add_partial(
+            'blogdescription',
+            array(
+                'selector'        => '.site-description',
+                'render_callback' => 'lala_global_language_customize_partial_blogdescription',
+            )
+        );
+    }
+
+    // Add Theme Options Panel
+    $wp_customize->add_panel( 'lala_theme_options', array(
+        'title'       => __( 'LaLa Theme Options', 'lala-global-language' ),
+        'description' => __( 'Customize your LaLa Global Language theme', 'lala-global-language' ),
+        'priority'    => 30,
+    ) );
+
+    // Color Settings Section
+    $wp_customize->add_section( 'lala_color_settings', array(
+        'title'    => __( 'Color Settings', 'lala-global-language' ),
+        'panel'    => 'lala_theme_options',
+        'priority' => 10,
+    ) );
+
+    // Primary Color
+    $wp_customize->add_setting( 'primary_color', array(
+        'default'           => '#FF6B6B',
+        'sanitize_callback' => 'sanitize_hex_color',
+        'transport'         => 'postMessage',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'primary_color', array(
+        'label'    => __( 'Primary Color', 'lala-global-language' ),
+        'section'  => 'lala_color_settings',
+        'settings' => 'primary_color',
+    ) ) );
+
+    // Secondary Color
+    $wp_customize->add_setting( 'secondary_color', array(
+        'default'           => '#4ECDC4',
+        'sanitize_callback' => 'sanitize_hex_color',
+        'transport'         => 'postMessage',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'secondary_color', array(
+        'label'    => __( 'Secondary Color', 'lala-global-language' ),
+        'section'  => 'lala_color_settings',
+        'settings' => 'secondary_color',
+    ) ) );
+
+    // Accent Color
+    $wp_customize->add_setting( 'accent_color', array(
+        'default'           => '#FFE66D',
+        'sanitize_callback' => 'sanitize_hex_color',
+        'transport'         => 'postMessage',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'accent_color', array(
+        'label'    => __( 'Accent Color', 'lala-global-language' ),
+        'section'  => 'lala_color_settings',
+        'settings' => 'accent_color',
+    ) ) );
+
+    // Hero Section
+    $wp_customize->add_section( 'lala_hero_section', array(
+        'title'    => __( 'Hero Section', 'lala-global-language' ),
+        'panel'    => 'lala_theme_options',
+        'priority' => 20,
+    ) );
+
+    // Hero Title
+    $wp_customize->add_setting( 'hero_title', array(
+        'default'           => '世界中のことばを、ここ日本で。',
+        'sanitize_callback' => 'sanitize_text_field',
+        'transport'         => 'postMessage',
+    ) );
+
+    $wp_customize->add_control( 'hero_title', array(
+        'label'    => 'ヒーロータイトル',
+        'section'  => 'lala_hero_section',
+        'type'     => 'text',
+    ) );
+
+    // Hero Description
+    $wp_customize->add_setting( 'hero_description', array(
+        'default'           => '英語はもちろん、欧米、アジア、アフリカのことばも。駅前留学？ホテル留学？LaLaなら "自宅留学"！',
+        'sanitize_callback' => 'sanitize_textarea_field',
+        'transport'         => 'postMessage',
+    ) );
+
+    $wp_customize->add_control( 'hero_description', array(
+        'label'    => 'ヒーロー説明文',
+        'section'  => 'lala_hero_section',
+        'type'     => 'textarea',
+    ) );
+
+    // Social Media Section
+    $wp_customize->add_section( 'lala_social_media', array(
+        'title'    => __( 'Social Media Links', 'lala-global-language' ),
+        'panel'    => 'lala_theme_options',
+        'priority' => 30,
+    ) );
+
+    // Facebook URL
+    $wp_customize->add_setting( 'facebook_url', array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ) );
+
+    $wp_customize->add_control( 'facebook_url', array(
+        'label'    => __( 'Facebook URL', 'lala-global-language' ),
+        'section'  => 'lala_social_media',
+        'type'     => 'url',
+    ) );
+
+    // Twitter URL
+    $wp_customize->add_setting( 'twitter_url', array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ) );
+
+    $wp_customize->add_control( 'twitter_url', array(
+        'label'    => __( 'Twitter URL', 'lala-global-language' ),
+        'section'  => 'lala_social_media',
+        'type'     => 'url',
+    ) );
+
+    // Instagram URL
+    $wp_customize->add_setting( 'instagram_url', array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ) );
+
+    $wp_customize->add_control( 'instagram_url', array(
+        'label'    => __( 'Instagram URL', 'lala-global-language' ),
+        'section'  => 'lala_social_media',
+        'type'     => 'url',
+    ) );
+
+    // YouTube URL
+    $wp_customize->add_setting( 'youtube_url', array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ) );
+
+    $wp_customize->add_control( 'youtube_url', array(
+        'label'    => __( 'YouTube URL', 'lala-global-language' ),
+        'section'  => 'lala_social_media',
+        'type'     => 'url',
+    ) );
+}
+add_action( 'customize_register', 'lala_global_language_customize_register' );
+
+/**
+ * Render the site title for the selective refresh partial.
+ *
+ * @return void
+ */
+function lala_global_language_customize_partial_blogname() {
+    bloginfo( 'name' );
+}
+
+/**
+ * Render the site tagline for the selective refresh partial.
+ *
+ * @return void
+ */
+function lala_global_language_customize_partial_blogdescription() {
+    bloginfo( 'description' );
+}
+
+/**
+ * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
+ */
+function lala_global_language_customize_preview_js() {
+    wp_enqueue_script( 'lala-global-language-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '1.0.0', true );
+}
+add_action( 'customize_preview_init', 'lala_global_language_customize_preview_js' );
+
+/**
+ * Output custom CSS to live site
+ */
+function lala_global_language_customizer_css() {
+    ?>
+    <style type="text/css">
+        :root {
+            --primary-color: <?php echo esc_attr( get_theme_mod( 'primary_color', '#FF6B6B' ) ); ?>;
+            --secondary-color: <?php echo esc_attr( get_theme_mod( 'secondary_color', '#4ECDC4' ) ); ?>;
+            --accent-color: <?php echo esc_attr( get_theme_mod( 'accent_color', '#FFE66D' ) ); ?>;
+        }
+    </style>
+    <?php
+}
+add_action( 'wp_head', 'lala_global_language_customizer_css' );
