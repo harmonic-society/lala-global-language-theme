@@ -1,27 +1,46 @@
-name: Debug SSH
+name: Deploy
 on:
-  workflow_dispatch:
+  push:
+    branches: [ main ]
 
 jobs:
-  debug:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Debug SSH Connection
+      - uses: actions/checkout@v4
+      
+      - name: Setup SSH and Deploy
+        env:
+          PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          HOST: ${{ secrets.HOST }}
+          USER: ${{ secrets.USERNAME }}
+          PORT: ${{ secrets.SSH_PORT }}
         run: |
+          # デバッグ情報
+          echo "Connecting to $USER@$HOST:$PORT"
+          
           # SSH設定
           mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
+          chmod 700 ~/.ssh
           
-          # 鍵のフィンガープリントを確認
-          echo "=== Key fingerprint ==="
-          ssh-keygen -lf ~/.ssh/id_rsa
+          # 秘密鍵を正しく書き出す
+          echo "$PRIVATE_KEY" | tr -d '\r' > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
           
-          # 詳細な接続ログ
-          echo "=== Connection test with verbose mode ==="
-          ssh -vvv -p ${{ secrets.SSH_PORT }} \
-              -o StrictHostKeyChecking=no \
-              -o UserKnownHostsFile=/dev/null \
-              -i ~/.ssh/id_rsa \
-              ${{ secrets.USERNAME }}@${{ secrets.HOST }} \
-              "echo 'Success!'" || echo "Failed with exit code: $?"
+          # 鍵の確認（デバッグ用）
+          echo "Key info:"
+          ssh-keygen -y -f ~/.ssh/deploy_key > /dev/null && echo "Key is valid" || echo "Key is invalid"
+          
+          # known_hosts設定
+          ssh-keyscan -p $PORT -H $HOST >> ~/.ssh/known_hosts 2>/dev/null
+          
+          # SSH接続テスト
+          ssh -i ~/.ssh/deploy_key -p $PORT $USER@$HOST "echo 'Connected successfully'"
+          
+          # デプロイ実行
+          ssh -i ~/.ssh/deploy_key -p $PORT $USER@$HOST << 'EOF'
+            set -e
+            cd /home/wp629555/lala-global-language.com/public_html/wp-content/themes/lala-global-language-theme
+            git pull origin main
+            echo "Deployed at $(date)"
+          EOF
