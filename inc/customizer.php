@@ -48,39 +48,39 @@ function lala_global_language_customize_register( $wp_customize ) {
 
     // Primary Color
     $wp_customize->add_setting( 'primary_color', array(
-        'default'           => '#FF6B6B',
+        'default'           => '#008080',
         'sanitize_callback' => 'sanitize_hex_color',
         'transport'         => 'postMessage',
     ) );
 
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'primary_color', array(
-        'label'    => __( 'Primary Color', 'lala-global-language' ),
+        'label'    => __( 'Primary Color (Teal Blue - GLOBAL LANGUAGE)', 'lala-global-language' ),
         'section'  => 'lala_color_settings',
         'settings' => 'primary_color',
     ) ) );
 
     // Secondary Color
     $wp_customize->add_setting( 'secondary_color', array(
-        'default'           => '#4ECDC4',
+        'default'           => '#F88379',
         'sanitize_callback' => 'sanitize_hex_color',
         'transport'         => 'postMessage',
     ) );
 
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'secondary_color', array(
-        'label'    => __( 'Secondary Color', 'lala-global-language' ),
+        'label'    => __( 'Secondary Color (Coral Pink - LaLa Logo)', 'lala-global-language' ),
         'section'  => 'lala_color_settings',
         'settings' => 'secondary_color',
     ) ) );
 
     // Accent Color
     $wp_customize->add_setting( 'accent_color', array(
-        'default'           => '#FFE66D',
+        'default'           => '#FFD700',
         'sanitize_callback' => 'sanitize_hex_color',
         'transport'         => 'postMessage',
     ) );
 
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'accent_color', array(
-        'label'    => __( 'Accent Color', 'lala-global-language' ),
+        'label'    => __( 'Accent Color (Bright Yellow - Music notes & accents)', 'lala-global-language' ),
         'section'  => 'lala_color_settings',
         'settings' => 'accent_color',
     ) ) );
@@ -208,9 +208,9 @@ function lala_global_language_customizer_css() {
     ?>
     <style type="text/css">
         :root {
-            --primary-color: <?php echo esc_attr( get_theme_mod( 'primary_color', '#FF6B6B' ) ); ?>;
-            --secondary-color: <?php echo esc_attr( get_theme_mod( 'secondary_color', '#4ECDC4' ) ); ?>;
-            --accent-color: <?php echo esc_attr( get_theme_mod( 'accent_color', '#FFE66D' ) ); ?>;
+            --primary-color: <?php echo esc_attr( get_theme_mod( 'primary_color', '#008080' ) ); ?>;
+            --secondary-color: <?php echo esc_attr( get_theme_mod( 'secondary_color', '#F88379' ) ); ?>;
+            --accent-color: <?php echo esc_attr( get_theme_mod( 'accent_color', '#FFD700' ) ); ?>;
         }
     </style>
     <?php

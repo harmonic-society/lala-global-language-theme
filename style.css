@@ -17,15 +17,15 @@ Text Domain: lala-global-language
 }
 
 :root {
-    --primary-color: #FF6B6B;
-    --secondary-color: #4ECDC4;
-    --accent-color: #FFE66D;
+    --primary-color: #008080; /* Teal Blue - GLOBAL LANGUAGE */
+    --secondary-color: #F88379; /* Coral Pink - LaLa Logo */
+    --accent-color: #FFD700; /* Bright Yellow - Music notes & accents */
     --dark-color: #2D3436;
     --light-color: #FFFFFF;
     --text-color: #333333;
-    --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    --gradient-1: linear-gradient(135deg, #008080 0%, #006666 100%);
+    --gradient-2: linear-gradient(135deg, #F88379 0%, #F56B5F 100%);
+    --gradient-3: linear-gradient(135deg, #FFD700 0%, #FFC700 100%);
     
     /* Responsive spacing variables */
     --spacing-xs: 0.5rem;
@@ -88,7 +88,7 @@ p {
 
 /* Header */
 .site-header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #008080 0%, #006666 100%);
     padding: 15px 0;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     position: sticky;
@@ -154,7 +154,7 @@ p {
 
 /* Hero Section */
 .hero-section {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    background: linear-gradient(135deg, #F88379 0%, #F56B5F 100%);
     padding: 100px 0;
     text-align: center;
     position: relative;
@@ -259,7 +259,7 @@ p {
 }
 
 .feature-card {
-    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    background: linear-gradient(135deg, #FFE8E5 0%, #F88379 100%);
     padding: 40px;
     border-radius: 20px;
     text-align: center;
