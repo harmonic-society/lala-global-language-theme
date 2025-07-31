@@ -42,6 +42,7 @@
 
             <div class="footer-bottom">
                 <p>&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>. All rights reserved.</p>
+                <p class="tax-notice-footer">※当サイトの表示価格はすべて税込です</p>
                 <p class="made-with-love">語学を学ぶすべての人へ <span class="heart-animation">❤️</span></p>
             </div>
         </div>

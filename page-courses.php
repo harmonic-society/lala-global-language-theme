@@ -337,6 +337,8 @@ get_header(); ?>
                 </table>
             </div>
             
+            <p class="tax-notice-table">※上記価格はすべて消費税込みの価格です</p>
+            
             <div class="pricing-benefits">
                 <div class="benefit-card">
                     <h4>📊 目的や期間に応じて長期ほどお得！</h4>

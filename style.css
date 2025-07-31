@@ -1089,6 +1089,52 @@ p {
     }
 }
 
+/* ===========================================
+   TAX NOTICE STYLES
+   =========================================== */
+
+/* Tax notice in sections */
+.tax-notice {
+    text-align: center;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1rem;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    padding: 10px 20px;
+    background: rgba(0, 128, 128, 0.05);
+    border-radius: 50px;
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Tax notice after pricing table */
+.tax-notice-table {
+    text-align: center;
+    color: #666;
+    font-size: 0.95rem;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+
+/* Tax notice in footer */
+.tax-notice-footer {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    margin: 10px 0;
+}
+
+/* Highlight tax info in price labels */
+.price-label-with-tax::after {
+    content: "(税込)";
+    font-size: 0.85em;
+    color: var(--primary-color);
+    margin-left: 5px;
+}
+
 /* Hero Section Responsive Styles */
 @media (max-width: 1024px) {
     .hero-section {

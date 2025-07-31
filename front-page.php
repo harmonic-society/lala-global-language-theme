@@ -422,6 +422,7 @@ get_header(); ?>
         <div class="container">
             <h2 class="section-title">選べるコース & 料金体系</h2>
             <p class="section-subtitle">あなたの目的とペースに合わせて、最適なプランをお選びいただけます</p>
+            <p class="tax-notice">※表示価格はすべて税込です</p>
             
             <!-- Course Overview Grid -->
             <div class="course-overview-grid">
@@ -498,7 +499,7 @@ get_header(); ?>
             
             <!-- Quick Price Summary -->
             <div class="price-summary fade-in">
-                <h3>料金例</h3>
+                <h3>料金例（税込）</h3>
                 <?php 
                 $pricing_image = get_theme_mod( 'pricing_image' );
                 if ( $pricing_image ) : ?>
