@@ -193,6 +193,7 @@ function lala_global_language_fallback_menu() {
             <li><a href="<?php echo esc_url( home_url( '/instructors/' ) ); ?>">講師紹介</a></li>
             <li><a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>">ブログ</a></li>
             <li><a href="<?php echo esc_url( home_url( '/faq/' ) ); ?>">よくある質問</a></li>
+            <li><a href="<?php echo esc_url( home_url( '/recruitment/' ) ); ?>">採用情報</a></li>
             <li><a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">お問い合わせ</a></li>
         </ul>
     </div>
