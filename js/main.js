@@ -191,6 +191,30 @@
             return false;
         });
 
+        // Weekly Schedule Mobile Tabs
+        $('.day-tab').click(function() {
+            // Remove active class from all tabs and contents
+            $('.day-tab').removeClass('active');
+            $('.mobile-day-content').removeClass('active');
+            
+            // Add active class to clicked tab
+            $(this).addClass('active');
+            
+            // Show corresponding content
+            var dayType = $(this).data('day');
+            $('#' + dayType).addClass('active');
+        });
+
+        // Schedule slot hover effect
+        $('.slot.available').hover(
+            function() {
+                $(this).siblings('.slot').css('opacity', '0.7');
+            },
+            function() {
+                $(this).siblings('.slot').css('opacity', '1');
+            }
+        );
+
     });
 
     // Window load

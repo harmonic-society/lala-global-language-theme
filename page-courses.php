@@ -377,78 +377,265 @@ get_header(); ?>
 
     <!-- Schedule Section -->
     <section class="schedule-section">
+        <div class="schedule-background">
+            <div class="schedule-pattern"></div>
+        </div>
         <div class="container">
-            <h2 class="section-title">週間スケジュール</h2>
-            <p class="section-subtitle">週57枠の充実したレッスン体制</p>
+            <div class="schedule-header">
+                <h2 class="section-title">
+                    <span class="title-en">Weekly Schedule</span>
+                    <span class="title-ja">週間スケジュール</span>
+                </h2>
+                <p class="section-subtitle">
+                    <span class="subtitle-highlight">週57枠</span>の充実したレッスン体制で、あなたのライフスタイルに合わせて学習
+                </p>
+            </div>
             
-            <div class="schedule-grid">
-                <div class="schedule-card fade-in">
-                    <h3>🔹 平日（月〜金）</h3>
-                    <div class="schedule-content">
-                        <div class="time-slot">
-                            <h4>前半：10:00〜15:00（5枠）</h4>
-                            <ul>
-                                <li>①10:00-10:50</li>
-                                <li>②11:00-11:50</li>
-                                <li>③12:00-12:50</li>
-                                <li>④13:00-13:50</li>
-                                <li>⑤14:00-14:50</li>
-                            </ul>
-                        </div>
-                        <div class="time-slot">
-                            <h4>後半：18:00〜22:00（4枠）</h4>
-                            <ul>
-                                <li>⑥18:00-18:50</li>
-                                <li>⑦19:00-19:50</li>
-                                <li>⑧20:00-20:50</li>
-                                <li>⑨21:00-21:50</li>
-                            </ul>
-                        </div>
+            <div class="schedule-visual-container">
+                <!-- Time Legend -->
+                <div class="time-legend">
+                    <div class="legend-item morning">
+                        <span class="legend-icon">🌅</span>
+                        <span class="legend-text">朝の部</span>
                     </div>
-                    <p class="schedule-note">1日9枠 × 平日5日間 = 45枠</p>
+                    <div class="legend-item afternoon">
+                        <span class="legend-icon">☀️</span>
+                        <span class="legend-text">昼の部</span>
+                    </div>
+                    <div class="legend-item evening">
+                        <span class="legend-icon">🌙</span>
+                        <span class="legend-text">夜の部</span>
+                    </div>
                 </div>
                 
-                <div class="schedule-card fade-in">
-                    <h3>🔹 土日（土・日）</h3>
-                    <div class="schedule-content">
-                        <div class="time-slot">
-                            <h4>前半：10:00〜13:00（3枠）</h4>
-                            <ul>
-                                <li>①10:00-10:50</li>
-                                <li>②11:00-11:50</li>
-                                <li>③12:00-12:50</li>
-                            </ul>
+                <!-- Visual Calendar Grid -->
+                <div class="schedule-calendar">
+                    <!-- Days Header -->
+                    <div class="calendar-header">
+                        <div class="time-header">時間</div>
+                        <div class="day-header">
+                            <span class="day-name">月</span>
+                            <span class="day-label">Mon</span>
                         </div>
-                        <div class="time-slot">
-                            <h4>後半：18:00〜21:00（3枠）</h4>
-                            <ul>
-                                <li>⑥18:00-18:50</li>
-                                <li>⑦19:00-19:50</li>
-                                <li>⑧20:00-20:50</li>
-                            </ul>
+                        <div class="day-header">
+                            <span class="day-name">火</span>
+                            <span class="day-label">Tue</span>
+                        </div>
+                        <div class="day-header">
+                            <span class="day-name">水</span>
+                            <span class="day-label">Wed</span>
+                        </div>
+                        <div class="day-header">
+                            <span class="day-name">木</span>
+                            <span class="day-label">Thu</span>
+                        </div>
+                        <div class="day-header">
+                            <span class="day-name">金</span>
+                            <span class="day-label">Fri</span>
+                        </div>
+                        <div class="day-header weekend">
+                            <span class="day-name">土</span>
+                            <span class="day-label">Sat</span>
+                        </div>
+                        <div class="day-header weekend">
+                            <span class="day-name">日</span>
+                            <span class="day-label">Sun</span>
                         </div>
                     </div>
-                    <p class="schedule-note">1日6枠 × 土日2日間 = 12枠</p>
+                    
+                    <!-- Time Slots Grid -->
+                    <div class="time-slots-grid">
+                        <!-- 10:00 -->
+                        <div class="time-label">10:00</div>
+                        <div class="slot morning available" data-time="10:00-10:50" data-day="月"><span class="slot-number">①</span></div>
+                        <div class="slot morning available" data-time="10:00-10:50" data-day="火"><span class="slot-number">①</span></div>
+                        <div class="slot morning available" data-time="10:00-10:50" data-day="水"><span class="slot-number">①</span></div>
+                        <div class="slot morning available" data-time="10:00-10:50" data-day="木"><span class="slot-number">①</span></div>
+                        <div class="slot morning available" data-time="10:00-10:50" data-day="金"><span class="slot-number">①</span></div>
+                        <div class="slot morning available weekend" data-time="10:00-10:50" data-day="土"><span class="slot-number">①</span></div>
+                        <div class="slot morning available weekend" data-time="10:00-10:50" data-day="日"><span class="slot-number">①</span></div>
+                        
+                        <!-- 11:00 -->
+                        <div class="time-label">11:00</div>
+                        <div class="slot morning available" data-time="11:00-11:50" data-day="月"><span class="slot-number">②</span></div>
+                        <div class="slot morning available" data-time="11:00-11:50" data-day="火"><span class="slot-number">②</span></div>
+                        <div class="slot morning available" data-time="11:00-11:50" data-day="水"><span class="slot-number">②</span></div>
+                        <div class="slot morning available" data-time="11:00-11:50" data-day="木"><span class="slot-number">②</span></div>
+                        <div class="slot morning available" data-time="11:00-11:50" data-day="金"><span class="slot-number">②</span></div>
+                        <div class="slot morning available weekend" data-time="11:00-11:50" data-day="土"><span class="slot-number">②</span></div>
+                        <div class="slot morning available weekend" data-time="11:00-11:50" data-day="日"><span class="slot-number">②</span></div>
+                        
+                        <!-- 12:00 -->
+                        <div class="time-label">12:00</div>
+                        <div class="slot afternoon available" data-time="12:00-12:50" data-day="月"><span class="slot-number">③</span></div>
+                        <div class="slot afternoon available" data-time="12:00-12:50" data-day="火"><span class="slot-number">③</span></div>
+                        <div class="slot afternoon available" data-time="12:00-12:50" data-day="水"><span class="slot-number">③</span></div>
+                        <div class="slot afternoon available" data-time="12:00-12:50" data-day="木"><span class="slot-number">③</span></div>
+                        <div class="slot afternoon available" data-time="12:00-12:50" data-day="金"><span class="slot-number">③</span></div>
+                        <div class="slot afternoon available weekend" data-time="12:00-12:50" data-day="土"><span class="slot-number">③</span></div>
+                        <div class="slot afternoon available weekend" data-time="12:00-12:50" data-day="日"><span class="slot-number">③</span></div>
+                        
+                        <!-- 13:00 -->
+                        <div class="time-label">13:00</div>
+                        <div class="slot afternoon available" data-time="13:00-13:50" data-day="月"><span class="slot-number">④</span></div>
+                        <div class="slot afternoon available" data-time="13:00-13:50" data-day="火"><span class="slot-number">④</span></div>
+                        <div class="slot afternoon available" data-time="13:00-13:50" data-day="水"><span class="slot-number">④</span></div>
+                        <div class="slot afternoon available" data-time="13:00-13:50" data-day="木"><span class="slot-number">④</span></div>
+                        <div class="slot afternoon available" data-time="13:00-13:50" data-day="金"><span class="slot-number">④</span></div>
+                        <div class="slot unavailable"></div>
+                        <div class="slot unavailable"></div>
+                        
+                        <!-- 14:00 -->
+                        <div class="time-label">14:00</div>
+                        <div class="slot afternoon available" data-time="14:00-14:50" data-day="月"><span class="slot-number">⑤</span></div>
+                        <div class="slot afternoon available" data-time="14:00-14:50" data-day="火"><span class="slot-number">⑤</span></div>
+                        <div class="slot afternoon available" data-time="14:00-14:50" data-day="水"><span class="slot-number">⑤</span></div>
+                        <div class="slot afternoon available" data-time="14:00-14:50" data-day="木"><span class="slot-number">⑤</span></div>
+                        <div class="slot afternoon available" data-time="14:00-14:50" data-day="金"><span class="slot-number">⑤</span></div>
+                        <div class="slot unavailable"></div>
+                        <div class="slot unavailable"></div>
+                        
+                        <!-- Break Row -->
+                        <div class="break-row" style="grid-column: 1 / -1;">
+                            <span>休憩時間</span>
+                        </div>
+                        
+                        <!-- 18:00 -->
+                        <div class="time-label">18:00</div>
+                        <div class="slot evening available" data-time="18:00-18:50" data-day="月"><span class="slot-number">⑥</span></div>
+                        <div class="slot evening available" data-time="18:00-18:50" data-day="火"><span class="slot-number">⑥</span></div>
+                        <div class="slot evening available" data-time="18:00-18:50" data-day="水"><span class="slot-number">⑥</span></div>
+                        <div class="slot evening available" data-time="18:00-18:50" data-day="木"><span class="slot-number">⑥</span></div>
+                        <div class="slot evening available" data-time="18:00-18:50" data-day="金"><span class="slot-number">⑥</span></div>
+                        <div class="slot evening available weekend" data-time="18:00-18:50" data-day="土"><span class="slot-number">④</span></div>
+                        <div class="slot evening available weekend" data-time="18:00-18:50" data-day="日"><span class="slot-number">④</span></div>
+                        
+                        <!-- 19:00 -->
+                        <div class="time-label">19:00</div>
+                        <div class="slot evening available popular" data-time="19:00-19:50" data-day="月"><span class="slot-number">⑦</span><span class="popular-badge">人気</span></div>
+                        <div class="slot evening available popular" data-time="19:00-19:50" data-day="火"><span class="slot-number">⑦</span><span class="popular-badge">人気</span></div>
+                        <div class="slot evening available popular" data-time="19:00-19:50" data-day="水"><span class="slot-number">⑦</span><span class="popular-badge">人気</span></div>
+                        <div class="slot evening available popular" data-time="19:00-19:50" data-day="木"><span class="slot-number">⑦</span><span class="popular-badge">人気</span></div>
+                        <div class="slot evening available popular" data-time="19:00-19:50" data-day="金"><span class="slot-number">⑦</span><span class="popular-badge">人気</span></div>
+                        <div class="slot evening available weekend" data-time="19:00-19:50" data-day="土"><span class="slot-number">⑤</span></div>
+                        <div class="slot evening available weekend" data-time="19:00-19:50" data-day="日"><span class="slot-number">⑤</span></div>
+                        
+                        <!-- 20:00 -->
+                        <div class="time-label">20:00</div>
+                        <div class="slot evening available popular" data-time="20:00-20:50" data-day="月"><span class="slot-number">⑧</span><span class="popular-badge">人気</span></div>
+                        <div class="slot evening available popular" data-time="20:00-20:50" data-day="火"><span class="slot-number">⑧</span><span class="popular-badge">人気</span></div>
+                        <div class="slot evening available popular" data-time="20:00-20:50" data-day="水"><span class="slot-number">⑧</span><span class="popular-badge">人気</span></div>
+                        <div class="slot evening available popular" data-time="20:00-20:50" data-day="木"><span class="slot-number">⑧</span><span class="popular-badge">人気</span></div>
+                        <div class="slot evening available popular" data-time="20:00-20:50" data-day="金"><span class="slot-number">⑧</span><span class="popular-badge">人気</span></div>
+                        <div class="slot evening available weekend" data-time="20:00-20:50" data-day="土"><span class="slot-number">⑥</span></div>
+                        <div class="slot evening available weekend" data-time="20:00-20:50" data-day="日"><span class="slot-number">⑥</span></div>
+                        
+                        <!-- 21:00 -->
+                        <div class="time-label">21:00</div>
+                        <div class="slot evening available" data-time="21:00-21:50" data-day="月"><span class="slot-number">⑨</span></div>
+                        <div class="slot evening available" data-time="21:00-21:50" data-day="火"><span class="slot-number">⑨</span></div>
+                        <div class="slot evening available" data-time="21:00-21:50" data-day="水"><span class="slot-number">⑨</span></div>
+                        <div class="slot evening available" data-time="21:00-21:50" data-day="木"><span class="slot-number">⑨</span></div>
+                        <div class="slot evening available" data-time="21:00-21:50" data-day="金"><span class="slot-number">⑨</span></div>
+                        <div class="slot unavailable"></div>
+                        <div class="slot unavailable"></div>
+                    </div>
+                </div>
+                
+                <!-- Mobile Schedule View -->
+                <div class="schedule-mobile-view">
+                    <div class="mobile-day-tabs">
+                        <button class="day-tab active" data-day="weekday">平日</button>
+                        <button class="day-tab" data-day="weekend">土日</button>
+                    </div>
+                    
+                    <div class="mobile-schedule-content">
+                        <div class="mobile-day-content active" id="weekday">
+                            <h3>平日スケジュール（月〜金）</h3>
+                            <div class="mobile-time-group morning">
+                                <h4>🌅 朝の部</h4>
+                                <div class="mobile-slots">
+                                    <span class="mobile-slot">10:00</span>
+                                    <span class="mobile-slot">11:00</span>
+                                </div>
+                            </div>
+                            <div class="mobile-time-group afternoon">
+                                <h4>☀️ 昼の部</h4>
+                                <div class="mobile-slots">
+                                    <span class="mobile-slot">12:00</span>
+                                    <span class="mobile-slot">13:00</span>
+                                    <span class="mobile-slot">14:00</span>
+                                </div>
+                            </div>
+                            <div class="mobile-time-group evening">
+                                <h4>🌙 夜の部</h4>
+                                <div class="mobile-slots">
+                                    <span class="mobile-slot popular">18:00</span>
+                                    <span class="mobile-slot popular">19:00</span>
+                                    <span class="mobile-slot popular">20:00</span>
+                                    <span class="mobile-slot">21:00</span>
+                                </div>
+                            </div>
+                            <p class="mobile-total">合計: 9枠/日 × 5日 = 45枠</p>
+                        </div>
+                        
+                        <div class="mobile-day-content" id="weekend">
+                            <h3>週末スケジュール（土・日）</h3>
+                            <div class="mobile-time-group morning">
+                                <h4>🌅 朝の部</h4>
+                                <div class="mobile-slots">
+                                    <span class="mobile-slot">10:00</span>
+                                    <span class="mobile-slot">11:00</span>
+                                </div>
+                            </div>
+                            <div class="mobile-time-group afternoon">
+                                <h4>☀️ 昼の部</h4>
+                                <div class="mobile-slots">
+                                    <span class="mobile-slot">12:00</span>
+                                </div>
+                            </div>
+                            <div class="mobile-time-group evening">
+                                <h4>🌙 夜の部</h4>
+                                <div class="mobile-slots">
+                                    <span class="mobile-slot">18:00</span>
+                                    <span class="mobile-slot">19:00</span>
+                                    <span class="mobile-slot">20:00</span>
+                                </div>
+                            </div>
+                            <p class="mobile-total">合計: 6枠/日 × 2日 = 12枠</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             
-            <div class="schedule-summary fade-in">
-                <h3>✅ 合計（週単位）</h3>
-                <div class="summary-content">
-                    <div class="summary-item">
-                        <span class="label">平日</span>
-                        <span class="value">45枠</span>
-                    </div>
-                    <div class="summary-item">
-                        <span class="label">土日</span>
-                        <span class="value">12枠</span>
-                    </div>
-                    <div class="summary-item total">
-                        <span class="label">合計</span>
-                        <span class="value">57枠／週</span>
+            <!-- Summary Stats -->
+            <div class="schedule-stats fade-in">
+                <div class="stat-card">
+                    <div class="stat-icon">📅</div>
+                    <div class="stat-content">
+                        <span class="stat-number">57</span>
+                        <span class="stat-label">週間レッスン枠</span>
                     </div>
                 </div>
-                <p class="summary-note">安定的かつ柔軟な週構成</p>
+                <div class="stat-card">
+                    <div class="stat-icon">⏰</div>
+                    <div class="stat-content">
+                        <span class="stat-number">50</span>
+                        <span class="stat-label">分/レッスン</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🎯</div>
+                    <div class="stat-content">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">予約の柔軟性</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="schedule-cta">
+                <p>💡 人気の時間帯は早めのご予約がおすすめです！</p>
+                <a href="#contact" class="btn btn-primary">無料体験を予約する</a>
             </div>
         </div>
     </section>
