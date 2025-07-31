@@ -230,6 +230,9 @@ p {
     z-index: 10;
     max-width: 1000px;
     margin: 0 auto;
+    /* Ensure content is always visible */
+    pointer-events: auto;
+    isolation: isolate;
 }
 
 .hero-title {
@@ -1094,10 +1097,17 @@ p {
         display: none; /* Hide animations on mobile for performance */
     }
     
+    .hero-content {
+        z-index: 999 !important;
+    }
+    
     .hero-title {
         font-size: 2.5rem;
         line-height: 1.3;
         margin-bottom: 20px;
+        color: white !important;
+        opacity: 1 !important;
+        visibility: visible !important;
     }
     
     .hero-description {
@@ -1105,6 +1115,9 @@ p {
         line-height: 1.6;
         margin-bottom: 30px;
         padding: 0 20px;
+        color: white !important;
+        opacity: 1 !important;
+        visibility: visible !important;
     }
     
     .hero-buttons {
@@ -1159,11 +1172,17 @@ p {
     
     .hero-title {
         font-size: 2rem;
+        color: white !important;
+        opacity: 1 !important;
+        visibility: visible !important;
     }
     
     .hero-description {
         font-size: 1rem;
         padding: 0 15px;
+        color: white !important;
+        opacity: 1 !important;
+        visibility: visible !important;
     }
     
     .hero-buttons .btn {

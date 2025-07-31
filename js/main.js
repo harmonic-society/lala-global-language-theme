@@ -8,6 +8,15 @@
     // DOM ready
     $(document).ready(function() {
         
+        // Fix mobile text visibility issues
+        if ($(window).width() <= 768) {
+            $('.hero-title, .hero-description, .hero-buttons, .hero-stats').removeClass('animate-fade-up').css({
+                'opacity': '1',
+                'transform': 'none',
+                'visibility': 'visible'
+            });
+        }
+        
         // Smooth scrolling for anchor links
         $('a[href*="#"]').not('[href="#"]').not('[href="#0"]').click(function(event) {
             if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
