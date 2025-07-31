@@ -118,6 +118,52 @@ function lala_global_language_customize_register( $wp_customize ) {
         'type'     => 'textarea',
     ) );
 
+    // Hero Background Image
+    $wp_customize->add_setting( 'hero_background_image', array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+        'transport'         => 'refresh',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'hero_background_image', array(
+        'label'    => 'ヒーロー背景画像',
+        'section'  => 'lala_hero_section',
+        'settings' => 'hero_background_image',
+        'description' => '推奨サイズ: 1920x1080px以上の高解像度画像',
+    ) ) );
+
+    // Hero Background Overlay
+    $wp_customize->add_setting( 'hero_overlay_opacity', array(
+        'default'           => '0.4',
+        'sanitize_callback' => 'absint',
+        'transport'         => 'postMessage',
+    ) );
+
+    $wp_customize->add_control( 'hero_overlay_opacity', array(
+        'label'       => 'オーバーレイの透明度',
+        'description' => '背景画像の上に重ねる色の透明度（0-100%）',
+        'section'     => 'lala_hero_section',
+        'type'        => 'range',
+        'input_attrs' => array(
+            'min'  => 0,
+            'max'  => 100,
+            'step' => 10,
+        ),
+    ) );
+
+    // Hero Text Color
+    $wp_customize->add_setting( 'hero_text_color', array(
+        'default'           => '#FFFFFF',
+        'sanitize_callback' => 'sanitize_hex_color',
+        'transport'         => 'postMessage',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'hero_text_color', array(
+        'label'    => 'ヒーローテキストカラー',
+        'section'  => 'lala_hero_section',
+        'settings' => 'hero_text_color',
+    ) ) );
+
     // Social Media Section
     $wp_customize->add_section( 'lala_social_media', array(
         'title'    => __( 'Social Media Links', 'lala-global-language' ),
@@ -205,13 +251,49 @@ add_action( 'customize_preview_init', 'lala_global_language_customize_preview_js
  * Output custom CSS to live site
  */
 function lala_global_language_customizer_css() {
+    $hero_bg_image = get_theme_mod( 'hero_background_image', '' );
+    $hero_overlay_opacity = get_theme_mod( 'hero_overlay_opacity', '40' ) / 100;
+    $hero_text_color = get_theme_mod( 'hero_text_color', '#FFFFFF' );
     ?>
     <style type="text/css">
         :root {
             --primary-color: <?php echo esc_attr( get_theme_mod( 'primary_color', '#008080' ) ); ?>;
             --secondary-color: <?php echo esc_attr( get_theme_mod( 'secondary_color', '#F88379' ) ); ?>;
             --accent-color: <?php echo esc_attr( get_theme_mod( 'accent_color', '#FFD700' ) ); ?>;
+            --hero-text-color: <?php echo esc_attr( $hero_text_color ); ?>;
         }
+        
+        <?php if ( $hero_bg_image ) : ?>
+        .hero-section {
+            background-image: url('<?php echo esc_url( $hero_bg_image ); ?>');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+        }
+        
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(248, 131, 121, <?php echo esc_attr( $hero_overlay_opacity ); ?>) 0%, rgba(245, 107, 95, <?php echo esc_attr( $hero_overlay_opacity ); ?>) 100%);
+            z-index: 1;
+        }
+        
+        .hero-section .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-section .hero-title,
+        .hero-section .hero-description,
+        .hero-section .btn {
+            color: var(--hero-text-color) !important;
+        }
+        <?php endif; ?>
     </style>
     <?php
 }

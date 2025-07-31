@@ -68,6 +68,16 @@
             $('.hero-section').css('background-position', 'center ' + (scrolled * 0.5) + 'px');
         });
 
+        // Hero scroll indicator click
+        $('.hero-scroll-indicator').click(function() {
+            var target = $('#features');
+            if (target.length) {
+                $('html, body').animate({
+                    scrollTop: target.offset().top - 100
+                }, 800);
+            }
+        });
+
         // Form validation feedback
         $('form').on('submit', function() {
             var $form = $(this);

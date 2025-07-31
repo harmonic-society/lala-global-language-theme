@@ -69,7 +69,22 @@
     // Hero description
     wp.customize( 'hero_description', function( value ) {
         value.bind( function( to ) {
-            $( '.hero-description' ).text( to );
+            $( '.hero-description' ).html( to.replace(/\n/g, '<br>') );
+        } );
+    } );
+
+    // Hero text color
+    wp.customize( 'hero_text_color', function( value ) {
+        value.bind( function( to ) {
+            document.documentElement.style.setProperty('--hero-text-color', to);
+        } );
+    } );
+
+    // Hero overlay opacity
+    wp.customize( 'hero_overlay_opacity', function( value ) {
+        value.bind( function( to ) {
+            var opacity = to / 100;
+            $( '.hero-section::after' ).css( 'opacity', opacity );
         } );
     } );
 

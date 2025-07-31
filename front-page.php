@@ -11,15 +11,48 @@ get_header(); ?>
     
     <!-- Hero Section -->
     <section class="hero-section">
+        <div class="hero-animated-bg">
+            <div class="hero-shape hero-shape-1"></div>
+            <div class="hero-shape hero-shape-2"></div>
+            <div class="hero-shape hero-shape-3"></div>
+        </div>
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">世界中のことばを、ここ日本で。</h1>
-                <p class="hero-description">英語はもちろん、欧米、アジア、アフリカのことばも。<br>駅前留学？ホテル留学？LaLaなら "自宅留学"！<br>「世界中のことばを、誰でも、どこでも学べる」"言語のデパート"を目指します。</p>
-                <div class="hero-buttons">
-                    <a href="#courses" class="btn btn-primary">無料体験レッスン</a>
-                    <a href="#about" class="btn btn-secondary">詳しく見る</a>
+                <h1 class="hero-title animate-fade-up">
+                    <?php echo esc_html( get_theme_mod( 'hero_title', '世界中のことばを、ここ日本で。' ) ); ?>
+                </h1>
+                <p class="hero-description animate-fade-up" style="animation-delay: 0.2s;">
+                    <?php echo nl2br( esc_html( get_theme_mod( 'hero_description', '英語はもちろん、欧米、アジア、アフリカのことばも。駅前留学？ホテル留学？LaLaなら "自宅留学"！' ) ) ); ?>
+                </p>
+                <div class="hero-buttons animate-fade-up" style="animation-delay: 0.4s;">
+                    <a href="#courses" class="btn btn-primary btn-large">
+                        <span class="btn-text">無料体験レッスン</span>
+                        <span class="btn-icon">→</span>
+                    </a>
+                    <a href="#languages" class="btn btn-secondary btn-large">
+                        <span class="btn-text">対応言語を見る</span>
+                        <span class="btn-icon">🌍</span>
+                    </a>
+                </div>
+                <div class="hero-stats animate-fade-up" style="animation-delay: 0.6s;">
+                    <div class="stat-item">
+                        <span class="stat-number">35</span>
+                        <span class="stat-label">ヶ国語対応</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">1,000+</span>
+                        <span class="stat-label">受講生</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-label">満足度</span>
+                    </div>
                 </div>
             </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <span class="scroll-text">SCROLL</span>
+            <div class="scroll-arrow"></div>
         </div>
     </section>
 
