@@ -245,6 +245,7 @@ p {
         0 0 40px rgba(0, 0, 0, 0.6);
     font-weight: 800;
     line-height: 1.2;
+    white-space: nowrap;
 }
 
 .hero-description {
@@ -1073,6 +1074,7 @@ p {
     
     .hero-title {
         font-size: 3.5rem;
+        white-space: normal;
     }
     
     .hero-description {
@@ -1105,6 +1107,7 @@ p {
         color: white !important;
         opacity: 1 !important;
         visibility: visible !important;
+        white-space: normal;
     }
     
     .hero-description {
