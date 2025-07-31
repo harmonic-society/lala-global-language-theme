@@ -206,6 +206,27 @@ function lala_global_language_customize_register( $wp_customize ) {
         'description' => 'カスタムクラス紹介文の下に表示される画像です。推奨サイズ: 1200x600px',
     ) ) );
 
+    // Features Section
+    $wp_customize->add_section( 'lala_features_section', array(
+        'title'    => __( 'Features Section', 'lala-global-language' ),
+        'panel'    => 'lala_theme_options',
+        'priority' => 27,
+    ) );
+
+    // Features Image
+    $wp_customize->add_setting( 'features_image', array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+        'transport'         => 'refresh',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'features_image', array(
+        'label'       => '選ばれる理由セクションの画像',
+        'section'     => 'lala_features_section',
+        'settings'    => 'features_image',
+        'description' => '「LaLa Global Language が選ばれる理由」の見出しの下に表示される画像です。推奨サイズ: 1200x400px',
+    ) ) );
+
     // Social Media Section
     $wp_customize->add_section( 'lala_social_media', array(
         'title'    => __( 'Social Media Links', 'lala-global-language' ),

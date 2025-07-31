@@ -485,6 +485,22 @@ p {
     background: var(--light-color);
 }
 
+.features-image {
+    margin: 40px auto;
+    max-width: 1200px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.features-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    max-height: 400px;
+}
+
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -748,6 +764,14 @@ p {
     /* Features section */
     .features-section {
         padding: 40px 0;
+    }
+    
+    .features-image {
+        margin: 20px auto;
+    }
+    
+    .features-image img {
+        max-height: 250px;
     }
     
     .features-grid {
