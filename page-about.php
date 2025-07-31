@@ -13,7 +13,6 @@ get_header(); ?>
         <div class="container">
             <div class="hero-content">
                 <h1 class="page-title fade-in">🌍 LaLa GLOBAL LANGUAGE</h1>
-                <p class="hero-subtitle fade-in">ララグローバル言語学院</p>
                 <p class="hero-tagline fade-in">🎶 Let's Learn Global Language！</p>
             </div>
         </div>
