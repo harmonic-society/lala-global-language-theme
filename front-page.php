@@ -577,61 +577,6 @@ get_header(); ?>
                     </div>
                 </div>
                 
-                <div class="custom-class-examples fade-in">
-                    <h3>導入事例</h3>
-                    <div class="examples-grid">
-                        <div class="example-card">
-                            <div class="example-icon">🏥</div>
-                            <h4>医療法人A様</h4>
-                            <p>外国人患者対応のための医療英語研修（看護師30名）</p>
-                        </div>
-                        <div class="example-card">
-                            <div class="example-icon">🏭</div>
-                            <h4>製造業B社様</h4>
-                            <p>ベトナム工場立ち上げに向けたベトナム語研修（管理職15名）</p>
-                        </div>
-                        <div class="example-card">
-                            <div class="example-icon">🏨</div>
-                            <h4>ホテルC様</h4>
-                            <p>インバウンド対応強化のための中国語・韓国語研修（スタッフ50名）</p>
-                        </div>
-                        <div class="example-card">
-                            <div class="example-icon">💼</div>
-                            <h4>IT企業D社様</h4>
-                            <p>海外展開に向けたビジネス英語＆プレゼン研修（全社員100名）</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="custom-class-process fade-in">
-                    <h3>導入までの流れ</h3>
-                    <div class="process-steps">
-                        <div class="process-step">
-                            <span class="step-number">1</span>
-                            <h4>ヒアリング</h4>
-                            <p>貴社のニーズを詳しくお伺い</p>
-                        </div>
-                        <div class="process-arrow">→</div>
-                        <div class="process-step">
-                            <span class="step-number">2</span>
-                            <h4>プラン提案</h4>
-                            <p>最適なカリキュラムをご提案</p>
-                        </div>
-                        <div class="process-arrow">→</div>
-                        <div class="process-step">
-                            <span class="step-number">3</span>
-                            <h4>体験レッスン</h4>
-                            <p>実際の講師による無料体験</p>
-                        </div>
-                        <div class="process-arrow">→</div>
-                        <div class="process-step">
-                            <span class="step-number">4</span>
-                            <h4>研修開始</h4>
-                            <p>定期的な進捗報告付き</p>
-                        </div>
-                    </div>
-                </div>
-                
                 <div class="custom-class-cta fade-in">
                     <div class="cta-box">
                         <h3>まずは無料相談から</h3>
@@ -1760,146 +1705,6 @@ get_header(); ?>
     margin: 0;
 }
 
-/* Examples Grid */
-.custom-class-examples {
-    margin-bottom: 80px;
-}
-
-.custom-class-examples h3 {
-    text-align: center;
-    font-size: 2rem;
-    color: var(--primary-color);
-    margin-bottom: 40px;
-}
-
-.examples-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.example-card {
-    background: white;
-    padding: 30px;
-    border-radius: 20px;
-    text-align: center;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-}
-
-.example-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 5px;
-    background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-}
-
-.example-card:hover::before {
-    transform: translateX(0);
-}
-
-.example-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-}
-
-.example-icon {
-    font-size: 3rem;
-    margin-bottom: 15px;
-    display: block;
-}
-
-.example-card h4 {
-    font-size: 1.2rem;
-    color: var(--dark-color);
-    margin-bottom: 10px;
-}
-
-.example-card p {
-    color: #666;
-    font-size: 0.95rem;
-    line-height: 1.6;
-}
-
-/* Process Steps */
-.custom-class-process {
-    margin-bottom: 80px;
-}
-
-.custom-class-process h3 {
-    text-align: center;
-    font-size: 2rem;
-    color: var(--primary-color);
-    margin-bottom: 50px;
-}
-
-.process-steps {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    max-width: 1000px;
-    margin: 0 auto;
-    flex-wrap: wrap;
-}
-
-.process-step {
-    background: white;
-    padding: 30px 25px;
-    border-radius: 20px;
-    text-align: center;
-    position: relative;
-    flex: 1;
-    min-width: 200px;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-}
-
-.process-step:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-}
-
-.step-number {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    background: var(--accent-color);
-    color: var(--dark-color);
-    border-radius: 50%;
-    font-size: 1.5rem;
-    font-weight: 700;
-    line-height: 50px;
-    margin-bottom: 15px;
-}
-
-.process-step h4 {
-    font-size: 1.2rem;
-    color: var(--dark-color);
-    margin-bottom: 10px;
-}
-
-.process-step p {
-    color: #666;
-    font-size: 0.9rem;
-    margin: 0;
-}
-
-.process-arrow {
-    font-size: 2rem;
-    color: var(--primary-color);
-    opacity: 0.5;
-}
-
 /* CTA Box */
 .custom-class-cta {
     text-align: center;
@@ -2026,26 +1831,6 @@ get_header(); ?>
         font-size: 1.2rem;
     }
     
-    .examples-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .process-steps {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    .process-arrow {
-        transform: rotate(90deg);
-        font-size: 1.5rem;
-    }
-    
-    .process-step {
-        width: 100%;
-        max-width: 350px;
-    }
-    
     .cta-box {
         padding: 40px 30px;
         border-radius: 20px;
@@ -2091,19 +1876,6 @@ get_header(); ?>
     
     .feature-content p {
         font-size: 0.9rem;
-    }
-    
-    .example-card {
-        padding: 20px;
-    }
-    
-    .example-icon {
-        font-size: 2.5rem;
-    }
-    
-    .custom-class-process h3,
-    .custom-class-examples h3 {
-        font-size: 1.5rem;
     }
     
     .cta-box {
