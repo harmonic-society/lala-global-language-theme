@@ -191,32 +191,6 @@
             return false;
         });
 
-        // CTA Countdown Timer
-        function updateCountdown() {
-            // Set campaign end date (30 days from now as example)
-            var campaignEnd = new Date();
-            campaignEnd.setDate(campaignEnd.getDate() + 30);
-            
-            var now = new Date();
-            var timeLeft = campaignEnd - now;
-            
-            if (timeLeft > 0) {
-                var days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-                var hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-                
-                $('#days').text(days.toString().padStart(2, '0'));
-                $('#hours').text(hours.toString().padStart(2, '0'));
-                $('#minutes').text(minutes.toString().padStart(2, '0'));
-            }
-        }
-        
-        // Update countdown every minute
-        if ($('#cta-countdown').length) {
-            updateCountdown();
-            setInterval(updateCountdown, 60000);
-        }
-
     });
 
     // Window load
