@@ -90,80 +90,321 @@ get_header(); ?>
 
     <!-- 35 Languages Section -->
     <section id="languages" class="languages-section">
+        <div class="languages-bg-pattern"></div>
         <div class="container">
             <h2 class="section-title fade-in">LaLaの対応35言語</h2>
             <p class="section-subtitle">世界中のことばを、誰でも、どこでも学べる"言語のデパート"</p>
             
-            <div class="languages-grid">
-                <div class="language-category fade-in">
-                    <h3>東アジア</h3>
-                    <ul>
-                        <li>🇨🇳 中国語（北京語）</li>
-                        <li>🇹🇼 台湾華語</li>
-                        <li>🇰🇷 韓国語</li>
-                        <li>🇲🇳 モンゴル語</li>
-                    </ul>
+            <div class="languages-showcase">
+                <!-- 東アジア -->
+                <div class="language-region east-asia fade-in" data-region="東アジア">
+                    <div class="region-header">
+                        <div class="region-icon">🏮</div>
+                        <h3 class="region-title">東アジア</h3>
+                        <span class="language-count">4言語</span>
+                    </div>
+                    <div class="language-items">
+                        <div class="language-item" data-lang="zh">
+                            <span class="flag-icon">🇨🇳</span>
+                            <div class="language-info">
+                                <h4>中国語</h4>
+                                <span class="language-native">北京語</span>
+                            </div>
+                        </div>
+                        <div class="language-item" data-lang="tw">
+                            <span class="flag-icon">🇹🇼</span>
+                            <div class="language-info">
+                                <h4>台湾華語</h4>
+                                <span class="language-native">繁體中文</span>
+                            </div>
+                        </div>
+                        <div class="language-item" data-lang="ko">
+                            <span class="flag-icon">🇰🇷</span>
+                            <div class="language-info">
+                                <h4>韓国語</h4>
+                                <span class="language-native">한국어</span>
+                            </div>
+                        </div>
+                        <div class="language-item" data-lang="mn">
+                            <span class="flag-icon">🇲🇳</span>
+                            <div class="language-info">
+                                <h4>モンゴル語</h4>
+                                <span class="language-native">Монгол</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="language-category fade-in">
-                    <h3>東南アジア</h3>
-                    <ul>
-                        <li>🇮🇩 インドネシア語</li>
-                        <li>🇰🇭 カンボジア語（クメール語）</li>
-                        <li>🇱🇦 ラオス語</li>
-                        <li>🇲🇲 ミャンマー語（ビルマ語）</li>
-                        <li>🇲🇾 マレーシア語（マレー語）</li>
-                        <li>🇵🇭 フィリピン語（タガログ語）</li>
-                        <li>🇹🇭 タイ語</li>
-                        <li>🇻🇳 ベトナム語</li>
-                    </ul>
+                <!-- 東南アジア -->
+                <div class="language-region southeast-asia fade-in" data-region="東南アジア">
+                    <div class="region-header">
+                        <div class="region-icon">🌺</div>
+                        <h3 class="region-title">東南アジア</h3>
+                        <span class="language-count">8言語</span>
+                    </div>
+                    <div class="language-items">
+                        <div class="language-item" data-lang="id">
+                            <span class="flag-icon">🇮🇩</span>
+                            <div class="language-info">
+                                <h4>インドネシア語</h4>
+                                <span class="language-native">Bahasa</span>
+                            </div>
+                        </div>
+                        <div class="language-item" data-lang="kh">
+                            <span class="flag-icon">🇰🇭</span>
+                            <div class="language-info">
+                                <h4>カンボジア語</h4>
+                                <span class="language-native">クメール語</span>
+                            </div>
+                        </div>
+                        <div class="language-item" data-lang="la">
+                            <span class="flag-icon">🇱🇦</span>
+                            <div class="language-info">
+                                <h4>ラオス語</h4>
+                                <span class="language-native">ພາສາລາວ</span>
+                            </div>
+                        </div>
+                        <div class="language-item" data-lang="mm">
+                            <span class="flag-icon">🇲🇲</span>
+                            <div class="language-info">
+                                <h4>ミャンマー語</h4>
+                                <span class="language-native">ビルマ語</span>
+                            </div>
+                        </div>
+                        <div class="language-item" data-lang="my">
+                            <span class="flag-icon">🇲🇾</span>
+                            <div class="language-info">
+                                <h4>マレーシア語</h4>
+                                <span class="language-native">マレー語</span>
+                            </div>
+                        </div>
+                        <div class="language-item" data-lang="ph">
+                            <span class="flag-icon">🇵🇭</span>
+                            <div class="language-info">
+                                <h4>フィリピン語</h4>
+                                <span class="language-native">タガログ語</span>
+                            </div>
+                        </div>
+                        <div class="language-item" data-lang="th">
+                            <span class="flag-icon">🇹🇭</span>
+                            <div class="language-info">
+                                <h4>タイ語</h4>
+                                <span class="language-native">ภาษาไทย</span>
+                            </div>
+                        </div>
+                        <div class="language-item" data-lang="vn">
+                            <span class="flag-icon">🇻🇳</span>
+                            <div class="language-info">
+                                <h4>ベトナム語</h4>
+                                <span class="language-native">Tiếng Việt</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="language-category fade-in">
-                    <h3>南アジア</h3>
-                    <ul>
-                        <li>🇧🇩 ベンガル語</li>
-                        <li>🇮🇳 ヒンディー語</li>
-                        <li>🇳🇵 ネパール語</li>
-                        <li>🇮🇳 パンジャーブ語</li>
-                        <li>🇱🇰 シンハラ語</li>
-                        <li>🇮🇳 タミル語</li>
-                        <li>🇵🇰 ウルドゥー語</li>
-                    </ul>
+                <!-- 南アジア -->
+                <div class="language-region south-asia fade-in" data-region="南アジア">
+                    <div class="region-header">
+                        <div class="region-icon">🕌</div>
+                        <h3 class="region-title">南アジア</h3>
+                        <span class="language-count">7言語</span>
+                    </div>
+                    <div class="language-items">
+                        <div class="language-item" data-lang="bd">
+                            <span class="flag-icon">🇧🇩</span>
+                            <div class="language-info">
+                                <h4>ベンガル語</h4>
+                                <span class="language-native">বাংলা</span>
+                            </div>
+                        </div>
+                        <div class="language-item" data-lang="hi">
+                            <span class="flag-icon">🇮🇳</span>
+                            <div class="language-info">
+                                <h4>ヒンディー語</h4>
+                                <span class="language-native">हिन्दी</span>
+                            </div>
+                        </div>
+                        <div class="language-item" data-lang="np">
+                            <span class="flag-icon">🇳🇵</span>
+                            <div class="language-info">
+                                <h4>ネパール語</h4>
+                                <span class="language-native">नेपाली</span>
+                            </div>
+                        </div>
+                        <div class="language-item" data-lang="pa">
+                            <span class="flag-icon">🇮🇳</span>
+                            <div class="language-info">
+                                <h4>パンジャーブ語</h4>
+                                <span class="language-native">ਪੰਜਾਬੀ</span>
+                            </div>
+                        </div>
+                        <div class="language-item" data-lang="si">
+                            <span class="flag-icon">🇱🇰</span>
+                            <div class="language-info">
+                                <h4>シンハラ語</h4>
+                                <span class="language-native">සිංහල</span>
+                            </div>
+                        </div>
+                        <div class="language-item" data-lang="ta">
+                            <span class="flag-icon">🇮🇳</span>
+                            <div class="language-info">
+                                <h4>タミル語</h4>
+                                <span class="language-native">தமிழ்</span>
+                            </div>
+                        </div>
+                        <div class="language-item" data-lang="ur">
+                            <span class="flag-icon">🇵🇰</span>
+                            <div class="language-info">
+                                <h4>ウルドゥー語</h4>
+                                <span class="language-native">اردو</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="language-category fade-in">
-                    <h3>ヨーロッパ</h3>
-                    <ul>
-                        <li>🇬🇧 英語</li>
-                        <li>🇩🇪 ドイツ語</li>
-                        <li>🇫🇷 フランス語</li>
-                        <li>🇮🇹 イタリア語</li>
-                        <li>🇪🇸 スペイン語</li>
-                        <li>🇵🇹 ポルトガル語</li>
-                        <li>🇳🇱 オランダ語</li>
-                    </ul>
+                <!-- ヨーロッパ -->
+                <div class="language-region europe fade-in" data-region="ヨーロッパ">
+                    <div class="region-header">
+                        <div class="region-icon">🏰</div>
+                        <h3 class="region-title">ヨーロッパ</h3>
+                        <span class="language-count">7言語</span>
+                    </div>
+                    <div class="language-items">
+                        <div class="language-item" data-lang="en">
+                            <span class="flag-icon">🇬🇧</span>
+                            <div class="language-info">
+                                <h4>英語</h4>
+                                <span class="language-native">English</span>
+                            </div>
+                        </div>
+                        <div class="language-item" data-lang="de">
+                            <span class="flag-icon">🇩🇪</span>
+                            <div class="language-info">
+                                <h4>ドイツ語</h4>
+                                <span class="language-native">Deutsch</span>
+                            </div>
+                        </div>
+                        <div class="language-item" data-lang="fr">
+                            <span class="flag-icon">🇫🇷</span>
+                            <div class="language-info">
+                                <h4>フランス語</h4>
+                                <span class="language-native">Français</span>
+                            </div>
+                        </div>
+                        <div class="language-item" data-lang="it">
+                            <span class="flag-icon">🇮🇹</span>
+                            <div class="language-info">
+                                <h4>イタリア語</h4>
+                                <span class="language-native">Italiano</span>
+                            </div>
+                        </div>
+                        <div class="language-item" data-lang="es">
+                            <span class="flag-icon">🇪🇸</span>
+                            <div class="language-info">
+                                <h4>スペイン語</h4>
+                                <span class="language-native">Español</span>
+                            </div>
+                        </div>
+                        <div class="language-item" data-lang="pt">
+                            <span class="flag-icon">🇵🇹</span>
+                            <div class="language-info">
+                                <h4>ポルトガル語</h4>
+                                <span class="language-native">Português</span>
+                            </div>
+                        </div>
+                        <div class="language-item" data-lang="nl">
+                            <span class="flag-icon">🇳🇱</span>
+                            <div class="language-info">
+                                <h4>オランダ語</h4>
+                                <span class="language-native">Nederlands</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="language-category fade-in">
-                    <h3>東欧・ロシア</h3>
-                    <ul>
-                        <li>🇷🇺 ロシア語</li>
-                        <li>🇺🇦 ウクライナ語</li>
-                        <li>🇨🇿 チェコ語</li>
-                        <li>🇭🇺 ハンガリー語</li>
-                    </ul>
+                <!-- 東欧・ロシア -->
+                <div class="language-region eastern-europe fade-in" data-region="東欧・ロシア">
+                    <div class="region-header">
+                        <div class="region-icon">⛪</div>
+                        <h3 class="region-title">東欧・ロシア</h3>
+                        <span class="language-count">4言語</span>
+                    </div>
+                    <div class="language-items">
+                        <div class="language-item" data-lang="ru">
+                            <span class="flag-icon">🇷🇺</span>
+                            <div class="language-info">
+                                <h4>ロシア語</h4>
+                                <span class="language-native">Русский</span>
+                            </div>
+                        </div>
+                        <div class="language-item" data-lang="ua">
+                            <span class="flag-icon">🇺🇦</span>
+                            <div class="language-info">
+                                <h4>ウクライナ語</h4>
+                                <span class="language-native">Українська</span>
+                            </div>
+                        </div>
+                        <div class="language-item" data-lang="cz">
+                            <span class="flag-icon">🇨🇿</span>
+                            <div class="language-info">
+                                <h4>チェコ語</h4>
+                                <span class="language-native">Čeština</span>
+                            </div>
+                        </div>
+                        <div class="language-item" data-lang="hu">
+                            <span class="flag-icon">🇭🇺</span>
+                            <div class="language-info">
+                                <h4>ハンガリー語</h4>
+                                <span class="language-native">Magyar</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="language-category fade-in">
-                    <h3>中東・アフリカ</h3>
-                    <ul>
-                        <li>🇸🇦 アラビア語</li>
-                        <li>🇮🇷 ペルシャ語</li>
-                        <li>🇮🇱 ヘブライ語</li>
-                        <li>🇹🇷 トルコ語</li>
-                        <li>🇰🇪 スワヒリ語</li>
-                    </ul>
+                <!-- 中東・アフリカ -->
+                <div class="language-region middle-east-africa fade-in" data-region="中東・アフリカ">
+                    <div class="region-header">
+                        <div class="region-icon">🕌</div>
+                        <h3 class="region-title">中東・アフリカ</h3>
+                        <span class="language-count">5言語</span>
+                    </div>
+                    <div class="language-items">
+                        <div class="language-item" data-lang="ar">
+                            <span class="flag-icon">🇸🇦</span>
+                            <div class="language-info">
+                                <h4>アラビア語</h4>
+                                <span class="language-native">العربية</span>
+                            </div>
+                        </div>
+                        <div class="language-item" data-lang="fa">
+                            <span class="flag-icon">🇮🇷</span>
+                            <div class="language-info">
+                                <h4>ペルシャ語</h4>
+                                <span class="language-native">فارسی</span>
+                            </div>
+                        </div>
+                        <div class="language-item" data-lang="he">
+                            <span class="flag-icon">🇮🇱</span>
+                            <div class="language-info">
+                                <h4>ヘブライ語</h4>
+                                <span class="language-native">עברית</span>
+                            </div>
+                        </div>
+                        <div class="language-item" data-lang="tr">
+                            <span class="flag-icon">🇹🇷</span>
+                            <div class="language-info">
+                                <h4>トルコ語</h4>
+                                <span class="language-native">Türkçe</span>
+                            </div>
+                        </div>
+                        <div class="language-item" data-lang="sw">
+                            <span class="flag-icon">🇰🇪</span>
+                            <div class="language-info">
+                                <h4>スワヒリ語</h4>
+                                <span class="language-native">Kiswahili</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -460,45 +701,298 @@ get_header(); ?>
 <style>
 /* Languages Section */
 .languages-section {
-    padding: 80px 0;
-    background: white;
+    padding: 100px 0;
+    background: #F8F9FA;
+    position: relative;
+    overflow: hidden;
+}
+
+.languages-bg-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(0, 128, 128, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(248, 131, 121, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 50% 100%, rgba(255, 215, 0, 0.05) 0%, transparent 50%);
+    pointer-events: none;
 }
 
 .section-subtitle {
     text-align: center;
-    font-size: 1.2rem;
-    color: #666;
-    margin-bottom: 50px;
-}
-
-.languages-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-    margin-top: 50px;
-}
-
-.language-category {
-    background: #F8F9FA;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-}
-
-.language-category h3 {
-    color: var(--primary-color);
-    margin-bottom: 20px;
     font-size: 1.3rem;
+    color: #666;
+    margin-bottom: 60px;
+    font-weight: 500;
 }
 
-.language-category ul {
-    list-style: none;
-    padding: 0;
+.languages-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
 }
 
-.language-category li {
-    padding: 8px 0;
+/* Language Region Cards */
+.language-region {
+    background: white;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.language-region:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.region-header {
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.region-icon {
+    font-size: 2.5rem;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.region-title {
+    font-size: 1.8rem;
+    color: white;
+    margin: 0;
+    flex: 1;
+}
+
+.language-count {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Regional Color Schemes */
+.east-asia .region-header {
+    background: linear-gradient(135deg, #E74C3C 0%, #C0392B 100%);
+}
+
+.southeast-asia .region-header {
+    background: linear-gradient(135deg, #3498DB 0%, #2980B9 100%);
+}
+
+.south-asia .region-header {
+    background: linear-gradient(135deg, #9B59B6 0%, #8E44AD 100%);
+}
+
+.europe .region-header {
+    background: linear-gradient(135deg, #1ABC9C 0%, #16A085 100%);
+}
+
+.eastern-europe .region-header {
+    background: linear-gradient(135deg, #34495E 0%, #2C3E50 100%);
+}
+
+.middle-east-africa .region-header {
+    background: linear-gradient(135deg, #E67E22 0%, #D35400 100%);
+}
+
+/* Language Items */
+.language-items {
+    padding: 20px;
+    display: grid;
+    gap: 12px;
+}
+
+.language-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+    background: #F8F9FA;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.language-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0, 128, 128, 0.1) 0%, rgba(248, 131, 121, 0.1) 100%);
+    transition: width 0.3s ease;
+    z-index: 0;
+}
+
+.language-item:hover::before {
+    width: 100%;
+}
+
+.language-item:hover {
+    transform: translateX(10px);
+    background: white;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.flag-icon {
+    font-size: 2.5rem;
+    position: relative;
+    z-index: 1;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    transition: transform 0.3s ease;
+}
+
+.language-item:hover .flag-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.language-info {
+    flex: 1;
+    position: relative;
+    z-index: 1;
+}
+
+.language-info h4 {
+    margin: 0;
     font-size: 1.1rem;
+    color: var(--dark-color);
+    font-weight: 600;
+}
+
+.language-native {
+    font-size: 0.85rem;
+    color: #666;
+    font-style: italic;
+    display: block;
+    margin-top: 3px;
+}
+
+/* Special emphasis for popular languages */
+.language-item[data-lang="en"],
+.language-item[data-lang="zh"],
+.language-item[data-lang="ko"] {
+    background: linear-gradient(135deg, #FFF5E6 0%, #FFE4CC 100%);
+}
+
+.language-item[data-lang="en"]::after,
+.language-item[data-lang="zh"]::after,
+.language-item[data-lang="ko"]::after {
+    content: '人気';
+    position: absolute;
+    top: -5px;
+    right: 10px;
+    background: var(--accent-color);
+    color: var(--dark-color);
+    font-size: 0.7rem;
+    padding: 3px 10px;
+    border-radius: 10px;
+    font-weight: 600;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Stagger animation for language regions */
+.language-region {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.language-region:nth-child(1) { animation-delay: 0.1s; }
+.language-region:nth-child(2) { animation-delay: 0.2s; }
+.language-region:nth-child(3) { animation-delay: 0.3s; }
+.language-region:nth-child(4) { animation-delay: 0.4s; }
+.language-region:nth-child(5) { animation-delay: 0.5s; }
+.language-region:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Interactive hover states */
+.language-region {
+    cursor: pointer;
+    position: relative;
+}
+
+.language-region::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    border-radius: 25px;
+}
+
+.language-region:hover::before {
+    opacity: 1;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 1200px) {
+    .languages-showcase {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .languages-section {
+        padding: 60px 0;
+    }
+    
+    .language-item[data-lang="en"]::after,
+    .language-item[data-lang="zh"]::after,
+    .language-item[data-lang="ko"]::after {
+        display: none;
+    }
+    
+    .language-item {
+        padding: 10px 12px;
+    }
+    
+    .flag-icon {
+        font-size: 1.8rem;
+    }
 }
 
 /* Course System Section */
@@ -1027,25 +1521,60 @@ get_header(); ?>
         padding: 30px 25px;
     }
     
-    /* Languages grid - 2 columns on mobile */
-    .languages-grid {
-        grid-template-columns: repeat(2, 1fr);
+    /* Languages showcase responsive */
+    .languages-showcase {
+        grid-template-columns: 1fr;
         gap: 20px;
-        margin-top: 30px;
     }
     
-    .language-category {
+    .language-region {
+        border-radius: 20px;
+    }
+    
+    .region-header {
         padding: 20px;
+        gap: 10px;
     }
     
-    .language-category h3 {
-        font-size: 1.1rem;
-        margin-bottom: 15px;
+    .region-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 2rem;
     }
     
-    .language-category li {
-        font-size: 0.95rem;
-        padding: 5px 0;
+    .region-title {
+        font-size: 1.4rem;
+    }
+    
+    .language-count {
+        padding: 5px 15px;
+        font-size: 0.8rem;
+    }
+    
+    .language-items {
+        padding: 15px;
+        gap: 10px;
+    }
+    
+    .language-item {
+        padding: 12px 15px;
+        gap: 12px;
+    }
+    
+    .flag-icon {
+        font-size: 2rem;
+    }
+    
+    .language-info h4 {
+        font-size: 1rem;
+    }
+    
+    .language-native {
+        font-size: 0.8rem;
+    }
+    
+    .language-item:hover {
+        transform: translateX(5px);
     }
     
     /* Course cards - stack on mobile */

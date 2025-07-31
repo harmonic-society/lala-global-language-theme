@@ -87,6 +87,48 @@
             }
         });
 
+        // Language item hover effects
+        $('.language-item').hover(
+            function() {
+                $(this).siblings().css('opacity', '0.6');
+            },
+            function() {
+                $(this).siblings().css('opacity', '1');
+            }
+        );
+
+        // Region card click to smooth scroll to contact
+        $('.language-region').click(function() {
+            var languageRegion = $(this).data('region');
+            console.log('Selected region: ' + languageRegion);
+            
+            // Scroll to courses section
+            var target = $('#courses');
+            if (target.length) {
+                $('html, body').animate({
+                    scrollTop: target.offset().top - 100
+                }, 800);
+            }
+        });
+
+        // Add ripple effect on language item click
+        $('.language-item').click(function(e) {
+            var ripple = $('<span class="ripple"></span>');
+            $(this).append(ripple);
+            
+            var x = e.pageX - $(this).offset().left;
+            var y = e.pageY - $(this).offset().top;
+            
+            ripple.css({
+                left: x + 'px',
+                top: y + 'px'
+            });
+            
+            setTimeout(function() {
+                ripple.remove();
+            }, 600);
+        });
+
         // Form validation feedback
         $('form').on('submit', function() {
             var $form = $(this);
@@ -204,6 +246,26 @@ style.textContent = `
     @keyframes rotate {
         0% { transform: rotate(0deg); }
         100% { transform: rotate(360deg); }
+    }
+
+    .ripple {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.6);
+        transform: scale(0);
+        animation: ripple-animation 0.6s ease-out;
+        pointer-events: none;
+    }
+
+    @keyframes ripple-animation {
+        to {
+            transform: scale(4);
+            opacity: 0;
+        }
+    }
+
+    .language-item {
+        transition: opacity 0.3s ease;
     }
 `;
 document.head.appendChild(style);
