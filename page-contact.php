@@ -18,32 +18,9 @@ get_header(); ?>
         </div>
     </section>
 
-    <!-- Contact Information Section -->
-    <section class="contact-info-section">
+    <!-- Response Time Section -->
+    <section class="response-time-section">
         <div class="container">
-            <div class="contact-info-grid">
-                <div class="info-card fade-in">
-                    <div class="info-icon">📧</div>
-                    <h3>メール</h3>
-                    <p>info@lala-global-language.com</p>
-                    <span class="info-note">24時間受付</span>
-                </div>
-                
-                <div class="info-card fade-in">
-                    <div class="info-icon">📞</div>
-                    <h3>お電話</h3>
-                    <p>03-XXXX-XXXX</p>
-                    <span class="info-note">平日 10:00-18:00</span>
-                </div>
-                
-                <div class="info-card fade-in">
-                    <div class="info-icon">💬</div>
-                    <h3>LINE</h3>
-                    <p>@lala-global</p>
-                    <span class="info-note">友達追加で簡単相談</span>
-                </div>
-            </div>
-            
             <div class="response-time fade-in">
                 <p>📝 お問い合わせへの返信は、通常3営業日以内に行います。</p>
             </div>
@@ -56,21 +33,32 @@ get_header(); ?>
             <div class="form-wrapper">
                 <h2 class="section-title">お問い合わせフォーム</h2>
                 
-                <?php
-                // Check if Contact Form 7 is active
-                if ( function_exists( 'wpcf7' ) ) {
-                    // Replace with your actual Contact Form 7 shortcode
-                    echo do_shortcode( '[contact-form-7 id="YOUR_FORM_ID" title="Contact form"]' );
-                } else {
-                    // Fallback form
+                <div class="contact-form-area">
+                    <p class="form-instruction">以下のフォームに必要事項をご記入ください。</p>
+                    
+                    <?php
+                    // Display page content (where Contact Form 7 shortcode will be placed)
+                    while ( have_posts() ) :
+                        the_post();
+                        the_content();
+                    endwhile;
+                    ?>
+                    
+                    <?php
+                    // If no content, show placeholder
+                    if ( empty( get_the_content() ) ) :
                     ?>
                     <div class="contact-form-placeholder">
-                        <p>お問い合わせフォームを表示するには、Contact Form 7プラグインをインストール・有効化してください。</p>
-                        <p>詳しい設定方法は、<a href="/contact-form-7-setup-guide.md">設定ガイド</a>をご覧ください。</p>
+                        <p>お問い合わせフォームを設定するには：</p>
+                        <ol>
+                            <li>WordPress管理画面から「お問い合わせ」→「コンタクトフォーム」へ</li>
+                            <li>フォームを作成し、ショートコードをコピー</li>
+                            <li>このページの編集画面にショートコードを貼り付け</li>
+                        </ol>
+                        <p>詳しい設定方法は、<a href="<?php echo esc_url( home_url( '/contact-form-7-setup-guide.md' ) ); ?>">設定ガイド</a>をご覧ください。</p>
                     </div>
-                    <?php
-                }
-                ?>
+                    <?php endif; ?>
+                </div>
             </div>
         </div>
     </section>
@@ -130,53 +118,10 @@ get_header(); ?>
     opacity: 0.9;
 }
 
-/* Contact Information Section */
-.contact-info-section {
-    padding: 80px 0 40px;
+/* Response Time Section */
+.response-time-section {
+    padding: 40px 0;
     background: white;
-}
-
-.contact-info-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px;
-    margin-bottom: 50px;
-}
-
-.info-card {
-    text-align: center;
-    padding: 40px 30px;
-    background: #f8f9fa;
-    border-radius: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.info-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.info-icon {
-    font-size: 3rem;
-    margin-bottom: 20px;
-}
-
-.info-card h3 {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    margin-bottom: 15px;
-}
-
-.info-card p {
-    font-size: 1.2rem;
-    color: #333;
-    margin-bottom: 10px;
-    font-weight: 600;
-}
-
-.info-note {
-    font-size: 0.9rem;
-    color: #666;
 }
 
 .response-time {
@@ -195,9 +140,16 @@ get_header(); ?>
     font-weight: 500;
 }
 
+.form-instruction {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 40px;
+}
+
 /* Contact Form Section */
 .contact-form-section {
-    padding: 60px 0 80px;
+    padding: 0 0 80px;
     background: white;
 }
 
@@ -214,7 +166,8 @@ get_header(); ?>
 }
 
 /* Contact Form 7 Styling Override */
-.contact-form-section .wpcf7 {
+.contact-form-section .wpcf7,
+.contact-form-area .lala-contact-form {
     background: white;
     padding: 50px;
     border-radius: 30px;
@@ -375,22 +328,9 @@ get_header(); ?>
         padding: 0 20px;
     }
     
-    /* Contact Info */
-    .contact-info-section {
-        padding: 60px 0 30px;
-    }
-    
-    .contact-info-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-    
-    .info-card {
-        padding: 30px 20px;
-    }
-    
-    .info-icon {
-        font-size: 2.5rem;
+    /* Response Time */
+    .response-time-section {
+        padding: 30px 0;
     }
     
     /* Form Section */
