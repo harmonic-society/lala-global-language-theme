@@ -492,6 +492,13 @@ get_header(); ?>
             <!-- Quick Price Summary -->
             <div class="price-summary fade-in">
                 <h3>料金例</h3>
+                <?php 
+                $pricing_image = get_theme_mod( 'pricing_image' );
+                if ( $pricing_image ) : ?>
+                    <div class="pricing-image">
+                        <img src="<?php echo esc_url( $pricing_image ); ?>" alt="料金プラン" />
+                    </div>
+                <?php endif; ?>
                 <div class="price-examples">
                     <div class="price-example">
                         <span class="example-label">最安プラン</span>
@@ -1117,6 +1124,21 @@ get_header(); ?>
     margin-bottom: 30px;
 }
 
+.pricing-image {
+    margin-bottom: 30px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    max-height: 400px;
+}
+
 .price-examples {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -1513,6 +1535,14 @@ get_header(); ?>
     /* Price summary responsive */
     .price-summary {
         padding: 30px 20px;
+    }
+    
+    .pricing-image {
+        margin-bottom: 20px;
+    }
+    
+    .pricing-image img {
+        max-height: 250px;
     }
     
     .price-examples {

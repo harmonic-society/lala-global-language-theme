@@ -164,6 +164,27 @@ function lala_global_language_customize_register( $wp_customize ) {
         'settings' => 'hero_text_color',
     ) ) );
 
+    // Pricing Section
+    $wp_customize->add_section( 'lala_pricing_section', array(
+        'title'    => __( 'Pricing Section', 'lala-global-language' ),
+        'panel'    => 'lala_theme_options',
+        'priority' => 25,
+    ) );
+
+    // Pricing Image
+    $wp_customize->add_setting( 'pricing_image', array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+        'transport'         => 'refresh',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'pricing_image', array(
+        'label'       => '料金例セクションの画像',
+        'section'     => 'lala_pricing_section',
+        'settings'    => 'pricing_image',
+        'description' => '料金例の見出しの下に表示される画像です。推奨サイズ: 1200x400px',
+    ) ) );
+
     // Social Media Section
     $wp_customize->add_section( 'lala_social_media', array(
         'title'    => __( 'Social Media Links', 'lala-global-language' ),
