@@ -290,7 +290,7 @@ function lala_global_language_customizer_css() {
         
         .hero-section .hero-title,
         .hero-section .hero-description {
-            color: var(--hero-text-color);
+            color: white;
         }
         <?php endif; ?>
     </style>
