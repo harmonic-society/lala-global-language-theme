@@ -522,6 +522,137 @@ get_header(); ?>
         </div>
     </section>
 
+    <!-- Custom Class Recommendation Section -->
+    <section class="custom-class-section">
+        <div class="custom-class-bg-gradient"></div>
+        <div class="container">
+            <div class="custom-class-content">
+                <div class="custom-class-intro fade-in">
+                    <span class="section-badge">おすすめ</span>
+                    <h2 class="section-title">企業・団体様向け<br>カスタムクラスのご案内</h2>
+                    <p class="section-lead">
+                        貴社のニーズに合わせて、完全オーダーメイドの語学研修プログラムをご提供します
+                    </p>
+                </div>
+                
+                <div class="custom-class-features">
+                    <div class="feature-row fade-in">
+                        <div class="feature-icon">
+                            <span>🏢</span>
+                        </div>
+                        <div class="feature-content">
+                            <h3>法人・団体様に最適化</h3>
+                            <p>企業の海外展開、インバウンド対応、社員のスキルアップなど、組織の目的に合わせたカリキュラムを設計</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-row fade-in">
+                        <div class="feature-icon">
+                            <span>🎯</span>
+                        </div>
+                        <div class="feature-content">
+                            <h3>業界特化型プログラム</h3>
+                            <p>医療、IT、製造業、観光業など、各業界の専門用語やビジネスシーンに対応した実践的な内容</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-row fade-in">
+                        <div class="feature-icon">
+                            <span>📊</span>
+                        </div>
+                        <div class="feature-content">
+                            <h3>柔軟な受講形態</h3>
+                            <p>オンライン・対面・ハイブリッド対応。就業時間内の研修や、早朝・夜間レッスンも可能</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-row fade-in">
+                        <div class="feature-icon">
+                            <span>💰</span>
+                        </div>
+                        <div class="feature-content">
+                            <h3>お得な団体割引</h3>
+                            <p>10名以上の受講で特別料金をご用意。助成金申請のサポートも承ります</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="custom-class-examples fade-in">
+                    <h3>導入事例</h3>
+                    <div class="examples-grid">
+                        <div class="example-card">
+                            <div class="example-icon">🏥</div>
+                            <h4>医療法人A様</h4>
+                            <p>外国人患者対応のための医療英語研修（看護師30名）</p>
+                        </div>
+                        <div class="example-card">
+                            <div class="example-icon">🏭</div>
+                            <h4>製造業B社様</h4>
+                            <p>ベトナム工場立ち上げに向けたベトナム語研修（管理職15名）</p>
+                        </div>
+                        <div class="example-card">
+                            <div class="example-icon">🏨</div>
+                            <h4>ホテルC様</h4>
+                            <p>インバウンド対応強化のための中国語・韓国語研修（スタッフ50名）</p>
+                        </div>
+                        <div class="example-card">
+                            <div class="example-icon">💼</div>
+                            <h4>IT企業D社様</h4>
+                            <p>海外展開に向けたビジネス英語＆プレゼン研修（全社員100名）</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="custom-class-process fade-in">
+                    <h3>導入までの流れ</h3>
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <span class="step-number">1</span>
+                            <h4>ヒアリング</h4>
+                            <p>貴社のニーズを詳しくお伺い</p>
+                        </div>
+                        <div class="process-arrow">→</div>
+                        <div class="process-step">
+                            <span class="step-number">2</span>
+                            <h4>プラン提案</h4>
+                            <p>最適なカリキュラムをご提案</p>
+                        </div>
+                        <div class="process-arrow">→</div>
+                        <div class="process-step">
+                            <span class="step-number">3</span>
+                            <h4>体験レッスン</h4>
+                            <p>実際の講師による無料体験</p>
+                        </div>
+                        <div class="process-arrow">→</div>
+                        <div class="process-step">
+                            <span class="step-number">4</span>
+                            <h4>研修開始</h4>
+                            <p>定期的な進捗報告付き</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="custom-class-cta fade-in">
+                    <div class="cta-box">
+                        <h3>まずは無料相談から</h3>
+                        <p>貴社の語学研修に関するお悩みをお聞かせください。<br>最適なソリューションをご提案いたします。</p>
+                        <div class="cta-buttons">
+                            <a href="#contact" class="btn btn-primary btn-large">
+                                <span class="btn-text">無料相談を申し込む</span>
+                                <span class="btn-icon">→</span>
+                            </a>
+                            <a href="<?php echo esc_url( home_url( '/custom-class/' ) ); ?>" class="btn btn-secondary btn-large">
+                                <span class="btn-text">詳細資料をダウンロード</span>
+                                <span class="btn-icon">📄</span>
+                            </a>
+                        </div>
+                        <p class="cta-note">※お見積もりは無料です。お気軽にお問い合わせください。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Testimonials Section -->
     <section class="testimonials-section">
         <div class="container">
@@ -1527,6 +1658,465 @@ get_header(); ?>
     .btn {
         padding: 14px 30px;
         font-size: 0.95rem;
+    }
+}
+
+/* Custom Class Section */
+.custom-class-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #F8F9FA 0%, #E9ECEF 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.custom-class-bg-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 10% 20%, rgba(248, 131, 121, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(0, 128, 128, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.custom-class-content {
+    position: relative;
+    z-index: 1;
+}
+
+.custom-class-intro {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-badge {
+    display: inline-block;
+    background: var(--accent-color);
+    color: var(--dark-color);
+    padding: 8px 25px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.section-lead {
+    font-size: 1.3rem;
+    color: #666;
+    max-width: 700px;
+    margin: 20px auto 0;
+    line-height: 1.8;
+}
+
+/* Custom Class Features */
+.custom-class-features {
+    max-width: 900px;
+    margin: 0 auto 80px;
+}
+
+.feature-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.feature-row:hover {
+    transform: translateX(10px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.feature-content h3 {
+    font-size: 1.4rem;
+    color: var(--dark-color);
+    margin-bottom: 10px;
+}
+
+.feature-content p {
+    color: #666;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* Examples Grid */
+.custom-class-examples {
+    margin-bottom: 80px;
+}
+
+.custom-class-examples h3 {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+}
+
+.examples-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.example-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.example-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.example-card:hover::before {
+    transform: translateX(0);
+}
+
+.example-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.example-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.example-card h4 {
+    font-size: 1.2rem;
+    color: var(--dark-color);
+    margin-bottom: 10px;
+}
+
+.example-card p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Process Steps */
+.custom-class-process {
+    margin-bottom: 80px;
+}
+
+.custom-class-process h3 {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 50px;
+}
+
+.process-steps {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.process-step {
+    background: white;
+    padding: 30px 25px;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+    flex: 1;
+    min-width: 200px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.process-step:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.step-number {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background: var(--accent-color);
+    color: var(--dark-color);
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 50px;
+    margin-bottom: 15px;
+}
+
+.process-step h4 {
+    font-size: 1.2rem;
+    color: var(--dark-color);
+    margin-bottom: 10px;
+}
+
+.process-step p {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.process-arrow {
+    font-size: 2rem;
+    color: var(--primary-color);
+    opacity: 0.5;
+}
+
+/* CTA Box */
+.custom-class-cta {
+    text-align: center;
+}
+
+.cta-box {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #006666 100%);
+    padding: 60px;
+    border-radius: 30px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.cta-box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+}
+
+.cta-box h3 {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-box > p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    opacity: 0.95;
+    position: relative;
+    z-index: 1;
+    line-height: 1.8;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-buttons .btn-large {
+    padding: 20px 40px;
+    font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cta-buttons .btn-primary {
+    background: white;
+    color: var(--primary-color);
+}
+
+.cta-buttons .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.cta-buttons .btn-secondary {
+    background: transparent;
+    color: white;
+    border: 3px solid white;
+}
+
+.cta-buttons .btn-secondary:hover {
+    background: white;
+    color: var(--primary-color);
+}
+
+.cta-note {
+    margin-top: 20px;
+    opacity: 0.8;
+    font-size: 0.95rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .custom-class-section {
+        padding: 60px 0;
+    }
+    
+    .custom-class-intro {
+        margin-bottom: 40px;
+    }
+    
+    .section-lead {
+        font-size: 1.1rem;
+        padding: 0 20px;
+    }
+    
+    .feature-row {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 20px;
+        gap: 20px;
+    }
+    
+    .feature-row:hover {
+        transform: translateX(0) translateY(-5px);
+    }
+    
+    .feature-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+        margin: 0 auto;
+    }
+    
+    .feature-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .examples-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .process-steps {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .process-arrow {
+        transform: rotate(90deg);
+        font-size: 1.5rem;
+    }
+    
+    .process-step {
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    .cta-box {
+        padding: 40px 30px;
+        border-radius: 20px;
+    }
+    
+    .cta-box h3 {
+        font-size: 1.8rem;
+    }
+    
+    .cta-box > p {
+        font-size: 1rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-buttons .btn-large {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-badge {
+        font-size: 0.8rem;
+        padding: 6px 20px;
+    }
+    
+    .custom-class-intro h2 {
+        font-size: 1.5rem;
+    }
+    
+    .section-lead {
+        font-size: 1rem;
+    }
+    
+    .feature-content h3 {
+        font-size: 1.1rem;
+    }
+    
+    .feature-content p {
+        font-size: 0.9rem;
+    }
+    
+    .example-card {
+        padding: 20px;
+    }
+    
+    .example-icon {
+        font-size: 2.5rem;
+    }
+    
+    .custom-class-process h3,
+    .custom-class-examples h3 {
+        font-size: 1.5rem;
+    }
+    
+    .cta-box {
+        padding: 30px 20px;
+    }
+    
+    .cta-box h3 {
+        font-size: 1.5rem;
+    }
+    
+    .cta-buttons .btn-large {
+        padding: 16px 30px;
+        font-size: 1rem;
     }
 }
 </style>
