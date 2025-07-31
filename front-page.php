@@ -668,11 +668,94 @@ get_header(); ?>
 
     <!-- CTA Section -->
     <section class="cta-section">
+        <div class="cta-background">
+            <div class="cta-gradient-layer"></div>
+            <div class="cta-pattern-layer"></div>
+            <div class="cta-floating-elements">
+                <div class="floating-element element-1">🌍</div>
+                <div class="floating-element element-2">🗣️</div>
+                <div class="floating-element element-3">📚</div>
+                <div class="floating-element element-4">🎯</div>
+                <div class="floating-element element-5">✨</div>
+                <div class="floating-element element-6">🌟</div>
+            </div>
+        </div>
         <div class="container">
             <div class="cta-content">
-                <h2>今すぐ語学学習を始めよう！</h2>
-                <p>まずは無料体験レッスンから。あなたにぴったりのコースがきっと見つかります。</p>
-                <a href="#" class="btn btn-primary btn-large">無料体験を申し込む</a>
+                <div class="cta-badge animate-bounce">
+                    <span>期間限定</span>
+                </div>
+                <h2 class="cta-title">
+                    <span class="title-line-1">あなたの世界を</span>
+                    <span class="title-line-2">広げる第一歩を</span>
+                </h2>
+                <div class="cta-description">
+                    <p>35ヶ国語から選べる、バイリンガル講師による本格レッスン</p>
+                    <p class="cta-offer">今なら <span class="highlight">入会金50%OFF</span> キャンペーン実施中！</p>
+                </div>
+                
+                <div class="cta-actions">
+                    <div class="primary-action">
+                        <a href="#" class="cta-button primary-button">
+                            <span class="button-content">
+                                <span class="button-icon">🎓</span>
+                                <span class="button-text">
+                                    <span class="button-main">無料体験レッスン</span>
+                                    <span class="button-sub">まずは気軽にお試し</span>
+                                </span>
+                                <span class="button-arrow">→</span>
+                            </span>
+                            <div class="button-glow"></div>
+                        </a>
+                        <p class="action-note">※ クレジットカード不要</p>
+                    </div>
+                    
+                    <div class="secondary-actions">
+                        <a href="#" class="cta-button secondary-button">
+                            <span class="button-icon">📞</span>
+                            <span>無料相談予約</span>
+                        </a>
+                        <a href="#" class="cta-button secondary-button">
+                            <span class="button-icon">📄</span>
+                            <span>資料請求</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="cta-features">
+                    <div class="cta-feature">
+                        <span class="feature-icon">✅</span>
+                        <span>完全オンライン対応</span>
+                    </div>
+                    <div class="cta-feature">
+                        <span class="feature-icon">✅</span>
+                        <span>24時間予約可能</span>
+                    </div>
+                    <div class="cta-feature">
+                        <span class="feature-icon">✅</span>
+                        <span>満足度98.7%</span>
+                    </div>
+                </div>
+                
+                <div class="cta-timer">
+                    <span class="timer-label">キャンペーン終了まで</span>
+                    <div class="timer-countdown" id="cta-countdown">
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="days">00</span>
+                            <span class="countdown-label">日</span>
+                        </div>
+                        <div class="countdown-separator">:</div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="hours">00</span>
+                            <span class="countdown-label">時間</span>
+                        </div>
+                        <div class="countdown-separator">:</div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="minutes">00</span>
+                            <span class="countdown-label">分</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1323,24 +1406,367 @@ get_header(); ?>
     font-size: 0.9rem;
 }
 
-/* CTA Section */
+/* CTA Section - Creative Design */
 .cta-section {
-    padding: 100px 0;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    text-align: center;
-    color: white;
+    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+    background: #0a0e27;
 }
 
-.cta-content h2 {
+/* Background Layers */
+.cta-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+.cta-gradient-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(136, 126, 234, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(118, 75, 162, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 50% 100%, rgba(248, 131, 121, 0.2) 0%, transparent 50%);
+    animation: gradientShift 20s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.1) rotate(5deg); }
+}
+
+.cta-pattern-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 25% 25%, transparent 20%, rgba(255, 255, 255, 0.02) 21%, rgba(255, 255, 255, 0.02) 34%, transparent 35%, transparent),
+        radial-gradient(circle at 75% 75%, transparent 20%, rgba(255, 255, 255, 0.02) 21%, rgba(255, 255, 255, 0.02) 34%, transparent 35%, transparent);
+    background-size: 100px 100px;
+    animation: patternMove 30s linear infinite;
+}
+
+@keyframes patternMove {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(100px, 100px); }
+}
+
+/* Floating Elements */
+.cta-floating-elements {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.floating-element {
+    position: absolute;
     font-size: 3rem;
-    color: white;
-    margin-bottom: 20px;
+    opacity: 0.1;
+    animation: floatAnimation 20s ease-in-out infinite;
 }
 
-.cta-content p {
+.element-1 { top: 10%; left: 5%; animation-delay: 0s; }
+.element-2 { top: 20%; right: 10%; animation-delay: 3s; }
+.element-3 { bottom: 30%; left: 15%; animation-delay: 6s; }
+.element-4 { bottom: 20%; right: 5%; animation-delay: 9s; }
+.element-5 { top: 50%; left: 50%; animation-delay: 12s; }
+.element-6 { top: 60%; right: 30%; animation-delay: 15s; }
+
+@keyframes floatAnimation {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.1;
+    }
+    50% {
+        transform: translateY(-30px) rotate(180deg);
+        opacity: 0.3;
+    }
+}
+
+/* Content Styling */
+.cta-content {
+    position: relative;
+    z-index: 10;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Badge */
+.cta-badge {
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+.cta-badge span {
+    background: linear-gradient(135deg, var(--accent-color) 0%, #FFA500 100%);
+    color: var(--dark-color);
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+}
+
+/* Title */
+.cta-title {
+    margin-bottom: 30px;
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.title-line-1,
+.title-line-2 {
+    display: block;
+    background: linear-gradient(90deg, #fff 0%, #e0e0e0 50%, #fff 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: textShine 3s linear infinite;
+}
+
+.title-line-2 {
+    font-size: 3.5rem;
+    animation-delay: 0.5s;
+}
+
+@keyframes textShine {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+/* Description */
+.cta-description {
+    margin-bottom: 50px;
+}
+
+.cta-description p {
     font-size: 1.3rem;
-    margin-bottom: 40px;
-    opacity: 0.9;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.cta-offer {
+    font-size: 1.5rem !important;
+    font-weight: 600;
+}
+
+.highlight {
+    background: linear-gradient(135deg, var(--accent-color) 0%, #FFA500 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+/* Actions */
+.cta-actions {
+    margin-bottom: 50px;
+}
+
+.primary-action {
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.primary-button {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #00a0a0 100%);
+    padding: 25px 50px;
+    border-radius: 100px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: white;
+    box-shadow: 0 20px 40px rgba(0, 128, 128, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.button-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+    z-index: 2;
+}
+
+.button-icon {
+    font-size: 2rem;
+}
+
+.button-text {
+    text-align: left;
+}
+
+.button-main {
+    display: block;
+    font-size: 1.3rem;
+}
+
+.button-sub {
+    display: block;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    font-weight: 400;
+}
+
+.button-arrow {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.primary-button:hover .button-arrow {
+    transform: translateX(5px);
+}
+
+.button-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.primary-button:hover .button-glow {
+    width: 400px;
+    height: 400px;
+}
+
+.primary-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 30px 60px rgba(0, 128, 128, 0.4);
+}
+
+.action-note {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Secondary Actions */
+.secondary-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.secondary-button {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    padding: 15px 30px;
+    border-radius: 50px;
+    color: white;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.secondary-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Features */
+.cta-features {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.cta-feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+}
+
+.feature-icon {
+    font-size: 1.3rem;
+    filter: drop-shadow(0 0 10px rgba(0, 255, 0, 0.5));
+}
+
+/* Timer */
+.cta-timer {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    display: inline-block;
+}
+
+.timer-label {
+    display: block;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.timer-countdown {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 2rem;
+}
+
+.countdown-item {
+    text-align: center;
+}
+
+.countdown-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    font-family: 'Courier New', monospace;
+}
+
+.countdown-label {
+    display: block;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 5px;
+}
+
+.countdown-separator {
+    color: var(--accent-color);
+    font-weight: 700;
+    animation: blink 1s ease-in-out infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
 }
 
 .btn-large {
@@ -1593,16 +2019,87 @@ get_header(); ?>
     
     /* CTA Section */
     .cta-section {
-        padding: 60px 0;
+        padding: 80px 0;
     }
     
-    .cta-content h2 {
-        font-size: 1.8rem;
+    .cta-background {
+        display: none; /* Hide complex animations on mobile */
     }
     
-    .cta-content p {
+    .cta-title {
+        font-size: 2.5rem;
+    }
+    
+    .title-line-1,
+    .title-line-2 {
+        font-size: 2.5rem;
+    }
+    
+    .title-line-2 {
+        font-size: 2.2rem;
+    }
+    
+    .cta-description p {
         font-size: 1.1rem;
         padding: 0 20px;
+    }
+    
+    .cta-offer {
+        font-size: 1.2rem !important;
+    }
+    
+    .primary-button {
+        padding: 20px 30px;
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    .button-content {
+        justify-content: center;
+    }
+    
+    .button-icon {
+        font-size: 1.5rem;
+    }
+    
+    .button-main {
+        font-size: 1.1rem;
+    }
+    
+    .button-sub {
+        font-size: 0.8rem;
+    }
+    
+    .secondary-actions {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .secondary-button {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+    
+    .cta-features {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+    
+    .cta-timer {
+        padding: 20px;
+        width: 90%;
+        max-width: 350px;
+    }
+    
+    .timer-countdown {
+        font-size: 1.5rem;
+    }
+    
+    .countdown-number {
+        font-size: 2rem;
     }
     
     .btn-large {
@@ -1647,6 +2144,70 @@ get_header(); ?>
     .btn {
         padding: 14px 30px;
         font-size: 0.95rem;
+    }
+    
+    /* CTA Section - Small screens */
+    .cta-section {
+        padding: 60px 0;
+    }
+    
+    .cta-badge span {
+        font-size: 0.8rem;
+        padding: 8px 20px;
+    }
+    
+    .cta-title {
+        font-size: 2rem;
+    }
+    
+    .title-line-1,
+    .title-line-2 {
+        font-size: 2rem;
+    }
+    
+    .title-line-2 {
+        font-size: 1.8rem;
+    }
+    
+    .cta-description p {
+        font-size: 1rem;
+    }
+    
+    .primary-button {
+        padding: 18px 25px;
+    }
+    
+    .button-text {
+        text-align: center;
+    }
+    
+    .button-arrow {
+        display: none;
+    }
+    
+    .secondary-button {
+        padding: 12px 25px;
+        font-size: 0.95rem;
+    }
+    
+    .cta-feature {
+        font-size: 1rem;
+    }
+    
+    .cta-timer {
+        padding: 15px;
+    }
+    
+    .timer-label {
+        font-size: 0.8rem;
+    }
+    
+    .countdown-number {
+        font-size: 1.5rem;
+    }
+    
+    .countdown-label {
+        font-size: 0.7rem;
     }
 }
 
