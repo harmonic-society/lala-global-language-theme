@@ -185,6 +185,27 @@ function lala_global_language_customize_register( $wp_customize ) {
         'description' => '料金例の見出しの下に表示される画像です。推奨サイズ: 1200x400px',
     ) ) );
 
+    // Custom Class Section
+    $wp_customize->add_section( 'lala_custom_class_section', array(
+        'title'    => __( 'Custom Class Section', 'lala-global-language' ),
+        'panel'    => 'lala_theme_options',
+        'priority' => 26,
+    ) );
+
+    // Custom Class Image
+    $wp_customize->add_setting( 'custom_class_image', array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+        'transport'         => 'refresh',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'custom_class_image', array(
+        'label'       => 'カスタムクラスセクションの画像',
+        'section'     => 'lala_custom_class_section',
+        'settings'    => 'custom_class_image',
+        'description' => 'カスタムクラス紹介文の下に表示される画像です。推奨サイズ: 1200x600px',
+    ) ) );
+
     // Social Media Section
     $wp_customize->add_section( 'lala_social_media', array(
         'title'    => __( 'Social Media Links', 'lala-global-language' ),

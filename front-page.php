@@ -540,6 +540,13 @@ get_header(); ?>
                     <p class="section-lead">
                         貴社のニーズに合わせて、完全オーダーメイドの語学研修プログラムをご提供します
                     </p>
+                    <?php 
+                    $custom_class_image = get_theme_mod( 'custom_class_image' );
+                    if ( $custom_class_image ) : ?>
+                        <div class="custom-class-image">
+                            <img src="<?php echo esc_url( $custom_class_image ); ?>" alt="カスタムクラス" />
+                        </div>
+                    <?php endif; ?>
                 </div>
                 
                 <div class="custom-class-features">
@@ -1687,6 +1694,25 @@ get_header(); ?>
     line-height: 1.8;
 }
 
+.custom-class-image {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.custom-class-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    max-height: 600px;
+}
+
 /* Custom Class Features */
 .custom-class-features {
     max-width: 900px;
@@ -1839,6 +1865,16 @@ get_header(); ?>
         padding: 0 20px;
     }
     
+    .custom-class-image {
+        margin-top: 30px;
+        margin-bottom: 15px;
+        border-radius: 15px;
+    }
+    
+    .custom-class-image img {
+        max-height: 400px;
+    }
+    
     .feature-row {
         flex-direction: column;
         text-align: center;
@@ -1898,6 +1934,15 @@ get_header(); ?>
     
     .section-lead {
         font-size: 1rem;
+    }
+    
+    .custom-class-image {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    
+    .custom-class-image img {
+        max-height: 300px;
     }
     
     .feature-content h3 {
