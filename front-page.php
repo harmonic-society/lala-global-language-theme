@@ -410,184 +410,114 @@ get_header(); ?>
         </div>
     </section>
 
-    <!-- Course System Section -->
+    <!-- Course Overview Section -->
     <section id="courses" class="courses-section">
         <div class="container">
-            <h2 class="section-title">選べる3つのコース</h2>
-            <p class="section-subtitle">目的やスタイルに合わせて、3つのクラスと3つのコースから自由に選べます。</p>
+            <h2 class="section-title">選べるコース & 料金体系</h2>
+            <p class="section-subtitle">あなたの目的とペースに合わせて、最適なプランをお選びいただけます</p>
             
-            <div class="course-types-grid">
-                <div class="course-type-card fade-in">
-                    <div class="course-type-header" style="background: linear-gradient(135deg, #4ECDC4, #44A08D);">
-                        <h3>Sコース<span class="course-subtitle">（ショート）</span></h3>
-                    </div>
-                    <div class="course-type-content">
-                        <p class="course-duration">50分×4回（1ヶ月単位）</p>
-                        <p>まず試したい方や、旅行・イベント前の短期集中に最適なコースです。</p>
-                        <div class="price-info">
-                            <p><strong>シングル：</strong>24,200円/月</p>
-                            <p><strong>ペア：</strong>19,800円/月（1人分）</p>
-                            <p><strong>トリオ：</strong>16,500円/月（1人分）</p>
+            <!-- Course Overview Grid -->
+            <div class="course-overview-grid">
+                <!-- Courses Column -->
+                <div class="overview-column fade-in">
+                    <h3 class="overview-title">
+                        <span class="overview-icon">📚</span>
+                        3つのコース期間
+                    </h3>
+                    <div class="overview-items">
+                        <div class="overview-item">
+                            <h4>Sコース<span class="item-subtitle">（ショート）</span></h4>
+                            <p class="item-duration">50分×4回（1ヶ月）</p>
+                            <p class="item-price">月額 16,500円〜</p>
+                        </div>
+                        <div class="overview-item popular">
+                            <span class="popular-label">人気No.1</span>
+                            <h4>Mコース<span class="item-subtitle">（ミドル）</span></h4>
+                            <p class="item-duration">50分×20回（5ヶ月）</p>
+                            <p class="item-price">82,500円〜</p>
+                        </div>
+                        <div class="overview-item">
+                            <h4>Lコース<span class="item-subtitle">（ロング）</span></h4>
+                            <p class="item-duration">50分×40回（10ヶ月）</p>
+                            <p class="item-price">143,000円〜</p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="course-type-card fade-in popular">
-                    <div class="popular-badge">人気No.1</div>
-                    <div class="course-type-header" style="background: linear-gradient(135deg, #FF6B6B, #FFE66D);">
-                        <h3>Mコース<span class="course-subtitle">（ミドル）</span></h3>
-                    </div>
-                    <div class="course-type-content">
-                        <p class="course-duration">50分×20回（5ヶ月契約）</p>
-                        <p>学びを習慣化したい方、継続的にレベルアップしたい方におすすめです。</p>
-                        <div class="price-info">
-                            <p><strong>シングル：</strong>115,500円（5,775円/回）</p>
-                            <p><strong>ペア：</strong>93,500円（4,675円/回）</p>
-                            <p><strong>トリオ：</strong>82,500円（3,850円/回）</p>
+                <!-- Classes Column -->
+                <div class="overview-column fade-in">
+                    <h3 class="overview-title">
+                        <span class="overview-icon">🎯</span>
+                        3つのクラス
+                    </h3>
+                    <div class="overview-items">
+                        <div class="overview-item">
+                            <h4>アラカルトクラス</h4>
+                            <p>趣味・旅行・推し活など個人向け</p>
+                        </div>
+                        <div class="overview-item">
+                            <h4>ビジネスクラス</h4>
+                            <p>実務で使える語学力を身につける</p>
+                        </div>
+                        <div class="overview-item">
+                            <h4>カスタムクラス</h4>
+                            <p>企業・団体向けオーダーメイド</p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="course-type-card fade-in">
-                    <div class="course-type-header" style="background: linear-gradient(135deg, #f093fb, #f5576c);">
-                        <h3>Lコース<span class="course-subtitle">（ロング）</span></h3>
-                    </div>
-                    <div class="course-type-content">
-                        <p class="course-duration">50分×40回（10ヶ月契約）</p>
-                        <p>本格的に学びたい方、しっかり定着させたい方のための充実コースです。</p>
-                        <div class="price-info">
-                            <p><strong>シングル：</strong>220,000円（5,500円/回）</p>
-                            <p><strong>ペア：</strong>176,000円（4,400円/回）</p>
-                            <p><strong>トリオ：</strong>143,000円（3,575円/回）</p>
+                <!-- Lesson Format Column -->
+                <div class="overview-column fade-in">
+                    <h3 class="overview-title">
+                        <span class="overview-icon">👥</span>
+                        レッスン形式
+                    </h3>
+                    <div class="overview-items">
+                        <div class="overview-item">
+                            <h4>シングル</h4>
+                            <p>講師と1対1のマンツーマン</p>
+                        </div>
+                        <div class="overview-item">
+                            <h4>ペア</h4>
+                            <p>2名で受講（割引料金）</p>
+                        </div>
+                        <div class="overview-item">
+                            <h4>トリオ</h4>
+                            <p>3名で受講（さらにお得）</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    
-    <!-- Class Types Section -->
-    <section class="class-types-section">
-        <div class="container">
-            <h2 class="section-title">3つのクラス分類</h2>
             
-            <div class="class-types-grid">
-                <div class="class-type-card fade-in">
-                    <div class="class-icon">🍱</div>
-                    <h3>A｜アラカルトクラス</h3>
-                    <p>趣味・旅行・推し活・語学検定など、"学んでみたい"をきっかけにした個人向けクラスです。好きな言語を自由に選び、自分のペースで続けられます。</p>
-                </div>
-                
-                <div class="class-type-card fade-in">
-                    <div class="class-icon">💼</div>
-                    <h3>B｜ビジネスクラス</h3>
-                    <p>社会人やキャリアアップを目指す方のためのクラスです。英語はもちろん、実務で必要な各国の言語にも対応し、仕事で"使える"語学力を身につけます。</p>
-                </div>
-                
-                <div class="class-type-card fade-in">
-                    <div class="class-icon">🏢</div>
-                    <h3>C｜カスタムクラス</h3>
-                    <p>官公庁・企業・団体向けのオーダーメイド型クラスです。目的、期間、スタイルに応じて個別提案・設計し、研修・グループ指導などにも対応します。</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Lesson Format Section -->
-    <section class="lesson-format-section">
-        <div class="container">
-            <h2 class="section-title">レッスン形式</h2>
-            
-            <div class="lesson-formats-grid">
-                <div class="lesson-format-card fade-in">
-                    <h3>👤 シングルレッスン</h3>
-                    <p>講師と1対1で、自分のペースと目的にじっくり向き合えるレッスンです。他人と比べず、成長の手応えをしっかり感じながら、自分だけの"ことばの旅"を進められます。学びたい気持ちに、まっすぐ応えるスタイルです。</p>
-                </div>
-                
-                <div class="lesson-format-card fade-in">
-                    <h3>👥 ペアレッスン・トリオレッスン</h3>
-                    <p>夫婦、親子、友だち同士など、気心の知れた人と一緒に学べるレッスン。会話量もたっぷり、学ぶ楽しさを共有できます。2名は"ペア"、3名は"トリオ"としてご案内し、人数に応じて割安になる料金設定です。仲間と一緒だからこそ、続けやすく、励まし合える環境になります。</p>
-                </div>
-            </div>
-            
-            <p class="lesson-note">※どちらのレッスン形式でも、S・M・Lコース（ショート／ミドル／ロング）を選べます。<br>
-            ※レッスン形式は、A（アラカルトクラス）・B（ビジネスクラス）どちらにも対応しています。<br>
-            ※C（カスタムクラス）は、レッスン形式・人数・頻度・内容をすべて個別に設計します。</p>
-        </div>
-    </section>
-    
-    <!-- Pricing Table Section -->
-    <section class="pricing-section">
-        <div class="container">
-            <h2 class="section-title">レッスン料金一覧（税込）</h2>
-            
-            <div class="pricing-table-wrapper">
-                <table class="pricing-table fade-in">
-                    <thead>
-                        <tr>
-                            <th>レッスン形式</th>
-                            <th>S（4回）<br><span class="table-subtitle">1ヵ月月謝制</span></th>
-                            <th>M（20回）<br><span class="table-subtitle">5ヵ月一括納入</span></th>
-                            <th>L（40回）<br><span class="table-subtitle">10ヵ月一括納入</span></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="lesson-type">シングル</td>
-                            <td>6,050円／回<br><span class="monthly">毎月24,200円</span></td>
-                            <td>5,775円／回<br><span class="total">計115,500円</span></td>
-                            <td>5,500円／回<br><span class="total">計220,000円</span></td>
-                        </tr>
-                        <tr>
-                            <td class="lesson-type">ペア（2名）<br><span class="note">※1人分の料金</span></td>
-                            <td>4,950円／回<br><span class="monthly">毎月19,800円</span></td>
-                            <td>4,675円／回<br><span class="total">計93,500円</span></td>
-                            <td>4,400円／回<br><span class="total">計176,000円</span></td>
-                        </tr>
-                        <tr>
-                            <td class="lesson-type">トリオ（3名）<br><span class="note">※1人分の料金</span></td>
-                            <td>4,125円／回<br><span class="monthly">毎月16,500円</span></td>
-                            <td>3,850円／回<br><span class="total">計82,500円</span></td>
-                            <td>3,575円／回<br><span class="total">計143,000円</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            
-            <div class="pricing-benefits">
-                <div class="benefit-card">
-                    <h4>📊 目的や期間に応じて長期ほどお得！</h4>
-                    <p>長期コースほど1回あたりの料金がお得になります。</p>
-                </div>
-                <div class="benefit-card">
-                    <h4>👥 1人あたり約4,400円〜シングルより割安！</h4>
-                    <p>ペアレッスンなら、シングルレッスンよりお得に受講できます。</p>
-                </div>
-                <div class="benefit-card">
-                    <h4>👨‍👩‍👧 1人あたり約3,575円〜3人で2人分の料金！</h4>
-                    <p>トリオレッスンなら、さらにお得。友達や家族と一緒に学びましょう。</p>
-                </div>
-            </div>
-            
-            <div class="additional-fees fade-in">
-                <h3>その他の費用（2025年度）</h3>
-                <div class="fee-items">
-                    <div class="fee-item">
-                        <h4>① 入会金</h4>
-                        <p class="fee-amount">16,500円（税込）</p>
-                        <p class="fee-note">春・夏・秋・冬のキャンペーンで割引や免除を実施可</p>
+            <!-- Quick Price Summary -->
+            <div class="price-summary fade-in">
+                <h3>料金例</h3>
+                <div class="price-examples">
+                    <div class="price-example">
+                        <span class="example-label">最安プラン</span>
+                        <span class="example-price">月額 16,500円〜</span>
+                        <span class="example-desc">（トリオ・Sコース）</span>
                     </div>
-                    <div class="fee-item">
-                        <h4>② 教材費</h4>
-                        <p class="fee-amount">実費</p>
-                        <p class="fee-note">市販教材をAmazon等で各自購入</p>
+                    <div class="price-example">
+                        <span class="example-label">人気プラン</span>
+                        <span class="example-price">1回あたり 4,675円〜</span>
+                        <span class="example-desc">（ペア・Mコース）</span>
                     </div>
-                    <div class="fee-item">
-                        <h4>③ 月会費</h4>
-                        <p class="fee-amount">オンライン受講生：1,100円（税込）</p>
-                        <p class="fee-amount">通学型（将来導入）：2,200円（税込）</p>
+                    <div class="price-example">
+                        <span class="example-label">入会金</span>
+                        <span class="example-price">16,500円</span>
+                        <span class="example-desc">（キャンペーン割引あり）</span>
                     </div>
                 </div>
+            </div>
+            
+            <!-- CTA Button -->
+            <div class="course-cta">
+                <a href="<?php echo esc_url( home_url( '/courses/' ) ); ?>" class="btn btn-primary btn-large">
+                    <span class="btn-text">詳しいコース内容・料金表を見る</span>
+                    <span class="btn-icon">→</span>
+                </a>
+                <p class="cta-note">※目的に合わせた最適なプランをご提案します</p>
             </div>
         </div>
     </section>
@@ -995,292 +925,180 @@ get_header(); ?>
     }
 }
 
-/* Course System Section */
+/* Course Overview Section */
 .courses-section {
     padding: 80px 0;
-    background: #F8F9FA;
+    background: white;
 }
 
-.course-types-grid {
+.course-overview-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
+    gap: 40px;
+    margin: 60px 0;
 }
 
-.course-type-card {
-    background: white;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+.overview-column {
+    background: #F8F9FA;
+    border-radius: 25px;
+    padding: 40px;
     position: relative;
     transition: transform 0.3s ease;
 }
 
-.course-type-card:hover {
-    transform: translateY(-10px);
+.overview-column:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
 }
 
-.course-type-card.popular {
+.overview-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.overview-icon {
+    font-size: 2rem;
+}
+
+.overview-items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.overview-item {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
     position: relative;
+    transition: transform 0.3s ease;
 }
 
-.popular-badge {
+.overview-item:hover {
+    transform: translateX(10px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.overview-item h4 {
+    font-size: 1.2rem;
+    color: var(--dark-color);
+    margin-bottom: 8px;
+}
+
+.item-subtitle {
+    font-size: 0.9rem;
+    font-weight: normal;
+    color: #666;
+    margin-left: 5px;
+}
+
+.item-duration {
+    font-size: 0.95rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.item-price {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    font-weight: 700;
+}
+
+.overview-item.popular {
+    border: 2px solid var(--accent-color);
+    background: linear-gradient(135deg, #FFF5E6 0%, #FFE4CC 100%);
+}
+
+.popular-label {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: -10px;
+    right: 15px;
     background: var(--accent-color);
     color: var(--dark-color);
-    padding: 8px 20px;
-    border-radius: 50px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    z-index: 1;
-}
-
-.course-type-header {
-    padding: 40px;
-    text-align: center;
-    color: white;
-}
-
-.course-type-header h3 {
-    font-size: 2rem;
-    color: white;
-    margin: 0;
-}
-
-.course-subtitle {
-    font-size: 1rem;
-    font-weight: normal;
-    margin-left: 10px;
-}
-
-.course-type-content {
-    padding: 40px;
-}
-
-.course-duration {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--primary-color);
-    margin-bottom: 15px;
-}
-
-.price-info {
-    background: #F8F9FA;
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 20px;
-}
-
-.price-info p {
-    margin: 10px 0;
-}
-
-/* Class Types Section */
-.class-types-section {
-    padding: 80px 0;
-    background: white;
-}
-
-.class-types-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-    margin-top: 50px;
-}
-
-.class-type-card {
-    text-align: center;
-    padding: 40px;
-    background: #F8F9FA;
+    padding: 5px 15px;
     border-radius: 20px;
-    transition: transform 0.3s ease;
+    font-size: 0.8rem;
+    font-weight: 600;
 }
 
-.class-type-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+/* Price Summary */
+.price-summary {
+    background: linear-gradient(135deg, #F8F9FA 0%, #E9ECEF 100%);
+    border-radius: 25px;
+    padding: 40px;
+    margin: 40px 0;
+    text-align: center;
 }
 
-.class-icon {
-    font-size: 4rem;
-    margin-bottom: 20px;
-}
-
-.class-type-card h3 {
-    font-size: 1.5rem;
+.price-summary h3 {
+    font-size: 1.8rem;
     color: var(--dark-color);
-    margin-bottom: 15px;
+    margin-bottom: 30px;
 }
 
-/* Lesson Format Section */
-.lesson-format-section {
-    padding: 80px 0;
-    background: #F8F9FA;
-}
-
-.lesson-formats-grid {
+.price-examples {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 40px;
-    margin-top: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
 }
 
-.lesson-format-card {
+.price-example {
     background: white;
-    padding: 40px;
-    border-radius: 20px;
+    padding: 25px;
+    border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
 
-.lesson-format-card h3 {
-    color: var(--primary-color);
-    margin-bottom: 20px;
-    font-size: 1.5rem;
-}
-
-.lesson-note {
-    text-align: center;
-    margin-top: 40px;
-    color: #666;
-    font-size: 0.9rem;
-    line-height: 1.8;
-}
-
-/* Pricing Section */
-.pricing-section {
-    padding: 80px 0;
-    background: white;
-}
-
-.pricing-table-wrapper {
-    overflow-x: auto;
-    margin: 50px 0;
-}
-
-.pricing-table {
-    width: 100%;
-    background: white;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.pricing-table th {
-    background: var(--primary-color);
-    color: white;
-    padding: 25px 20px;
-    font-weight: 600;
-    text-align: center;
-}
-
-.table-subtitle {
-    font-size: 0.9rem;
-    font-weight: normal;
-    opacity: 0.9;
-}
-
-.pricing-table td {
-    padding: 25px 20px;
-    text-align: center;
-    border-bottom: 1px solid #eee;
-}
-
-.pricing-table tbody tr:last-child td {
-    border-bottom: none;
-}
-
-.lesson-type {
-    font-weight: 600;
-    color: var(--dark-color);
-    text-align: left !important;
-}
-
-.note {
-    font-size: 0.85rem;
-    color: #666;
-    font-weight: normal;
-}
-
-.monthly {
+.example-label {
     display: block;
     font-size: 0.9rem;
-    color: var(--primary-color);
-    margin-top: 5px;
-}
-
-.total {
-    display: block;
-    font-size: 0.9rem;
-    color: var(--secondary-color);
-    margin-top: 5px;
-}
-
-.pricing-benefits {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin: 50px 0;
-}
-
-.benefit-card {
-    background: #F8F9FA;
-    padding: 30px;
-    border-radius: 15px;
-    text-align: center;
-}
-
-.benefit-card h4 {
-    color: var(--primary-color);
+    color: #666;
     margin-bottom: 10px;
 }
 
-.additional-fees {
-    background: #F8F9FA;
-    padding: 50px;
-    border-radius: 20px;
+.example-price {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.example-desc {
+    display: block;
+    font-size: 0.85rem;
+    color: #999;
+}
+
+/* Course CTA */
+.course-cta {
+    text-align: center;
     margin-top: 50px;
 }
 
-.additional-fees h3 {
-    text-align: center;
-    color: var(--dark-color);
-    margin-bottom: 40px;
+.course-cta .btn-large {
+    padding: 20px 50px;
+    font-size: 1.2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-.fee-items {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
+.course-cta .btn-large:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
 }
 
-.fee-item {
-    text-align: center;
-}
-
-.fee-item h4 {
-    color: var(--secondary-color);
-    margin-bottom: 15px;
-}
-
-.fee-amount {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--dark-color);
-    margin: 10px 0;
-}
-
-.fee-note {
-    font-size: 0.9rem;
+.cta-note {
+    margin-top: 15px;
     color: #666;
-}
-
-/* Courses Section */
-.courses-section {
-    padding: 80px 0;
-    background: #F8F9FA;
+    font-size: 0.95rem;
 }
 
 .courses-grid {
@@ -1577,105 +1395,70 @@ get_header(); ?>
         transform: translateX(5px);
     }
     
-    /* Course cards - stack on mobile */
-    .course-types-grid {
+    /* Course overview responsive */
+    .course-overview-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
-        margin-top: 30px;
+        gap: 25px;
     }
     
-    .course-type-header {
-        padding: 30px 20px;
+    .overview-column {
+        padding: 30px 25px;
     }
     
-    .course-type-header h3 {
+    .overview-title {
+        font-size: 1.3rem;
+        gap: 10px;
+    }
+    
+    .overview-icon {
         font-size: 1.5rem;
     }
     
-    .course-type-content {
-        padding: 30px 20px;
+    .overview-items {
+        gap: 15px;
     }
     
-    .course-duration {
+    .overview-item {
+        padding: 15px;
+    }
+    
+    .overview-item h4 {
         font-size: 1.1rem;
     }
     
-    .popular-badge {
-        top: 10px;
-        right: 10px;
-        padding: 6px 15px;
-        font-size: 0.8rem;
-    }
-    
-    /* Class types - stack on mobile */
-    .class-types-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-    
-    .class-type-card {
-        padding: 30px 25px;
-    }
-    
-    .class-icon {
-        font-size: 3rem;
-    }
-    
-    /* Lesson formats */
-    .lesson-formats-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-    
-    .lesson-format-card {
-        padding: 30px 25px;
-    }
-    
-    /* Pricing table - make scrollable */
-    .pricing-table-wrapper {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        margin: 30px -20px;
-        padding: 0 20px;
-    }
-    
-    .pricing-table {
-        min-width: 600px;
-        font-size: 0.85rem;
-    }
-    
-    .pricing-table th,
-    .pricing-table td {
-        padding: 15px 10px;
-    }
-    
-    .pricing-benefits {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        margin: 30px 0;
-    }
-    
-    .benefit-card {
-        padding: 20px;
-    }
-    
-    .benefit-card h4 {
+    .item-price {
         font-size: 1rem;
     }
     
-    /* Additional fees */
-    .additional-fees {
+    .overview-item:hover {
+        transform: translateX(5px);
+    }
+    
+    /* Price summary responsive */
+    .price-summary {
         padding: 30px 20px;
-        margin-top: 30px;
     }
     
-    .fee-items {
+    .price-examples {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 20px;
     }
     
-    .fee-amount {
+    .price-example {
+        padding: 20px;
+    }
+    
+    .example-price {
         font-size: 1.3rem;
+    }
+    
+    /* Course CTA responsive */
+    .course-cta .btn-large {
+        width: 100%;
+        max-width: 350px;
+        padding: 18px 30px;
+        font-size: 1rem;
+        justify-content: center;
     }
     
     /* Testimonials */
