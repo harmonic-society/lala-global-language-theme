@@ -243,8 +243,6 @@ p {
         1px 1px 0 #000,
         0 0 10px rgba(0, 0, 0, 0.8),
         0 0 20px rgba(0, 0, 0, 0.6);
-    background: none;
-    -webkit-text-fill-color: white;
     font-weight: 800;
     line-height: 1.2;
 }
@@ -423,6 +421,23 @@ p {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Ensure animations work on mobile */
+@media (max-width: 768px) {
+    .animate-fade-up {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+    }
+}
+
+/* Fallback for browsers that don't support animations */
+@supports not (animation: fadeUp 0.8s) {
+    .animate-fade-up {
+        opacity: 1 !important;
+        transform: none !important;
     }
 }
 

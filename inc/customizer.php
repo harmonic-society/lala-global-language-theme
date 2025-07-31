@@ -289,9 +289,8 @@ function lala_global_language_customizer_css() {
         }
         
         .hero-section .hero-title,
-        .hero-section .hero-description,
-        .hero-section .btn {
-            color: var(--hero-text-color) !important;
+        .hero-section .hero-description {
+            color: var(--hero-text-color);
         }
         <?php endif; ?>
     </style>
