@@ -311,30 +311,48 @@ p {
 .hero-stats {
     display: flex;
     justify-content: center;
-    gap: 60px;
-    flex-wrap: wrap;
+    margin-top: 20px;
 }
 
-.stat-item {
-    text-align: center;
-    color: white;
+.stat-highlight {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 100px;
+    padding: 25px 50px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-.stat-number {
-    display: block;
+.stat-highlight:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.stat-icon {
     font-size: 3rem;
-    font-weight: 800;
-    line-height: 1;
-    margin-bottom: 10px;
+    display: block;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.stat-text {
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 500;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.stat-label {
-    font-size: 1.1rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    opacity: 0.9;
+.stat-text strong {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--accent-color);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+    display: inline-block;
+    margin: 0 5px;
 }
 
 /* Scroll Indicator */
@@ -1073,15 +1091,24 @@ p {
     }
     
     .hero-stats {
-        gap: 30px;
+        margin-top: 15px;
     }
     
-    .stat-number {
+    .stat-highlight {
+        padding: 20px 30px;
+        gap: 15px;
+    }
+    
+    .stat-icon {
         font-size: 2.5rem;
     }
     
-    .stat-label {
-        font-size: 0.9rem;
+    .stat-text {
+        font-size: 1.2rem;
+    }
+    
+    .stat-text strong {
+        font-size: 1.5rem;
     }
     
     .hero-scroll-indicator {
@@ -1113,17 +1140,25 @@ p {
         font-size: 0.95rem;
     }
     
-    .hero-stats {
+    .stat-highlight {
+        padding: 15px 25px;
+        gap: 10px;
         flex-direction: column;
-        gap: 20px;
+        text-align: center;
     }
     
-    .stat-number {
+    .stat-icon {
         font-size: 2rem;
     }
     
-    .stat-label {
-        font-size: 0.85rem;
+    .stat-text {
+        font-size: 1rem;
+    }
+    
+    .stat-text strong {
+        font-size: 1.3rem;
+        display: block;
+        margin: 5px 0;
     }
 }
 
@@ -1147,8 +1182,24 @@ p {
         margin-bottom: 30px;
     }
     
-    .hero-stats {
-        display: none; /* Hide stats in landscape mobile to save space */
+    .stat-highlight {
+        padding: 10px 20px;
+        gap: 10px;
+        flex-direction: row;
+    }
+    
+    .stat-icon {
+        font-size: 1.5rem;
+    }
+    
+    .stat-text {
+        font-size: 0.9rem;
+    }
+    
+    .stat-text strong {
+        font-size: 1.1rem;
+        display: inline;
+        margin: 0 3px;
     }
     
     .hero-scroll-indicator {

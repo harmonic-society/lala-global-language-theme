@@ -35,17 +35,9 @@ get_header(); ?>
                     </a>
                 </div>
                 <div class="hero-stats animate-fade-up" style="animation-delay: 0.6s;">
-                    <div class="stat-item">
-                        <span class="stat-number">35</span>
-                        <span class="stat-label">ヶ国語対応</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">1,000+</span>
-                        <span class="stat-label">受講生</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">98%</span>
-                        <span class="stat-label">満足度</span>
+                    <div class="stat-highlight">
+                        <span class="stat-icon">🌍</span>
+                        <span class="stat-text">バイリンガル講師による<strong>35ヶ国語</strong>対応</span>
                     </div>
                 </div>
             </div>
