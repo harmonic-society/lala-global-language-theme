@@ -34,28 +34,82 @@ get_header(); ?>
 
     <!-- Philosophy Section -->
     <section class="philosophy-section">
+        <div class="philosophy-universe">
+            <div class="philosophy-stars"></div>
+            <div class="philosophy-stars"></div>
+            <div class="philosophy-stars"></div>
+            <div class="philosophy-gradient-orb"></div>
+        </div>
+        
         <div class="container">
-            <div class="philosophy-grid">
-                <div class="philosophy-card fade-in">
-                    <div class="philosophy-icon">🌱</div>
-                    <h3>理念</h3>
-                    <h4>「そのチャレンジが未来を変える。」</h4>
-                    <p>とりあえず「やってみよう！」が、未来を動かす第一歩。一歩を踏み出すことで、世界は広がり、自分自身も変わります。LaLaは、その挑戦する勇気とWAKU²(ワクワク)を言語を通じて育みます。</p>
+            <div class="philosophy-header fade-in">
+                <h2 class="philosophy-title">
+                    <span class="title-gradient">Our Core Philosophy</span>
+                </h2>
+                <div class="philosophy-divider">
+                    <span class="divider-line"></span>
+                    <span class="divider-star">✦</span>
+                    <span class="divider-line"></span>
+                </div>
+            </div>
+
+            <div class="philosophy-pyramid">
+                <!-- 理念 - Top Level -->
+                <div class="philosophy-level philosophy-level-1 fade-in">
+                    <div class="philosophy-card philosophy-rinen">
+                        <div class="card-glow"></div>
+                        <div class="card-content">
+                            <div class="philosophy-label">
+                                <span class="label-text">理念</span>
+                                <span class="label-subtitle">Philosophy</span>
+                            </div>
+                            <div class="philosophy-icon-wrapper">
+                                <div class="icon-pulse"></div>
+                                <div class="philosophy-icon">🌱</div>
+                            </div>
+                            <h4 class="philosophy-statement">「そのチャレンジが未来を変える。」</h4>
+                            <p class="philosophy-description">とりあえず「やってみよう！」が、未来を動かす第一歩。一歩を踏み出すことで、世界は広がり、自分自身も変わります。LaLaは、その挑戦する勇気とWAKU²(ワクワク)を言語を通じて育みます。</p>
+                            <div class="philosophy-sparkles">
+                                <span class="sparkle"></span>
+                                <span class="sparkle"></span>
+                                <span class="sparkle"></span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="philosophy-card fade-in">
-                    <div class="philosophy-icon">🎯</div>
-                    <h3>ミッション</h3>
-                    <h4>「言葉で世界をつなぎ、多様な未来を共につくる。」</h4>
-                    <p>すべての「やってみたい！」を鼓舞して、学ぶ人と教える人をつなぎ、言葉を通じて、自分と世界の可能性を広げます。</p>
-                </div>
+                <!-- ミッション & ビジョン - Second Level -->
+                <div class="philosophy-level philosophy-level-2">
+                    <div class="philosophy-card philosophy-mission fade-in" style="animation-delay: 0.2s;">
+                        <div class="card-glow"></div>
+                        <div class="card-content">
+                            <div class="philosophy-label">
+                                <span class="label-text">ミッション</span>
+                                <span class="label-subtitle">Mission</span>
+                            </div>
+                            <div class="philosophy-icon-wrapper">
+                                <div class="philosophy-icon">🎯</div>
+                            </div>
+                            <h4 class="philosophy-statement">「言葉で世界をつなぎ、多様な未来を共につくる。」</h4>
+                            <p class="philosophy-description">すべての「やってみたい！」を鼓舞して、学ぶ人と教える人をつなぎ、言葉を通じて、自分と世界の可能性を広げます。</p>
+                        </div>
+                    </div>
 
-                <div class="philosophy-card fade-in">
-                    <div class="philosophy-icon">🔭</div>
-                    <h3>ビジョン</h3>
-                    <h4>「LaLaから世界へ、挑戦する人を育てる。」</h4>
-                    <p>言語を学ぶことで、文化や国境を超えた出会いと成長を生み出す。LaLa GLOBAL LANGUAGEは、日本人と外国人が共に学び、共に高め合い、人生を動かす"分岐点"となる場所を目指します。</p>
-                    <p class="vision-note">ここから世界へ――一人ひとりが未来へ飛び出すきっかけを。</p>
+                    <div class="philosophy-card philosophy-vision fade-in" style="animation-delay: 0.4s;">
+                        <div class="card-glow"></div>
+                        <div class="card-content">
+                            <div class="philosophy-label">
+                                <span class="label-text">ビジョン</span>
+                                <span class="label-subtitle">Vision</span>
+                            </div>
+                            <div class="philosophy-icon-wrapper">
+                                <div class="philosophy-icon">🔭</div>
+                            </div>
+                            <h4 class="philosophy-statement">「LaLaから世界へ、挑戦する人を育てる。」</h4>
+                            <p class="philosophy-description">言語を学ぶことで、文化や国境を超えた出会いと成長を生み出す。LaLa GLOBAL LANGUAGEは、日本人と外国人が共に学び、共に高め合い、人生を動かす"分岐点"となる場所を目指します。</p>
+                            <p class="vision-note">ここから世界へ――一人ひとりが未来へ飛び出すきっかけを。</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -211,59 +265,350 @@ get_header(); ?>
     margin-bottom: 25px;
 }
 
-/* Philosophy Section */
+/* Philosophy Section - Ultimate Design */
 .philosophy-section {
-    padding: 80px 0;
-    background: #F8F9FA;
+    padding: 120px 0;
+    background: linear-gradient(180deg, #0a0e27 0%, #1a1f3a 50%, #0f1424 100%);
+    position: relative;
+    overflow: hidden;
 }
 
-.philosophy-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 40px;
+/* Universe Background */
+.philosophy-universe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
 }
 
-.philosophy-card {
-    background: white;
-    padding: 50px 40px;
-    border-radius: 20px;
+.philosophy-stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(2px 2px at 20px 30px, white, transparent),
+                      radial-gradient(2px 2px at 40px 70px, white, transparent),
+                      radial-gradient(1px 1px at 50px 90px, white, transparent),
+                      radial-gradient(1px 1px at 130px 40px, white, transparent),
+                      radial-gradient(2px 2px at 180px 80px, white, transparent);
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    animation: starsAnimation 120s linear infinite;
+}
+
+.philosophy-stars:nth-child(2) {
+    background-image: radial-gradient(1px 1px at 10px 10px, rgba(255,255,255,0.5), transparent),
+                      radial-gradient(1px 1px at 60px 170px, rgba(255,255,255,0.5), transparent),
+                      radial-gradient(2px 2px at 120px 30px, rgba(255,255,255,0.5), transparent);
+    background-size: 300px 300px;
+    animation-duration: 150s;
+}
+
+.philosophy-stars:nth-child(3) {
+    background-image: radial-gradient(1px 1px at 90px 150px, rgba(255,255,255,0.3), transparent),
+                      radial-gradient(1px 1px at 190px 50px, rgba(255,255,255,0.3), transparent);
+    background-size: 250px 250px;
+    animation-duration: 180s;
+}
+
+@keyframes starsAnimation {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-100%); }
+}
+
+.philosophy-gradient-orb {
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, rgba(102, 126, 234, 0.15) 0%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: orbFloat 20s ease-in-out infinite;
+}
+
+@keyframes orbFloat {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.1); }
+}
+
+/* Header */
+.philosophy-header {
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    margin-bottom: 80px;
+    position: relative;
+    z-index: 1;
+}
+
+.philosophy-title {
+    font-size: 3.5rem;
+    margin-bottom: 30px;
+}
+
+.title-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #667eea 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 5s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.philosophy-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.divider-line {
+    height: 2px;
+    width: 100px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+}
+
+.divider-star {
+    font-size: 1.5rem;
+    color: #667eea;
+    animation: starRotate 3s linear infinite;
+}
+
+@keyframes starRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Pyramid Layout */
+.philosophy-pyramid {
+    position: relative;
+    z-index: 1;
+}
+
+.philosophy-level {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.philosophy-level-1 {
+    margin-bottom: 80px;
+}
+
+/* Cards */
+.philosophy-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.philosophy-rinen {
+    width: 600px;
+    padding: 60px;
+    box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3),
+                0 0 100px rgba(102, 126, 234, 0.1) inset;
+}
+
+.philosophy-mission,
+.philosophy-vision {
+    width: 450px;
+    padding: 50px;
+}
+
+.philosophy-mission {
+    box-shadow: 0 15px 40px rgba(247, 147, 251, 0.2);
+}
+
+.philosophy-vision {
+    box-shadow: 0 15px 40px rgba(79, 172, 254, 0.2);
 }
 
 .philosophy-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-15px) scale(1.02);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Card Glow Effect */
+.card-glow {
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.05) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.philosophy-card:hover .card-glow {
+    opacity: 1;
+}
+
+/* Card Content */
+.card-content {
+    position: relative;
+    z-index: 1;
+}
+
+.philosophy-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.label-text {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: rgba(255, 255, 255, 0.9);
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.label-subtitle {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-style: italic;
+}
+
+/* Icons */
+.philosophy-icon-wrapper {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 40px;
 }
 
 .philosophy-icon {
-    font-size: 3rem;
-    margin-bottom: 20px;
+    font-size: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
 }
 
-.philosophy-card h3 {
-    font-size: 1.2rem;
-    color: var(--secondary-color);
-    margin-bottom: 15px;
+.philosophy-rinen .philosophy-icon {
+    font-size: 5rem;
+    filter: drop-shadow(0 0 20px rgba(102, 126, 234, 0.6));
 }
 
-.philosophy-card h4 {
-    font-size: 1.5rem;
-    color: var(--dark-color);
-    margin-bottom: 20px;
-    line-height: 1.4;
+.icon-pulse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(102, 126, 234, 0.3) 0%, transparent 70%);
+    animation: iconPulse 2s ease-in-out infinite;
 }
 
-.philosophy-card p {
-    font-size: 1.05rem;
+@keyframes iconPulse {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+    50% { transform: translate(-50%, -50%) scale(1.3); opacity: 0; }
+}
+
+/* Text Content */
+.philosophy-statement {
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin-bottom: 25px;
+    line-height: 1.5;
+    font-weight: 700;
+    text-align: center;
+}
+
+.philosophy-rinen .philosophy-statement {
+    font-size: 2.2rem;
+    background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.philosophy-description {
+    font-size: 1.1rem;
     line-height: 1.8;
-    color: #666;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+}
+
+.philosophy-rinen .philosophy-description {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .vision-note {
     margin-top: 20px;
     font-style: italic;
-    color: var(--primary-color);
+    color: #4facfe;
+    text-align: center;
+    font-size: 1rem;
+}
+
+/* Sparkles */
+.philosophy-sparkles {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    pointer-events: none;
+}
+
+.sparkle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: white;
+    border-radius: 50%;
+    animation: sparkleFloat 3s ease-in-out infinite;
+}
+
+.sparkle:nth-child(1) {
+    top: 0;
+    left: 0;
+    animation-delay: 0s;
+}
+
+.sparkle:nth-child(2) {
+    top: 20px;
+    left: 15px;
+    animation-delay: 1s;
+}
+
+.sparkle:nth-child(3) {
+    top: -10px;
+    left: 30px;
+    animation-delay: 2s;
+}
+
+@keyframes sparkleFloat {
+    0%, 100% {
+        opacity: 0;
+        transform: translateY(0) scale(0);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-20px) scale(1);
+    }
 }
 
 /* Values Section */
@@ -630,6 +975,122 @@ get_header(); ?>
     .btn {
         padding: 14px 25px;
         font-size: 0.95rem;
+    }
+    
+    /* Philosophy Section Responsive */
+    .philosophy-title {
+        font-size: 2.5rem;
+    }
+    
+    .philosophy-pyramid {
+        max-width: 100%;
+    }
+    
+    .philosophy-level {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    
+    .philosophy-level-1 {
+        margin-bottom: 50px;
+    }
+    
+    .philosophy-rinen {
+        width: 100%;
+        max-width: 500px;
+        padding: 40px 30px;
+    }
+    
+    .philosophy-mission,
+    .philosophy-vision {
+        width: 100%;
+        max-width: 400px;
+        padding: 35px 25px;
+    }
+    
+    .philosophy-icon-wrapper {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 30px;
+    }
+    
+    .philosophy-icon {
+        font-size: 3rem;
+    }
+    
+    .philosophy-rinen .philosophy-icon {
+        font-size: 3.5rem;
+    }
+    
+    .philosophy-statement {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+    }
+    
+    .philosophy-rinen .philosophy-statement {
+        font-size: 1.6rem;
+    }
+    
+    .philosophy-description {
+        font-size: 1rem;
+    }
+    
+    .philosophy-rinen .philosophy-description {
+        font-size: 1.05rem;
+    }
+    
+    .divider-line {
+        width: 60px;
+    }
+    
+    .philosophy-gradient-orb {
+        width: 500px;
+        height: 500px;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+    .philosophy-section {
+        padding: 80px 0;
+    }
+    
+    .philosophy-header {
+        margin-bottom: 50px;
+    }
+    
+    .philosophy-title {
+        font-size: 2rem;
+    }
+    
+    .philosophy-rinen {
+        padding: 35px 20px;
+    }
+    
+    .philosophy-mission,
+    .philosophy-vision {
+        padding: 30px 20px;
+    }
+    
+    .philosophy-statement {
+        font-size: 1.2rem;
+    }
+    
+    .philosophy-rinen .philosophy-statement {
+        font-size: 1.4rem;
+    }
+    
+    .philosophy-description {
+        font-size: 0.95rem;
+    }
+    
+    .label-text {
+        font-size: 1rem;
+    }
+    
+    .label-subtitle {
+        font-size: 0.8rem;
     }
 }
 </style>

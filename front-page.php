@@ -54,7 +54,7 @@ get_header(); ?>
     <!-- Features Section -->
     <section id="features" class="features-section">
         <div class="container">
-            <h2 class="section-title fade-in">LaLa Global Language が選ばれる理由</h2>
+            <h2 class="section-title fade-in">LaLa GLOBAL LANGUAGE が選ばれる理由</h2>
             <?php 
             $features_image = get_theme_mod( 'features_image' );
             if ( $features_image ) : ?>
