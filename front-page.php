@@ -48,6 +48,9 @@ get_header(); ?>
         </div>
     </section>
 
+    <!-- Announcements Section -->
+    <?php get_template_part( 'template-parts/announcement', 'list' ); ?>
+
     <!-- Features Section -->
     <section id="features" class="features-section">
         <div class="container">

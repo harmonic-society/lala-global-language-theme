@@ -225,6 +225,23 @@
             return false;
         });
 
+        // Announcement expand/collapse functionality
+        $('.announcement-expand').click(function() {
+            var $this = $(this);
+            var announcementId = $this.data('announcement-id');
+            var $content = $('#announcement-content-' + announcementId);
+            
+            if ($content.is(':visible')) {
+                $content.slideUp(300);
+                $this.removeClass('expanded');
+                $this.html('詳しく見る <span class="expand-icon">▼</span>');
+            } else {
+                $content.slideDown(300);
+                $this.addClass('expanded');
+                $this.html('閉じる <span class="expand-icon">▼</span>');
+            }
+        });
+
         // Weekly Schedule Mobile Tabs
         $('.day-tab').click(function() {
             // Remove active class from all tabs and contents
