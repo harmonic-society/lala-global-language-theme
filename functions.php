@@ -212,9 +212,304 @@ function lala_global_language_body_classes( $classes ) {
         $classes[] = 'has-sidebar';
     }
 
+    // Check if there's an active announcement
+    $active_announcement = get_posts( array(
+        'post_type'      => 'announcement',
+        'posts_per_page' => 1,
+        'meta_query'     => array(
+            array(
+                'key'     => '_announcement_active',
+                'value'   => '1',
+                'compare' => '='
+            )
+        ),
+        'fields' => 'ids'
+    ) );
+    
+    if ( ! empty( $active_announcement ) ) {
+        $classes[] = 'has-announcement';
+    }
+
     return $classes;
 }
 add_filter( 'body_class', 'lala_global_language_body_classes' );
+
+/**
+ * Register Announcement Custom Post Type
+ */
+function lala_register_announcement_post_type() {
+    $labels = array(
+        'name'                  => _x( 'お知らせ', 'Post Type General Name', 'lala-global-language' ),
+        'singular_name'         => _x( 'お知らせ', 'Post Type Singular Name', 'lala-global-language' ),
+        'menu_name'             => __( 'お知らせ', 'lala-global-language' ),
+        'name_admin_bar'        => __( 'お知らせ', 'lala-global-language' ),
+        'add_new'               => __( '新規追加', 'lala-global-language' ),
+        'add_new_item'          => __( '新しいお知らせを追加', 'lala-global-language' ),
+        'new_item'              => __( '新しいお知らせ', 'lala-global-language' ),
+        'edit_item'             => __( 'お知らせを編集', 'lala-global-language' ),
+        'view_item'             => __( 'お知らせを表示', 'lala-global-language' ),
+        'all_items'             => __( 'すべてのお知らせ', 'lala-global-language' ),
+        'search_items'          => __( 'お知らせを検索', 'lala-global-language' ),
+        'not_found'             => __( 'お知らせが見つかりません', 'lala-global-language' ),
+        'not_found_in_trash'    => __( 'ゴミ箱にお知らせが見つかりません', 'lala-global-language' ),
+    );
+    
+    $args = array(
+        'label'                 => __( 'お知らせ', 'lala-global-language' ),
+        'labels'                => $labels,
+        'supports'              => array( 'title', 'editor' ),
+        'hierarchical'          => false,
+        'public'                => false,
+        'show_ui'               => true,
+        'show_in_menu'          => true,
+        'menu_position'         => 20,
+        'menu_icon'             => 'dashicons-megaphone',
+        'show_in_admin_bar'     => true,
+        'show_in_nav_menus'     => false,
+        'can_export'            => true,
+        'has_archive'           => false,
+        'exclude_from_search'   => true,
+        'publicly_queryable'    => false,
+        'capability_type'       => 'post',
+        'show_in_rest'          => true,
+    );
+    
+    register_post_type( 'announcement', $args );
+}
+add_action( 'init', 'lala_register_announcement_post_type', 0 );
+
+/**
+ * Add meta boxes for announcements
+ */
+function lala_add_announcement_meta_boxes() {
+    add_meta_box(
+        'announcement_settings',
+        __( 'お知らせ設定', 'lala-global-language' ),
+        'lala_announcement_settings_callback',
+        'announcement',
+        'side',
+        'default'
+    );
+}
+add_action( 'add_meta_boxes', 'lala_add_announcement_meta_boxes' );
+
+/**
+ * Announcement settings meta box callback
+ */
+function lala_announcement_settings_callback( $post ) {
+    // Add nonce for security
+    wp_nonce_field( 'lala_announcement_settings_nonce', 'lala_announcement_settings_nonce' );
+    
+    // Get existing values
+    $announcement_type = get_post_meta( $post->ID, '_announcement_type', true );
+    $expiry_date = get_post_meta( $post->ID, '_announcement_expiry_date', true );
+    $is_dismissible = get_post_meta( $post->ID, '_announcement_dismissible', true );
+    $is_active = get_post_meta( $post->ID, '_announcement_active', true );
+    
+    ?>
+    <p>
+        <label for="announcement_type"><?php _e( 'お知らせタイプ:', 'lala-global-language' ); ?></label>
+        <select name="announcement_type" id="announcement_type" class="widefat">
+            <option value="info" <?php selected( $announcement_type, 'info' ); ?>><?php _e( '情報', 'lala-global-language' ); ?></option>
+            <option value="warning" <?php selected( $announcement_type, 'warning' ); ?>><?php _e( '警告', 'lala-global-language' ); ?></option>
+            <option value="success" <?php selected( $announcement_type, 'success' ); ?>><?php _e( '成功', 'lala-global-language' ); ?></option>
+            <option value="error" <?php selected( $announcement_type, 'error' ); ?>><?php _e( 'エラー', 'lala-global-language' ); ?></option>
+        </select>
+    </p>
+    
+    <p>
+        <label for="announcement_expiry_date"><?php _e( '有効期限:', 'lala-global-language' ); ?></label>
+        <input type="datetime-local" name="announcement_expiry_date" id="announcement_expiry_date" value="<?php echo esc_attr( $expiry_date ); ?>" class="widefat" />
+        <small><?php _e( '空欄の場合は無期限', 'lala-global-language' ); ?></small>
+    </p>
+    
+    <p>
+        <label>
+            <input type="checkbox" name="announcement_dismissible" value="1" <?php checked( $is_dismissible, '1' ); ?> />
+            <?php _e( 'ユーザーが閉じることができる', 'lala-global-language' ); ?>
+        </label>
+    </p>
+    
+    <p>
+        <label>
+            <input type="checkbox" name="announcement_active" value="1" <?php checked( $is_active, '1' ); ?> />
+            <?php _e( 'アクティブ（表示する）', 'lala-global-language' ); ?>
+        </label>
+    </p>
+    <?php
+}
+
+/**
+ * Save announcement meta data
+ */
+function lala_save_announcement_meta( $post_id ) {
+    // Check nonce
+    if ( ! isset( $_POST['lala_announcement_settings_nonce'] ) || ! wp_verify_nonce( $_POST['lala_announcement_settings_nonce'], 'lala_announcement_settings_nonce' ) ) {
+        return;
+    }
+    
+    // Check autosave
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+        return;
+    }
+    
+    // Check permissions
+    if ( ! current_user_can( 'edit_post', $post_id ) ) {
+        return;
+    }
+    
+    // Save announcement type
+    if ( isset( $_POST['announcement_type'] ) ) {
+        update_post_meta( $post_id, '_announcement_type', sanitize_text_field( $_POST['announcement_type'] ) );
+    }
+    
+    // Save expiry date
+    if ( isset( $_POST['announcement_expiry_date'] ) ) {
+        update_post_meta( $post_id, '_announcement_expiry_date', sanitize_text_field( $_POST['announcement_expiry_date'] ) );
+    }
+    
+    // Save dismissible option
+    $is_dismissible = isset( $_POST['announcement_dismissible'] ) ? '1' : '0';
+    update_post_meta( $post_id, '_announcement_dismissible', $is_dismissible );
+    
+    // Save active status
+    $is_active = isset( $_POST['announcement_active'] ) ? '1' : '0';
+    update_post_meta( $post_id, '_announcement_active', $is_active );
+}
+add_action( 'save_post_announcement', 'lala_save_announcement_meta' );
+
+/**
+ * Add custom columns to announcement admin list
+ */
+function lala_announcement_columns( $columns ) {
+    $new_columns = array();
+    
+    foreach ( $columns as $key => $value ) {
+        if ( $key == 'title' ) {
+            $new_columns[$key] = $value;
+            $new_columns['announcement_type'] = __( 'タイプ', 'lala-global-language' );
+            $new_columns['announcement_status'] = __( 'ステータス', 'lala-global-language' );
+            $new_columns['announcement_expiry'] = __( '有効期限', 'lala-global-language' );
+        } else {
+            $new_columns[$key] = $value;
+        }
+    }
+    
+    return $new_columns;
+}
+add_filter( 'manage_announcement_posts_columns', 'lala_announcement_columns' );
+
+/**
+ * Display custom column content
+ */
+function lala_announcement_column_content( $column, $post_id ) {
+    switch ( $column ) {
+        case 'announcement_type':
+            $type = get_post_meta( $post_id, '_announcement_type', true );
+            $types = array(
+                'info'    => __( '情報', 'lala-global-language' ),
+                'warning' => __( '警告', 'lala-global-language' ),
+                'success' => __( '成功', 'lala-global-language' ),
+                'error'   => __( 'エラー', 'lala-global-language' )
+            );
+            echo isset( $types[$type] ) ? $types[$type] : $types['info'];
+            break;
+            
+        case 'announcement_status':
+            $is_active = get_post_meta( $post_id, '_announcement_active', true );
+            $expiry_date = get_post_meta( $post_id, '_announcement_expiry_date', true );
+            
+            if ( $expiry_date && strtotime( $expiry_date ) < current_time( 'timestamp' ) ) {
+                echo '<span style="color: #dc3545;">期限切れ</span>';
+            } elseif ( $is_active == '1' ) {
+                echo '<span style="color: #28a745;">アクティブ</span>';
+            } else {
+                echo '<span style="color: #6c757d;">非アクティブ</span>';
+            }
+            break;
+            
+        case 'announcement_expiry':
+            $expiry_date = get_post_meta( $post_id, '_announcement_expiry_date', true );
+            if ( $expiry_date ) {
+                echo date_i18n( 'Y年m月d日 H:i', strtotime( $expiry_date ) );
+            } else {
+                echo __( '無期限', 'lala-global-language' );
+            }
+            break;
+    }
+}
+add_action( 'manage_announcement_posts_custom_column', 'lala_announcement_column_content', 10, 2 );
+
+/**
+ * Make custom columns sortable
+ */
+function lala_announcement_sortable_columns( $columns ) {
+    $columns['announcement_type'] = 'announcement_type';
+    $columns['announcement_status'] = 'announcement_status';
+    $columns['announcement_expiry'] = 'announcement_expiry';
+    return $columns;
+}
+add_filter( 'manage_edit-announcement_sortable_columns', 'lala_announcement_sortable_columns' );
+
+/**
+ * Handle sorting for custom columns
+ */
+function lala_announcement_column_orderby( $query ) {
+    if ( ! is_admin() || ! $query->is_main_query() ) {
+        return;
+    }
+    
+    if ( 'announcement_type' === $query->get( 'orderby' ) ) {
+        $query->set( 'meta_key', '_announcement_type' );
+        $query->set( 'orderby', 'meta_value' );
+    }
+    
+    if ( 'announcement_status' === $query->get( 'orderby' ) ) {
+        $query->set( 'meta_key', '_announcement_active' );
+        $query->set( 'orderby', 'meta_value' );
+    }
+    
+    if ( 'announcement_expiry' === $query->get( 'orderby' ) ) {
+        $query->set( 'meta_key', '_announcement_expiry_date' );
+        $query->set( 'orderby', 'meta_value' );
+    }
+}
+add_action( 'pre_get_posts', 'lala_announcement_column_orderby' );
+
+/**
+ * Add admin styles for announcement columns
+ */
+function lala_announcement_admin_styles() {
+    global $pagenow, $post_type;
+    
+    if ( ( $pagenow == 'edit.php' || $pagenow == 'post.php' || $pagenow == 'post-new.php' ) && $post_type == 'announcement' ) {
+        ?>
+        <style>
+            .column-announcement_type { width: 100px; }
+            .column-announcement_status { width: 120px; }
+            .column-announcement_expiry { width: 180px; }
+            
+            /* Style the admin editor for announcements */
+            .post-type-announcement #titlediv #title {
+                height: auto;
+                min-height: 40px;
+            }
+            
+            .post-type-announcement .wp-editor-container {
+                background: #f8f9fa;
+                border: 2px solid #e9ecef;
+                border-radius: 8px;
+            }
+            
+            /* Highlight active announcements in the list */
+            .post-type-announcement .status-publish {
+                background-color: rgba(40, 167, 69, 0.05);
+            }
+        </style>
+        <?php
+    }
+}
+add_action( 'admin_head', 'lala_announcement_admin_styles' );
 
 /**
  * Customizer additions

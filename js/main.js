@@ -174,6 +174,40 @@
             }
         );
 
+        // Announcement dismiss functionality
+        $('.announcement-close').click(function() {
+            var $announcement = $(this).closest('.announcement-bar');
+            var announcementId = $announcement.data('announcement-id');
+            
+            // Fade out the announcement
+            $announcement.fadeOut(300, function() {
+                $(this).remove();
+            });
+            
+            // Set cookie to remember dismissal (expires in 30 days)
+            var date = new Date();
+            date.setTime(date.getTime() + (30 * 24 * 60 * 60 * 1000));
+            var expires = "; expires=" + date.toUTCString();
+            document.cookie = "lala_dismissed_announcement_" + announcementId + "=1" + expires + "; path=/";
+            
+            // Also store in localStorage as backup
+            if (typeof(Storage) !== "undefined") {
+                localStorage.setItem('lala_dismissed_announcement_' + announcementId, '1');
+            }
+        });
+
+        // Check localStorage for dismissed announcements on page load
+        $('.announcement-bar').each(function() {
+            var announcementId = $(this).data('announcement-id');
+            
+            // Check if announcement was dismissed
+            if (typeof(Storage) !== "undefined") {
+                if (localStorage.getItem('lala_dismissed_announcement_' + announcementId) === '1') {
+                    $(this).remove();
+                }
+            }
+        });
+
         // Back to top button
         var $backToTop = $('<button class="back-to-top">↑</button>');
         $('body').append($backToTop);
