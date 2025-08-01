@@ -18,13 +18,19 @@ get_header(); ?>
         </div>
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title animate-fade-up">
+                <div class="hero-stats animate-fade-up">
+                    <div class="stat-highlight">
+                        <span class="stat-icon">🌍</span>
+                        <span class="stat-text">バイリンガル講師による<strong>35ヶ国語</strong>対応</span>
+                    </div>
+                </div>
+                <h1 class="hero-title animate-fade-up" style="animation-delay: 0.2s;">
                     <?php echo esc_html( get_theme_mod( 'hero_title', '世界中のことばを、ここ日本で。' ) ); ?>
                 </h1>
-                <p class="hero-description animate-fade-up" style="animation-delay: 0.2s;">
+                <p class="hero-description animate-fade-up" style="animation-delay: 0.4s;">
                     <?php echo nl2br( esc_html( get_theme_mod( 'hero_description', '英語はもちろん、欧米、アジア、アフリカのことばも。駅前留学？ホテル留学？LaLaなら "自宅留学"！' ) ) ); ?>
                 </p>
-                <div class="hero-buttons animate-fade-up" style="animation-delay: 0.4s;">
+                <div class="hero-buttons animate-fade-up" style="animation-delay: 0.6s;">
                     <a href="#courses" class="btn btn-primary btn-large">
                         <span class="btn-text">無料体験レッスン</span>
                         <span class="btn-icon">→</span>
@@ -33,12 +39,6 @@ get_header(); ?>
                         <span class="btn-text">対応言語を見る</span>
                         <span class="btn-icon">🌍</span>
                     </a>
-                </div>
-                <div class="hero-stats animate-fade-up" style="animation-delay: 0.6s;">
-                    <div class="stat-highlight">
-                        <span class="stat-icon">🌍</span>
-                        <span class="stat-text">バイリンガル講師による<strong>35ヶ国語</strong>対応</span>
-                    </div>
                 </div>
             </div>
         </div>
