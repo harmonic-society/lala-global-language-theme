@@ -495,6 +495,27 @@ body.has-announcement .site-header {
     margin: 0 5px;
 }
 
+.stat-text .stat-number {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--accent-color);
+    text-shadow: 
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        2px 2px 0 #000,
+        0 0 12px rgba(0, 0, 0, 0.8);
+    letter-spacing: 0.05em;
+    display: inline-block;
+    margin: 0 8px;
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+.stat-highlight:hover .stat-number {
+    transform: scale(1.1);
+}
+
 /* Scroll Indicator */
 .hero-scroll-indicator {
     position: absolute;
@@ -1595,6 +1616,10 @@ body.has-announcement .site-header {
         font-size: 1.5rem;
     }
     
+    .stat-text .stat-number {
+        font-size: 2.5rem;
+    }
+    
     .hero-scroll-indicator {
         bottom: 20px;
     }
@@ -1650,6 +1675,11 @@ body.has-announcement .site-header {
         display: block;
         margin: 5px 0;
     }
+    
+    .stat-text .stat-number {
+        font-size: 2rem;
+        margin: 5px 0;
+    }
 }
 
 /* Landscape orientation optimizations for Hero */
@@ -1689,6 +1719,11 @@ body.has-announcement .site-header {
     .stat-text strong {
         font-size: 1.1rem;
         display: inline;
+        margin: 0 3px;
+    }
+    
+    .stat-text .stat-number {
+        font-size: 1.5rem;
         margin: 0 3px;
     }
     

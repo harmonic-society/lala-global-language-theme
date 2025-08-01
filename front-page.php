@@ -21,7 +21,7 @@ get_header(); ?>
                 <div class="hero-stats animate-fade-up">
                     <div class="stat-highlight">
                         <span class="stat-icon">🌍</span>
-                        <span class="stat-text">バイリンガル講師による<strong>35ヶ国語</strong>対応</span>
+                        <span class="stat-text">バイリンガル講師による<strong class="stat-number">35ヶ国</strong>語対応</span>
                     </div>
                 </div>
                 <h1 class="hero-title animate-fade-up" style="animation-delay: 0.2s;">
