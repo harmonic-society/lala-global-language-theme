@@ -81,18 +81,18 @@ get_header(); ?>
                 <div class="feature-card fade-in">
                     <div class="feature-icon">📱</div>
                     <h3 class="feature-title">オンラインで世界とつながる</h3>
-                    <p>基本的に講座はオンライン。どこからでも質の高いレッスンを受講できます。通学の必要がなく、自宅で
+                    <p>基本的に講座はオンライン。全国どこからでも質の高いレッスンを受講できます。通学の必要がなく、自宅で
   気軽に学習可能。</p>
                 </div>
                 <div class="feature-card fade-in">
                     <div class="feature-icon">🎓</div>
                     <h3 class="feature-title">実践的なカリキュラム</h3>
-                    <p>旅行、ビジネス、日常会話など、目的に合わせた実践的なカリキュラムをご用意しています。</p>
+                    <p>旅行、ビジネス、日常会話など、目的に合わせたすぐに使える実践的なカリキュラムをご用意しています。</p>
                 </div>
                 <div class="feature-card fade-in">
                     <div class="feature-icon">📈</div>
                     <h3 class="feature-title">充実のサポート体制</h3>
-                    <p>学習の進捗管理から、留学相談まで。専任カウンセラーがあなたの語学学習を全面サポート。</p>
+                    <p>専任コンシェルジュがあなたの語学学習を全面サポート。</p>
                 </div>
             </div>
         </div>
