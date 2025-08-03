@@ -1438,8 +1438,8 @@ get_header(); ?>
 /* Language Badge */
 .language-badge {
     position: absolute;
-    top: 15px;
-    right: 15px;
+    bottom: 20px;
+    right: 20px;
     background: linear-gradient(135deg, var(--primary-color) 0%, #006666 100%);
     color: white;
     padding: 10px 25px;
@@ -1560,7 +1560,7 @@ get_header(); ?>
 
 /* Hover effects */
 .testimonial-card:hover .language-badge {
-    transform: translateY(-5px) translateX(5px);
+    transform: translateY(5px) translateX(-5px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
@@ -1870,8 +1870,8 @@ get_header(); ?>
     }
     
     .language-badge {
-        top: 10px;
-        right: 10px;
+        bottom: 15px;
+        right: 15px;
         padding: 8px 20px;
         font-size: 0.8rem;
         border-radius: 15px;
@@ -2001,8 +2001,8 @@ get_header(); ?>
     }
     
     .language-badge {
-        top: 8px;
-        right: 8px;
+        bottom: 12px;
+        right: 12px;
         padding: 6px 15px;
         font-size: 0.75rem;
         gap: 5px;
