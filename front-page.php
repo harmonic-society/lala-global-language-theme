@@ -1465,7 +1465,7 @@ get_header(); ?>
 /* BtoB Label */
 .btob-label {
     position: absolute;
-    top: -12px;
+    top: 12px;
     left: 30px;
     background: var(--accent-color);
     color: var(--dark-color);
@@ -1493,7 +1493,7 @@ get_header(); ?>
 }
 
 .testimonial-card.btob .testimonial-content {
-    padding-top: 35px;
+    padding-top: 50px;
 }
 
 .testimonial-title {
@@ -1886,14 +1886,14 @@ get_header(); ?>
     }
     
     .btob-label {
-        top: -10px;
+        top: 10px;
         left: 20px;
         padding: 4px 12px;
         font-size: 0.7rem;
     }
     
     .testimonial-card.btob .testimonial-content {
-        padding-top: 25px;
+        padding-top: 40px;
     }
     
     .testimonial-title {
@@ -2018,14 +2018,14 @@ get_header(); ?>
     }
     
     .btob-label {
-        top: -8px;
+        top: 8px;
         left: 15px;
         padding: 3px 10px;
         font-size: 0.65rem;
     }
     
     .testimonial-card.btob .testimonial-content {
-        padding-top: 20px;
+        padding-top: 35px;
     }
     
     .testimonial-title {
