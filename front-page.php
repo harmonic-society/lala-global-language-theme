@@ -1438,18 +1438,19 @@ get_header(); ?>
 /* Language Badge */
 .language-badge {
     position: absolute;
-    top: -2px;
-    right: -2px;
+    top: 15px;
+    right: 15px;
     background: linear-gradient(135deg, var(--primary-color) 0%, #006666 100%);
     color: white;
     padding: 10px 25px;
-    border-radius: 0 25px 0 25px;
+    border-radius: 20px;
     display: flex;
     align-items: center;
     gap: 8px;
     font-weight: 600;
     font-size: 0.9rem;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    z-index: 2;
 }
 
 .badge-flag {
@@ -1464,7 +1465,7 @@ get_header(); ?>
 /* BtoB Label */
 .btob-label {
     position: absolute;
-    top: 20px;
+    top: -12px;
     left: 30px;
     background: var(--accent-color);
     color: var(--dark-color);
@@ -1475,6 +1476,7 @@ get_header(); ?>
     text-transform: uppercase;
     letter-spacing: 0.5px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    z-index: 2;
 }
 
 .testimonial-card.btob .language-badge {
@@ -1487,6 +1489,11 @@ get_header(); ?>
     line-height: 1.8;
     position: relative;
     z-index: 1;
+    padding-top: 10px;
+}
+
+.testimonial-card.btob .testimonial-content {
+    padding-top: 35px;
 }
 
 .testimonial-title {
@@ -1863,9 +1870,11 @@ get_header(); ?>
     }
     
     .language-badge {
+        top: 10px;
+        right: 10px;
         padding: 8px 20px;
         font-size: 0.8rem;
-        border-radius: 0 20px 0 20px;
+        border-radius: 15px;
     }
     
     .badge-flag {
@@ -1877,10 +1886,14 @@ get_header(); ?>
     }
     
     .btob-label {
-        top: 15px;
+        top: -10px;
         left: 20px;
         padding: 4px 12px;
         font-size: 0.7rem;
+    }
+    
+    .testimonial-card.btob .testimonial-content {
+        padding-top: 25px;
     }
     
     .testimonial-title {
@@ -1988,9 +2001,12 @@ get_header(); ?>
     }
     
     .language-badge {
+        top: 8px;
+        right: 8px;
         padding: 6px 15px;
         font-size: 0.75rem;
         gap: 5px;
+        border-radius: 12px;
     }
     
     .badge-flag {
@@ -2002,10 +2018,14 @@ get_header(); ?>
     }
     
     .btob-label {
-        top: 12px;
+        top: -8px;
         left: 15px;
         padding: 3px 10px;
         font-size: 0.65rem;
+    }
+    
+    .testimonial-card.btob .testimonial-content {
+        padding-top: 20px;
     }
     
     .testimonial-title {
