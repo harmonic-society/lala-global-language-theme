@@ -626,42 +626,120 @@ get_header(); ?>
     <!-- Testimonials Section -->
     <section class="testimonials-section">
         <div class="container">
-            <h2 class="section-title">受講生の声</h2>
+            <h2 class="section-title">お客様の声</h2>
+            <p class="section-subtitle">LaLaで学ぶ受講生の、リアルな声をお届けします</p>
             <div class="testimonials-grid">
-                <div class="testimonial-card fade-in">
+                <div class="testimonial-card fade-in" data-language="taiwan">
+                    <div class="language-badge">
+                        <span class="badge-flag">🇹🇼</span>
+                        <span class="badge-text">台湾華語</span>
+                    </div>
                     <div class="testimonial-content">
-                        <p>"ビジネス英語コースを受講して、海外クライアントとの交渉がスムーズにできるようになりました！"</p>
+                        <h3 class="testimonial-title">「初めての不安」を「面白い!」に変えてくれる先生たち。</h3>
+                        <p>旅行前に全く初めての台湾華語をスタート。<br>
+                        実践的(@夜市)なフレーズを少しずつ話せるのが楽しくて、挑戦するのがクセになっています。</p>
                     </div>
                     <div class="testimonial-author">
                         <span class="author-avatar">👩</span>
                         <div>
-                            <h4>田中 太郎さん</h4>
-                            <p>英語コース受講生</p>
+                            <h4>Nana さん</h4>
+                            <p>台湾華語コース受講生</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="testimonial-card fade-in">
+                <div class="testimonial-card fade-in" data-language="korean">
+                    <div class="language-badge">
+                        <span class="badge-flag">🇰🇷</span>
+                        <span class="badge-text">韓国語</span>
+                    </div>
                     <div class="testimonial-content">
-                        <p>"韓国ドラマを字幕なしで見るのが夢でした。楽しく学んで、今では韓国旅行も楽しめるように！"</p>
+                        <h3 class="testimonial-title">推しのライブでコール&レスポンスをするのが夢!</h3>
+                        <p>年明けに現地ライブに行くため LaLa に入会しました。<br>
+                        先生が「何て声をかけたいの?」と聞いてくれ、練習に付き合ってくれるのが嬉しくて、基礎も頑張れます。</p>
                     </div>
                     <div class="testimonial-author">
-                        <span class="author-avatar">👨</span>
+                        <span class="author-avatar">👩</span>
                         <div>
-                            <h4>佐藤 美優さん</h4>
+                            <h4>Haruna さん</h4>
                             <p>韓国語コース受講生</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="testimonial-card fade-in">
+                <div class="testimonial-card fade-in" data-language="spanish">
+                    <div class="language-badge">
+                        <span class="badge-flag">🇪🇸</span>
+                        <span class="badge-text">スペイン語</span>
+                    </div>
                     <div class="testimonial-content">
-                        <p>"HSK6級に合格しました！先生方の熱心な指導のおかげで、難しい中国語も楽しく学べました。"</p>
+                        <h3 class="testimonial-title">「プロサッカー選手になりたくて!」</h3>
+                        <p>1年後にスペインへサッカー留学予定です。<br>
+                        現地生活に困らないよう、日常会話やサッカーで使う表現を重点的に学んでいます。</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <span class="author-avatar">👦</span>
+                        <div>
+                            <h4>Teppei くん</h4>
+                            <p>スペイン語コース受講生</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-in" data-language="english">
+                    <div class="language-badge">
+                        <span class="badge-flag">🇦🇺</span>
+                        <span class="badge-text">英語</span>
+                    </div>
+                    <div class="testimonial-content">
+                        <h3 class="testimonial-title">ワーホリでオーストラリアに行くことを決めたので!</h3>
+                        <p>体験レッスンで偶然??オーストラリア出身の先生が担当してくれて感激!<br>
+                        もっと Oz 訛りで話せるようになりたいです。</p>
                     </div>
                     <div class="testimonial-author">
                         <span class="author-avatar">👩</span>
                         <div>
-                            <h4>鈴木 花子さん</h4>
+                            <h4>Manami さん</h4>
+                            <p>英語コース受講生</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-in btob" data-language="thai">
+                    <div class="language-badge">
+                        <span class="badge-flag">🇹🇭</span>
+                        <span class="badge-text">タイ語</span>
+                    </div>
+                    <div class="btob-label">BtoB 赴任前研修</div>
+                    <div class="testimonial-content">
+                        <h3 class="testimonial-title">「あいさつ」が通じただけで一気に楽しくなりました!</h3>
+                        <p>まだレッスンを始めたばかりですが、先日タイ料理店で試したら通じました。<br>
+                        「次は現場でこう言いたい!」という気持ちがどんどん湧いてきます。</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <span class="author-avatar">👩</span>
+                        <div>
+                            <h4>Hiromi さん</h4>
+                            <p>タイ語コース受講生</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-in btob" data-language="chinese">
+                    <div class="language-badge">
+                        <span class="badge-flag">🇨🇳</span>
+                        <span class="badge-text">中国語</span>
+                    </div>
+                    <div class="btob-label">BtoB 社内語学研修</div>
+                    <div class="testimonial-content">
+                        <h3 class="testimonial-title">海外クライアントと話すのが怖くなくなりました!</h3>
+                        <p>先生が毎回「一緒にやってみよう」と背中を押してくれるので挑戦が楽しくなります。<br>
+                        次の MTG では、習ったフレーズをガンガン使ってみます!</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <span class="author-avatar">👨</span>
+                        <div>
+                            <h4>Takayuki さん</h4>
                             <p>中国語コース受講生</p>
                         </div>
                     </div>
@@ -1271,61 +1349,225 @@ get_header(); ?>
 
 /* Testimonials Section */
 .testimonials-section {
-    padding: 80px 0;
-    background: white;
+    padding: 100px 0;
+    background: linear-gradient(135deg, #F8F9FA 0%, #FFFFFF 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonials-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(248, 131, 121, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.testimonials-section::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -10%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(0, 128, 128, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.testimonials-section .section-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 50px;
+    font-weight: 400;
 }
 
 .testimonials-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
     gap: 40px;
     margin-top: 50px;
+    position: relative;
+    z-index: 1;
 }
 
 .testimonial-card {
-    background: #F8F9FA;
+    background: white;
     padding: 40px;
-    border-radius: 20px;
+    border-radius: 25px;
     position: relative;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    overflow: hidden;
 }
 
-.testimonial-card::before {
-    content: '"';
-    font-size: 6rem;
-    color: var(--primary-color);
-    opacity: 0.2;
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* Language specific styling */
+.testimonial-card[data-language="taiwan"]:hover {
+    border-color: #E74C3C;
+}
+
+.testimonial-card[data-language="korean"]:hover {
+    border-color: #3498DB;
+}
+
+.testimonial-card[data-language="spanish"]:hover {
+    border-color: #E67E22;
+}
+
+.testimonial-card[data-language="english"]:hover {
+    border-color: #1ABC9C;
+}
+
+.testimonial-card[data-language="thai"]:hover {
+    border-color: #9B59B6;
+}
+
+.testimonial-card[data-language="chinese"]:hover {
+    border-color: #E74C3C;
+}
+
+/* Language Badge */
+.language-badge {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #006666 100%);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 0 25px 0 25px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.badge-flag {
+    font-size: 1.5rem;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.badge-text {
+    font-size: 0.95rem;
+}
+
+/* BtoB Label */
+.btob-label {
     position: absolute;
     top: 20px;
     left: 30px;
+    background: var(--accent-color);
+    color: var(--dark-color);
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-card.btob .language-badge {
+    background: linear-gradient(135deg, #34495E 0%, #2C3E50 100%);
+}
+
+/* Testimonial Content */
+.testimonial-content {
+    margin-bottom: 30px;
+    line-height: 1.8;
+    position: relative;
+    z-index: 1;
+}
+
+.testimonial-title {
+    font-size: 1.3rem;
+    color: var(--dark-color);
+    margin-bottom: 15px;
+    font-weight: 700;
+    line-height: 1.4;
+    position: relative;
+}
+
+.testimonial-title::before {
+    content: '"';
+    font-size: 3rem;
+    color: var(--primary-color);
+    opacity: 0.2;
+    position: absolute;
+    top: -20px;
+    left: -25px;
     line-height: 1;
 }
 
-.testimonial-content {
-    margin-bottom: 30px;
-    font-style: italic;
-    line-height: 1.8;
+.testimonial-content p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 0;
 }
 
+/* Author Section */
 .testimonial-author {
     display: flex;
     align-items: center;
     gap: 15px;
+    padding-top: 20px;
+    border-top: 2px solid #F0F0F0;
 }
 
 .author-avatar {
     font-size: 2.5rem;
+    background: linear-gradient(135deg, #F8F9FA 0%, #E9ECEF 100%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
 
 .testimonial-author h4 {
     margin: 0;
     color: var(--dark-color);
+    font-size: 1.1rem;
+    font-weight: 600;
 }
 
 .testimonial-author p {
     margin: 0;
-    color: #666;
+    color: #888;
     font-size: 0.9rem;
+    margin-top: 3px;
 }
+
+/* Hover effects */
+.testimonial-card:hover .language-badge {
+    transform: translateY(-5px) translateX(5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-card:hover .author-avatar {
+    transform: scale(1.1);
+}
+
+/* Animation delays */
+.testimonial-card:nth-child(1) { animation-delay: 0.1s; }
+.testimonial-card:nth-child(2) { animation-delay: 0.2s; }
+.testimonial-card:nth-child(3) { animation-delay: 0.3s; }
+.testimonial-card:nth-child(4) { animation-delay: 0.4s; }
+.testimonial-card:nth-child(5) { animation-delay: 0.5s; }
+.testimonial-card:nth-child(6) { animation-delay: 0.6s; }
 
 /* CTA Section */
 .cta-section {
@@ -1392,6 +1634,16 @@ get_header(); ?>
     /* Course cards adjustments */
     .course-types-grid {
         gap: 25px;
+    }
+    
+    /* Testimonials Tablet */
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    
+    .testimonial-card {
+        padding: 35px 30px;
     }
 }
 
@@ -1586,6 +1838,21 @@ get_header(); ?>
     }
     
     /* Testimonials */
+    .testimonials-section {
+        padding: 60px 0;
+    }
+    
+    .testimonials-section::before,
+    .testimonials-section::after {
+        display: none;
+    }
+    
+    .testimonials-section .section-subtitle {
+        font-size: 1rem;
+        margin-bottom: 30px;
+        padding: 0 20px;
+    }
+    
     .testimonials-grid {
         grid-template-columns: 1fr;
         gap: 25px;
@@ -1593,6 +1860,57 @@ get_header(); ?>
     
     .testimonial-card {
         padding: 30px 25px;
+    }
+    
+    .language-badge {
+        padding: 8px 20px;
+        font-size: 0.8rem;
+        border-radius: 0 20px 0 20px;
+    }
+    
+    .badge-flag {
+        font-size: 1.2rem;
+    }
+    
+    .badge-text {
+        font-size: 0.85rem;
+    }
+    
+    .btob-label {
+        top: 15px;
+        left: 20px;
+        padding: 4px 12px;
+        font-size: 0.7rem;
+    }
+    
+    .testimonial-title {
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+    }
+    
+    .testimonial-title::before {
+        font-size: 2.5rem;
+        top: -15px;
+        left: -20px;
+    }
+    
+    .testimonial-content p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    
+    .author-avatar {
+        width: 50px;
+        height: 50px;
+        font-size: 2rem;
+    }
+    
+    .testimonial-author h4 {
+        font-size: 1rem;
+    }
+    
+    .testimonial-author p {
+        font-size: 0.85rem;
     }
     
     /* CTA Section */
@@ -1651,6 +1969,79 @@ get_header(); ?>
     .btn {
         padding: 14px 30px;
         font-size: 0.95rem;
+    }
+    
+    /* Testimonials Mobile */
+    .testimonials-section {
+        padding: 50px 0;
+    }
+    
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-top: 30px;
+    }
+    
+    .testimonial-card {
+        padding: 25px 20px;
+        border-radius: 20px;
+    }
+    
+    .language-badge {
+        padding: 6px 15px;
+        font-size: 0.75rem;
+        gap: 5px;
+    }
+    
+    .badge-flag {
+        font-size: 1rem;
+    }
+    
+    .badge-text {
+        font-size: 0.8rem;
+    }
+    
+    .btob-label {
+        top: 12px;
+        left: 15px;
+        padding: 3px 10px;
+        font-size: 0.65rem;
+    }
+    
+    .testimonial-title {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+    
+    .testimonial-title::before {
+        display: none;
+    }
+    
+    .testimonial-content p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    .testimonial-author {
+        padding-top: 15px;
+    }
+    
+    .author-avatar {
+        width: 45px;
+        height: 45px;
+        font-size: 1.8rem;
+    }
+    
+    .testimonial-author h4 {
+        font-size: 0.95rem;
+    }
+    
+    .testimonial-author p {
+        font-size: 0.8rem;
+    }
+    
+    .testimonial-card:hover {
+        transform: translateY(-5px);
     }
 }
 
