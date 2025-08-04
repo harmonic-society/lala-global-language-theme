@@ -236,17 +236,192 @@ get_header(); ?>
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-@media (max-width: 768px) {
+/* Responsive Styles */
+@media (max-width: 1024px) {
     .page-container {
         grid-template-columns: 1fr;
+        max-width: 800px;
+        gap: 30px;
+    }
+    
+    .sidebar {
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-container {
+        padding: 30px 15px;
+        gap: 20px;
+    }
+    
+    .page-content {
+        padding: 30px;
+        border-radius: 15px;
+    }
+    
+    .page-hero-image {
+        margin: -30px -30px 30px;
+    }
+    
+    .page-hero-image img {
+        height: 200px;
+        border-radius: 15px 15px 0 0;
+    }
+    
+    .page-content .entry-title {
+        font-size: 1.75rem;
+        margin-bottom: 20px;
+    }
+    
+    .page-content .entry-content {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    
+    .page-content .entry-content h2 {
+        font-size: 1.5rem;
+        margin: 30px 0 15px;
+    }
+    
+    .page-content .entry-content h3 {
+        font-size: 1.25rem;
+        margin: 25px 0 12px;
+    }
+    
+    .page-content .entry-content p {
+        margin-bottom: 15px;
+    }
+    
+    .page-content .entry-content ul,
+    .page-content .entry-content ol {
+        margin: 15px 0 15px 25px;
+    }
+    
+    .page-content .entry-content blockquote {
+        margin: 20px 0;
+        padding-left: 15px;
+    }
+    
+    /* Form adjustments */
+    .page-content .wpcf7 {
+        margin: 30px 0;
+    }
+    
+    .page-content .wpcf7 input[type="text"],
+    .page-content .wpcf7 input[type="email"],
+    .page-content .wpcf7 input[type="tel"],
+    .page-content .wpcf7 textarea {
+        padding: 12px;
+        font-size: 0.95rem;
+        margin-bottom: 15px;
+    }
+    
+    .page-content .wpcf7 input[type="submit"] {
+        padding: 12px 30px;
+        font-size: 1rem;
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    /* Table responsive */
+    .page-content table {
+        font-size: 0.9rem;
+    }
+    
+    .page-content table th,
+    .page-content table td {
+        padding: 10px;
+    }
+    
+    /* Button adjustments */
+    .page-content .wp-block-button__link {
+        padding: 12px 30px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-container {
+        padding: 20px 10px;
     }
     
     .page-content {
         padding: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+    
+    .page-hero-image {
+        margin: -20px -20px 20px;
+    }
+    
+    .page-hero-image img {
+        height: 150px;
     }
     
     .page-content .entry-title {
-        font-size: 2rem;
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+    
+    .page-content .entry-content {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+    
+    .page-content .entry-content h2 {
+        font-size: 1.3rem;
+        margin: 25px 0 12px;
+    }
+    
+    .page-content .entry-content h3 {
+        font-size: 1.15rem;
+        margin: 20px 0 10px;
+    }
+    
+    .page-content .entry-content ul,
+    .page-content .entry-content ol {
+        margin: 12px 0 12px 20px;
+    }
+    
+    .page-content .entry-content li {
+        margin-bottom: 8px;
+    }
+    
+    /* Form adjustments */
+    .page-content .wpcf7 input[type="text"],
+    .page-content .wpcf7 input[type="email"],
+    .page-content .wpcf7 input[type="tel"],
+    .page-content .wpcf7 textarea {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+    
+    .page-content .wpcf7 input[type="submit"] {
+        padding: 12px 25px;
+        font-size: 0.95rem;
+        max-width: 100%;
+    }
+    
+    /* Table scroll on mobile */
+    .page-content table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    .page-content table th,
+    .page-content table td {
+        padding: 8px;
+        font-size: 0.85rem;
+    }
+    
+    /* Button adjustments */
+    .page-content .wp-block-button__link {
+        padding: 12px 25px;
+        font-size: 0.9rem;
+        display: block;
+        text-align: center;
     }
 }
 </style>

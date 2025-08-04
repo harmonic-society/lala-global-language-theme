@@ -1653,10 +1653,10 @@ get_header(); ?>
 
 /* Mobile Responsive Styles */
 @media (max-width: 1024px) {
-    /* Languages grid - 3 columns on tablet */
-    .languages-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
+    /* Languages showcase */
+    .languages-showcase {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
     }
     
     /* Course cards adjustments */
@@ -1678,71 +1678,172 @@ get_header(); ?>
 @media (max-width: 768px) {
     /* Hero Section */
     .hero-section {
-        padding: 80px 0 60px;
+        padding: 60px 0 40px;
+        min-height: auto;
+    }
+    
+    .hero-animated-bg {
+        display: none;
+    }
+    
+    .hero-content {
+        padding: 0 10px;
     }
     
     .hero-title {
-        font-size: 1.8rem;
+        font-size: 1.75rem;
         line-height: 1.3;
+        margin-bottom: 15px;
+        white-space: normal;
     }
     
     .hero-description {
-        font-size: 1rem;
-        padding: 0 20px;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        padding: 0;
+        margin-bottom: 25px;
     }
     
     .hero-buttons {
         flex-direction: column;
-        gap: 15px;
+        gap: 12px;
         align-items: center;
+        margin-bottom: 30px;
     }
     
     .hero-buttons .btn {
         width: 100%;
-        max-width: 280px;
+        max-width: 300px;
+        padding: 15px 30px;
+        font-size: 0.95rem;
+        justify-content: center;
+    }
+    
+    .btn-icon {
+        font-size: 1rem;
+    }
+    
+    .hero-stats {
+        margin-bottom: 20px;
+        margin-top: 15px;
+    }
+    
+    .stat-highlight {
+        padding: 15px 20px;
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+        border-radius: 20px;
+    }
+    
+    .stat-icon {
+        font-size: 2rem;
+    }
+    
+    .stat-text {
+        font-size: 0.9rem;
+    }
+    
+    .stat-text strong,
+    .stat-text .stat-number {
+        font-size: 1.2rem;
+        display: inline;
+        margin: 0 3px;
+    }
+    
+    .hero-scroll-indicator {
+        bottom: 15px;
+    }
+    
+    .scroll-text {
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+    }
+    
+    .scroll-arrow {
+        width: 20px;
+        height: 20px;
     }
     
     /* Section spacing */
     .features-section,
     .languages-section,
     .courses-section,
-    .class-types-section,
-    .lesson-format-section,
-    .pricing-section,
+    .custom-class-section,
     .testimonials-section,
+    .cta-section,
     .latest-posts-section {
-        padding: 50px 0;
+        padding: 40px 0;
     }
     
     .section-title {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
         margin-bottom: 15px;
+        padding: 0 10px;
     }
     
     .section-subtitle {
-        font-size: 1rem;
-        margin-bottom: 30px;
-        padding: 0 20px;
+        font-size: 0.95rem;
+        margin-bottom: 25px;
+        padding: 0 15px;
+        line-height: 1.5;
     }
     
     /* Features grid */
     .features-grid {
         grid-template-columns: 1fr;
-        gap: 25px;
+        gap: 20px;
+        margin-top: 25px;
+    }
+    
+    .features-image {
+        margin: 20px -15px;
+        border-radius: 0;
+    }
+    
+    .features-image img {
+        max-height: 200px;
+        border-radius: 0;
     }
     
     .feature-card {
-        padding: 30px 25px;
+        padding: 25px 20px;
+        border-radius: 15px;
+    }
+    
+    .feature-card:hover {
+        transform: translateY(-3px);
+    }
+    
+    .feature-icon {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+    }
+    
+    .feature-title {
+        font-size: 1.15rem;
+        margin-bottom: 10px;
+    }
+    
+    .feature-card p {
+        font-size: 0.9rem;
+        line-height: 1.5;
     }
     
     /* Languages showcase responsive */
     .languages-showcase {
         grid-template-columns: 1fr;
         gap: 20px;
+        margin-top: 30px;
     }
     
     .language-region {
         border-radius: 20px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    }
+    
+    .language-region:hover {
+        transform: translateY(-5px);
     }
     
     .region-header {
@@ -1753,16 +1854,17 @@ get_header(); ?>
     .region-icon {
         width: 45px;
         height: 45px;
-        font-size: 2rem;
+        font-size: 1.8rem;
+        border-radius: 12px;
     }
     
     .region-title {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
     }
     
     .language-count {
-        padding: 5px 15px;
-        font-size: 0.8rem;
+        padding: 5px 12px;
+        font-size: 0.75rem;
     }
     
     .language-items {
@@ -1773,37 +1875,49 @@ get_header(); ?>
     .language-item {
         padding: 12px 15px;
         gap: 12px;
+        border-radius: 12px;
     }
     
     .flag-icon {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     
     .language-info h4 {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
     
     .language-native {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
     }
     
     .language-item:hover {
         transform: translateX(5px);
     }
     
+    .language-item[data-lang]::after {
+        display: none;
+    }
+    
     /* Course overview responsive */
     .course-overview-grid {
         grid-template-columns: 1fr;
         gap: 25px;
+        margin: 40px 0;
     }
     
     .overview-column {
-        padding: 30px 25px;
+        padding: 30px 20px;
+        border-radius: 20px;
+    }
+    
+    .overview-column:hover {
+        transform: translateY(-3px);
     }
     
     .overview-title {
-        font-size: 1.3rem;
+        font-size: 1.25rem;
         gap: 10px;
+        margin-bottom: 20px;
     }
     
     .overview-icon {
@@ -1816,14 +1930,32 @@ get_header(); ?>
     
     .overview-item {
         padding: 15px;
+        border-radius: 12px;
     }
     
     .overview-item h4 {
-        font-size: 1.1rem;
+        font-size: 1.05rem;
+        margin-bottom: 5px;
+    }
+    
+    .item-subtitle {
+        font-size: 0.8rem;
+    }
+    
+    .item-duration {
+        font-size: 0.85rem;
     }
     
     .item-price {
-        font-size: 1rem;
+        font-size: 0.95rem;
+    }
+    
+    .popular-label {
+        top: -8px;
+        right: 10px;
+        padding: 3px 10px;
+        font-size: 0.7rem;
+        border-radius: 15px;
     }
     
     .overview-item:hover {
@@ -1833,41 +1965,169 @@ get_header(); ?>
     /* Price summary responsive */
     .price-summary {
         padding: 30px 20px;
+        margin: 30px 0;
+        border-radius: 20px;
+    }
+    
+    .price-summary h3 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
     }
     
     .pricing-image {
         margin-bottom: 20px;
+        border-radius: 12px;
+        overflow: hidden;
     }
     
     .pricing-image img {
-        max-height: 250px;
+        max-height: 200px;
+        border-radius: 0;
     }
     
     .price-examples {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 15px;
     }
     
     .price-example {
-        padding: 20px;
+        padding: 18px;
+        border-radius: 12px;
+    }
+    
+    .example-label {
+        font-size: 0.8rem;
+        margin-bottom: 8px;
     }
     
     .example-price {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
+        margin-bottom: 3px;
+    }
+    
+    .example-desc {
+        font-size: 0.75rem;
     }
     
     /* Course CTA responsive */
+    .course-cta {
+        text-align: center;
+        margin-top: 30px;
+    }
+    
     .course-cta .btn-large {
         width: 100%;
-        max-width: 350px;
-        padding: 18px 30px;
+        max-width: 100%;
+        padding: 16px 25px;
+        font-size: 0.95rem;
+        justify-content: center;
+        gap: 8px;
+        border-radius: 50px;
+    }
+    
+    .cta-note {
+        font-size: 0.85rem;
+        margin-top: 12px;
+    }
+    
+    /* Custom Class Section */
+    .custom-class-section {
+        padding: 50px 0;
+    }
+    
+    .custom-class-intro {
+        margin-bottom: 40px;
+    }
+    
+    .section-badge {
+        font-size: 0.75rem;
+        padding: 5px 18px;
+        margin-bottom: 15px;
+    }
+    
+    .section-lead {
         font-size: 1rem;
+        padding: 0 15px;
+        line-height: 1.5;
+    }
+    
+    .custom-class-image {
+        margin-top: 25px;
+        margin-bottom: 15px;
+        border-radius: 15px;
+    }
+    
+    .custom-class-image img {
+        max-height: 300px;
+    }
+    
+    .custom-class-features {
+        margin-bottom: 50px;
+    }
+    
+    .feature-row {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .feature-row:hover {
+        transform: translateY(-3px);
+    }
+    
+    .feature-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+        margin: 0 auto;
+        border-radius: 15px;
+    }
+    
+    .feature-content h3 {
+        font-size: 1.15rem;
+        margin-bottom: 8px;
+    }
+    
+    .feature-content p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    .cta-box {
+        padding: 30px 20px;
+        border-radius: 20px;
+    }
+    
+    .cta-box h3 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+    
+    .cta-box > p {
+        font-size: 0.95rem;
+        margin-bottom: 25px;
+        line-height: 1.5;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+    
+    .cta-buttons .btn-large {
+        width: 100%;
+        max-width: 280px;
+        padding: 15px 25px;
+        font-size: 0.95rem;
         justify-content: center;
     }
     
     /* Testimonials */
     .testimonials-section {
-        padding: 60px 0;
+        padding: 50px 0;
     }
     
     .testimonials-section::before,
@@ -1876,138 +2136,9 @@ get_header(); ?>
     }
     
     .testimonials-section .section-subtitle {
-        font-size: 1rem;
-        margin-bottom: 30px;
-        padding: 0 20px;
-    }
-    
-    .testimonials-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-    
-    .testimonial-card {
-        padding: 30px 25px;
-    }
-    
-    .language-badge {
-        bottom: 15px;
-        right: 15px;
-        padding: 8px 20px;
-        font-size: 0.8rem;
-        border-radius: 15px;
-    }
-    
-    .badge-flag {
-        font-size: 1.2rem;
-    }
-    
-    .badge-text {
-        font-size: 0.85rem;
-    }
-    
-    .btob-label {
-        top: 10px;
-        left: 20px;
-        padding: 4px 12px;
-        font-size: 0.7rem;
-    }
-    
-    .testimonial-card.btob .testimonial-content {
-        padding-top: 40px;
-    }
-    
-    .testimonial-title {
-        font-size: 1.1rem;
-        margin-bottom: 12px;
-    }
-    
-    .testimonial-title::before {
-        font-size: 2.5rem;
-        top: -15px;
-        left: -20px;
-    }
-    
-    .testimonial-content p {
-        font-size: 0.95rem;
-        line-height: 1.6;
-    }
-    
-    .author-avatar {
-        width: 50px;
-        height: 50px;
-        font-size: 2rem;
-    }
-    
-    .testimonial-author h4 {
-        font-size: 1rem;
-    }
-    
-    .testimonial-author p {
-        font-size: 0.85rem;
-    }
-    
-    /* CTA Section */
-    .cta-section {
-        padding: 60px 0;
-    }
-    
-    .cta-content h2 {
-        font-size: 1.8rem;
-    }
-    
-    .cta-content p {
-        font-size: 1.1rem;
-        padding: 0 20px;
-    }
-    
-    .btn-large {
-        padding: 16px 40px;
-        font-size: 1rem;
-    }
-    
-    /* Latest posts */
-    .latest-posts-section .posts-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-    
-    /* Reduce animations on mobile */
-    .fade-in {
-        animation: none;
-        opacity: 1;
-    }
-    
-    /* Container padding */
-    .container {
-        padding: 0 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    /* Languages grid - single column on small phones */
-    .languages-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    /* Even smaller text adjustments */
-    .hero-title {
-        font-size: 1.5rem;
-    }
-    
-    .section-title {
-        font-size: 1.5rem;
-    }
-    
-    /* Button adjustments */
-    .btn {
-        padding: 14px 30px;
-        font-size: 0.95rem;
-    }
-    
-    /* Testimonials Mobile */
-    .testimonials-section {
-        padding: 50px 0;
+        font-size: 0.9rem;
+        margin-bottom: 25px;
+        padding: 0 15px;
     }
     
     .testimonials-grid {
@@ -2017,21 +2148,26 @@ get_header(); ?>
     }
     
     .testimonial-card {
-        padding: 25px 20px;
+        padding: 25px 20px 80px;
         border-radius: 20px;
+        position: relative;
+    }
+    
+    .testimonial-card:hover {
+        transform: translateY(-3px);
     }
     
     .language-badge {
-        bottom: 12px;
-        right: 12px;
-        padding: 6px 15px;
+        bottom: 15px;
+        right: 15px;
+        padding: 8px 15px;
         font-size: 0.75rem;
-        gap: 5px;
-        border-radius: 12px;
+        border-radius: 15px;
+        gap: 6px;
     }
     
     .badge-flag {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
     
     .badge-text {
@@ -2039,10 +2175,11 @@ get_header(); ?>
     }
     
     .btob-label {
-        top: 8px;
-        left: 15px;
-        padding: 3px 10px;
+        top: 10px;
+        left: 20px;
+        padding: 4px 10px;
         font-size: 0.65rem;
+        border-radius: 12px;
     }
     
     .testimonial-card.btob .testimonial-content {
@@ -2050,12 +2187,15 @@ get_header(); ?>
     }
     
     .testimonial-title {
-        font-size: 1rem;
+        font-size: 1.05rem;
         margin-bottom: 10px;
+        line-height: 1.4;
     }
     
     .testimonial-title::before {
-        display: none;
+        font-size: 2rem;
+        top: -12px;
+        left: -15px;
     }
     
     .testimonial-content p {
@@ -2065,6 +2205,7 @@ get_header(); ?>
     
     .testimonial-author {
         padding-top: 15px;
+        gap: 12px;
     }
     
     .author-avatar {
@@ -2079,10 +2220,382 @@ get_header(); ?>
     
     .testimonial-author p {
         font-size: 0.8rem;
+        margin-top: 2px;
     }
     
-    .testimonial-card:hover {
-        transform: translateY(-5px);
+    /* CTA Section */
+    .cta-section {
+        padding: 50px 0;
+    }
+    
+    .cta-content h2 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+    
+    .cta-content p {
+        font-size: 0.95rem;
+        padding: 0 15px;
+        margin-bottom: 25px;
+    }
+    
+    .cta-content .btn-large {
+        padding: 15px 30px;
+        font-size: 0.95rem;
+    }
+    
+    /* Latest posts */
+    .latest-posts-section .posts-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .post-card {
+        border-radius: 15px;
+        overflow: hidden;
+    }
+    
+    .post-thumbnail {
+        height: 180px;
+        overflow: hidden;
+    }
+    
+    .post-content {
+        padding: 20px;
+    }
+    
+    .entry-title {
+        font-size: 1.15rem;
+        margin-bottom: 10px;
+    }
+    
+    .entry-meta {
+        font-size: 0.8rem;
+        margin-bottom: 10px;
+    }
+    
+    .entry-summary {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    .read-more {
+        font-size: 0.9rem;
+    }
+    
+    /* Reduce animations on mobile */
+    .fade-in,
+    .animate-fade-up,
+    .slide-in-left,
+    .slide-in-right {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+    
+    /* Disable complex animations */
+    .language-region,
+    .testimonial-card {
+        animation: none !important;
+        opacity: 1 !important;
+    }
+    
+    /* Container padding */
+    .container {
+        padding: 0 15px;
+    }
+}
+
+/* Extra small devices (max-width: 480px) */
+
+@media (max-width: 480px) {
+    /* Typography adjustments */
+    .section-title {
+        font-size: 1.3rem;
+        padding: 0 5px;
+    }
+    
+    .title-en {
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+    }
+    
+    .title-ja {
+        font-size: 1.5rem;
+    }
+    
+    .section-subtitle {
+        font-size: 0.85rem;
+        padding: 0 10px;
+    }
+    
+    .subtitle-highlight {
+        font-size: 1.1rem;
+    }
+    
+    /* Hero adjustments */
+    .hero-section {
+        padding: 50px 0 30px;
+    }
+    
+    .hero-title {
+        font-size: 1.5rem;
+        margin-bottom: 12px;
+    }
+    
+    .hero-description {
+        font-size: 0.85rem;
+        margin-bottom: 20px;
+    }
+    
+    .hero-buttons .btn {
+        padding: 14px 25px;
+        font-size: 0.9rem;
+    }
+    
+    .stat-highlight {
+        padding: 12px 15px;
+    }
+    
+    .stat-icon {
+        font-size: 1.5rem;
+    }
+    
+    .stat-text {
+        font-size: 0.8rem;
+    }
+    
+    .stat-text .stat-number {
+        font-size: 1rem;
+    }
+    
+    /* Languages Section */
+    .languages-section {
+        padding: 30px 0;
+    }
+    
+    .language-region {
+        box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+    }
+    
+    .region-header {
+        padding: 15px;
+    }
+    
+    .region-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+    
+    .region-title {
+        font-size: 1.1rem;
+    }
+    
+    .language-count {
+        padding: 3px 10px;
+        font-size: 0.7rem;
+    }
+    
+    .language-items {
+        padding: 12px;
+        gap: 8px;
+    }
+    
+    .language-item {
+        padding: 10px 12px;
+    }
+    
+    .flag-icon {
+        font-size: 1.5rem;
+    }
+    
+    .language-info h4 {
+        font-size: 0.85rem;
+    }
+    
+    .language-native {
+        font-size: 0.7rem;
+    }
+    
+    /* Course Overview */
+    .course-overview-grid {
+        gap: 20px;
+        margin: 30px 0;
+    }
+    
+    .overview-column {
+        padding: 25px 15px;
+    }
+    
+    .overview-title {
+        font-size: 1.1rem;
+    }
+    
+    .overview-icon {
+        font-size: 1.3rem;
+    }
+    
+    .overview-items {
+        gap: 12px;
+    }
+    
+    .overview-item {
+        padding: 12px;
+    }
+    
+    .overview-item h4 {
+        font-size: 0.95rem;
+    }
+    
+    /* Price Summary */
+    .price-summary {
+        padding: 25px 15px;
+    }
+    
+    .price-summary h3 {
+        font-size: 1.3rem;
+    }
+    
+    .pricing-image img {
+        max-height: 150px;
+    }
+    
+    .price-example {
+        padding: 15px;
+    }
+    
+    .example-price {
+        font-size: 1.1rem;
+    }
+    
+    /* Custom Class */
+    .custom-class-section {
+        padding: 40px 0;
+    }
+    
+    .section-badge {
+        font-size: 0.7rem;
+        padding: 4px 15px;
+    }
+    
+    .custom-class-intro h2 {
+        font-size: 1.3rem;
+    }
+    
+    .section-lead {
+        font-size: 0.9rem;
+    }
+    
+    .custom-class-image img {
+        max-height: 200px;
+    }
+    
+    .feature-row {
+        padding: 15px;
+        margin-bottom: 12px;
+    }
+    
+    .feature-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+    
+    .feature-content h3 {
+        font-size: 1rem;
+    }
+    
+    .feature-content p {
+        font-size: 0.85rem;
+    }
+    
+    .cta-box {
+        padding: 25px 15px;
+    }
+    
+    .cta-box h3 {
+        font-size: 1.3rem;
+    }
+    
+    .cta-box > p {
+        font-size: 0.9rem;
+    }
+    
+    /* Testimonials */
+    .testimonials-section {
+        padding: 40px 0;
+    }
+    
+    .testimonial-card {
+        padding: 20px 15px 70px;
+    }
+    
+    .language-badge {
+        bottom: 10px;
+        right: 10px;
+        padding: 5px 12px;
+        font-size: 0.7rem;
+    }
+    
+    .badge-flag {
+        font-size: 0.9rem;
+    }
+    
+    .badge-text {
+        font-size: 0.75rem;
+    }
+    
+    .btob-label {
+        top: 8px;
+        left: 15px;
+        padding: 3px 8px;
+        font-size: 0.6rem;
+    }
+    
+    .testimonial-title {
+        font-size: 0.95rem;
+    }
+    
+    .testimonial-content p {
+        font-size: 0.85rem;
+    }
+    
+    .author-avatar {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+    
+    .testimonial-author h4 {
+        font-size: 0.9rem;
+    }
+    
+    .testimonial-author p {
+        font-size: 0.75rem;
+    }
+    
+    /* CTA Section */
+    .cta-section {
+        padding: 40px 0;
+    }
+    
+    .cta-content h2 {
+        font-size: 1.3rem;
+    }
+    
+    .cta-content p {
+        font-size: 0.9rem;
+    }
+    
+    .cta-content .btn-large {
+        padding: 14px 25px;
+        font-size: 0.9rem;
+    }
+    
+    /* Container extra small */
+    .container {
+        padding: 0 10px;
     }
 }
 

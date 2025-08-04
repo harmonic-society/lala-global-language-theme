@@ -180,9 +180,91 @@
         color: var(--light-color);
     }
 
+    /* Responsive Styles */
     @media (max-width: 768px) {
+        .site-footer {
+            padding: 30px 0 15px;
+            margin-top: 40px;
+        }
+        
         .footer-content {
             grid-template-columns: 1fr;
+            gap: 25px;
+            text-align: center;
+        }
+        
+        .footer-widget {
+            margin-bottom: 10px;
+        }
+        
+        .footer-widget h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+        
+        .footer-widget p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .social-links {
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .social-links a {
+            font-size: 1.3rem;
+        }
+        
+        .footer-menu {
+            text-align: center;
+        }
+        
+        .footer-menu li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-menu a {
+            font-size: 0.95rem;
+        }
+        
+        .language-list {
+            text-align: left;
+            max-width: 250px;
+            margin: 0 auto;
+        }
+        
+        .language-list li {
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+        
+        .language-flag {
+            font-size: 1.2rem;
+        }
+        
+        .footer-link {
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+        
+        .footer-bottom {
+            padding-top: 20px;
+            text-align: center;
+        }
+        
+        .footer-bottom p {
+            font-size: 0.85rem;
+            margin-bottom: 5px;
+        }
+        
+        .tax-notice-footer {
+            font-size: 0.8rem;
+        }
+        
+        .made-with-love {
+            font-size: 0.85rem;
         }
         
         /* Disable all footer animations on mobile */
@@ -199,6 +281,10 @@
             animation: none !important;
         }
         
+        .emoji-animation {
+            animation: none !important;
+        }
+        
         /* Disable hover animations on mobile */
         .social-links a:hover {
             transform: none;
@@ -206,6 +292,62 @@
         
         .footer-link:hover {
             transform: none;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .site-footer {
+            padding: 25px 0 10px;
+            margin-top: 30px;
+        }
+        
+        .footer-content {
+            gap: 20px;
+        }
+        
+        .footer-widget h3 {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+        }
+        
+        .footer-widget p {
+            font-size: 0.85rem;
+        }
+        
+        .social-links {
+            gap: 15px;
+        }
+        
+        .social-links a {
+            font-size: 1.2rem;
+        }
+        
+        .footer-menu a {
+            font-size: 0.9rem;
+        }
+        
+        .language-list li {
+            font-size: 0.85rem;
+        }
+        
+        .footer-link {
+            font-size: 0.85rem;
+        }
+        
+        .footer-bottom {
+            padding-top: 15px;
+        }
+        
+        .footer-bottom p {
+            font-size: 0.8rem;
+        }
+        
+        .tax-notice-footer {
+            font-size: 0.75rem;
+        }
+        
+        .made-with-love {
+            font-size: 0.8rem;
         }
     }
     </style>
