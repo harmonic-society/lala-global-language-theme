@@ -28,6 +28,14 @@ get_header(); ?>
                 <p class="lead-text">LaLa GLOBAL LANGUAGEは「やってみたい！」という想いから始まります。</p>
                 <p>言葉を学ぶことは、ただのスキル習得ではなく、自分の世界を拡張し、未来へ飛び出すための"翼"を持つこと。挑戦する楽しさ、つながる喜び、成長の実感――LaLaは、その全てを一緒に味わう場所です。</p>
                 <p>"Let's""Learn"の頭文字(LL)、そして前向きな「ララ♪」の響き。この名前には、学ぶ人・教える人・支える人、すべての"やってみたい"を応援する熱い想いが込められています。</p>
+                
+                <?php 
+                $brand_core_image = get_theme_mod( 'brand_core_image' );
+                if ( $brand_core_image ) : ?>
+                    <div class="brand-core-image fade-in">
+                        <img src="<?php echo esc_url( $brand_core_image ); ?>" alt="LaLa GLOBAL LANGUAGE ブランドの核">
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
     </section>
@@ -282,6 +290,24 @@ get_header(); ?>
     font-size: 1.1rem;
     line-height: 1.8;
     margin-bottom: 25px;
+}
+
+.brand-core-image {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.brand-core-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.brand-core-image img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
 }
 
 /* Philosophy Section - Ultimate Design */
@@ -877,6 +903,14 @@ get_header(); ?>
     .brand-content p {
         font-size: 1rem;
         margin-bottom: 20px;
+    }
+    
+    .brand-core-image {
+        margin-top: 30px;
+    }
+    
+    .brand-core-image img {
+        border-radius: 15px;
     }
     
     /* Philosophy cards - stack nicely on mobile */

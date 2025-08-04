@@ -281,6 +281,27 @@ function lala_global_language_customize_register( $wp_customize ) {
         'section'  => 'lala_social_media',
         'type'     => 'url',
     ) );
+
+    // About Page Section
+    $wp_customize->add_section( 'lala_about_page', array(
+        'title'    => __( 'About Page Settings', 'lala-global-language' ),
+        'panel'    => 'lala_theme_options',
+        'priority' => 40,
+    ) );
+
+    // Brand Core Image
+    $wp_customize->add_setting( 'brand_core_image', array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+        'transport'         => 'refresh',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'brand_core_image', array(
+        'label'       => 'ブランドの核セクションの画像',
+        'section'     => 'lala_about_page',
+        'settings'    => 'brand_core_image',
+        'description' => 'ブランドの核セクションの下に表示される画像です。推奨サイズ: 1200x800px',
+    ) ) );
 }
 add_action( 'customize_register', 'lala_global_language_customize_register' );
 
