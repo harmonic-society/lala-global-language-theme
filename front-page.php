@@ -1000,15 +1000,27 @@ get_header(); ?>
 }
 
 /* Special emphasis for popular languages */
-.language-item[data-lang="en"],
 .language-item[data-lang="zh"],
-.language-item[data-lang="ko"] {
+.language-item[data-lang="tw"],
+.language-item[data-lang="es"],
+.language-item[data-lang="th"],
+.language-item[data-lang="id"],
+.language-item[data-lang="vn"],
+.language-item[data-lang="np"],
+.language-item[data-lang="ru"],
+.language-item[data-lang="ar"] {
     background: linear-gradient(135deg, #FFF5E6 0%, #FFE4CC 100%);
 }
 
-.language-item[data-lang="en"]::after,
 .language-item[data-lang="zh"]::after,
-.language-item[data-lang="ko"]::after {
+.language-item[data-lang="tw"]::after,
+.language-item[data-lang="es"]::after,
+.language-item[data-lang="th"]::after,
+.language-item[data-lang="id"]::after,
+.language-item[data-lang="vn"]::after,
+.language-item[data-lang="np"]::after,
+.language-item[data-lang="ru"]::after,
+.language-item[data-lang="ar"]::after {
     content: '人気';
     position: absolute;
     top: -5px;
@@ -1092,9 +1104,15 @@ get_header(); ?>
         padding: 60px 0;
     }
     
-    .language-item[data-lang="en"]::after,
     .language-item[data-lang="zh"]::after,
-    .language-item[data-lang="ko"]::after {
+    .language-item[data-lang="tw"]::after,
+    .language-item[data-lang="es"]::after,
+    .language-item[data-lang="th"]::after,
+    .language-item[data-lang="id"]::after,
+    .language-item[data-lang="vn"]::after,
+    .language-item[data-lang="np"]::after,
+    .language-item[data-lang="ru"]::after,
+    .language-item[data-lang="ar"]::after {
         display: none;
     }
     
