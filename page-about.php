@@ -111,47 +111,66 @@ get_header(); ?>
                         </div>
                     </div>
                 </div>
+
+                <!-- WAKU² Values - Third Level -->
+                <div class="philosophy-level philosophy-level-3">
+                    <div class="waku-header fade-in">
+                        <h3 class="waku-title">🌟 LaLaが大切にする3つのWAKU²</h3>
+                    </div>
+                </div>
+                <div class="philosophy-level philosophy-level-waku">
+                    <div class="philosophy-card philosophy-waku waku-1 fade-in" style="animation-delay: 0.6s;">
+                        <div class="card-glow"></div>
+                        <div class="card-content">
+                            <div class="philosophy-label">
+                                <span class="label-text">WAKU² 1</span>
+                                <span class="label-subtitle">Challenge & Growth</span>
+                            </div>
+                            <div class="philosophy-icon-wrapper">
+                                <div class="philosophy-icon">🎉</div>
+                            </div>
+                            <h4 class="philosophy-statement">挑戦と成長</h4>
+                            <h5 class="waku-subtitle">「やってみたい！」が未来をつくる</h5>
+                            <p class="philosophy-description">「やってみたい！」の一歩が、新しい自分をつくる。LaLaは、挑戦することの楽しさを一緒に味わい、成長を伴走します。</p>
+                        </div>
+                    </div>
+
+                    <div class="philosophy-card philosophy-waku waku-2 fade-in" style="animation-delay: 0.8s;">
+                        <div class="card-glow"></div>
+                        <div class="card-content">
+                            <div class="philosophy-label">
+                                <span class="label-text">WAKU² 2</span>
+                                <span class="label-subtitle">Discover the World</span>
+                            </div>
+                            <div class="philosophy-icon-wrapper">
+                                <div class="philosophy-icon">🌈</div>
+                            </div>
+                            <h4 class="philosophy-statement">世界を知る</h4>
+                            <h5 class="waku-subtitle">その一言で、世界の扉がひらく</h5>
+                            <p class="philosophy-description">「Hello」「こんにちは」――その一言が、世界の扉を開く。言語を通して、文化・価値観・多様性に触れ、自分の世界が広がります。</p>
+                        </div>
+                    </div>
+
+                    <div class="philosophy-card philosophy-waku waku-3 fade-in" style="animation-delay: 1s;">
+                        <div class="card-glow"></div>
+                        <div class="card-content">
+                            <div class="philosophy-label">
+                                <span class="label-text">WAKU² 3</span>
+                                <span class="label-subtitle">Take Off to the World</span>
+                            </div>
+                            <div class="philosophy-icon-wrapper">
+                                <div class="philosophy-icon">✈️</div>
+                            </div>
+                            <h4 class="philosophy-statement">世界へ飛び出せ！</h4>
+                            <h5 class="waku-subtitle">学びのその先へ</h5>
+                            <p class="philosophy-description">学んだ先に待っているのは、まだ見ぬ体験と出会い。LaLaは、その一歩を後押しし、「世界へ挑戦する人」を応援します。</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Values Section -->
-    <section class="values-section">
-        <div class="container">
-            <div class="section-header fade-in">
-                <h2>🌟 LaLaが大切にする3つのWAKU²</h2>
-            </div>
-            
-            <div class="values-grid">
-                <div class="value-card slide-in-left">
-                    <div class="value-header">
-                        <span class="value-icon">🎉</span>
-                        <h3>WAKU² 1：挑戦と成長</h3>
-                    </div>
-                    <h4>「やってみたい！」が未来をつくる</h4>
-                    <p>「やってみたい！」の一歩が、新しい自分をつくる。LaLaは、挑戦することの楽しさを一緒に味わい、成長を伴走します。</p>
-                </div>
-
-                <div class="value-card slide-in-right">
-                    <div class="value-header">
-                        <span class="value-icon">🌈</span>
-                        <h3>WAKU² 2：世界を知る</h3>
-                    </div>
-                    <h4>その一言で、世界の扉がひらく</h4>
-                    <p>「Hello」「こんにちは」――その一言が、世界の扉を開く。言語を通して、文化・価値観・多様性に触れ、自分の世界が広がります。</p>
-                </div>
-
-                <div class="value-card slide-in-left">
-                    <div class="value-header">
-                        <span class="value-icon">✈️</span>
-                        <h3>WAKU² 3：世界へ飛び出せ！</h3>
-                    </div>
-                    <h4>学びのその先へ</h4>
-                    <p>学んだ先に待っているのは、まだ見ぬ体験と出会い。LaLaは、その一歩を後押しし、「世界へ挑戦する人」を応援します。</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Name Story Section -->
     <section class="name-story-section">
@@ -565,6 +584,111 @@ get_header(); ?>
     font-size: 1rem;
 }
 
+/* WAKU² Styles */
+.philosophy-level-3 {
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+
+.waku-header {
+    text-align: center;
+    width: 100%;
+}
+
+.waku-title {
+    font-size: 2.2rem;
+    color: #ffffff;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 50%, #4facfe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.philosophy-level-waku {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+}
+
+.philosophy-waku {
+    width: 360px;
+    padding: 45px 35px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.waku-1 {
+    box-shadow: 0 15px 40px rgba(241, 87, 108, 0.15),
+                0 0 60px rgba(241, 87, 108, 0.05) inset;
+}
+
+.waku-1:hover {
+    border-color: rgba(241, 87, 108, 0.3);
+    box-shadow: 0 20px 50px rgba(241, 87, 108, 0.25),
+                0 0 80px rgba(241, 87, 108, 0.1) inset;
+}
+
+.waku-2 {
+    box-shadow: 0 15px 40px rgba(243, 147, 251, 0.15),
+                0 0 60px rgba(243, 147, 251, 0.05) inset;
+}
+
+.waku-2:hover {
+    border-color: rgba(243, 147, 251, 0.3);
+    box-shadow: 0 20px 50px rgba(243, 147, 251, 0.25),
+                0 0 80px rgba(243, 147, 251, 0.1) inset;
+}
+
+.waku-3 {
+    box-shadow: 0 15px 40px rgba(79, 172, 254, 0.15),
+                0 0 60px rgba(79, 172, 254, 0.05) inset;
+}
+
+.waku-3:hover {
+    border-color: rgba(79, 172, 254, 0.3);
+    box-shadow: 0 20px 50px rgba(79, 172, 254, 0.25),
+                0 0 80px rgba(79, 172, 254, 0.1) inset;
+}
+
+.philosophy-waku .philosophy-icon {
+    font-size: 3.5rem;
+    filter: none;
+}
+
+.waku-1 .philosophy-icon {
+    filter: drop-shadow(0 0 15px rgba(241, 87, 108, 0.6));
+}
+
+.waku-2 .philosophy-icon {
+    filter: drop-shadow(0 0 15px rgba(243, 147, 251, 0.6));
+}
+
+.waku-3 .philosophy-icon {
+    filter: drop-shadow(0 0 15px rgba(79, 172, 254, 0.6));
+}
+
+.philosophy-waku .philosophy-statement {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.waku-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.philosophy-waku .philosophy-description {
+    font-size: 1rem;
+}
+
 /* Sparkles */
 .philosophy-sparkles {
     position: absolute;
@@ -611,69 +735,6 @@ get_header(); ?>
     }
 }
 
-/* Values Section */
-.values-section {
-    padding: 100px 0;
-    background: white;
-}
-
-.values-grid {
-    display: grid;
-    gap: 50px;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.value-card {
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    padding: 50px;
-    border-radius: 30px;
-    position: relative;
-    overflow: hidden;
-}
-
-.value-card::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
-    transform: scale(0);
-    transition: transform 0.5s ease;
-}
-
-.value-card:hover::before {
-    transform: scale(1);
-}
-
-.value-header {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 20px;
-}
-
-.value-icon {
-    font-size: 3rem;
-}
-
-.value-card h3 {
-    font-size: 1.8rem;
-    color: var(--dark-color);
-}
-
-.value-card h4 {
-    font-size: 1.3rem;
-    color: var(--primary-color);
-    margin-bottom: 15px;
-}
-
-.value-card p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-}
 
 /* Name Story Section */
 .name-story-section {
@@ -770,11 +831,6 @@ get_header(); ?>
     .philosophy-grid {
         gap: 30px;
     }
-    
-    /* Values section adjustments */
-    .values-grid {
-        gap: 40px;
-    }
 }
 
 @media (max-width: 768px) {
@@ -803,7 +859,6 @@ get_header(); ?>
     }
     
     .philosophy-section,
-    .values-section,
     .name-story-section,
     .about-cta-section {
         padding: 60px 0;
@@ -853,39 +908,6 @@ get_header(); ?>
         font-size: 0.95rem;
     }
     
-    /* Values section */
-    .values-grid {
-        gap: 30px;
-    }
-    
-    .value-card {
-        padding: 35px 25px;
-        border-radius: 20px;
-    }
-    
-    .value-header {
-        flex-direction: row;
-        gap: 15px;
-        margin-bottom: 15px;
-    }
-    
-    .value-icon {
-        font-size: 2rem;
-    }
-    
-    .value-card h3 {
-        font-size: 1.3rem;
-        line-height: 1.3;
-    }
-    
-    .value-card h4 {
-        font-size: 1.1rem;
-        margin-bottom: 10px;
-    }
-    
-    .value-card p {
-        font-size: 0.95rem;
-    }
     
     /* Name Story */
     .story-content h2 {
@@ -957,14 +979,6 @@ get_header(); ?>
         padding: 30px 20px;
     }
     
-    .value-card {
-        padding: 30px 20px;
-    }
-    
-    .value-header {
-        flex-direction: column;
-        text-align: center;
-    }
     
     .highlight {
         font-size: 1.1rem;
@@ -1091,6 +1105,68 @@ get_header(); ?>
     
     .label-subtitle {
         font-size: 0.8rem;
+    }
+    
+    /* WAKU² responsive styles */
+    .philosophy-level-waku {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+    
+    .philosophy-waku {
+        width: 100%;
+        max-width: 400px;
+        padding: 35px 25px;
+    }
+    
+    .waku-title {
+        font-size: 1.8rem;
+    }
+    
+    .philosophy-waku .philosophy-statement {
+        font-size: 1.3rem;
+    }
+    
+    .waku-subtitle {
+        font-size: 1rem;
+    }
+    
+    .philosophy-waku .philosophy-icon {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .philosophy-level-3 {
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+    
+    .waku-title {
+        font-size: 1.5rem;
+        padding: 0 20px;
+    }
+    
+    .philosophy-level-waku {
+        gap: 20px;
+    }
+    
+    .philosophy-waku {
+        padding: 30px 20px;
+    }
+    
+    .philosophy-waku .philosophy-statement {
+        font-size: 1.2rem;
+    }
+    
+    .waku-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 15px;
+    }
+    
+    .philosophy-waku .philosophy-description {
+        font-size: 0.95rem;
     }
 }
 </style>
