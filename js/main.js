@@ -182,6 +182,14 @@
             // Fade out the announcement
             $announcement.fadeOut(300, function() {
                 $(this).remove();
+                
+                // Check if there are any remaining announcement bars
+                if ($('.announcement-bar').length === 0) {
+                    // Remove has-announcement class from body
+                    $('body').removeClass('has-announcement');
+                    // Reset CSS variable
+                    document.documentElement.style.setProperty('--announcement-height', '0px');
+                }
             });
             
             // Set cookie to remember dismissal (expires in 30 days)

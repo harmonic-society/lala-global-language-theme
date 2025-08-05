@@ -153,8 +153,11 @@ p {
 .announcement-bar {
     width: 100%;
     padding: 15px 0;
-    position: relative;
-    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1001;
     animation: slideDown 0.3s ease-out;
 }
 
@@ -250,13 +253,19 @@ p {
 
 /* Adjust header position when announcement is present */
 body.has-announcement .site-header {
-    top: auto;
+    top: var(--announcement-height, 60px);
+}
+
+/* Add padding to body when announcement is present */
+body.has-announcement {
+    padding-top: calc(var(--announcement-height, 60px) + 80px); /* announcement height + header height */
 }
 
 /* Mobile responsiveness for announcement */
 @media (max-width: 768px) {
     .announcement-bar {
         padding: 12px 0;
+        position: fixed;
     }
     
     .announcement-content {
@@ -1095,7 +1104,7 @@ body.has-announcement .site-header {
     /* Header adjustments */
     .site-header {
         padding: 10px 0;
-        position: relative;
+        position: sticky;
     }
     
     .site-header .container {
@@ -1590,7 +1599,7 @@ body.has-announcement .site-header {
     }
     
     .site-header {
-        position: relative;
+        position: sticky;
     }
 }
 

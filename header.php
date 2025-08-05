@@ -522,6 +522,19 @@ get_template_part( 'template-parts/announcement', 'bar' );
         const menuContainer = document.querySelector('.menu-container');
         const body = document.body;
         
+        // Calculate and set announcement bar height
+        function updateAnnouncementHeight() {
+            const announcementBar = document.querySelector('.announcement-bar');
+            if (announcementBar) {
+                const height = announcementBar.offsetHeight;
+                document.documentElement.style.setProperty('--announcement-height', height + 'px');
+            }
+        }
+        
+        // Update on load and resize
+        updateAnnouncementHeight();
+        window.addEventListener('resize', updateAnnouncementHeight);
+        
         if (menuToggle) {
             menuToggle.addEventListener('click', function() {
                 const expanded = this.getAttribute('aria-expanded') === 'true' || false;
