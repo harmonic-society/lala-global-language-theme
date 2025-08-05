@@ -223,6 +223,14 @@ get_header(); ?>
                 <h2>C｜カスタムクラス</h2>
                 <p class="section-subtitle">法人向けカスタマイズ型語学研修</p>
                 
+                <?php 
+                $courses_custom_class_image = get_theme_mod('courses_custom_class_image');
+                if ($courses_custom_class_image) : ?>
+                    <div class="custom-class-image">
+                        <img src="<?php echo esc_url($courses_custom_class_image); ?>" alt="カスタムクラス 法人向けカスタマイズ型語学研修">
+                    </div>
+                <?php endif; ?>
+                
                 <div class="custom-intro">
                     <p>法人・団体のお客様のための完全カスタマイズ型語学研修（35言語に対応）です。</p>
                     <p>私たちが提供するのは、業務に直結する語学力です。現場で使える言葉を、実務に沿った形で身につけていただく。そのために、LaLaは「ゼロベースで一緒に研修をつくる」ことを大切にしています。</p>
@@ -927,6 +935,22 @@ get_header(); ?>
     color: var(--secondary-color);
     font-weight: 600;
     margin-bottom: 50px;
+}
+
+.custom-class-image {
+    width: 100%;
+    max-width: 1200px;
+    margin: 30px auto 40px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.custom-class-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
 }
 
 .custom-intro {

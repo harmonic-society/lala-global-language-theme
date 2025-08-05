@@ -338,6 +338,20 @@ function lala_global_language_customize_register( $wp_customize ) {
         'description' => 'ペアレッスン・トリオレッスンの見出しの下に表示される画像です。推奨サイズ: 800x600px',
     ) ) );
 
+    // Custom Class Section Image for Courses Page
+    $wp_customize->add_setting( 'courses_custom_class_image', array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+        'transport'         => 'refresh',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'courses_custom_class_image', array(
+        'label'       => 'C｜カスタムクラス 法人向けカスタマイズ型語学研修の画像',
+        'section'     => 'lala_courses_page',
+        'settings'    => 'courses_custom_class_image',
+        'description' => 'カスタムクラスセクションの見出しの下に表示される画像です。推奨サイズ: 1200x600px',
+    ) ) );
+
     // Recruitment Page Section
     $wp_customize->add_section( 'lala_recruitment_page', array(
         'title'    => __( 'Recruitment Page Settings', 'lala-global-language' ),
