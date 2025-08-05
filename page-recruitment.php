@@ -33,6 +33,14 @@ get_header(); ?>
                     <span class="title-en">To all my comrades</span>
                 </h2>
                 
+                <?php 
+                $all_comrades_image = get_theme_mod('all_comrades_image');
+                if ($all_comrades_image) : ?>
+                    <div class="message-image">
+                        <img src="<?php echo esc_url($all_comrades_image); ?>" alt="すべての仲間たちへ">
+                    </div>
+                <?php endif; ?>
+                
                 <div class="message-text">
                     <p class="lead-text">LaLa GLOBAL LANGUAGEは、チャレンジする人たちが集う場所です。</p>
                     
@@ -407,6 +415,22 @@ get_header(); ?>
     font-size: 1rem;
     color: #999;
     margin-top: 10px;
+}
+
+.message-image {
+    width: 100%;
+    max-width: 1000px;
+    margin: 40px auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.message-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
 }
 
 .message-text {

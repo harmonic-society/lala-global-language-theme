@@ -337,6 +337,27 @@ function lala_global_language_customize_register( $wp_customize ) {
         'settings'    => 'pair_trio_lesson_image',
         'description' => 'ペアレッスン・トリオレッスンの見出しの下に表示される画像です。推奨サイズ: 800x600px',
     ) ) );
+
+    // Recruitment Page Section
+    $wp_customize->add_section( 'lala_recruitment_page', array(
+        'title'    => __( 'Recruitment Page Settings', 'lala-global-language' ),
+        'panel'    => 'lala_theme_options',
+        'priority' => 60,
+    ) );
+
+    // All Comrades Image
+    $wp_customize->add_setting( 'all_comrades_image', array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+        'transport'         => 'refresh',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'all_comrades_image', array(
+        'label'       => 'すべての仲間たちへセクションの画像',
+        'section'     => 'lala_recruitment_page',
+        'settings'    => 'all_comrades_image',
+        'description' => '「すべての仲間たちへ」セクションの下に表示される画像です。推奨サイズ: 1200x800px',
+    ) ) );
 }
 add_action( 'customize_register', 'lala_global_language_customize_register' );
 
