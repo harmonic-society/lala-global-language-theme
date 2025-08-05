@@ -303,7 +303,7 @@ get_header(); ?>
     background: white;
     padding: 30px 0;
     position: sticky;
-    top: 80px;
+    top: 60px;
     z-index: 100;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
@@ -338,7 +338,7 @@ get_header(); ?>
 
 .faq-category {
     margin-bottom: 80px;
-    scroll-margin-top: 150px;
+    scroll-margin-top: 120px;
 }
 
 .category-title {
@@ -528,7 +528,7 @@ get_header(); ?>
     /* Category Navigation - make horizontally scrollable */
     .faq-navigation {
         padding: 20px 0;
-        top: 60px;
+        top: 50px;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
     }
@@ -568,7 +568,7 @@ get_header(); ?>
     
     .faq-category {
         margin-bottom: 50px;
-        scroll-margin-top: 120px;
+        scroll-margin-top: 100px;
     }
     
     .category-title {

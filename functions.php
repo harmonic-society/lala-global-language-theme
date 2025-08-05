@@ -212,23 +212,23 @@ function lala_global_language_body_classes( $classes ) {
         $classes[] = 'has-sidebar';
     }
 
-    // Check if there's an active announcement
-    $active_announcement = get_posts( array(
-        'post_type'      => 'announcement',
-        'posts_per_page' => 1,
-        'meta_query'     => array(
-            array(
-                'key'     => '_announcement_active',
-                'value'   => '1',
-                'compare' => '='
-            )
-        ),
-        'fields' => 'ids'
-    ) );
+    // Check if there's an active announcement - Disabled
+    // $active_announcement = get_posts( array(
+    //     'post_type'      => 'announcement',
+    //     'posts_per_page' => 1,
+    //     'meta_query'     => array(
+    //         array(
+    //             'key'     => '_announcement_active',
+    //             'value'   => '1',
+    //             'compare' => '='
+    //         )
+    //     ),
+    //     'fields' => 'ids'
+    // ) );
     
-    if ( ! empty( $active_announcement ) ) {
-        $classes[] = 'has-announcement';
-    }
+    // if ( ! empty( $active_announcement ) ) {
+    //     $classes[] = 'has-announcement';
+    // }
 
     return $classes;
 }
