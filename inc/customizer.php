@@ -302,6 +302,41 @@ function lala_global_language_customize_register( $wp_customize ) {
         'settings'    => 'brand_core_image',
         'description' => 'ブランドの核セクションの下に表示される画像です。推奨サイズ: 1200x800px',
     ) ) );
+
+    // Courses Page Section
+    $wp_customize->add_section( 'lala_courses_page', array(
+        'title'    => __( 'Courses Page Settings', 'lala-global-language' ),
+        'panel'    => 'lala_theme_options',
+        'priority' => 50,
+    ) );
+
+    // Single Lesson Image
+    $wp_customize->add_setting( 'single_lesson_image', array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+        'transport'         => 'refresh',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'single_lesson_image', array(
+        'label'       => 'シングルレッスンの画像',
+        'section'     => 'lala_courses_page',
+        'settings'    => 'single_lesson_image',
+        'description' => 'シングルレッスンの見出しの下に表示される画像です。推奨サイズ: 800x600px',
+    ) ) );
+
+    // Pair/Trio Lesson Image
+    $wp_customize->add_setting( 'pair_trio_lesson_image', array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+        'transport'         => 'refresh',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'pair_trio_lesson_image', array(
+        'label'       => 'ペアレッスン・トリオレッスンの画像',
+        'section'     => 'lala_courses_page',
+        'settings'    => 'pair_trio_lesson_image',
+        'description' => 'ペアレッスン・トリオレッスンの見出しの下に表示される画像です。推奨サイズ: 800x600px',
+    ) ) );
 }
 add_action( 'customize_register', 'lala_global_language_customize_register' );
 

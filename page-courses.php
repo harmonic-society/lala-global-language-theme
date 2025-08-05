@@ -276,6 +276,13 @@ get_header(); ?>
             <div class="lesson-formats-grid">
                 <div class="lesson-format-card fade-in">
                     <h3>👤 シングルレッスン</h3>
+                    <?php 
+                    $single_lesson_image = get_theme_mod('single_lesson_image');
+                    if ($single_lesson_image) : ?>
+                        <div class="lesson-format-image">
+                            <img src="<?php echo esc_url($single_lesson_image); ?>" alt="シングルレッスン">
+                        </div>
+                    <?php endif; ?>
                     <p>講師と1対1で、自分のペースと目的にじっくり向き合えるレッスンです。他人と比べず、成長の手応えをしっかり感じながら、自分だけの"ことばの旅"を進められます。学びたい気持ちに、まっすぐ応えるスタイルです。</p>
                     <div class="format-features">
                         <span class="feature-tag">マンツーマン</span>
@@ -286,6 +293,13 @@ get_header(); ?>
                 
                 <div class="lesson-format-card fade-in">
                     <h3>👥 ペアレッスン・トリオレッスン</h3>
+                    <?php 
+                    $pair_trio_lesson_image = get_theme_mod('pair_trio_lesson_image');
+                    if ($pair_trio_lesson_image) : ?>
+                        <div class="lesson-format-image">
+                            <img src="<?php echo esc_url($pair_trio_lesson_image); ?>" alt="ペアレッスン・トリオレッスン">
+                        </div>
+                    <?php endif; ?>
                     <p>夫婦、親子、友だち同士など、気心の知れた人と一緒に学べるレッスン。会話量もたっぷり、学ぶ楽しさを共有できます。2名は"ペア"、3名は"トリオ"としてご案内し、人数に応じて割安になる料金設定です。仲間と一緒だからこそ、続けやすく、励まし合える環境になります。</p>
                     <div class="format-features">
                         <span class="feature-tag">一緒に学べる</span>
@@ -1018,6 +1032,20 @@ get_header(); ?>
     color: var(--primary-color);
     margin-bottom: 20px;
     font-size: 1.5rem;
+}
+
+.lesson-format-image {
+    width: 100%;
+    margin: 20px 0;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.lesson-format-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
 }
 
 .format-features {
