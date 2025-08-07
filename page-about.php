@@ -76,7 +76,7 @@ get_header(); ?>
                                 <div class="philosophy-icon">🌱</div>
                             </div>
                             <h4 class="philosophy-statement">「そのチャレンジが未来を変える。」</h4>
-                            <p class="philosophy-description">とりあえず「やってみよう！」が、未来を動かす第一歩。一歩を踏み出すことで、世界は広がり、自分自身も変わります。LaLaは、その挑戦する勇気とWAKU²(ワクワク)を言語を通じて育みます。</p>
+                            <p class="philosophy-description">まずは「やってみよう！」が、未来を動かす第一歩。一歩を踏み出すことで、世界は広がり、自分自身も変わります。LaLaは、その挑戦する勇気とWAKU²(ワクワク)を言語を通じて育みます。</p>
                             <div class="philosophy-sparkles">
                                 <span class="sparkle"></span>
                                 <span class="sparkle"></span>
@@ -99,7 +99,7 @@ get_header(); ?>
                                 <div class="philosophy-icon">🎯</div>
                             </div>
                             <h4 class="philosophy-statement">「言葉で世界をつなぎ、多様な未来を共につくる。」</h4>
-                            <p class="philosophy-description">すべての「やってみたい！」を鼓舞して、学ぶ人と教える人をつなぎ、言葉を通じて、自分と世界の可能性を広げます。</p>
+                            <p class="philosophy-description">すべての「やってみたい！」を応援して、学ぶ人と教える人をつなぎ、言葉を通じて、自分と世界の可能性を広げます。</p>
                         </div>
                     </div>
 
@@ -187,7 +187,7 @@ get_header(); ?>
                 <h2>💡 LaLa という名前に込めた想い</h2>
                 <div class="story-text">
                     <p class="highlight">Let's Learn = LL = ララ = 「LaLa」</p>
-                    <p>さらに、軽やかで前向きな「ララ♪」の響きが、人の気持ちをポジティブに変える力を持っています。</p>
+                    <p>軽やかで前向きな「ララ♪」の響きが、人の気持ちをポジティブに変える力を持っています。</p>
                     <p>LaLaは、誰もがまた帰ってきたくなる「心の拠点」であり、ここから世界へ飛び出す力をもらえる場所です。</p>
                 </div>
             </div>
