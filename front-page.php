@@ -21,7 +21,7 @@ get_header(); ?>
                 <div class="hero-stats animate-fade-up">
                     <div class="stat-highlight">
                         <span class="stat-icon">🌍</span>
-                        <span class="stat-text">バイリンガル講師による<strong class="stat-number">35ヶ国</strong>語対応</span>
+                        <span class="stat-text">バイリンガル講師による<strong class="stat-number">35ヶ言語</strong>対応</span>
                     </div>
                 </div>
                 <h1 class="hero-title animate-fade-up" style="animation-delay: 0.2s;">
@@ -71,7 +71,7 @@ get_header(); ?>
                 <div class="feature-card fade-in">
                     <div class="feature-icon">👥</div>
                     <h3 class="feature-title">35ヶ国語から選べる</h3>
-                    <p>英語、中国語、韓国語から、アラビア語、スワヒリ語まで。あなたの学びたい言語がきっと見つかります。</p>
+                    <p>アジア、アフリカ、ヨーロッパ、中東諸国の言語まで。あなたの学びたい言語がきっと見つかります。</p>
                 </div>
                 <div class="feature-card fade-in">
                     <div class="feature-icon">🎮</div>
@@ -1002,6 +1002,7 @@ get_header(); ?>
 /* Special emphasis for popular languages */
 .language-item[data-lang="zh"],
 .language-item[data-lang="tw"],
+.language-item[data-lang="ko"],
 .language-item[data-lang="es"],
 .language-item[data-lang="th"],
 .language-item[data-lang="id"],
@@ -1014,6 +1015,7 @@ get_header(); ?>
 
 .language-item[data-lang="zh"]::after,
 .language-item[data-lang="tw"]::after,
+.language-item[data-lang="ko"]::after,
 .language-item[data-lang="es"]::after,
 .language-item[data-lang="th"]::after,
 .language-item[data-lang="id"]::after,
@@ -1106,6 +1108,7 @@ get_header(); ?>
     
     .language-item[data-lang="zh"]::after,
     .language-item[data-lang="tw"]::after,
+    .language-item[data-lang="ko"]::after,
     .language-item[data-lang="es"]::after,
     .language-item[data-lang="th"]::after,
     .language-item[data-lang="id"]::after,
@@ -2800,7 +2803,7 @@ get_header(); ?>
 
 .cta-note {
     margin-top: 20px;
-    opacity: 0.8;
+    color: #FFD700;
     font-size: 0.95rem;
     position: relative;
     z-index: 1;

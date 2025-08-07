@@ -12,7 +12,7 @@ get_header(); ?>
     <section class="about-hero">
         <div class="container">
             <div class="hero-content">
-                <h1 class="page-title fade-in">🌍 LaLa GLOBAL LANGUAGE</h1>
+                <h1 class="page-title fade-in"><?php if ( has_site_icon() ) : ?><img src="<?php echo esc_url( get_site_icon_url( 512 ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" class="hero-globe-icon"><?php endif; ?> LaLa GLOBAL LANGUAGE</h1>
                 <p class="hero-tagline fade-in">🎶 Let's Learn Global Language！</p>
             </div>
         </div>
@@ -244,6 +244,17 @@ get_header(); ?>
     font-size: 3.5rem;
     margin-bottom: 20px;
     animation: fadeInDown 1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.hero-globe-icon {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    vertical-align: middle;
 }
 
 .hero-subtitle {
@@ -870,6 +881,11 @@ get_header(); ?>
         margin-bottom: 15px;
     }
     
+    .hero-globe-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
     .hero-subtitle {
         font-size: 1.2rem;
         margin-bottom: 8px;
@@ -1003,6 +1019,11 @@ get_header(); ?>
     /* Even smaller adjustments for small phones */
     .about-hero .page-title {
         font-size: 1.6rem;
+    }
+    
+    .hero-globe-icon {
+        width: 35px;
+        height: 35px;
     }
     
     .section-header h2 {
