@@ -29,7 +29,7 @@ get_header(); ?>
         <div class="container">
             <div class="message-content">
                 <h2 class="message-title">
-                    すべての仲間たちへ
+                    すべての仲間たちへ。
                     <span class="title-en">To all my comrades</span>
                 </h2>
                 
@@ -46,7 +46,7 @@ get_header(); ?>
                     
                     <p>私たちは35言語の「ことば」だけでなく、その背景にある文化や生活も大切にしています。
                     LaLaで教える講師も、支える事務スタッフも、かつては皆、それぞれの挑戦をしてきた先輩たち。
-                    だからこそ、これからチャレンジしようとする人たちの勇気を心からリスペクトしています。</p>
+                    だからこそ、これからチャレンジしようとする人たちの心に寄り添ったサポートを提供します。</p>
                     
                     <div class="philosophy-box">
                         <h3>LaLaの理念</h3>
@@ -340,7 +340,7 @@ get_header(); ?>
 .recruitment-hero {
     position: relative;
     padding: 180px 0 120px;
-    color: white;
+    color: #FFFFFF;
     text-align: center;
 }
 
@@ -378,18 +378,24 @@ get_header(); ?>
     text-transform: uppercase;
     letter-spacing: 3px;
     margin-bottom: 10px;
-    opacity: 0.9;
+    color: #FFFFFF;
+    opacity: 1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .title-ja {
     display: block;
     font-size: 3.5rem;
     font-weight: 800;
+    color: #FFFFFF;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
 }
 
 .hero-subtitle {
     font-size: 1.3rem;
-    opacity: 0.9;
+    color: #FFFFFF;
+    opacity: 1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 /* Main Message Section */
