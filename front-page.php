@@ -65,34 +65,33 @@ get_header(); ?>
             <div class="features-grid">
                 <div class="feature-card fade-in">
                     <div class="feature-icon">🎯</div>
-                    <h3 class="feature-title">バイリンガル講師による丁寧な指導</h3>
-                    <p>日本語も話せるバイリンガル講師陣が、あなたのペースに合わせて丁寧に指導します。</p>
+                    <h3 class="feature-title">バイリンガルだからできる、伝わるレッスン</h3>
+                    <p>LaLa の講師陣は、言語だけでなく文化の違いも理解したバイリンガル。日本語でのサポートが可能だからこそ、安心して質問・相談ができ、つまずきや不安をその場で解消。学びのペースに合わせた“伝わる”レッスンで、一歩ずつ着実に力がつきます。</p>
                 </div>
                 <div class="feature-card fade-in">
                     <div class="feature-icon">👥</div>
-                    <h3 class="feature-title">35言語から選べる</h3>
-                    <p>アジア、アフリカ、ヨーロッパ、中東諸国の言語まで。あなたの学びたい言語がきっと見つかります。</p>
+                    <h3 class="feature-title">35 言語から選べる</h3>
+                    <p>英語や韓国語はもちろん、アジア、アフリカ、ヨーロッパ、中東のことばまで。ひとつの出会いが、世界を広げる。あなたの「学びたい」が、きっと見つかる。</p>
                 </div>
                 <div class="feature-card fade-in">
                     <div class="feature-icon">🎮</div>
-                    <h3 class="feature-title">楽しく続けられる工夫</h3>
-                    <p>ゲーム感覚で学べる教材や、レベルアップシステムで、モチベーションを維持しながら学習できます。</p>
+                    <h3 class="feature-title">“やってみたい”が続いていくヒミツ</h3>
+                    <p>LaLa のレッスンには、楽しみながら学べるヒントがたっぷり。ちょっとした会話の成功、講師とのやりとり、毎回の達成感——気づけば“続いてる”を感じられる、自分だけの成長ストーリーが始まります。</p>
                 </div>
                 <div class="feature-card fade-in">
                     <div class="feature-icon">📱</div>
-                    <h3 class="feature-title">オンラインで世界とつながる</h3>
-                    <p>基本的に講座はオンライン。全国どこからでも質の高いレッスンを受講できます。通学の必要がなく、自宅で
-  気軽に学習可能。</p>
+                    <h3 class="feature-title">世界とつながる、あなたの毎日に</h3>
+                    <p>LaLa のレッスンはオンライン。だけど、その画面の向こうには、世界で育った講師たちとの、生きた対話があります。言葉だけじゃない。文化も、価値観も、新しい景色も――あなたの毎日に、“世界とつながる実感”を届けます。</p>
                 </div>
                 <div class="feature-card fade-in">
                     <div class="feature-icon">🎓</div>
-                    <h3 class="feature-title">実践的なカリキュラム</h3>
-                    <p>旅行、ビジネス、日常会話など、目的に合わせたすぐに使える実践的なカリキュラムをご用意しています。</p>
+                    <h3 class="feature-title">使えるを超えて、伝わるへ</h3>
+                    <p>旅行も、ビジネスも、日常も。LaLa のカリキュラムは、あなたの“今”にフィットする実践設計。学んだその日から使えるだけでなく、気持ちがちゃんと届く「伝える力」も一緒に育てていきます。</p>
                 </div>
                 <div class="feature-card fade-in">
                     <div class="feature-icon">📈</div>
-                    <h3 class="feature-title">充実のサポート体制</h3>
-                    <p>専任コンシェルジュがあなたの語学学習を全面サポート。</p>
+                    <h3 class="feature-title">寄り添うサポート体制</h3>
+                    <p>「本当にできるかな?」そんな不安も大丈夫。LaLa には、あなたに寄り添う専任コンシェルジュがいます。学びの進め方、目標設定、悩み相談まで──ずっとあなたの味方です。</p>
                 </div>
             </div>
         </div>
@@ -445,7 +444,7 @@ get_header(); ?>
                             <span class="popular-label">人気No.1</span>
                             <h4>Mコース<span class="item-subtitle">（ミドル）</span></h4>
                             <p class="item-duration">50分×20回（5ヶ月）</p>
-                            <p class="item-price">82,500円〜</p>
+                            <p class="item-price">77,000円〜</p>
                         </div>
                         <div class="overview-item">
                             <h4>Lコース<span class="item-subtitle">（ロング）</span></h4>
@@ -566,8 +565,8 @@ get_header(); ?>
                             <span>🏢</span>
                         </div>
                         <div class="feature-content">
-                            <h3>法人・団体様に最適化</h3>
-                            <p>企業の海外展開、インバウンド対応、社員のスキルアップなど、組織の目的に合わせたカリキュラムを設計</p>
+                            <h3>法人・団体様向けカスタムプラン</h3>
+                            <p>海外展開・インバウンド対応・社員育成など、企業ニーズに応じて 35 言語対応の語学研修を設計。現地法人との交渉・接客対応・赴任準備など、目的別に柔軟にカスタマイズ可能です。LaLa の伴走型サポートで、貴社のグローバル化をしっかり支えます。</p>
                         </div>
                     </div>
                     
@@ -577,7 +576,7 @@ get_header(); ?>
                         </div>
                         <div class="feature-content">
                             <h3>業界特化型プログラム</h3>
-                            <p>医療、IT、製造業、観光業など、各業界の専門用語やビジネスシーンに対応した実践的な内容</p>
+                            <p>医療、IT、製造業、観光業などの現場で求められる専門用語や対応スキルを習得。外国人患者の受け入れ対応、IT 開発チームとの MTG、工場での安全指導、ホテルでの接客対応など、業界・職種ごとのリアルな場面に即したカリキュラムを提供します。</p>
                         </div>
                     </div>
                     
@@ -586,8 +585,8 @@ get_header(); ?>
                             <span>📊</span>
                         </div>
                         <div class="feature-content">
-                            <h3>柔軟な受講形態</h3>
-                            <p>オンライン・対面・ハイブリッド対応。就業時間内の研修や、早朝・夜間レッスンも可能</p>
+                            <h3>柔軟な受講スタイルで、WAKU2をデザイン</h3>
+                            <p>オンライン・対面・ハイブリッドから選べて、就業時間内・早朝・夜間など、働き方に合わせたスケジューリングも OK。回数やご予算に応じて、一緒に理想の研修を創り上げていきましょう!</p>
                         </div>
                     </div>
                     
