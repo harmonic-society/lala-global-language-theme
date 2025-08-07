@@ -102,7 +102,7 @@ get_header(); ?>
                     <div class="detail-grid">
                         <div class="detail-item">
                             <h4>募集人数</h4>
-                            <p>5名以上<br><span class="note">※マルチリンガルは複数カウント</span></p>
+                            <p>5名以上</p>
                         </div>
                         
                         <div class="detail-item">
@@ -116,6 +116,7 @@ get_header(); ?>
                                 <li>外国語ネイティブスピーカー</li>
                                 <li>日本語能力試験 JLPT N2以上（または同等の能力）</li>
                                 <li>オンラインレッスンの経験あり</li>
+                                <li>日本人で語学教育の指導経験者</li>
                             </ul>
                         </div>
                         
@@ -163,7 +164,7 @@ get_header(); ?>
                         <div class="profile-item">
                             <div class="profile-number">5</div>
                             <h4>母語で引っ張る力</h4>
-                            <p>日本語に頼りすぎず、初心者を見捨てない絶妙な匙加減</p>
+                            <p>日本語に頼りすぎず、初心者でも安心のサポート</p>
                         </div>
                         
                         <div class="profile-item">

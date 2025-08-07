@@ -250,7 +250,10 @@ get_header(); ?>
                 <h2>まだ疑問がありますか？</h2>
                 <p>お気軽にお問い合わせください。専門スタッフが丁寧にお答えします。</p>
                 <div class="cta-buttons">
-                    <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class=\"btn btn-primary\">お問い合わせする</a>
+                    <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn-primary btn-large">
+                        <span class="btn-text">お問い合わせする</span>
+                        <span class="btn-icon">→</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -484,8 +487,37 @@ get_header(); ?>
 }
 
 .faq-cta-section .btn {
-    padding: 18px 40px;
+    padding: 18px 45px;
     font-size: 1.1rem;
+    background: white;
+    color: var(--primary-color);
+    border: none;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.faq-cta-section .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    gap: 15px;
+}
+
+.faq-cta-section .btn-text {
+    display: inline-block;
+}
+
+.faq-cta-section .btn-icon {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.faq-cta-section .btn:hover .btn-icon {
+    transform: translateX(3px);
 }
 
 /* Animations Control */

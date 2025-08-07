@@ -70,7 +70,7 @@ get_header(); ?>
                 </div>
                 <div class="feature-card fade-in">
                     <div class="feature-icon">👥</div>
-                    <h3 class="feature-title">35ヶ国語から選べる</h3>
+                    <h3 class="feature-title">35言語から選べる</h3>
                     <p>アジア、アフリカ、ヨーロッパ、中東諸国の言語まで。あなたの学びたい言語がきっと見つかります。</p>
                 </div>
                 <div class="feature-card fade-in">
