@@ -139,6 +139,7 @@ get_header(); ?>
                                 <li>✓ 継続的に学びたい</li>
                             </ul>
                         </div>
+                        <p class="course-note">※短期集中型（ex.週2日、2コマ連続）の相談も可能。</p>
                     </div>
                 </div>
                 
@@ -157,6 +158,7 @@ get_header(); ?>
                                 <li>✓ ビジネスレベルまで上達したい</li>
                             </ul>
                         </div>
+                        <p class="course-note">※短期集中型（ex.週2日、2コマ連続）の相談も可能。</p>
                     </div>
                 </div>
             </div>
@@ -195,6 +197,7 @@ get_header(); ?>
                             <li>• 海外取引先との商談</li>
                             <li>• プレゼンテーション</li>
                             <li>• ビジネスメールの作成</li>
+                            <li>• 語学検定対策</li>
                         </ul>
                     </div>
                 </div>
@@ -209,6 +212,7 @@ get_header(); ?>
                             <li>• 企業研修プログラム</li>
                             <li>• 海外赴任前研修</li>
                             <li>• 団体向け特別講座</li>
+                            <li>• 社員向け福利厚生</li>
                         </ul>
                     </div>
                 </div>
@@ -845,6 +849,16 @@ get_header(); ?>
 .course-benefits li {
     padding: 5px 0;
     color: #666;
+}
+
+.course-note {
+    margin-top: 20px;
+    padding: 15px;
+    background: #FFF5E6;
+    border-left: 3px solid var(--accent-color);
+    font-size: 0.9rem;
+    color: #666;
+    border-radius: 5px;
 }
 
 /* Class Types Section */
