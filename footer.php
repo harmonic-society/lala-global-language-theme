@@ -41,9 +41,16 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>. All rights reserved.</p>
-                <p class="tax-notice-footer">※当サイトの表示価格はすべて税込です</p>
-                <p class="made-with-love">語学を学ぶすべての人へ <span class="heart-animation">❤️</span></p>
+                <div class="footer-bottom-left">
+                    <p>&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>. All rights reserved.</p>
+                    <p class="tax-notice-footer">※当サイトの表示価格はすべて税込です</p>
+                    <p class="made-with-love">語学を学ぶすべての人へ <span class="heart-animation">❤️</span></p>
+                </div>
+                <div class="footer-bottom-right">
+                    <a href="<?php echo esc_url( home_url( '/terms/' ) ); ?>" class="footer-legal-link">利用規約</a>
+                    <span class="footer-separator">｜</span>
+                    <a href="<?php echo esc_url( home_url( '/privacy-policy/' ) ); ?>" class="footer-legal-link">プライバシーポリシー</a>
+                </div>
             </div>
         </div>
 
@@ -167,6 +174,43 @@
         opacity: 0.8;
     }
     
+    .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .footer-bottom-left {
+        flex: 1;
+    }
+    
+    .footer-bottom-right {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    
+    .footer-legal-link {
+        color: var(--light-color);
+        text-decoration: none;
+        font-size: 0.9rem;
+        opacity: 0.8;
+        transition: opacity 0.3s ease;
+    }
+    
+    .footer-legal-link:hover {
+        opacity: 1;
+        color: var(--accent-color);
+    }
+    
+    .footer-separator {
+        color: var(--light-color);
+        opacity: 0.5;
+        font-size: 0.9rem;
+    }
+    
     .footer-link {
         display: inline-block;
         margin-top: 15px;
@@ -252,11 +296,30 @@
         .footer-bottom {
             padding-top: 20px;
             text-align: center;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .footer-bottom-left {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        
+        .footer-bottom-right {
+            justify-content: center;
         }
         
         .footer-bottom p {
             font-size: 0.85rem;
             margin-bottom: 5px;
+        }
+        
+        .footer-legal-link {
+            font-size: 0.85rem;
+        }
+        
+        .footer-separator {
+            font-size: 0.85rem;
         }
         
         .tax-notice-footer {
@@ -339,6 +402,14 @@
         }
         
         .footer-bottom p {
+            font-size: 0.8rem;
+        }
+        
+        .footer-legal-link {
+            font-size: 0.8rem;
+        }
+        
+        .footer-separator {
             font-size: 0.8rem;
         }
         
