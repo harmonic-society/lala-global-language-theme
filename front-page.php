@@ -721,7 +721,7 @@ get_header(); ?>
                     <div class="testimonial-author">
                         <span class="author-avatar">👩</span>
                         <div>
-                            <h4>Hiromi さん</h4>
+                            <h4>Marin さん</h4>
                             <p>タイ語コース受講生</p>
                         </div>
                     </div>

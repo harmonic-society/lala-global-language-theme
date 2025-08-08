@@ -3,7 +3,7 @@
             <div class="footer-content">
                 <div class="footer-widget">
                     <h3>LaLa GLOBAL LANGUAGEについて</h3>
-                    <p>35ヶ国語から選べる、日本人のための語学スクール。楽しく学んで、世界とつながろう！</p>
+                    <p>35ヶ言語から選べる、日本人のための語学スクール。楽しく学んで、世界とつながろう！</p>
                     <div class="social-links">
                         <a href="#" aria-label="Facebook"><span class="emoji-animation">📘</span></a>
                         <a href="#" aria-label="Twitter"><span class="emoji-animation">🐦</span></a>

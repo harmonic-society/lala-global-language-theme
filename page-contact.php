@@ -238,6 +238,20 @@ get_header(); ?>
     box-shadow: 0 10px 30px rgba(0, 128, 128, 0.3);
 }
 
+/* Privacy Policy Link Styling */
+.contact-form-section .privacy-text a,
+.contact-form-section .wpcf7-form a {
+    color: var(--primary-color);
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.contact-form-section .privacy-text a:hover,
+.contact-form-section .wpcf7-form a:hover {
+    text-decoration: none;
+    color: #006666;
+}
+
 /* Contact Form Placeholder */
 .contact-form-placeholder {
     background: #f8f9fa;

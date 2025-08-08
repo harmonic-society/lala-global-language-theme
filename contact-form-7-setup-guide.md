@@ -50,7 +50,7 @@
 </div>
 
 <div class="form-group">
-[acceptance acceptance-privacy] <span class="privacy-text">プライバシーポリシーに同意する <span class="required">*</span></span>
+[acceptance acceptance-privacy] <span class="privacy-text"><a href="/privacy-policy/" target="_blank">プライバシーポリシー</a>に同意する <span class="required">*</span></span>
 </div>
 
 <div class="form-submit">
@@ -218,6 +218,17 @@ https://lala-global-language.com
 .lala-contact-form .privacy-text {
     font-size: 0.95rem;
     margin-left: 5px;
+}
+
+.lala-contact-form .privacy-text a {
+    color: #008080;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.lala-contact-form .privacy-text a:hover {
+    text-decoration: none;
+    color: #006666;
 }
 
 .lala-contact-form .form-submit {
