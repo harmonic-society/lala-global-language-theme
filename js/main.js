@@ -251,7 +251,10 @@
         });
 
         // Weekly Schedule Mobile Tabs
-        $('.day-tab').click(function() {
+        $('.day-tab').on('click touchstart', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
             // Remove active class from all tabs and contents
             $('.day-tab').removeClass('active');
             $('.mobile-day-content').removeClass('active');
