@@ -17,9 +17,9 @@ get_header(); ?>
                 <p class="coming-soon-subtitle">講師紹介ページ準備中</p>
                 
                 <div class="coming-soon-message">
-                    <p>LaLa Global Languageの素晴らしい講師陣を<br>
+                    <p>LaLa GLOBAL LANGUAGEの素晴らしい講師陣を<br>
                     ご紹介するページを準備しています。</p>
-                    <p>35ヶ国語を教える個性豊かな講師たちの<br>
+                    <p>35言語を教える個性豊かな講師たちの<br>
                     プロフィールをお楽しみに！</p>
                 </div>
                 
