@@ -41,15 +41,17 @@
             </div>
 
             <div class="footer-bottom">
-                <div class="footer-bottom-left">
-                    <p>&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>. All rights reserved.</p>
+                <div class="footer-info">
                     <p class="tax-notice-footer">※当サイトの表示価格はすべて税込です</p>
                     <p class="made-with-love">語学を学ぶすべての人へ <span class="heart-animation">❤️</span></p>
                 </div>
-                <div class="footer-bottom-right">
+                <div class="footer-legal">
                     <a href="<?php echo esc_url( home_url( '/terms/' ) ); ?>" class="footer-legal-link">利用規約</a>
                     <span class="footer-separator">｜</span>
                     <a href="<?php echo esc_url( home_url( '/privacy-policy/' ) ); ?>" class="footer-legal-link">プライバシーポリシー</a>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>. All rights reserved.</p>
                 </div>
             </div>
         </div>
@@ -176,20 +178,32 @@
     
     .footer-bottom {
         display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        flex-wrap: wrap;
-        gap: 20px;
+        flex-direction: column;
+        gap: 15px;
+        padding-top: 30px;
     }
     
-    .footer-bottom-left {
-        flex: 1;
+    .footer-info {
+        text-align: center;
     }
     
-    .footer-bottom-right {
+    .footer-legal {
         display: flex;
+        justify-content: center;
         align-items: center;
         gap: 5px;
+    }
+    
+    .footer-copyright {
+        text-align: center;
+        padding-top: 15px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        margin-top: 10px;
+    }
+    
+    .footer-copyright p {
+        margin: 0;
+        opacity: 0.7;
     }
     
     .footer-legal-link {
@@ -295,18 +309,20 @@
         
         .footer-bottom {
             padding-top: 20px;
-            text-align: center;
-            flex-direction: column;
-            align-items: center;
+            gap: 10px;
         }
         
-        .footer-bottom-left {
+        .footer-info {
             text-align: center;
-            margin-bottom: 10px;
         }
         
-        .footer-bottom-right {
+        .footer-legal {
             justify-content: center;
+        }
+        
+        .footer-copyright {
+            padding-top: 12px;
+            margin-top: 8px;
         }
         
         .footer-bottom p {
@@ -399,10 +415,16 @@
         
         .footer-bottom {
             padding-top: 15px;
+            gap: 8px;
         }
         
         .footer-bottom p {
             font-size: 0.8rem;
+        }
+        
+        .footer-copyright {
+            padding-top: 10px;
+            margin-top: 5px;
         }
         
         .footer-legal-link {
