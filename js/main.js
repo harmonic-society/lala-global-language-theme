@@ -251,20 +251,22 @@
         });
 
         // Weekly Schedule Mobile Tabs
-        $('.day-tab').on('click touchstart', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
+        $(document).on('click', '.day-tab', function() {
+            var $this = $(this);
+            var dayType = $this.data('day');
             
-            // Remove active class from all tabs and contents
-            $('.day-tab').removeClass('active');
-            $('.mobile-day-content').removeClass('active');
-            
-            // Add active class to clicked tab
-            $(this).addClass('active');
-            
-            // Show corresponding content
-            var dayType = $(this).data('day');
-            $('#' + dayType).addClass('active');
+            // Only proceed if not already active
+            if (!$this.hasClass('active')) {
+                // Remove active class from all tabs and contents
+                $('.day-tab').removeClass('active');
+                $('.mobile-day-content').removeClass('active');
+                
+                // Add active class to clicked tab
+                $this.addClass('active');
+                
+                // Show corresponding content
+                $('#' + dayType).addClass('active');
+            }
         });
 
         // Schedule slot hover effect
