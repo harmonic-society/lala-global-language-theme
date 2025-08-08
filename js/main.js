@@ -250,33 +250,23 @@
             }
         });
 
-        // Weekly Schedule Mobile Tabs
-        // Use body delegation to handle dynamically loaded content
-        $('body').on('click', '.day-tab', function(e) {
-            e.preventDefault();
-            
-            var $tab = $(this);
-            var targetId = $tab.attr('data-day');
-            
-            // Skip if already active
-            if ($tab.hasClass('active')) {
-                return;
-            }
+        // Weekly Schedule Mobile Tabs - Simplified version
+        $(document).on('click', '.day-tab:not(.active)', function() {
+            var targetId = $(this).data('day');
             
             // Update tabs
             $('.day-tab').removeClass('active');
-            $tab.addClass('active');
+            $(this).addClass('active');
             
             // Update content
-            $('.mobile-day-content').removeClass('active').hide();
-            $('#' + targetId).addClass('active').show();
-            
-            console.log('Tab clicked:', targetId);
+            $('.mobile-day-content').hide().removeClass('active');
+            $('#' + targetId).show().addClass('active');
         });
         
-        // Ensure initial state
-        $('.mobile-day-content').not('.active').hide();
-        $('.mobile-day-content.active').show();
+        // Initialize mobile schedule tabs on load
+        setTimeout(function() {
+            $('.mobile-day-content').not('.active').hide();
+        }, 100);
 
         // Schedule slot hover effect
         $('.slot.available').hover(

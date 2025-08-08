@@ -2370,11 +2370,11 @@ p {
 }
 
 .mobile-day-content {
-    display: none;
+    display: none !important;
 }
 
 .mobile-day-content.active {
-    display: block;
+    display: block !important;
 }
 
 .mobile-day-content h3 {
