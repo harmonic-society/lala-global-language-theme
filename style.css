@@ -54,6 +54,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 1rem;
+    text-align: center;
 }
 
 h1 {
@@ -72,6 +73,12 @@ h3 {
 
 p {
     margin-bottom: 1rem;
+    text-align: left;
+}
+
+/* Ensure other text elements are left-aligned */
+ul, ol, li, dl, dt, dd, blockquote, address {
+    text-align: left;
 }
 
 /* Container */
