@@ -250,23 +250,81 @@
             }
         });
 
-        // Weekly Schedule Mobile Tabs - Simplified version
-        $(document).on('click', '.day-tab:not(.active)', function() {
-            var targetId = $(this).data('day');
+        // Weekly Schedule Mobile Tabs - Complete Rewrite
+        function setupMobileTabs() {
+            console.log('Setting up mobile tabs...');
             
-            // Update tabs
-            $('.day-tab').removeClass('active');
-            $(this).addClass('active');
+            // Find all tab buttons
+            const tabButtons = document.querySelectorAll('.day-tab');
+            const tabContents = document.querySelectorAll('.mobile-day-content');
             
-            // Update content
-            $('.mobile-day-content').hide().removeClass('active');
-            $('#' + targetId).show().addClass('active');
-        });
+            console.log('Found tabs:', tabButtons.length);
+            console.log('Found contents:', tabContents.length);
+            
+            // Initialize: hide all contents except active
+            tabContents.forEach(function(content) {
+                if (!content.classList.contains('active')) {
+                    content.style.display = 'none';
+                } else {
+                    content.style.display = 'block';
+                }
+            });
+            
+            // Add click listeners to each tab
+            tabButtons.forEach(function(button) {
+                // Remove existing listeners by cloning
+                const newButton = button.cloneNode(true);
+                button.parentNode.replaceChild(newButton, button);
+                
+                // Add new listener
+                newButton.addEventListener('click', function(e) {
+                    console.log('Tab clicked!');
+                    e.stopPropagation();
+                    
+                    const targetDay = this.getAttribute('data-day');
+                    console.log('Target day:', targetDay);
+                    
+                    // Don't do anything if already active
+                    if (this.classList.contains('active')) {
+                        console.log('Tab already active');
+                        return;
+                    }
+                    
+                    // Remove active from all tabs
+                    document.querySelectorAll('.day-tab').forEach(function(tab) {
+                        tab.classList.remove('active');
+                    });
+                    
+                    // Add active to this tab
+                    this.classList.add('active');
+                    
+                    // Hide all contents
+                    document.querySelectorAll('.mobile-day-content').forEach(function(content) {
+                        content.classList.remove('active');
+                        content.style.display = 'none';
+                    });
+                    
+                    // Show target content
+                    const targetContent = document.getElementById(targetDay);
+                    if (targetContent) {
+                        console.log('Showing content for:', targetDay);
+                        targetContent.classList.add('active');
+                        targetContent.style.display = 'block';
+                    } else {
+                        console.error('Content not found for:', targetDay);
+                    }
+                });
+            });
+        }
         
-        // Initialize mobile schedule tabs on load
-        setTimeout(function() {
-            $('.mobile-day-content').not('.active').hide();
-        }, 100);
+        // Run setup immediately
+        setupMobileTabs();
+        
+        // Also run after a delay to catch any dynamic content
+        setTimeout(setupMobileTabs, 500);
+        
+        // Run on window load as backup
+        window.addEventListener('load', setupMobileTabs);
 
         // Schedule slot hover effect
         $('.slot.available').hover(

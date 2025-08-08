@@ -574,8 +574,8 @@ get_header(); ?>
                 <!-- Mobile Schedule View -->
                 <div class="schedule-mobile-view">
                     <div class="mobile-day-tabs">
-                        <button class="day-tab active" data-day="weekday">平日</button>
-                        <button class="day-tab" data-day="weekend">土日</button>
+                        <button type="button" class="day-tab active" data-day="weekday">平日</button>
+                        <button type="button" class="day-tab" data-day="weekend">土日</button>
                     </div>
                     
                     <div class="mobile-schedule-content">
