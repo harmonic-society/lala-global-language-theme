@@ -827,6 +827,7 @@ get_header(); ?>
 .about-cta-section p {
     font-size: 1.3rem;
     margin-bottom: 40px;
+    text-align: center;
 }
 
 .cta-buttons {
@@ -985,6 +986,7 @@ get_header(); ?>
     .about-cta-section p {
         font-size: 1.1rem;
         padding: 0 20px;
+        text-align: center;
     }
     
     .cta-buttons {

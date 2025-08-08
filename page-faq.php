@@ -477,6 +477,7 @@ get_header(); ?>
 .faq-cta-section p {
     font-size: 1.2rem;
     margin-bottom: 40px;
+    text-align: center;
 }
 
 .faq-cta-section .cta-buttons {
@@ -686,6 +687,7 @@ get_header(); ?>
     .faq-cta-section p {
         font-size: 1rem;
         padding: 0 20px;
+        text-align: center;
     }
     
     .faq-cta-section .cta-buttons {

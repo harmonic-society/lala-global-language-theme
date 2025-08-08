@@ -1370,6 +1370,7 @@ get_header(); ?>
     font-size: 1.3rem;
     margin-bottom: 40px;
     line-height: 1.8;
+    text-align: center;
 }
 
 .btn-large {

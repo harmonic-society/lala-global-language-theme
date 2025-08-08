@@ -1316,6 +1316,7 @@ get_header(); ?>
     margin-top: 15px;
     color: #666;
     font-size: 0.95rem;
+    text-align: center;
 }
 
 .courses-grid {
@@ -1617,6 +1618,7 @@ get_header(); ?>
     font-size: 1.3rem;
     margin-bottom: 40px;
     opacity: 0.9;
+    text-align: center;
 }
 
 .btn-large {
@@ -2030,6 +2032,7 @@ get_header(); ?>
     .cta-note {
         font-size: 0.85rem;
         margin-top: 12px;
+        text-align: center;
     }
     
     /* Custom Class Section */
@@ -2111,6 +2114,7 @@ get_header(); ?>
         font-size: 0.95rem;
         margin-bottom: 25px;
         line-height: 1.5;
+        text-align: center;
     }
     
     .cta-buttons {
@@ -2239,6 +2243,7 @@ get_header(); ?>
         font-size: 0.95rem;
         padding: 0 15px;
         margin-bottom: 25px;
+        text-align: center;
     }
     
     .cta-content .btn-large {
@@ -2522,6 +2527,7 @@ get_header(); ?>
     
     .cta-box > p {
         font-size: 0.9rem;
+        text-align: center;
     }
     
     /* Testimonials */
@@ -2588,6 +2594,7 @@ get_header(); ?>
     
     .cta-content p {
         font-size: 0.9rem;
+        text-align: center;
     }
     
     .cta-content .btn-large {
@@ -2760,6 +2767,7 @@ get_header(); ?>
     position: relative;
     z-index: 1;
     line-height: 1.8;
+    text-align: center;
 }
 
 .cta-buttons {
@@ -2804,6 +2812,7 @@ get_header(); ?>
     margin-top: 20px;
     color: #FFD700;
     font-size: 0.95rem;
+    text-align: center;
     position: relative;
     z-index: 1;
 }
@@ -2866,6 +2875,7 @@ get_header(); ?>
     
     .cta-box > p {
         font-size: 1rem;
+        text-align: center;
     }
     
     .cta-buttons {

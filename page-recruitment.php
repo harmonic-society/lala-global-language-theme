@@ -868,6 +868,7 @@ get_header(); ?>
     font-size: 1.3rem;
     margin-bottom: 40px;
     opacity: 0.9;
+    text-align: center;
 }
 
 .cta-buttons {
@@ -1015,6 +1016,7 @@ get_header(); ?>
     .cta-content p {
         font-size: 1.1rem;
         padding: 0 20px;
+        text-align: center;
     }
     
     .cta-buttons {

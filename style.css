@@ -2510,6 +2510,7 @@ ul, ol, li, dl, dt, dd, blockquote, address {
     font-size: 1.3rem;
     margin-bottom: 30px;
     color: #333;
+    text-align: center;
 }
 
 .schedule-cta .btn {
@@ -2639,6 +2640,7 @@ ul, ol, li, dl, dt, dd, blockquote, address {
     .schedule-cta p {
         font-size: 1.1rem;
         margin-bottom: 25px;
+        text-align: center;
     }
     
     .schedule-cta .btn {
