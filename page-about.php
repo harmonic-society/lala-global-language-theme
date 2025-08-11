@@ -266,6 +266,7 @@ get_header(); ?>
 .hero-tagline {
     font-size: 1.3rem;
     font-style: italic;
+    text-align: center;
 }
 
 /* Brand Core Section */

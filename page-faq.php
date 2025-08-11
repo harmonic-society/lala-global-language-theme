@@ -299,6 +299,7 @@ get_header(); ?>
 .faq-hero .hero-subtitle {
     font-size: 1.2rem;
     opacity: 0.9;
+    text-align: center;
 }
 
 /* Category Navigation */

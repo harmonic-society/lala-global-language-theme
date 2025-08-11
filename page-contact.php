@@ -116,6 +116,7 @@ get_header(); ?>
 .hero-subtitle {
     font-size: 1.3rem;
     opacity: 0.9;
+    text-align: center;
 }
 
 /* Response Time Section */

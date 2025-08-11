@@ -397,6 +397,7 @@ get_header(); ?>
     color: #FFFFFF;
     opacity: 1;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-align: center;
 }
 
 /* Main Message Section */
