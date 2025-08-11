@@ -664,7 +664,7 @@ get_header(); ?>
             
             <div class="schedule-cta">
                 <p>💡 人気の時間帯は早めのご予約がおすすめです！</p>
-                <a href="#contact" class="btn btn-primary">無料体験レッスンを予約する</a>
+                <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn-primary">無料体験レッスンを予約する</a>
             </div>
         </div>
     </section>
