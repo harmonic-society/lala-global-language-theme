@@ -31,8 +31,8 @@ get_header(); ?>
                     <?php echo nl2br( esc_html( get_theme_mod( 'hero_description', '英語はもちろん、欧米、アジア、アフリカのことばも。駅前留学？ホテル留学？LaLaなら "自宅留学"！' ) ) ); ?>
                 </p>
                 <div class="hero-buttons animate-fade-up" style="animation-delay: 0.6s;">
-                    <a href="#courses" class="btn btn-primary btn-large">
-                        <span class="btn-text">無料体験レッスン</span>
+                    <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn-primary btn-large">
+                        <span class="btn-text">無料体験レッスンを予約する</span>
                         <span class="btn-icon">→</span>
                     </a>
                     <a href="#languages" class="btn btn-secondary btn-large">
@@ -576,7 +576,7 @@ get_header(); ?>
                         </div>
                         <div class="feature-content">
                             <h3>業界特化型プログラム</h3>
-                            <p>医療、IT、製造業、観光業などの現場で求められる専門用語や対応スキルを習得。外国人患者の受け入れ対応、IT 開発チームとの MTG、工場での安全指導、ホテルでの接客対応など、業界・職種ごとのリアルな場面に即したカリキュラムを提供します。</p>
+                            <p>医療、IT、製造業、観光業などの現場で求められる専門用語や対応スキルを習得。外国人患者の受け入れ対応、IT 開発チームとのミーティング、工場での安全指導、ホテルでの接客対応など、業界・職種ごとのリアルな場面に即したカリキュラムを提供します。</p>
                         </div>
                     </div>
                     
@@ -585,7 +585,7 @@ get_header(); ?>
                             <span>📊</span>
                         </div>
                         <div class="feature-content">
-                            <h3>柔軟な受講スタイルで、WAKU2をデザイン</h3>
+                            <h3>柔軟な受講スタイルで、WAKU<sup>2</sup>をデザイン</h3>
                             <p>オンライン・対面・ハイブリッドから選べて、就業時間内・早朝・夜間など、働き方に合わせたスケジューリングも OK。回数やご予算に応じて、一緒に理想の研修を創り上げていきましょう!</p>
                         </div>
                     </div>
@@ -736,7 +736,7 @@ get_header(); ?>
                     <div class="testimonial-content">
                         <h3 class="testimonial-title">海外クライアントと話すのが怖くなくなりました!</h3>
                         <p>先生が毎回「一緒にやってみよう」と背中を押してくれるので挑戦が楽しくなります。<br>
-                        次の MTG では、習ったフレーズをガンガン使ってみます!</p>
+                        次のミーティングでは、習ったフレーズをガンガン使ってみます!</p>
                     </div>
                     <div class="testimonial-author">
                         <span class="author-avatar">👨</span>
@@ -756,7 +756,7 @@ get_header(); ?>
             <div class="cta-content">
                 <h2>今すぐ語学学習を始めよう！</h2>
                 <p>まずは無料体験レッスンから。あなたにぴったりのコースがきっと見つかります。</p>
-                <a href="#" class="btn btn-primary btn-large">無料体験を申し込む</a>
+                <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn-primary btn-large">無料体験レッスンを予約する</a>
             </div>
         </div>
     </section>
