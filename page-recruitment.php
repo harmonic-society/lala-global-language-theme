@@ -102,7 +102,7 @@ get_header(); ?>
                     <div class="detail-grid">
                         <div class="detail-item">
                             <h4>募集人数</h4>
-                            <p>5名以上</p>
+                            <p>各言語 5 名追加募集</p>
                         </div>
                         
                         <div class="detail-item">
