@@ -1040,6 +1040,7 @@ get_header(); ?>
     color: var(--primary-color);
     margin-bottom: 30px;
     line-height: 1.8;
+    text-align: center;
 }
 
 .btn-large {
