@@ -609,11 +609,11 @@ get_header(); ?>
                         <h3>まずは無料相談から</h3>
                         <p>貴社の語学研修に関するお悩みをお聞かせください。<br>最適なソリューションをご提案いたします。</p>
                         <div class="cta-buttons">
-                            <a href="#contact" class="btn btn-primary btn-large">
+                            <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn-primary btn-large">
                                 <span class="btn-text">無料相談を申し込む</span>
                                 <span class="btn-icon">→</span>
                             </a>
-                            <a href="<?php echo esc_url( home_url( '/custom-class/' ) ); ?>" class="btn btn-secondary btn-large">
+                            <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn-secondary btn-large">
                                 <span class="btn-text">詳細資料をダウンロード</span>
                                 <span class="btn-icon">📄</span>
                             </a>
