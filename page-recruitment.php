@@ -473,6 +473,7 @@ get_header(); ?>
     font-size: 2rem;
     font-weight: 800;
     color: var(--secondary-color);
+    text-align: center;
 }
 
 .target-audience {
