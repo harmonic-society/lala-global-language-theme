@@ -50,7 +50,7 @@ get_header(); ?>
                     
                     <div class="philosophy-box">
                         <h3>LaLaの理念</h3>
-                        <p class="philosophy-text">「そのチャレンジが、未来を変える。」</p>
+                        <p class="philosophy-text no-line-break">「そのチャレンジが、未来を変える」</p>
                     </div>
                     
                     <p>この想いを胸に、私たちは学びたい人の一歩を支える伴走者でありたいと考えています。
