@@ -294,6 +294,7 @@ get_header(); ?>
     font-size: 1.2rem;
     color: #666;
     margin-bottom: 30px;
+    text-align: center;
 }
 
 .btn-secondary {
