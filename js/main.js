@@ -17,6 +17,139 @@
             });
         }
         
+        // Optimize line breaks for centered text
+        function optimizeTextLineBreaks() {
+            // Select all centered text elements
+            var centeredElements = [
+                '.hero-subtitle',
+                '.hero-description', 
+                '.faq-link-content p',
+                '.custom-message p',
+                '.form-instruction',
+                '.response-time p',
+                '.section-subtitle',
+                '.philosophy-text',
+                '.lead-text',
+                '.welcome-message',
+                '.position-subtitle',
+                '.intro-text'
+            ];
+            
+            centeredElements.forEach(function(selector) {
+                $(selector).each(function() {
+                    var $element = $(this);
+                    var originalText = $element.html();
+                    
+                    // Skip if element already has manual <br> tags
+                    if (originalText.includes('<br>') || originalText.includes('<br/>')) {
+                        return;
+                    }
+                    
+                    // Split text by Japanese sentence endings
+                    var sentences = originalText.split(/([。！？])/);
+                    var processedSentences = [];
+                    
+                    // Recombine sentences with their punctuation
+                    for (var i = 0; i < sentences.length; i += 2) {
+                        if (sentences[i]) {
+                            var sentence = sentences[i] + (sentences[i + 1] || '');
+                            if (sentence.trim()) {
+                                processedSentences.push(sentence);
+                            }
+                        }
+                    }
+                    
+                    // Apply line break rules
+                    if (processedSentences.length === 2) {
+                        // For 2 sentences: 1 sentence per line
+                        $element.html(processedSentences.join('<br>'));
+                    } else if (processedSentences.length === 1) {
+                        // For single sentence: check for awkward line breaks
+                        var text = processedSentences[0];
+                        
+                        // Create temporary element to measure text
+                        var $temp = $('<div>').css({
+                            position: 'absolute',
+                            visibility: 'hidden',
+                            width: $element.width(),
+                            font: $element.css('font'),
+                            fontSize: $element.css('fontSize'),
+                            lineHeight: $element.css('lineHeight'),
+                            padding: $element.css('padding'),
+                            whiteSpace: 'normal'
+                        }).html(text).appendTo('body');
+                        
+                        var lineHeight = parseInt($temp.css('lineHeight'));
+                        var actualHeight = $temp.height();
+                        var lines = Math.round(actualHeight / lineHeight);
+                        
+                        // If text spans multiple lines, check for orphaned characters
+                        if (lines > 1) {
+                            // Try adding non-breaking spaces to prevent orphaned characters
+                            var words = text.split('');
+                            var lastLineChars = 0;
+                            var testText = text;
+                            
+                            // Check if last line has very few characters (1-2)
+                            $temp.html(testText);
+                            var lastLineText = getLastLineText($temp[0]);
+                            
+                            if (lastLineText && lastLineText.length <= 2) {
+                                // Add non-breaking space before last few characters to keep them together
+                                var splitPoint = text.length - 5; // Keep last 5 characters together
+                                if (splitPoint > 0) {
+                                    testText = text.substring(0, splitPoint) + '\u00A0' + text.substring(splitPoint).replace(/ /g, '\u00A0');
+                                    $element.html(testText);
+                                }
+                            }
+                        }
+                        
+                        $temp.remove();
+                    }
+                });
+            });
+        }
+        
+        // Helper function to get text of last line
+        function getLastLineText(element) {
+            var $el = $(element);
+            var text = $el.text();
+            var words = text.split('');
+            
+            // Create clone to test
+            var $clone = $el.clone().css({
+                position: 'absolute',
+                visibility: 'hidden'
+            }).appendTo('body');
+            
+            var fullHeight = $clone.height();
+            var lastLineText = '';
+            
+            // Binary search to find where last line starts
+            for (var i = text.length - 1; i >= 0; i--) {
+                $clone.text(text.substring(0, i));
+                if ($clone.height() < fullHeight) {
+                    lastLineText = text.substring(i);
+                    break;
+                }
+            }
+            
+            $clone.remove();
+            return lastLineText;
+        }
+        
+        // Run optimization on page load
+        optimizeTextLineBreaks();
+        
+        // Re-run on window resize
+        var resizeTimer;
+        $(window).resize(function() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function() {
+                optimizeTextLineBreaks();
+            }, 250);
+        });
+        
         // Smooth scrolling for anchor links
         $('a[href*="#"]').not('[href="#"]').not('[href="#0"]').click(function(event) {
             if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
