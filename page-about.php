@@ -25,7 +25,7 @@ get_header(); ?>
                 <h2>💎 ブランドの核</h2>
             </div>
             <div class="brand-content fade-in">
-                <p class="lead-text">LaLa GLOBAL LANGUAGEは「やってみたい！」という想いから始まります。</p>
+                <p class="lead-text no-line-break">LaLa GLOBAL LANGUAGEは「やってみたい！」という想いから始まります。</p>
                 <p>言葉を学ぶことは、ただのスキル習得ではなく、自分の世界を拡張し、未来へ飛び出すための"翼"を持つこと。挑戦する楽しさ、つながる喜び、成長の実感――LaLaは、その全てを一緒に味わう場所です。</p>
                 <p>"Let's""Learn"の頭文字(LL)、そして前向きな「ララ♪」の響き。この名前には、学ぶ人・教える人・支える人、すべての"やってみたい"を応援する熱い想いが込められています。</p>
                 

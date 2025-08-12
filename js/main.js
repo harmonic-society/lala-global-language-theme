@@ -40,6 +40,11 @@
                     var $element = $(this);
                     var originalText = $element.html();
                     
+                    // Skip if element has no-line-break class
+                    if ($element.hasClass('no-line-break')) {
+                        return;
+                    }
+                    
                     // Skip if element already has manual <br> tags
                     if (originalText.includes('<br>') || originalText.includes('<br/>')) {
                         return;
