@@ -13,8 +13,8 @@ get_header(); ?>
         <div class="container">
             <div class="hero-content">
                 <h1 class="page-title fade-in">コース案内</h1>
-                <p class="hero-description fade-in">LaLaは「世界中のことばを、誰でも、どこでも学べる」"言語のデパート"を目指します。<br>
-                目的やスタイルに合わせて、3つのクラスと3つのコースから自由に選べます。</p>
+                <p class="hero-description fade-in no-line-break">LaLaは「世界中のことばを、誰でも、どこでも学べる」"言語のデパート"を目指します。</p>
+                <p class="hero-description fade-in">目的やスタイルに合わせて、3つのクラスと3つのコースから自由に選べます。</p>
             </div>
         </div>
     </section>
@@ -707,6 +707,13 @@ get_header(); ?>
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
+}
+
+.courses-hero .hero-description.no-line-break {
+    font-size: 1.15rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* Languages Section */
@@ -1426,6 +1433,12 @@ get_header(); ?>
     .courses-hero .hero-description {
         font-size: 1.1rem;
         padding: 0 20px;
+    }
+    
+    .courses-hero .hero-description.no-line-break {
+        font-size: 0.95rem;
+        white-space: normal;
+        overflow: visible;
     }
     
     /* Section spacing */
