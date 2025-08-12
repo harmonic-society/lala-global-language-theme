@@ -139,7 +139,7 @@ get_header(); ?>
                             </div>
                             <h4 class="philosophy-statement">挑戦と成長</h4>
                             <h5 class="waku-subtitle">「やってみたい！」が未来をつくる</h5>
-                            <p class="philosophy-description">「やってみたい！」の一歩が、新しい自分をつくる。LaLaは、挑戦することの楽しさを一緒に味わい、成長を伴走します。</p>
+                            <p class="philosophy-description three-line-text">「やってみたい！」の一歩が、新しい自分をつくる。LaLaは、挑戦することの楽しさを一緒に味わい、成長を伴走します。</p>
                         </div>
                     </div>
 
@@ -171,7 +171,7 @@ get_header(); ?>
                             </div>
                             <h4 class="philosophy-statement">世界へ飛び出せ！</h4>
                             <h5 class="waku-subtitle">学びのその先へ</h5>
-                            <p class="philosophy-description">学んだ先に待っているのは、まだ見ぬ体験と出会い。LaLaは、その一歩を後押しし、「世界へ挑戦する人」を応援します。</p>
+                            <p class="philosophy-description three-line-text">学んだ先に待っているのは、まだ見ぬ体験と出会い。LaLaは、その一歩を後押しし、「世界へ挑戦する人」を応援します。</p>
                         </div>
                     </div>
                 </div>
@@ -727,6 +727,18 @@ get_header(); ?>
     font-size: 1rem;
 }
 
+/* Three-line text optimization */
+.philosophy-description.three-line-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    min-height: 4.5em;
+    max-height: 4.5em;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
 /* Sparkles */
 .philosophy-sparkles {
     position: absolute;
@@ -1225,6 +1237,13 @@ get_header(); ?>
     
     .philosophy-waku .philosophy-description {
         font-size: 0.95rem;
+    }
+    
+    .philosophy-description.three-line-text {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        min-height: 4em;
+        max-height: 4em;
     }
 }
 </style>
