@@ -731,12 +731,12 @@ get_header(); ?>
 .philosophy-description.three-line-text {
     font-size: 0.95rem;
     line-height: 1.6;
-    min-height: 4.5em;
-    max-height: 4.5em;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    min-height: auto;
+    height: auto;
+    display: block;
+    overflow: visible;
+    -webkit-line-clamp: unset;
+    -webkit-box-orient: unset;
 }
 
 /* Sparkles */
@@ -1240,10 +1240,11 @@ get_header(); ?>
     }
     
     .philosophy-description.three-line-text {
-        font-size: 0.9rem;
-        line-height: 1.5;
-        min-height: 4em;
-        max-height: 4em;
+        font-size: 0.85rem;
+        line-height: 1.4;
+        min-height: auto;
+        height: auto;
+        padding-bottom: 10px;
     }
 }
 </style>
