@@ -755,7 +755,7 @@ get_header(); ?>
         <div class="container">
             <div class="cta-content">
                 <h2>今すぐ語学学習を始めよう！</h2>
-                <p>まずは無料体験レッスンから。あなたにぴったりのコースがきっと見つかります。</p>
+                <p>まずは無料体験レッスンから。<br>あなたにぴったりのコースがきっと見つかります。</p>
                 <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn-primary btn-large">無料体験レッスンを予約する</a>
             </div>
         </div>
