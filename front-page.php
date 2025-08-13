@@ -618,7 +618,7 @@ get_header(); ?>
                                 <span class="btn-icon">📄</span>
                             </a>
                         </div>
-                        <p class="cta-note">※お見積もりは無料です。お気軽にお問い合わせください。</p>
+                        <p class="cta-note">※お見積もりは無料です。<br>お気軽にお問い合わせください。</p>
                     </div>
                 </div>
             </div>
