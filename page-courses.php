@@ -358,7 +358,7 @@ get_header(); ?>
                         <tr>
                             <td class="lesson-type">トリオ（3名）<br><span class="note">※1人分の料金</span></td>
                             <td>4,125円／回<br><span class="monthly">毎月16,500円</span></td>
-                            <td>3,850円／回<br><span class="total">計77,500円</span></td>
+                            <td>3,850円／回<br><span class="total">計77,000円</span></td>
                             <td>3,575円／回<br><span class="total">計143,000円</span></td>
                         </tr>
                     </tbody>
