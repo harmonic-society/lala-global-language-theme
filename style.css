@@ -17,13 +17,13 @@ Text Domain: lala-global-language
 }
 
 :root {
-    --primary-color: #008080; /* Teal Blue - GLOBAL LANGUAGE */
+    --primary-color: #00A0A0; /* Teal Blue - GLOBAL LANGUAGE */
     --secondary-color: #F88379; /* Coral Pink - LaLa Logo */
     --accent-color: #FFD700; /* Bright Yellow - Music notes & accents */
     --dark-color: #2D3436;
     --light-color: #FFFFFF;
     --text-color: #333333;
-    --gradient-1: linear-gradient(135deg, #008080 0%, #006666 100%);
+    --gradient-1: linear-gradient(135deg, #00A0A0 0%, #008585 100%);
     --gradient-2: linear-gradient(135deg, #F88379 0%, #F56B5F 100%);
     --gradient-3: linear-gradient(135deg, #FFD700 0%, #FFC700 100%);
     
@@ -92,7 +92,7 @@ ul, ol, li, dl, dt, dd, blockquote, address {
 
 /* Header */
 .site-header {
-    background: linear-gradient(135deg, #008080 0%, #006666 100%);
+    background: linear-gradient(135deg, #00A0A0 0%, #008585 100%);
     padding: 15px 0;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     position: sticky;
@@ -180,7 +180,7 @@ ul, ol, li, dl, dt, dd, blockquote, address {
 }
 
 .announcement-bar.announcement-info {
-    background: linear-gradient(135deg, var(--primary-color) 0%, #006666 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, #008585 100%);
     color: white;
 }
 
