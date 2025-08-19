@@ -781,7 +781,7 @@ get_header(); ?>
                             <?php if ( has_post_thumbnail() ) : ?>
                                 <div class="post-thumbnail">
                                     <a href="<?php the_permalink(); ?>">
-                                        <?php the_post_thumbnail( 'medium_large' ); ?>
+                                        <?php the_post_thumbnail( 'thumbnail' ); ?>
                                     </a>
                                 </div>
                             <?php endif; ?>
@@ -1639,6 +1639,93 @@ get_header(); ?>
     margin-top: 50px;
 }
 
+.latest-posts-section .post-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.latest-posts-section .post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.latest-posts-section .post-thumbnail {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background: #f0f0f0;
+}
+
+.latest-posts-section .post-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.latest-posts-section .post-card:hover .post-thumbnail img {
+    transform: scale(1.05);
+}
+
+.latest-posts-section .post-content {
+    padding: 25px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.latest-posts-section .entry-title {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.latest-posts-section .entry-title a {
+    color: var(--dark-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.latest-posts-section .entry-title a:hover {
+    color: var(--primary-color);
+}
+
+.latest-posts-section .entry-meta {
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.latest-posts-section .entry-summary {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.latest-posts-section .read-more {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.latest-posts-section .read-more:hover {
+    transform: translateX(5px);
+}
+
 .section-title {
     text-align: center;
     font-size: 2.5rem;
@@ -2257,14 +2344,13 @@ get_header(); ?>
         gap: 20px;
     }
     
-    .post-card {
+    .latest-posts-section .post-card {
         border-radius: 15px;
         overflow: hidden;
     }
     
-    .post-thumbnail {
-        height: 180px;
-        overflow: hidden;
+    .latest-posts-section .post-thumbnail {
+        height: 150px;
     }
     
     .post-content {
