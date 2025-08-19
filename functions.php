@@ -517,6 +517,16 @@ add_action( 'admin_head', 'lala_announcement_admin_styles' );
 require get_template_directory() . '/inc/customizer.php';
 
 /**
+ * SEO Functions
+ */
+require get_template_directory() . '/inc/seo-functions.php';
+
+/**
+ * SEO Dashboard
+ */
+require get_template_directory() . '/inc/seo-dashboard.php';
+
+/**
  * Load Jetpack compatibility file
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
