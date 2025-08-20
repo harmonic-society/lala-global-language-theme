@@ -1,0 +1,133 @@
+/* Ultimate Mobile Overflow Fix for Blog Content */
+/* This CSS file contains aggressive fixes for mobile text overflow issues */
+
+@media screen and (max-width: 768px) {
+    /* Reset box model for all elements */
+    * {
+        box-sizing: border-box !important;
+    }
+    
+    /* Prevent horizontal scroll on body and html */
+    html, body {
+        overflow-x: hidden !important;
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+    
+    /* Main containers */
+    #page,
+    .site,
+    .site-main,
+    .post-container,
+    .blog-container,
+    .post-content-area,
+    .entry-content {
+        max-width: 100vw !important;
+        overflow-x: hidden !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* All text elements must wrap */
+    h1, h2, h3, h4, h5, h6,
+    p, li, td, th, dd, dt,
+    blockquote, figcaption,
+    .entry-content p,
+    .entry-content li,
+    .entry-content td,
+    .entry-content th {
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        word-break: break-word !important;
+        hyphens: auto !important;
+        max-width: 100% !important;
+    }
+    
+    /* Aggressive link breaking */
+    a, 
+    .entry-content a {
+        word-break: break-all !important;
+        overflow-wrap: break-word !important;
+        display: inline-block !important;
+        max-width: 100% !important;
+    }
+    
+    /* Code and pre elements */
+    code, 
+    pre,
+    .entry-content code,
+    .entry-content pre {
+        white-space: pre-wrap !important;
+        word-wrap: break-word !important;
+        word-break: break-all !important;
+        overflow-x: auto !important;
+        max-width: 100% !important;
+        display: block !important;
+    }
+    
+    /* Images and media */
+    img, 
+    video, 
+    iframe, 
+    embed, 
+    object,
+    .entry-content img,
+    .entry-content video,
+    .entry-content iframe {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+    
+    /* Tables */
+    table,
+    .entry-content table {
+        max-width: 100% !important;
+        overflow-x: auto !important;
+        display: block !important;
+    }
+    
+    /* Specific padding adjustments */
+    .post-content-area {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+    
+    .entry-content {
+        padding: 0 !important;
+    }
+    
+    /* Force all child elements to respect container width */
+    .entry-content > * {
+        max-width: 100% !important;
+    }
+    
+    /* Long words in any context */
+    * {
+        word-break: break-word !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Even more aggressive mobile fixes */
+    .post-content-area {
+        padding: 15px 10px !important;
+        margin: 0 5px !important;
+        width: calc(100% - 10px) !important;
+    }
+    
+    .entry-content {
+        font-size: 1rem !important;
+        line-height: 1.7 !important;
+    }
+    
+    /* Reduce all heading sizes */
+    .entry-content h1 { font-size: 1.8rem !important; }
+    .entry-content h2 { font-size: 1.5rem !important; }
+    .entry-content h3 { font-size: 1.3rem !important; }
+    .entry-content h4 { font-size: 1.1rem !important; }
+    
+    /* Ensure no element can cause overflow */
+    .entry-content * {
+        max-width: calc(100vw - 20px) !important;
+    }
+}

@@ -2700,14 +2700,38 @@ ul, ol, li, dl, dt, dd, blockquote, address {
     h1, h2, h3, h4, h5, h6,
     p, span, a, li, td, th,
     blockquote, pre, code {
-        word-wrap: break-word;
-        overflow-wrap: break-word;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        word-break: break-word !important;
         hyphens: auto;
+        max-width: 100%;
     }
     
     /* Fix long URLs and strings */
     a {
-        word-break: break-all;
+        word-break: break-all !important;
+    }
+    
+    /* Force content sections to respect viewport width - excluding navigation */
+    section, article, aside, main {
+        max-width: 100vw !important;
+        overflow-x: hidden !important;
+    }
+    
+    /* Specific fixes for blog content */
+    .post-container,
+    .post-content-area,
+    .entry-content,
+    .blog-container {
+        max-width: 100vw !important;
+        overflow-x: hidden !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* Ensure proper padding on mobile */
+    .entry-content * {
+        max-width: 100% !important;
+        box-sizing: border-box !important;
     }
     
     /* Ensure images and media don't overflow */

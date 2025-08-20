@@ -125,6 +125,9 @@ add_action( 'widgets_init', 'lala_global_language_widgets_init' );
 function lala_global_language_scripts() {
     // Enqueue main stylesheet
     wp_enqueue_style( 'lala-global-language-style', get_stylesheet_uri(), array(), '1.0.0' );
+    
+    // Enqueue mobile overflow fix stylesheet
+    wp_enqueue_style( 'lala-mobile-overflow-fix', get_template_directory_uri() . '/mobile-overflow-fix.css', array(), '1.0.0' );
 
     // Enqueue Google Fonts
     wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap', array(), null );
