@@ -518,9 +518,9 @@ function lala_buffer_end() {
     }
 }
 
-// Enable HTML minification
-add_action( 'init', 'lala_buffer_start' );
-add_action( 'wp_footer', 'lala_buffer_end', 100 );
+// Disable HTML minification - it was breaking JavaScript
+// add_action( 'init', 'lala_buffer_start' );
+// add_action( 'wp_footer', 'lala_buffer_end', 100 );
 
 /**
  * Add performance optimization headers
