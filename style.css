@@ -2684,9 +2684,16 @@ ul, ol, li, dl, dt, dd, blockquote, address {
 
 /* Global Mobile Overflow Fixes */
 @media (max-width: 768px) {
-    /* Prevent horizontal overflow on all elements */
+    /* Prevent horizontal overflow on all elements except fixed positioned */
     * {
         max-width: 100%;
+    }
+    
+    /* Exception for fixed/absolute positioned elements */
+    .menu-container,
+    [style*="position: fixed"],
+    [style*="position: absolute"] {
+        max-width: none !important;
     }
     
     /* Ensure all text content wraps properly */
