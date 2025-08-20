@@ -345,6 +345,9 @@ get_header(); ?>
     line-height: 1.1;
     margin-bottom: 30px;
     text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 .hero-author {
@@ -494,6 +497,9 @@ get_header(); ?>
     font-size: 1.2rem;
     line-height: 1.9;
     color: #2d3748;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 .entry-content h2 {
@@ -544,6 +550,8 @@ get_header(); ?>
     font-size: 1.3rem;
     font-style: italic;
     color: #2d3748;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .entry-content blockquote:before {
@@ -572,6 +580,7 @@ get_header(); ?>
     border-radius: 6px;
     font-size: 0.95em;
     color: #e53e3e;
+    word-break: break-all;
 }
 
 .entry-content pre {
@@ -581,6 +590,9 @@ get_header(); ?>
     border-radius: 15px;
     overflow-x: auto;
     margin: 40px 0;
+    max-width: 100%;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
 
 /* Tags */
@@ -864,13 +876,31 @@ get_header(); ?>
     
     .hero-title {
         font-size: 2rem;
+        padding: 0 10px;
     }
     
     .post-content-area {
         padding: 30px 20px;
+        border-radius: 20px;
     }
     
     .entry-content {
+        font-size: 1.1rem;
+    }
+    
+    .entry-content h2,
+    .entry-content h3 {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    
+    .entry-content pre {
+        padding: 20px;
+        font-size: 0.85rem;
+    }
+    
+    .entry-content blockquote {
+        padding: 25px;
         font-size: 1.1rem;
     }
     
@@ -886,6 +916,11 @@ get_header(); ?>
         flex-direction: column;
         text-align: center;
     }
+    
+    .share-buttons-vertical {
+        flex-direction: row;
+        justify-content: center;
+    }
 }
 
 @media (max-width: 480px) {
@@ -900,6 +935,38 @@ get_header(); ?>
     
     .author-info {
         text-align: center;
+    }
+    
+    .post-content-area {
+        padding: 20px 15px;
+    }
+    
+    .entry-content {
+        font-size: 1rem;
+    }
+    
+    .entry-content h2 {
+        font-size: 1.6rem;
+    }
+    
+    .entry-content h3 {
+        font-size: 1.3rem;
+    }
+    
+    .entry-content img {
+        border-radius: 10px;
+        margin: 20px 0;
+    }
+    
+    .entry-content ul,
+    .entry-content ol {
+        margin-left: 20px;
+        padding-left: 0;
+    }
+    
+    .featured-footer,
+    .card-footer {
+        flex-wrap: wrap;
     }
 }
 </style>
