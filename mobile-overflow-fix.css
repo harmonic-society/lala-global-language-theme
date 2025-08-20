@@ -7,16 +7,18 @@
         box-sizing: border-box !important;
     }
     
-    /* Prevent horizontal scroll on body and html */
+    /* Prevent horizontal scroll on body and html - but allow when menu is open */
     html, body {
-        overflow-x: hidden !important;
         max-width: 100% !important;
         width: 100% !important;
     }
     
-    /* Main containers */
-    #page,
-    .site,
+    /* Only hide overflow when menu is not open */
+    body:not(.menu-open) {
+        overflow-x: hidden !important;
+    }
+    
+    /* Main containers - don't restrict page wrapper when menu is open */
     .site-main,
     .post-container,
     .blog-container,
@@ -26,6 +28,13 @@
         overflow-x: hidden !important;
         width: 100% !important;
         box-sizing: border-box !important;
+    }
+    
+    /* Ensure menu elements can function properly */
+    .menu-container,
+    .menu-toggle,
+    .main-navigation {
+        max-width: none !important;
     }
     
     /* All text elements must wrap */

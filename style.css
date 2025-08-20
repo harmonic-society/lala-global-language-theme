@@ -2689,8 +2689,10 @@ ul, ol, li, dl, dt, dd, blockquote, address {
         max-width: 100%;
     }
     
-    /* Exception for fixed/absolute positioned elements */
+    /* Exception for fixed/absolute positioned elements and navigation */
     .menu-container,
+    .menu-toggle,
+    .main-navigation,
     [style*="position: fixed"],
     [style*="position: absolute"] {
         max-width: none !important;
@@ -2713,7 +2715,7 @@ ul, ol, li, dl, dt, dd, blockquote, address {
     }
     
     /* Force content sections to respect viewport width - excluding navigation */
-    section, article, aside, main {
+    article, aside, main:not(.menu-open) {
         max-width: 100vw !important;
         overflow-x: hidden !important;
     }

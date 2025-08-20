@@ -517,52 +517,43 @@
     </style>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const menuToggle = document.querySelector('.menu-toggle');
-        const menuContainer = document.querySelector('.menu-container');
-        const body = document.body;
-        
-        // Calculate and set announcement bar height - Disabled
-        // function updateAnnouncementHeight() {
-        //     const announcementBar = document.querySelector('.announcement-bar');
-        //     if (announcementBar) {
-        //         const height = announcementBar.offsetHeight;
-        //         document.documentElement.style.setProperty('--announcement-height', height + 'px');
-        //     }
-        // }
-        
-        // Update on load and resize - Disabled
-        // updateAnnouncementHeight();
-        // window.addEventListener('resize', updateAnnouncementHeight);
-        
-        if (menuToggle) {
-            menuToggle.addEventListener('click', function() {
-                const expanded = this.getAttribute('aria-expanded') === 'true' || false;
-                this.setAttribute('aria-expanded', !expanded);
-                menuContainer.classList.toggle('toggled');
-                body.classList.toggle('menu-open');
-            });
+    (function() {
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const menuContainer = document.querySelector('.menu-container');
+            const body = document.body;
             
-            // Close menu when clicking outside
-            document.addEventListener('click', function(event) {
-                if (menuContainer.classList.contains('toggled') && 
-                    !menuContainer.contains(event.target) && 
-                    !menuToggle.contains(event.target)) {
-                    menuToggle.setAttribute('aria-expanded', 'false');
-                    menuContainer.classList.remove('toggled');
-                    body.classList.remove('menu-open');
-                }
-            });
-            
-            // Close menu when clicking on a link
-            const menuLinks = menuContainer.querySelectorAll('a');
-            menuLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    menuToggle.setAttribute('aria-expanded', 'false');
-                    menuContainer.classList.remove('toggled');
-                    body.classList.remove('menu-open');
+            if (menuToggle && menuContainer) {
+                menuToggle.addEventListener('click', function() {
+                    const expanded = this.getAttribute('aria-expanded') === 'true' || false;
+                    this.setAttribute('aria-expanded', !expanded);
+                    menuContainer.classList.toggle('toggled');
+                    body.classList.toggle('menu-open');
                 });
-            });
-        }
-    });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (menuContainer && menuContainer.classList.contains('toggled') && 
+                        !menuContainer.contains(event.target) && 
+                        !menuToggle.contains(event.target)) {
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                        menuContainer.classList.remove('toggled');
+                        body.classList.remove('menu-open');
+                    }
+                });
+                
+                // Close menu when clicking on a link
+                if (menuContainer) {
+                    const menuLinks = menuContainer.querySelectorAll('a');
+                    menuLinks.forEach(function(link) {
+                        link.addEventListener('click', function() {
+                            menuToggle.setAttribute('aria-expanded', 'false');
+                            menuContainer.classList.remove('toggled');
+                            body.classList.remove('menu-open');
+                        });
+                    });
+                }
+            }
+        });
+    })();
     </script>
