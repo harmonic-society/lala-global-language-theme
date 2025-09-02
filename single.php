@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all single posts
+ * Enhanced template for displaying single posts with dramatic UI/UX improvements
  *
  * @package LaLa_Global_Language
  */
@@ -9,1117 +9,547 @@ get_header(); ?>
 
 <?php lala_breadcrumbs(); ?>
 
-<!-- Reading Progress Bar -->
-<div class="reading-progress-bar"></div>
+<!-- Enhanced Reading Experience Tools -->
+<div class="reading-tools-container">
+    <div class="reading-progress">
+        <div class="progress-bar"></div>
+        <span class="progress-percentage">0%</span>
+    </div>
+    
+    <div class="floating-tools">
+        <button class="tool-btn" id="font-size-toggle" aria-label="フォントサイズ調整">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 7V4h16v3M9 20h6M12 4v16"/>
+            </svg>
+        </button>
+        <button class="tool-btn" id="theme-toggle" aria-label="テーマ切替">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="5"/>
+                <line x1="12" y1="1" x2="12" y2="3"/>
+                <line x1="12" y1="21" x2="12" y2="23"/>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                <line x1="1" y1="12" x2="3" y2="12"/>
+                <line x1="21" y1="12" x2="23" y2="12"/>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+        </button>
+        <button class="tool-btn" id="search-article" aria-label="記事内検索">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"/>
+                <path d="m21 21-4.35-4.35"/>
+            </svg>
+        </button>
+        <button class="tool-btn" id="speak-article" aria-label="音声読み上げ">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
+            </svg>
+        </button>
+        <button class="tool-btn" id="print-article" aria-label="印刷">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 6 2 18 2 18 9"/>
+                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+                <rect x="6" y="14" width="12" height="8"/>
+            </svg>
+        </button>
+    </div>
+</div>
 
-<main id="primary" class="site-main single-main">
+<!-- Search Overlay -->
+<div class="search-overlay" id="search-overlay">
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="記事内を検索...">
+        <button id="close-search">×</button>
+        <div class="search-results"></div>
+    </div>
+</div>
+
+<!-- Font Size Panel -->
+<div class="font-size-panel" id="font-size-panel">
+    <button data-size="small">小</button>
+    <button data-size="medium" class="active">中</button>
+    <button data-size="large">大</button>
+    <button data-size="xlarge">特大</button>
+</div>
+
+<main id="primary" class="site-main single-main enhanced">
     <?php
     while ( have_posts() ) :
         the_post();
         ?>
         
-        <!-- Hero Section with Parallax -->
-        <div class="post-hero-section">
+        <!-- Enhanced Hero Section -->
+        <div class="post-hero-enhanced">
             <?php if ( has_post_thumbnail() ) : ?>
-                <div class="hero-background" data-parallax>
-                    <?php the_post_thumbnail( 'full' ); ?>
-                    <div class="hero-overlay"></div>
+                <div class="hero-image-wrapper">
+                    <div class="hero-image" data-parallax>
+                        <?php the_post_thumbnail( 'full' ); ?>
+                    </div>
+                    <div class="hero-gradient"></div>
                 </div>
             <?php endif; ?>
             
-            <div class="hero-content">
-                <div class="hero-meta">
-                    <?php
-                    $categories = get_the_category();
-                    if ( ! empty( $categories ) ) :
-                        foreach ( $categories as $category ) :
-                    ?>
-                        <span class="hero-category">
-                            <?php echo esc_html( $category->name ); ?>
+            <div class="hero-content-wrapper">
+                <div class="hero-meta-bar">
+                    <div class="meta-categories">
+                        <?php
+                        $categories = get_the_category();
+                        if ( ! empty( $categories ) ) :
+                            foreach ( $categories as $category ) :
+                        ?>
+                            <a href="<?php echo esc_url( get_category_link( $category->term_id ) ); ?>" class="category-badge">
+                                <?php echo esc_html( $category->name ); ?>
+                            </a>
+                        <?php
+                            endforeach;
+                        endif;
+                        ?>
+                    </div>
+                    <div class="meta-stats">
+                        <span class="stat-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                            <?php echo reading_time(); ?> 分で読了
                         </span>
-                    <?php
-                        endforeach;
-                    endif;
-                    ?>
-                    <span class="hero-reading-time">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"/>
-                            <polyline points="12 6 12 12 16 14"/>
-                        </svg>
-                        <?php echo reading_time(); ?> min read
-                    </span>
+                        <span class="stat-item views-count">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                <circle cx="12" cy="12" r="3"/>
+                            </svg>
+                            <span id="view-count">0</span> 回閲覧
+                        </span>
+                    </div>
                 </div>
                 
-                <?php the_title( '<h1 class="hero-title">', '</h1>' ); ?>
+                <h1 class="hero-title-enhanced"><?php the_title(); ?></h1>
                 
-                <div class="hero-author">
-                    <div class="author-avatar">
-                        <?php echo get_avatar( get_the_author_meta( 'ID' ), 60 ); ?>
+                <div class="hero-author-enhanced">
+                    <div class="author-card">
+                        <?php echo get_avatar( get_the_author_meta( 'ID' ), 80 ); ?>
+                        <div class="author-details">
+                            <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" class="author-name">
+                                <?php the_author(); ?>
+                            </a>
+                            <div class="author-meta">
+                                <time datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>">
+                                    <?php echo esc_html( get_the_date( 'Y年n月j日' ) ); ?>
+                                </time>
+                                <?php if ( get_the_modified_date() != get_the_date() ) : ?>
+                                    <span class="updated">
+                                        更新: <?php echo esc_html( get_the_modified_date( 'Y年n月j日' ) ); ?>
+                                    </span>
+                                <?php endif; ?>
+                            </div>
+                        </div>
                     </div>
-                    <div class="author-info">
-                        <span class="author-name"><?php the_author(); ?></span>
-                        <span class="post-date"><?php echo esc_html( get_the_date( 'F j, Y' ) ); ?></span>
+                    
+                    <div class="quick-actions">
+                        <button class="action-btn bookmark-btn" data-post-id="<?php the_ID(); ?>">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+                            </svg>
+                            <span>保存</span>
+                        </button>
+                        <button class="action-btn share-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="18" cy="5" r="3"/>
+                                <circle cx="6" cy="12" r="3"/>
+                                <circle cx="18" cy="19" r="3"/>
+                                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+                                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+                            </svg>
+                            <span>共有</span>
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
         
-        <div class="post-container">
-            <div class="post-layout">
-                <!-- Sidebar with TOC and Share -->
-                <aside class="post-sidebar">
-                    <div class="sidebar-sticky">
-                        <div class="toc-container">
-                            <h3 class="toc-title">Table of Contents</h3>
-                            <nav class="toc-nav" id="toc-nav">
-                                <!-- TOC will be generated by JS -->
+        <div class="content-wrapper">
+            <div class="content-layout">
+                <!-- Enhanced Sidebar -->
+                <aside class="sidebar-enhanced">
+                    <div class="sidebar-sticky-wrapper">
+                        <!-- Table of Contents -->
+                        <div class="toc-widget">
+                            <div class="widget-header">
+                                <h3>目次</h3>
+                                <button class="toc-toggle" aria-label="目次を折りたたむ">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="6 9 12 15 18 9"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <nav class="toc-content" id="toc-nav">
+                                <!-- Generated by JavaScript -->
                             </nav>
+                            <div class="reading-time-estimate">
+                                <div class="time-bar">
+                                    <div class="time-progress"></div>
+                                </div>
+                                <span class="time-text">読了まで約 <span id="remaining-time"><?php echo reading_time(); ?></span> 分</span>
+                            </div>
                         </div>
                         
-                        <div class="share-container">
-                            <h3 class="share-title">Share</h3>
-                            <div class="share-buttons-vertical">
-                                <a href="https://twitter.com/intent/tweet?url=<?php echo urlencode( get_permalink() ); ?>&text=<?php echo urlencode( get_the_title() ); ?>" class="share-btn twitter" target="_blank" rel="noopener">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <!-- Share Widget -->
+                        <div class="share-widget">
+                            <h3>シェア</h3>
+                            <div class="share-buttons-grid">
+                                <a href="https://twitter.com/intent/tweet?url=<?php echo urlencode( get_permalink() ); ?>&text=<?php echo urlencode( get_the_title() ); ?>" class="share-button twitter" target="_blank" rel="noopener">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
                                         <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
                                     </svg>
                                 </a>
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode( get_permalink() ); ?>" class="share-btn facebook" target="_blank" rel="noopener">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode( get_permalink() ); ?>" class="share-button facebook" target="_blank" rel="noopener">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
                                         <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
                                     </svg>
                                 </a>
-                                <a href="https://www.linkedin.com/sharing/share-offsite/?url=<?php echo urlencode( get_permalink() ); ?>" class="share-btn linkedin" target="_blank" rel="noopener">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
-                                        <circle cx="4" cy="4" r="2"/>
+                                <a href="https://line.me/R/msg/text/?<?php echo urlencode( get_the_title() . ' ' . get_permalink() ); ?>" class="share-button line" target="_blank" rel="noopener">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.349 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
                                     </svg>
                                 </a>
-                                <a href="mailto:?subject=<?php echo urlencode( get_the_title() ); ?>&body=<?php echo urlencode( get_permalink() ); ?>" class="share-btn email">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                                        <polyline points="22,6 12,13 2,6"/>
+                                <button class="share-button copy-link" data-url="<?php echo esc_url( get_permalink() ); ?>">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
                                     </svg>
-                                </a>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Reactions Widget -->
+                        <div class="reactions-widget">
+                            <h3>リアクション</h3>
+                            <div class="reactions-grid">
+                                <button class="reaction-btn" data-reaction="like">
+                                    <span class="reaction-emoji">👍</span>
+                                    <span class="reaction-count">0</span>
+                                </button>
+                                <button class="reaction-btn" data-reaction="love">
+                                    <span class="reaction-emoji">❤️</span>
+                                    <span class="reaction-count">0</span>
+                                </button>
+                                <button class="reaction-btn" data-reaction="wow">
+                                    <span class="reaction-emoji">😮</span>
+                                    <span class="reaction-count">0</span>
+                                </button>
+                                <button class="reaction-btn" data-reaction="think">
+                                    <span class="reaction-emoji">🤔</span>
+                                    <span class="reaction-count">0</span>
+                                </button>
                             </div>
                         </div>
                     </div>
                 </aside>
                 
-                <!-- Main Content -->
-                <article id="post-<?php the_ID(); ?>" <?php post_class( 'post-content-area' ); ?>>
-                    <div class="entry-content">
-                        <?php
-                        the_content();
-                        
-                        wp_link_pages(
-                            array(
-                                'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'lala-global-language' ),
-                                'after'  => '</div>',
-                            )
-                        );
-                        ?>
+                <!-- Main Article Content -->
+                <article id="post-<?php the_ID(); ?>" <?php post_class( 'article-enhanced' ); ?>>
+                    <div class="article-body">
+                        <?php the_content(); ?>
                     </div>
                     
-                    <footer class="entry-footer">
-                        <?php if ( has_tag() ) : ?>
-                            <div class="tag-cloud">
-                                <h3 class="tags-title">Tags</h3>
-                                <div class="tags-list">
-                                    <?php
-                                    $tags = get_the_tags();
-                                    foreach ( $tags as $tag ) :
-                                    ?>
-                                        <a href="<?php echo esc_url( get_tag_link( $tag->term_id ) ); ?>" class="tag-item">
-                                            #<?php echo esc_html( $tag->name ); ?>
-                                        </a>
-                                    <?php endforeach; ?>
-                                </div>
+                    <!-- Enhanced Tags Section -->
+                    <?php if ( has_tag() ) : ?>
+                        <div class="tags-section-enhanced">
+                            <h3 class="section-title">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
+                                    <line x1="7" y1="7" x2="7.01" y2="7"/>
+                                </svg>
+                                タグ
+                            </h3>
+                            <div class="tags-cloud">
+                                <?php
+                                $tags = get_the_tags();
+                                foreach ( $tags as $tag ) :
+                                ?>
+                                    <a href="<?php echo esc_url( get_tag_link( $tag->term_id ) ); ?>" class="tag-pill">
+                                        #<?php echo esc_html( $tag->name ); ?>
+                                        <span class="tag-count"><?php echo $tag->count; ?></span>
+                                    </a>
+                                <?php endforeach; ?>
                             </div>
-                        <?php endif; ?>
-                    </footer>
+                        </div>
+                    <?php endif; ?>
+                    
+                    <!-- Article Footer Actions -->
+                    <div class="article-footer-actions">
+                        <div class="action-group">
+                            <button class="action-button like-article" data-post-id="<?php the_ID(); ?>">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                                </svg>
+                                <span>いいね</span>
+                                <span class="like-count">0</span>
+                            </button>
+                            <button class="action-button bookmark-article" data-post-id="<?php the_ID(); ?>">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+                                </svg>
+                                <span>保存</span>
+                            </button>
+                            <button class="action-button share-article">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="18" cy="5" r="3"/>
+                                    <circle cx="6" cy="12" r="3"/>
+                                    <circle cx="18" cy="19" r="3"/>
+                                    <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+                                    <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+                                </svg>
+                                <span>シェア</span>
+                            </button>
+                        </div>
+                    </div>
                 </article>
             </div>
             
-            <!-- Enhanced Navigation -->
-            <div class="post-navigation-modern">
-                <div class="nav-grid">
+            <!-- Enhanced Post Navigation -->
+            <nav class="post-navigation-enhanced">
+                <div class="nav-container">
                     <?php
                     $prev_post = get_previous_post();
                     $next_post = get_next_post();
-                    
-                    if ( $prev_post ) :
                     ?>
-                        <a href="<?php echo esc_url( get_permalink( $prev_post->ID ) ); ?>" class="nav-card prev-post">
-                            <span class="nav-direction">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    
+                    <?php if ( $prev_post ) : ?>
+                        <a href="<?php echo esc_url( get_permalink( $prev_post->ID ) ); ?>" class="nav-item prev">
+                            <div class="nav-arrow">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="15 18 9 12 15 6"/>
                                 </svg>
-                                Previous Article
-                            </span>
-                            <h4 class="nav-post-title"><?php echo esc_html( $prev_post->post_title ); ?></h4>
+                            </div>
+                            <div class="nav-content">
+                                <span class="nav-label">前の記事</span>
+                                <h4 class="nav-title"><?php echo esc_html( $prev_post->post_title ); ?></h4>
+                                <?php if ( has_post_thumbnail( $prev_post->ID ) ) : ?>
+                                    <div class="nav-thumb">
+                                        <?php echo get_the_post_thumbnail( $prev_post->ID, 'thumbnail' ); ?>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
                         </a>
                     <?php endif; ?>
                     
                     <?php if ( $next_post ) : ?>
-                        <a href="<?php echo esc_url( get_permalink( $next_post->ID ) ); ?>" class="nav-card next-post">
-                            <span class="nav-direction">
-                                Next Article
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                        <a href="<?php echo esc_url( get_permalink( $next_post->ID ) ); ?>" class="nav-item next">
+                            <div class="nav-content">
+                                <span class="nav-label">次の記事</span>
+                                <h4 class="nav-title"><?php echo esc_html( $next_post->post_title ); ?></h4>
+                                <?php if ( has_post_thumbnail( $next_post->ID ) ) : ?>
+                                    <div class="nav-thumb">
+                                        <?php echo get_the_post_thumbnail( $next_post->ID, 'thumbnail' ); ?>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                            <div class="nav-arrow">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="9 18 15 12 9 6"/>
                                 </svg>
-                            </span>
-                            <h4 class="nav-post-title"><?php echo esc_html( $next_post->post_title ); ?></h4>
+                            </div>
                         </a>
                     <?php endif; ?>
                 </div>
-            </div>
+            </nav>
             
             <!-- Enhanced Author Bio -->
-            <?php if ( get_the_author_meta( 'description' ) ) : ?>
-                <div class="author-bio-modern">
-                    <div class="bio-card">
-                        <div class="bio-header">
-                            <div class="bio-avatar">
-                                <?php echo get_avatar( get_the_author_meta( 'ID' ), 120 ); ?>
-                            </div>
-                            <div class="bio-info">
-                                <h3 class="bio-name"><?php the_author(); ?></h3>
-                                <div class="bio-stats">
-                                    <span class="stat-item">
-                                        <?php echo count_user_posts( get_the_author_meta( 'ID' ) ); ?> Articles
-                                    </span>
+            <div class="author-section-enhanced">
+                <div class="author-bio-card">
+                    <div class="author-header">
+                        <div class="author-avatar-large">
+                            <?php echo get_avatar( get_the_author_meta( 'ID' ), 150 ); ?>
+                            <span class="author-badge">✍️</span>
+                        </div>
+                        <div class="author-info">
+                            <h3 class="author-name">
+                                <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>">
+                                    <?php the_author(); ?>
+                                </a>
+                            </h3>
+                            <div class="author-stats">
+                                <div class="stat">
+                                    <span class="stat-value"><?php echo count_user_posts( get_the_author_meta( 'ID' ) ); ?></span>
+                                    <span class="stat-label">記事</span>
                                 </div>
+                                <div class="stat">
+                                    <span class="stat-value">
+                                        <?php
+                                        $author_posts = get_posts( array(
+                                            'author' => get_the_author_meta( 'ID' ),
+                                            'posts_per_page' => -1
+                                        ) );
+                                        $total_comments = 0;
+                                        foreach ( $author_posts as $post ) {
+                                            $total_comments += get_comments_number( $post->ID );
+                                        }
+                                        echo $total_comments;
+                                        ?>
+                                    </span>
+                                    <span class="stat-label">コメント</span>
+                                </div>
+                            </div>
+                            <?php if ( get_the_author_meta( 'description' ) ) : ?>
+                                <p class="author-bio"><?php the_author_meta( 'description' ); ?></p>
+                            <?php endif; ?>
+                            <div class="author-social">
+                                <?php if ( get_the_author_meta( 'user_url' ) ) : ?>
+                                    <a href="<?php the_author_meta( 'user_url' ); ?>" class="social-link" target="_blank" rel="noopener">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <circle cx="12" cy="12" r="10"/>
+                                            <line x1="2" y1="12" x2="22" y2="12"/>
+                                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                                        </svg>
+                                    </a>
+                                <?php endif; ?>
                             </div>
                         </div>
-                        <p class="bio-description"><?php the_author_meta( 'description' ); ?></p>
-                        <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" class="bio-link">
-                            View Author Profile
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M5 12h14M12 5l7 7-7 7"/>
-                            </svg>
-                        </a>
                     </div>
-                </div>
-            <?php endif; ?>
-            
-            <!-- Related Posts -->
-            <div class="related-posts-section">
-                <h2 class="related-title">You Might Also Like</h2>
-                <div class="related-grid">
-                    <?php
-                    $related_posts = get_posts( array(
-                        'category__in' => wp_get_post_categories( get_the_ID() ),
-                        'numberposts' => 3,
-                        'post__not_in' => array( get_the_ID() )
-                    ) );
-                    
-                    foreach ( $related_posts as $post ) :
-                        setup_postdata( $post );
-                    ?>
-                        <article class="related-card">
-                            <?php if ( has_post_thumbnail() ) : ?>
-                                <div class="related-thumbnail">
-                                    <a href="<?php the_permalink(); ?>">
-                                        <?php the_post_thumbnail( 'medium' ); ?>
-                                    </a>
-                                </div>
-                            <?php endif; ?>
-                            <div class="related-content">
-                                <span class="related-date"><?php echo get_the_date(); ?></span>
-                                <h3 class="related-card-title">
-                                    <a href="<?php the_permalink(); ?>}"><?php the_title(); ?></a>
-                                </h3>
-                            </div>
-                        </article>
-                    <?php
-                    endforeach;
-                    wp_reset_postdata();
-                    ?>
+                    <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" class="author-more-link">
+                        この著者の他の記事を見る
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"/>
+                        </svg>
+                    </a>
                 </div>
             </div>
             
-            <?php
-            // If comments are open or we have at least one comment, load up the comment template
-            if ( comments_open() || get_comments_number() ) :
-                echo '<div class="comments-section">';
-                comments_template();
-                echo '</div>';
-            endif;
-            ?>
+            <!-- Enhanced Related Posts -->
+            <div class="related-section-enhanced">
+                <div class="section-header">
+                    <h2 class="section-title-large">おすすめの記事</h2>
+                    <div class="carousel-controls">
+                        <button class="carousel-prev" aria-label="前へ">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="15 18 9 12 15 6"/>
+                            </svg>
+                        </button>
+                        <button class="carousel-next" aria-label="次へ">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="9 18 15 12 9 6"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="related-carousel">
+                    <div class="carousel-track">
+                        <?php
+                        $related_posts = get_posts( array(
+                            'category__in' => wp_get_post_categories( get_the_ID() ),
+                            'numberposts' => 6,
+                            'post__not_in' => array( get_the_ID() )
+                        ) );
+                        
+                        foreach ( $related_posts as $post ) :
+                            setup_postdata( $post );
+                        ?>
+                            <article class="related-item">
+                                <a href="<?php the_permalink(); ?>" class="related-link">
+                                    <?php if ( has_post_thumbnail() ) : ?>
+                                        <div class="related-image">
+                                            <?php the_post_thumbnail( 'medium' ); ?>
+                                            <div class="related-overlay">
+                                                <span class="read-more">記事を読む</span>
+                                            </div>
+                                        </div>
+                                    <?php endif; ?>
+                                    <div class="related-body">
+                                        <div class="related-meta">
+                                            <time><?php echo get_the_date( 'Y.m.d' ); ?></time>
+                                            <span class="reading-time"><?php echo reading_time(); ?>分</span>
+                                        </div>
+                                        <h3 class="related-title"><?php the_title(); ?></h3>
+                                        <p class="related-excerpt"><?php echo wp_trim_words( get_the_excerpt(), 15 ); ?></p>
+                                    </div>
+                                </a>
+                            </article>
+                        <?php
+                        endforeach;
+                        wp_reset_postdata();
+                        ?>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Enhanced Comments Section -->
+            <?php if ( comments_open() || get_comments_number() ) : ?>
+                <div class="comments-enhanced">
+                    <div class="comments-header">
+                        <h2 class="comments-title">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                            </svg>
+                            コメント
+                            <?php if ( get_comments_number() > 0 ) : ?>
+                                <span class="comments-count"><?php echo get_comments_number(); ?></span>
+                            <?php endif; ?>
+                        </h2>
+                    </div>
+                    <?php comments_template(); ?>
+                </div>
+            <?php endif; ?>
         </div>
         
     <?php endwhile; ?>
 </main>
 
-<style>
-/* Reading Progress Bar */
-.reading-progress-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 4px;
-    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-    width: 0%;
-    z-index: 1000;
-    transition: width 0.3s ease;
-}
-
-/* Hero Section */
-.post-hero-section {
-    position: relative;
-    height: 70vh;
-    min-height: 600px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    padding: 0 20px;
-    box-sizing: border-box;
-}
-
-.hero-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1;
-}
-
-.hero-background img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.7;
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    padding: 0 40px;
-    max-width: min(1200px, 90%);
-    margin: 0 auto;
-    width: 100%;
-    box-sizing: border-box;
-    animation: fadeInUp 0.8s ease;
-}
-
-.hero-meta {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 30px;
-    flex-wrap: wrap;
-}
-
-.hero-category {
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    color: white;
-    padding: 8px 20px;
-    border-radius: 50px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.hero-reading-time {
-    color: rgba(255, 255, 255, 0.9);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.95rem;
-}
-
-.hero-title {
-    font-size: clamp(2rem, 4vw, 3.5rem);
-    color: white;
-    font-weight: 900;
-    line-height: 1.3;
-    margin: 0 auto 30px;
-    text-shadow: 0 4px 20px rgba(0,0,0,0.3);
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    word-break: auto-phrase;
-    hyphens: auto;
-    max-width: 100%;
-    padding: 0;
-    white-space: normal;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.hero-author {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-}
-
-.author-avatar img {
-    border-radius: 50%;
-    border: 3px solid rgba(255, 255, 255, 0.3);
-}
-
-.author-info {
-    text-align: left;
-}
-
-.author-name {
-    display: block;
-    color: white;
-    font-weight: 600;
-    font-size: 1.1rem;
-}
-
-.post-date {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 0.95rem;
-}
-
-/* Post Container */
-.post-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 60px 20px;
-    overflow-x: hidden;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.post-layout {
-    display: grid;
-    grid-template-columns: 250px 1fr;
-    gap: 60px;
-    align-items: start;
-}
-
-/* Sidebar */
-.post-sidebar {
-    position: relative;
-}
-
-.sidebar-sticky {
-    position: sticky;
-    top: 100px;
-}
-
-.toc-container,
-.share-container {
-    background: white;
-    border-radius: 20px;
-    padding: 30px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-    margin-bottom: 30px;
-}
-
-.toc-title,
-.share-title {
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    color: #2d3748;
-}
-
-.toc-nav {
-    max-height: 400px;
-    overflow-y: auto;
-}
-
-.toc-nav a {
-    display: block;
-    padding: 8px 0;
-    color: #4a5568;
-    text-decoration: none;
-    font-size: 0.95rem;
-    border-left: 3px solid transparent;
-    padding-left: 15px;
-    margin-left: -15px;
-    transition: all 0.3s ease;
-}
-
-.toc-nav a:hover,
-.toc-nav a.active {
-    color: #667eea;
-    border-left-color: #667eea;
-    background: linear-gradient(90deg, rgba(102, 126, 234, 0.1) 0%, transparent 100%);
-}
-
-.share-buttons-vertical {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.share-btn {
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    transition: all 0.3s ease;
-    text-decoration: none;
-}
-
-.share-btn.twitter {
-    background: #1DA1F2;
-    color: white;
-}
-
-.share-btn.facebook {
-    background: #1877F2;
-    color: white;
-}
-
-.share-btn.linkedin {
-    background: #0A66C2;
-    color: white;
-}
-
-.share-btn.email {
-    background: #EA4335;
-    color: white;
-}
-
-.share-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-/* Main Content */
-.post-content-area {
-    background: white;
-    border-radius: 30px;
-    padding: 60px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-    overflow-x: hidden;
-    max-width: 100%;
-    box-sizing: border-box;
-}
-
-.entry-content {
-    font-size: 1.2rem;
-    line-height: 1.9;
-    color: #2d3748;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    hyphens: auto;
-    overflow-x: hidden;
-    max-width: 100%;
-}
-
-.entry-content h2 {
-    margin: 60px 0 30px;
-    font-size: 2.2rem;
-    font-weight: 800;
-    color: #1a202c;
-    position: relative;
-    padding-left: 20px;
-}
-
-.entry-content h2:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 4px;
-    height: 100%;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
-
-.entry-content h3 {
-    margin: 40px 0 20px;
-    font-size: 1.7rem;
-    font-weight: 700;
-    color: #2d3748;
-}
-
-.entry-content p {
-    margin-bottom: 30px;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    max-width: 100%;
-}
-
-.entry-content img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 20px;
-    margin: 40px 0;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
-
-.entry-content blockquote {
-    position: relative;
-    padding: 40px;
-    margin: 50px 0;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    border-radius: 20px;
-    font-size: 1.3rem;
-    font-style: italic;
-    color: #2d3748;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-}
-
-.entry-content blockquote:before {
-    content: '"';
-    position: absolute;
-    top: -20px;
-    left: 30px;
-    font-size: 80px;
-    color: #667eea;
-    opacity: 0.3;
-}
-
-.entry-content ul,
-.entry-content ol {
-    margin: 30px 0 30px 40px;
-}
-
-.entry-content li {
-    margin-bottom: 15px;
-    position: relative;
-}
-
-.entry-content code {
-    background: #f7fafc;
-    padding: 3px 8px;
-    border-radius: 6px;
-    font-size: 0.95em;
-    color: #e53e3e;
-    word-break: break-all;
-}
-
-.entry-content pre {
-    background: #1a202c;
-    color: #e2e8f0;
-    padding: 30px;
-    border-radius: 15px;
-    overflow-x: auto;
-    margin: 40px 0;
-    max-width: 100%;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-}
-
-/* Tags */
-.tag-cloud {
-    margin-top: 60px;
-    padding-top: 40px;
-    border-top: 2px solid #e2e8f0;
-}
-
-.tags-title {
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    color: #2d3748;
-}
-
-.tags-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-.tag-item {
-    padding: 10px 25px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    border-radius: 50px;
-    text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-.tag-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
-}
-
-/* Navigation Cards */
-.post-navigation-modern {
-    margin: 80px 0;
-}
-
-.nav-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-}
-
-.nav-card {
-    background: white;
-    border-radius: 20px;
-    padding: 40px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.nav-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-}
-
-.nav-direction {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: #667eea;
-    font-size: 0.95rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.nav-post-title {
-    font-size: 1.3rem;
-    color: #2d3748;
-    line-height: 1.4;
-    margin: 0;
-}
-
-.prev-post .nav-direction {
-    justify-content: flex-start;
-}
-
-.next-post .nav-direction {
-    justify-content: flex-end;
-}
-
-.next-post {
-    text-align: right;
-}
-
-/* Author Bio Modern */
-.author-bio-modern {
-    margin: 80px 0;
-}
-
-.bio-card {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-radius: 30px;
-    padding: 50px;
-    color: white;
-    box-shadow: 0 30px 60px rgba(102, 126, 234, 0.3);
-}
-
-.bio-header {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    margin-bottom: 30px;
-}
-
-.bio-avatar img {
-    border-radius: 50%;
-    border: 4px solid rgba(255, 255, 255, 0.3);
-}
-
-.bio-name {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-}
-
-.bio-stats {
-    display: flex;
-    gap: 20px;
-}
-
-.stat-item {
-    background: rgba(255, 255, 255, 0.2);
-    padding: 5px 15px;
-    border-radius: 50px;
-    font-size: 0.9rem;
-}
-
-.bio-description {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin-bottom: 30px;
-    opacity: 0.95;
-}
-
-.bio-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: white;
-    color: #667eea;
-    padding: 12px 30px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.bio-link:hover {
-    transform: translateX(5px);
-    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
-}
-
-/* Related Posts */
-.related-posts-section {
-    margin: 100px 0;
-}
-
-.related-title {
-    font-size: 2.5rem;
-    font-weight: 800;
-    text-align: center;
-    margin-bottom: 50px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.related-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-}
-
-.related-card {
-    background: white;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-    transition: all 0.3s ease;
-}
-
-.related-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-}
-
-.related-thumbnail {
-    height: 200px;
-    overflow: hidden;
-}
-
-.related-thumbnail img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.related-card:hover .related-thumbnail img {
-    transform: scale(1.1);
-}
-
-.related-content {
-    padding: 25px;
-}
-
-.related-date {
-    color: #718096;
-    font-size: 0.9rem;
-}
-
-.related-card-title {
-    margin: 10px 0 0;
-    font-size: 1.2rem;
-    line-height: 1.4;
-}
-
-.related-card-title a {
-    color: #2d3748;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.related-card-title a:hover {
-    color: #667eea;
-}
-
-/* Comments Section */
-.comments-section {
-    margin-top: 80px;
-    padding: 50px;
-    background: white;
-    border-radius: 30px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-}
-
-/* Animations */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Desktop adjustments for hero title */
-@media (min-width: 1200px) {
-    .post-hero-section {
-        padding: 0 40px;
-    }
-    
-    .hero-content {
-        padding: 0 60px;
-        max-width: min(1100px, 85%);
-    }
-    
-    .hero-title {
-        font-size: clamp(2.5rem, 3.5vw, 3.8rem);
-        word-break: break-word;
-        overflow-wrap: anywhere;
-    }
-}
-
-@media (min-width: 1400px) {
-    .hero-content {
-        max-width: 1200px;
-    }
-}
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .post-layout {
-        grid-template-columns: 1fr;
-    }
-    
-    .post-sidebar {
-        display: none;
-    }
-    
-    .post-content-area {
-        padding: 40px;
-    }
-    
-    .hero-content {
-        padding: 0 30px;
-        max-width: 900px;
-    }
-    
-    .hero-title {
-        font-size: clamp(2.2rem, 4vw, 3.5rem);
-        padding: 0 10px;
-    }
-}
-
-@media (max-width: 768px) {
-    .post-hero-section {
-        height: 50vh;
-        min-height: 400px;
-    }
-    
-    .hero-title {
-        font-size: 2rem;
-        padding: 0 10px;
-    }
-    
-    .post-container {
-        padding: 40px 15px;
-        max-width: 100vw;
-        overflow-x: hidden;
-    }
-    
-    .post-content-area {
-        padding: 30px 15px;
-        border-radius: 20px;
-        max-width: calc(100vw - 30px);
-        margin: 0 auto;
-    }
-    
-    .entry-content {
-        font-size: 1.1rem;
-    }
-    
-    .entry-content h2,
-    .entry-content h3 {
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-    }
-    
-    .entry-content pre {
-        padding: 20px;
-        font-size: 0.85rem;
-    }
-    
-    .entry-content blockquote {
-        padding: 25px;
-        font-size: 1.1rem;
-    }
-    
-    .nav-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .related-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .bio-header {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .share-buttons-vertical {
-        flex-direction: row;
-        justify-content: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-meta {
-        flex-direction: column;
-    }
-    
-    .hero-author {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .author-info {
-        text-align: center;
-    }
-    
-    .post-container {
-        padding: 30px 10px;
-    }
-    
-    .post-content-area {
-        padding: 20px 12px;
-        max-width: calc(100vw - 20px);
-    }
-    
-    .entry-content {
-        font-size: 1rem;
-    }
-    
-    .entry-content h2 {
-        font-size: 1.6rem;
-    }
-    
-    .entry-content h3 {
-        font-size: 1.3rem;
-    }
-    
-    .entry-content img {
-        border-radius: 10px;
-        margin: 20px 0;
-    }
-    
-    .entry-content ul,
-    .entry-content ol {
-        margin-left: 20px;
-        padding-left: 0;
-    }
-    
-    .featured-footer,
-    .card-footer {
-        flex-wrap: wrap;
-    }
-}
-</style>
-
-<script>
-// Reading Progress Bar
-window.addEventListener('scroll', () => {
-    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = (winScroll / height) * 100;
-    document.querySelector('.reading-progress-bar').style.width = scrolled + '%';
-});
-
-// Parallax Effect
-window.addEventListener('scroll', () => {
-    const parallax = document.querySelector('[data-parallax]');
-    if (parallax) {
-        const scrolled = window.pageYOffset;
-        parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
-    }
-});
-
-// Generate Table of Contents
-document.addEventListener('DOMContentLoaded', () => {
-    const tocNav = document.getElementById('toc-nav');
-    const headings = document.querySelectorAll('.entry-content h2, .entry-content h3');
-    
-    if (tocNav && headings.length > 0) {
-        const tocList = document.createElement('ul');
-        tocList.style.listStyle = 'none';
-        tocList.style.padding = '0';
-        
-        headings.forEach((heading, index) => {
-            const id = 'heading-' + index;
-            heading.setAttribute('id', id);
-            
-            const li = document.createElement('li');
-            const a = document.createElement('a');
-            a.href = '#' + id;
-            a.textContent = heading.textContent;
-            
-            if (heading.tagName === 'H3') {
-                a.style.paddingLeft = '30px';
-                a.style.fontSize = '0.9rem';
-            }
-            
-            li.appendChild(a);
-            tocList.appendChild(li);
-        });
-        
-        tocNav.appendChild(tocList);
-        
-        // Smooth scroll and active state
-        const tocLinks = tocNav.querySelectorAll('a');
-        
-        tocLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const target = document.querySelector(link.getAttribute('href'));
-                target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            });
-        });
-        
-        // Update active state on scroll
-        window.addEventListener('scroll', () => {
-            let current = '';
-            headings.forEach(heading => {
-                const rect = heading.getBoundingClientRect();
-                if (rect.top < 200) {
-                    current = heading.getAttribute('id');
-                }
-            });
-            
-            tocLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + current) {
-                    link.classList.add('active');
-                }
-            });
-        });
-    }
-});
-</script>
+<!-- Lightbox for Images -->
+<div class="lightbox" id="lightbox">
+    <button class="lightbox-close" aria-label="閉じる">×</button>
+    <img src="" alt="" class="lightbox-image">
+    <div class="lightbox-caption"></div>
+</div>
+
+<!-- Share Modal -->
+<div class="share-modal" id="share-modal">
+    <div class="modal-content">
+        <h3>この記事をシェア</h3>
+        <div class="share-options">
+            <a href="#" class="share-option twitter" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+                </svg>
+                <span>Twitter</span>
+            </a>
+            <a href="#" class="share-option facebook" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+                </svg>
+                <span>Facebook</span>
+            </a>
+            <a href="#" class="share-option line" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.349 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
+                </svg>
+                <span>LINE</span>
+            </a>
+            <a href="#" class="share-option linkedin" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+                    <circle cx="4" cy="4" r="2"/>
+                </svg>
+                <span>LinkedIn</span>
+            </a>
+            <button class="share-option copy-url">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+                </svg>
+                <span>URLをコピー</span>
+            </button>
+        </div>
+        <button class="modal-close">閉じる</button>
+    </div>
+</div>
+
+<!-- Toast Notification -->
+<div class="toast" id="toast">
+    <span class="toast-message"></span>
+</div>
 
 <?php get_footer(); ?>

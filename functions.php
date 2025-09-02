@@ -134,6 +134,12 @@ function lala_global_language_scripts() {
 
     // Enqueue main JavaScript file
     wp_enqueue_script( 'lala-global-language-script', get_template_directory_uri() . '/js/main.js', array('jquery'), '1.0.0', true );
+    
+    // Enhanced single post styles and scripts
+    if ( is_singular( 'post' ) ) {
+        wp_enqueue_style( 'enhanced-single-style', get_template_directory_uri() . '/css/enhanced-single.css', array(), '1.0.0' );
+        wp_enqueue_script( 'enhanced-single-script', get_template_directory_uri() . '/js/enhanced-single.js', array(), '1.0.0', true );
+    }
 
     // Enqueue comment reply script
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
