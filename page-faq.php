@@ -8,6 +8,8 @@
 
 get_header(); ?>
 
+<?php lala_breadcrumbs(); ?>
+
 <main id="primary" class="site-main faq-page">
     <!-- Hero Section -->
     <section class="faq-hero">

@@ -7,6 +7,8 @@
 
 get_header(); ?>
 
+<?php lala_breadcrumbs(); ?>
+
 <!-- Reading Progress Bar -->
 <div class="reading-progress-bar"></div>
 

@@ -7,6 +7,8 @@
 
 get_header(); ?>
 
+<?php lala_breadcrumbs(); ?>
+
 <main id="primary" class="site-main contact-page">
     <!-- Hero Section -->
     <section class="contact-hero">

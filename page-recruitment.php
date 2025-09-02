@@ -7,6 +7,8 @@
 
 get_header(); ?>
 
+<?php lala_breadcrumbs(); ?>
+
 <main id="primary" class="site-main recruitment-page">
     <!-- Hero Section -->
     <section class="recruitment-hero">

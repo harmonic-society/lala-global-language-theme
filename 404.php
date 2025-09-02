@@ -7,6 +7,8 @@
 
 get_header(); ?>
 
+<?php lala_breadcrumbs(); ?>
+
 <main id="primary" class="site-main">
     <section class="error-404 not-found">
         <div class="container">

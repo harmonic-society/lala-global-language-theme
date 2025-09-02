@@ -8,6 +8,8 @@
 
 get_header(); ?>
 
+<?php lala_breadcrumbs(); ?>
+
 <main id="primary" class="site-main coming-soon-page">
     <section class="coming-soon-section">
         <div class="container">

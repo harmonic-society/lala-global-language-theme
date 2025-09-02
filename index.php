@@ -7,6 +7,8 @@
 
 get_header(); ?>
 
+<?php lala_breadcrumbs(); ?>
+
 <main id="primary" class="site-main blog-main">
     <div class="blog-hero-section">
         <div class="blog-hero-content">

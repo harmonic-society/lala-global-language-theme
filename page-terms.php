@@ -8,6 +8,8 @@
 
 get_header(); ?>
 
+<?php lala_breadcrumbs(); ?>
+
 <main id="primary" class="site-main">
     <div class="container page-container full-width">
         <div class="content-area">
