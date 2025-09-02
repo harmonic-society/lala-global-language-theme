@@ -36,7 +36,13 @@ function lala_add_meta_description() {
             $description = get_the_excerpt() ? get_the_excerpt() : 'LaLa Global Language - ' . get_the_title();
         }
     } elseif ( is_single() ) {
-        $description = get_the_excerpt() ? get_the_excerpt() : wp_trim_words( get_the_content(), 30 );
+        // Check for custom SEO description first
+        $custom_description = get_post_meta( get_the_ID(), '_lala_seo_description', true );
+        if ( $custom_description ) {
+            $description = $custom_description;
+        } else {
+            $description = get_the_excerpt() ? get_the_excerpt() : wp_trim_words( get_the_content(), 30 );
+        }
     } elseif ( is_category() ) {
         $description = 'LaLa Global Language ' . single_cat_title( '', false ) . 'カテゴリーの記事一覧。語学学習に役立つ情報を定期的に発信しています。';
     } elseif ( is_tag() ) {
@@ -58,12 +64,79 @@ function lala_add_meta_description() {
 add_action( 'wp_head', 'lala_add_meta_description', 1 );
 
 /**
+ * Add meta keywords tag
+ */
+function lala_add_meta_keywords() {
+    if ( is_single() ) {
+        $keywords = get_post_meta( get_the_ID(), '_lala_seo_keywords', true );
+        if ( $keywords ) {
+            echo '<meta name="keywords" content="' . esc_attr( $keywords ) . '">' . "\n";
+        }
+    }
+}
+add_action( 'wp_head', 'lala_add_meta_keywords', 1 );
+
+/**
+ * Add robots meta tag
+ */
+function lala_add_robots_meta() {
+    $robots = array();
+    
+    if ( is_single() ) {
+        $noindex = get_post_meta( get_the_ID(), '_lala_seo_noindex', true );
+        $nofollow = get_post_meta( get_the_ID(), '_lala_seo_nofollow', true );
+        
+        if ( $noindex == '1' ) {
+            $robots[] = 'noindex';
+        }
+        
+        if ( $nofollow == '1' ) {
+            $robots[] = 'nofollow';
+        }
+        
+        if ( ! empty( $robots ) ) {
+            echo '<meta name="robots" content="' . esc_attr( implode( ', ', $robots ) ) . '">' . "\n";
+        }
+    }
+}
+add_action( 'wp_head', 'lala_add_robots_meta', 1 );
+
+/**
+ * Filter the document title
+ */
+function lala_filter_document_title( $title ) {
+    if ( is_single() ) {
+        $custom_title = get_post_meta( get_the_ID(), '_lala_seo_title', true );
+        if ( $custom_title ) {
+            return $custom_title;
+        }
+    }
+    return $title;
+}
+add_filter( 'pre_get_document_title', 'lala_filter_document_title', 10 );
+
+/**
  * Add Open Graph tags
  */
 function lala_add_open_graph_tags() {
     global $post;
     
-    $og_title = is_front_page() ? get_bloginfo( 'name' ) : wp_get_document_title();
+    // Check for custom OGP title on single posts
+    $og_title = '';
+    if ( is_single() ) {
+        $custom_ogp_title = get_post_meta( get_the_ID(), '_lala_ogp_title', true );
+        $custom_seo_title = get_post_meta( get_the_ID(), '_lala_seo_title', true );
+        
+        if ( $custom_ogp_title ) {
+            $og_title = $custom_ogp_title;
+        } elseif ( $custom_seo_title ) {
+            $og_title = $custom_seo_title;
+        } else {
+            $og_title = wp_get_document_title();
+        }
+    } else {
+        $og_title = is_front_page() ? get_bloginfo( 'name' ) : wp_get_document_title();
+    }
     $og_type = is_single() ? 'article' : 'website';
     $og_url = get_permalink();
     $og_site_name = get_bloginfo( 'name' );
@@ -74,15 +147,35 @@ function lala_add_open_graph_tags() {
     if ( is_front_page() ) {
         $og_description = 'LaLa Global Languageは、35言語に対応したオンライン語学スクール。バイリンガル講師による質の高いレッスンで、世界中の言語を自宅で学べます。';
     } elseif ( is_single() || is_page() ) {
-        $og_description = get_the_excerpt() ? get_the_excerpt() : wp_trim_words( get_the_content(), 30 );
+        // Check for custom OGP description on single posts
+        if ( is_single() ) {
+            $custom_ogp_description = get_post_meta( get_the_ID(), '_lala_ogp_description', true );
+            $custom_seo_description = get_post_meta( get_the_ID(), '_lala_seo_description', true );
+            
+            if ( $custom_ogp_description ) {
+                $og_description = $custom_ogp_description;
+            } elseif ( $custom_seo_description ) {
+                $og_description = $custom_seo_description;
+            } else {
+                $og_description = get_the_excerpt() ? get_the_excerpt() : wp_trim_words( get_the_content(), 30 );
+            }
+        } else {
+            $og_description = get_the_excerpt() ? get_the_excerpt() : wp_trim_words( get_the_content(), 30 );
+        }
     } else {
         $og_description = get_bloginfo( 'description' );
     }
     
     // Get image
     $og_image = '';
-    if ( is_single() && has_post_thumbnail() ) {
-        $og_image = get_the_post_thumbnail_url( $post->ID, 'large' );
+    if ( is_single() ) {
+        // Check for custom OGP image first
+        $custom_ogp_image_id = get_post_meta( get_the_ID(), '_lala_ogp_image_id', true );
+        if ( $custom_ogp_image_id ) {
+            $og_image = wp_get_attachment_url( $custom_ogp_image_id );
+        } elseif ( has_post_thumbnail() ) {
+            $og_image = get_the_post_thumbnail_url( $post->ID, 'large' );
+        }
     } else {
         // Use site logo or default image
         $custom_logo_id = get_theme_mod( 'custom_logo' );
@@ -119,14 +212,48 @@ add_action( 'wp_head', 'lala_add_open_graph_tags', 5 );
 function lala_add_twitter_card_tags() {
     global $post;
     
+    // Get Twitter card type
     $twitter_card = 'summary_large_image';
-    $twitter_title = is_front_page() ? get_bloginfo( 'name' ) : wp_get_document_title();
+    if ( is_single() ) {
+        $custom_twitter_card = get_post_meta( get_the_ID(), '_lala_twitter_card', true );
+        if ( $custom_twitter_card ) {
+            $twitter_card = $custom_twitter_card;
+        }
+    }
+    
+    // Get title
+    $twitter_title = '';
+    if ( is_single() ) {
+        $custom_ogp_title = get_post_meta( get_the_ID(), '_lala_ogp_title', true );
+        $custom_seo_title = get_post_meta( get_the_ID(), '_lala_seo_title', true );
+        
+        if ( $custom_ogp_title ) {
+            $twitter_title = $custom_ogp_title;
+        } elseif ( $custom_seo_title ) {
+            $twitter_title = $custom_seo_title;
+        } else {
+            $twitter_title = wp_get_document_title();
+        }
+    } else {
+        $twitter_title = is_front_page() ? get_bloginfo( 'name' ) : wp_get_document_title();
+    }
     
     // Get description
     $twitter_description = '';
     if ( is_front_page() ) {
         $twitter_description = 'LaLa Global Languageは、35言語に対応したオンライン語学スクール。バイリンガル講師による質の高いレッスンで、世界中の言語を自宅で学べます。';
-    } elseif ( is_single() || is_page() ) {
+    } elseif ( is_single() ) {
+        $custom_ogp_description = get_post_meta( get_the_ID(), '_lala_ogp_description', true );
+        $custom_seo_description = get_post_meta( get_the_ID(), '_lala_seo_description', true );
+        
+        if ( $custom_ogp_description ) {
+            $twitter_description = $custom_ogp_description;
+        } elseif ( $custom_seo_description ) {
+            $twitter_description = $custom_seo_description;
+        } else {
+            $twitter_description = get_the_excerpt() ? get_the_excerpt() : wp_trim_words( get_the_content(), 30 );
+        }
+    } elseif ( is_page() ) {
         $twitter_description = get_the_excerpt() ? get_the_excerpt() : wp_trim_words( get_the_content(), 30 );
     } else {
         $twitter_description = get_bloginfo( 'description' );
@@ -134,9 +261,17 @@ function lala_add_twitter_card_tags() {
     
     // Get image
     $twitter_image = '';
-    if ( is_single() && has_post_thumbnail() ) {
-        $twitter_image = get_the_post_thumbnail_url( $post->ID, 'large' );
-    } else {
+    if ( is_single() ) {
+        // Check for custom OGP image first
+        $custom_ogp_image_id = get_post_meta( get_the_ID(), '_lala_ogp_image_id', true );
+        if ( $custom_ogp_image_id ) {
+            $twitter_image = wp_get_attachment_url( $custom_ogp_image_id );
+        } elseif ( has_post_thumbnail() ) {
+            $twitter_image = get_the_post_thumbnail_url( $post->ID, 'large' );
+        }
+    }
+    
+    if ( ! $twitter_image ) {
         $custom_logo_id = get_theme_mod( 'custom_logo' );
         if ( $custom_logo_id ) {
             $twitter_image = wp_get_attachment_image_url( $custom_logo_id, 'full' );
@@ -164,7 +299,17 @@ function lala_add_canonical_url() {
     if ( is_front_page() ) {
         $canonical_url = home_url( '/' );
     } elseif ( is_single() || is_page() ) {
-        $canonical_url = get_permalink();
+        // Check for custom canonical URL on single posts
+        if ( is_single() ) {
+            $custom_canonical = get_post_meta( get_the_ID(), '_lala_seo_canonical', true );
+            if ( $custom_canonical ) {
+                $canonical_url = $custom_canonical;
+            } else {
+                $canonical_url = get_permalink();
+            }
+        } else {
+            $canonical_url = get_permalink();
+        }
     } elseif ( is_category() ) {
         $canonical_url = get_category_link( get_queried_object_id() );
     } elseif ( is_tag() ) {

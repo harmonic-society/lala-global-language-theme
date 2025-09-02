@@ -550,3 +550,245 @@ function reading_time() {
     
     return $reading_time;
 }
+
+/**
+ * Add SEO meta boxes for blog posts
+ */
+function lala_add_seo_meta_boxes() {
+    add_meta_box(
+        'lala_seo_settings',
+        __( 'SEO設定', 'lala-global-language' ),
+        'lala_seo_settings_callback',
+        'post',
+        'normal',
+        'high'
+    );
+    
+    add_meta_box(
+        'lala_ogp_settings',
+        __( 'OGP（ソーシャルメディア）設定', 'lala-global-language' ),
+        'lala_ogp_settings_callback',
+        'post',
+        'normal',
+        'high'
+    );
+}
+add_action( 'add_meta_boxes', 'lala_add_seo_meta_boxes' );
+
+/**
+ * SEO settings meta box callback
+ */
+function lala_seo_settings_callback( $post ) {
+    // Add nonce for security
+    wp_nonce_field( 'lala_seo_settings_nonce', 'lala_seo_settings_nonce' );
+    
+    // Get existing values
+    $seo_title = get_post_meta( $post->ID, '_lala_seo_title', true );
+    $seo_description = get_post_meta( $post->ID, '_lala_seo_description', true );
+    $seo_keywords = get_post_meta( $post->ID, '_lala_seo_keywords', true );
+    $seo_canonical = get_post_meta( $post->ID, '_lala_seo_canonical', true );
+    $seo_noindex = get_post_meta( $post->ID, '_lala_seo_noindex', true );
+    $seo_nofollow = get_post_meta( $post->ID, '_lala_seo_nofollow', true );
+    
+    ?>
+    <div class="lala-seo-meta-box">
+        <p>
+            <label for="lala_seo_title"><strong><?php _e( 'SEOタイトル', 'lala-global-language' ); ?></strong></label><br>
+            <input type="text" name="lala_seo_title" id="lala_seo_title" value="<?php echo esc_attr( $seo_title ); ?>" class="large-text" />
+            <span class="description"><?php _e( '空欄の場合は記事タイトルが使用されます（推奨: 60文字以内）', 'lala-global-language' ); ?></span>
+        </p>
+        
+        <p>
+            <label for="lala_seo_description"><strong><?php _e( 'メタディスクリプション', 'lala-global-language' ); ?></strong></label><br>
+            <textarea name="lala_seo_description" id="lala_seo_description" rows="3" class="large-text"><?php echo esc_textarea( $seo_description ); ?></textarea>
+            <span class="description"><?php _e( '検索結果に表示される説明文（推奨: 120-160文字）', 'lala-global-language' ); ?></span>
+        </p>
+        
+        <p>
+            <label for="lala_seo_keywords"><strong><?php _e( 'メタキーワード', 'lala-global-language' ); ?></strong></label><br>
+            <input type="text" name="lala_seo_keywords" id="lala_seo_keywords" value="<?php echo esc_attr( $seo_keywords ); ?>" class="large-text" />
+            <span class="description"><?php _e( 'カンマ区切りでキーワードを入力（例: 英語学習, オンライン英会話, 語学スクール）', 'lala-global-language' ); ?></span>
+        </p>
+        
+        <p>
+            <label for="lala_seo_canonical"><strong><?php _e( 'カノニカルURL', 'lala-global-language' ); ?></strong></label><br>
+            <input type="url" name="lala_seo_canonical" id="lala_seo_canonical" value="<?php echo esc_url( $seo_canonical ); ?>" class="large-text" />
+            <span class="description"><?php _e( '別のURLを正規URLとして指定する場合に入力', 'lala-global-language' ); ?></span>
+        </p>
+        
+        <div style="margin-top: 20px;">
+            <label>
+                <input type="checkbox" name="lala_seo_noindex" value="1" <?php checked( $seo_noindex, '1' ); ?> />
+                <strong><?php _e( 'noindex - 検索エンジンにインデックスさせない', 'lala-global-language' ); ?></strong>
+            </label>
+        </div>
+        
+        <div style="margin-top: 10px;">
+            <label>
+                <input type="checkbox" name="lala_seo_nofollow" value="1" <?php checked( $seo_nofollow, '1' ); ?> />
+                <strong><?php _e( 'nofollow - リンクを辿らせない', 'lala-global-language' ); ?></strong>
+            </label>
+        </div>
+    </div>
+    
+    <style>
+        .lala-seo-meta-box p { margin-bottom: 20px; }
+        .lala-seo-meta-box .description { display: block; margin-top: 5px; color: #666; font-style: italic; }
+    </style>
+    <?php
+}
+
+/**
+ * OGP settings meta box callback
+ */
+function lala_ogp_settings_callback( $post ) {
+    // Get existing values
+    $ogp_title = get_post_meta( $post->ID, '_lala_ogp_title', true );
+    $ogp_description = get_post_meta( $post->ID, '_lala_ogp_description', true );
+    $ogp_image_id = get_post_meta( $post->ID, '_lala_ogp_image_id', true );
+    $twitter_card = get_post_meta( $post->ID, '_lala_twitter_card', true );
+    
+    // Get image URL if exists
+    $ogp_image_url = '';
+    if ( $ogp_image_id ) {
+        $ogp_image_url = wp_get_attachment_url( $ogp_image_id );
+    }
+    
+    ?>
+    <div class="lala-ogp-meta-box">
+        <p>
+            <label for="lala_ogp_title"><strong><?php _e( 'OGPタイトル', 'lala-global-language' ); ?></strong></label><br>
+            <input type="text" name="lala_ogp_title" id="lala_ogp_title" value="<?php echo esc_attr( $ogp_title ); ?>" class="large-text" />
+            <span class="description"><?php _e( 'SNSでシェアされた時に表示されるタイトル（空欄の場合はSEOタイトルまたは記事タイトルを使用）', 'lala-global-language' ); ?></span>
+        </p>
+        
+        <p>
+            <label for="lala_ogp_description"><strong><?php _e( 'OGP説明文', 'lala-global-language' ); ?></strong></label><br>
+            <textarea name="lala_ogp_description" id="lala_ogp_description" rows="3" class="large-text"><?php echo esc_textarea( $ogp_description ); ?></textarea>
+            <span class="description"><?php _e( 'SNSでシェアされた時に表示される説明文（空欄の場合はメタディスクリプションを使用）', 'lala-global-language' ); ?></span>
+        </p>
+        
+        <div class="ogp-image-upload">
+            <label><strong><?php _e( 'OGP画像', 'lala-global-language' ); ?></strong></label><br>
+            <div class="ogp-image-preview" style="margin: 10px 0;">
+                <?php if ( $ogp_image_url ) : ?>
+                    <img src="<?php echo esc_url( $ogp_image_url ); ?>" style="max-width: 300px; height: auto; display: block; margin-bottom: 10px;" />
+                <?php endif; ?>
+            </div>
+            <input type="hidden" name="lala_ogp_image_id" id="lala_ogp_image_id" value="<?php echo esc_attr( $ogp_image_id ); ?>" />
+            <button type="button" class="button" id="upload_ogp_image_button"><?php _e( '画像を選択', 'lala-global-language' ); ?></button>
+            <button type="button" class="button" id="remove_ogp_image_button" <?php echo $ogp_image_id ? '' : 'style="display:none;"'; ?>><?php _e( '画像を削除', 'lala-global-language' ); ?></button>
+            <span class="description" style="display: block; margin-top: 5px;"><?php _e( '推奨サイズ: 1200×630px（FacebookやTwitterで最適に表示されます）', 'lala-global-language' ); ?></span>
+        </div>
+        
+        <p style="margin-top: 20px;">
+            <label for="lala_twitter_card"><strong><?php _e( 'Twitter Card タイプ', 'lala-global-language' ); ?></strong></label><br>
+            <select name="lala_twitter_card" id="lala_twitter_card">
+                <option value="summary" <?php selected( $twitter_card, 'summary' ); ?>><?php _e( 'Summary（小さい画像）', 'lala-global-language' ); ?></option>
+                <option value="summary_large_image" <?php selected( $twitter_card, 'summary_large_image' ); ?>><?php _e( 'Summary Large Image（大きい画像）', 'lala-global-language' ); ?></option>
+            </select>
+        </p>
+    </div>
+    
+    <script>
+    jQuery(document).ready(function($) {
+        // Media uploader for OGP image
+        $('#upload_ogp_image_button').click(function(e) {
+            e.preventDefault();
+            
+            var mediaUploader = wp.media({
+                title: '<?php _e( "OGP画像を選択", "lala-global-language" ); ?>',
+                button: {
+                    text: '<?php _e( "この画像を使用", "lala-global-language" ); ?>'
+                },
+                multiple: false
+            });
+            
+            mediaUploader.on('select', function() {
+                var attachment = mediaUploader.state().get('selection').first().toJSON();
+                $('#lala_ogp_image_id').val(attachment.id);
+                $('.ogp-image-preview').html('<img src="' + attachment.url + '" style="max-width: 300px; height: auto; display: block; margin-bottom: 10px;" />');
+                $('#remove_ogp_image_button').show();
+            });
+            
+            mediaUploader.open();
+        });
+        
+        // Remove OGP image
+        $('#remove_ogp_image_button').click(function(e) {
+            e.preventDefault();
+            $('#lala_ogp_image_id').val('');
+            $('.ogp-image-preview').html('');
+            $(this).hide();
+        });
+    });
+    </script>
+    
+    <style>
+        .lala-ogp-meta-box p { margin-bottom: 20px; }
+        .lala-ogp-meta-box .description { display: block; margin-top: 5px; color: #666; font-style: italic; }
+    </style>
+    <?php
+}
+
+/**
+ * Save SEO and OGP meta data
+ */
+function lala_save_seo_meta( $post_id ) {
+    // Check nonce
+    if ( ! isset( $_POST['lala_seo_settings_nonce'] ) || ! wp_verify_nonce( $_POST['lala_seo_settings_nonce'], 'lala_seo_settings_nonce' ) ) {
+        return;
+    }
+    
+    // Check autosave
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+        return;
+    }
+    
+    // Check permissions
+    if ( ! current_user_can( 'edit_post', $post_id ) ) {
+        return;
+    }
+    
+    // Save SEO fields
+    if ( isset( $_POST['lala_seo_title'] ) ) {
+        update_post_meta( $post_id, '_lala_seo_title', sanitize_text_field( $_POST['lala_seo_title'] ) );
+    }
+    
+    if ( isset( $_POST['lala_seo_description'] ) ) {
+        update_post_meta( $post_id, '_lala_seo_description', sanitize_textarea_field( $_POST['lala_seo_description'] ) );
+    }
+    
+    if ( isset( $_POST['lala_seo_keywords'] ) ) {
+        update_post_meta( $post_id, '_lala_seo_keywords', sanitize_text_field( $_POST['lala_seo_keywords'] ) );
+    }
+    
+    if ( isset( $_POST['lala_seo_canonical'] ) ) {
+        update_post_meta( $post_id, '_lala_seo_canonical', esc_url_raw( $_POST['lala_seo_canonical'] ) );
+    }
+    
+    // Save checkboxes
+    $seo_noindex = isset( $_POST['lala_seo_noindex'] ) ? '1' : '0';
+    update_post_meta( $post_id, '_lala_seo_noindex', $seo_noindex );
+    
+    $seo_nofollow = isset( $_POST['lala_seo_nofollow'] ) ? '1' : '0';
+    update_post_meta( $post_id, '_lala_seo_nofollow', $seo_nofollow );
+    
+    // Save OGP fields
+    if ( isset( $_POST['lala_ogp_title'] ) ) {
+        update_post_meta( $post_id, '_lala_ogp_title', sanitize_text_field( $_POST['lala_ogp_title'] ) );
+    }
+    
+    if ( isset( $_POST['lala_ogp_description'] ) ) {
+        update_post_meta( $post_id, '_lala_ogp_description', sanitize_textarea_field( $_POST['lala_ogp_description'] ) );
+    }
+    
+    if ( isset( $_POST['lala_ogp_image_id'] ) ) {
+        update_post_meta( $post_id, '_lala_ogp_image_id', absint( $_POST['lala_ogp_image_id'] ) );
+    }
+    
+    if ( isset( $_POST['lala_twitter_card'] ) ) {
+        update_post_meta( $post_id, '_lala_twitter_card', sanitize_text_field( $_POST['lala_twitter_card'] ) );
+    }
+}
+add_action( 'save_post', 'lala_save_seo_meta' );
