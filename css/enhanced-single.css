@@ -67,8 +67,10 @@ body.dark-mode {
 }
 
 /* Mobile actions - hidden on desktop by default */
-.mobile-actions {
-    display: none;
+@media (min-width: 769px) {
+    .mobile-actions {
+        display: none !important;
+    }
 }
 
 /* Show mobile actions only on mobile devices */
