@@ -28,13 +28,59 @@
         initTooltips();
         initAnimations();
         
-        // Force mobile actions visibility on mobile devices
+        // Force mobile actions visibility on mobile devices with enhanced styling
         const mobileActions = document.getElementById('mobile-actions-bar');
-        if (mobileActions && window.innerWidth <= 768) {
-            mobileActions.style.display = 'flex';
-            mobileActions.style.visibility = 'visible';
-            console.log('Mobile actions bar initialized');
+        if (mobileActions) {
+            if (window.innerWidth <= 768) {
+                // Apply all styles directly via JavaScript
+                mobileActions.style.cssText = `
+                    display: flex !important;
+                    position: fixed !important;
+                    bottom: 20px !important;
+                    left: 50% !important;
+                    transform: translateX(-50%) !important;
+                    gap: 12px !important;
+                    z-index: 99999 !important;
+                    background: rgba(0,0,0,0.8) !important;
+                    backdrop-filter: blur(10px) !important;
+                    -webkit-backdrop-filter: blur(10px) !important;
+                    padding: 8px 12px !important;
+                    border-radius: 30px !important;
+                    box-shadow: 0 4px 20px rgba(0,0,0,0.3) !important;
+                    visibility: visible !important;
+                `;
+                console.log('Mobile actions bar force-displayed via JavaScript');
+            } else {
+                mobileActions.style.display = 'none';
+            }
         }
+        
+        // Re-check on window resize
+        window.addEventListener('resize', function() {
+            const mobileActions = document.getElementById('mobile-actions-bar');
+            if (mobileActions) {
+                if (window.innerWidth <= 768) {
+                    mobileActions.style.cssText = `
+                        display: flex !important;
+                        position: fixed !important;
+                        bottom: 20px !important;
+                        left: 50% !important;
+                        transform: translateX(-50%) !important;
+                        gap: 12px !important;
+                        z-index: 99999 !important;
+                        background: rgba(0,0,0,0.8) !important;
+                        backdrop-filter: blur(10px) !important;
+                        -webkit-backdrop-filter: blur(10px) !important;
+                        padding: 8px 12px !important;
+                        border-radius: 30px !important;
+                        box-shadow: 0 4px 20px rgba(0,0,0,0.3) !important;
+                        visibility: visible !important;
+                    `;
+                } else {
+                    mobileActions.style.display = 'none';
+                }
+            }
+        });
     });
 
     /**

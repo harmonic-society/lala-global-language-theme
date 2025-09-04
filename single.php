@@ -548,7 +548,7 @@ get_header(); ?>
 </div>
 
 <!-- Mobile Action Buttons (visible only on mobile) -->
-<div class="mobile-actions" id="mobile-actions-bar">
+<div class="mobile-actions" id="mobile-actions-bar" style="display: none;">
     <button class="mobile-action-btn bookmark-mobile" data-post-id="<?php the_ID(); ?>" aria-label="保存">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
@@ -564,6 +564,49 @@ get_header(); ?>
         </svg>
     </button>
 </div>
+
+<style>
+@media (max-width: 768px) {
+    #mobile-actions-bar {
+        display: flex !important;
+        position: fixed !important;
+        bottom: 20px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        gap: 12px !important;
+        z-index: 99999 !important;
+        background: rgba(0,0,0,0.8) !important;
+        backdrop-filter: blur(10px) !important;
+        padding: 8px 12px !important;
+        border-radius: 30px !important;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.3) !important;
+    }
+    
+    #mobile-actions-bar .mobile-action-btn {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 45px !important;
+        height: 45px !important;
+        background: rgba(255,255,255,0.1) !important;
+        border: 1px solid rgba(255,255,255,0.2) !important;
+        border-radius: 50% !important;
+        color: white !important;
+        cursor: pointer !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    #mobile-actions-bar .mobile-action-btn:hover,
+    #mobile-actions-bar .mobile-action-btn:active {
+        background: rgba(255,255,255,0.2) !important;
+        transform: scale(1.1) !important;
+    }
+    
+    #mobile-actions-bar .mobile-action-btn.active {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+        border-color: transparent !important;
+    }
+}</style>
 
 <!-- Toast Notification -->
 <div class="toast" id="toast">

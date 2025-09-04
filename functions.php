@@ -137,8 +137,8 @@ function lala_global_language_scripts() {
     
     // Enhanced single post styles and scripts
     if ( is_singular( 'post' ) ) {
-        wp_enqueue_style( 'enhanced-single-style', get_template_directory_uri() . '/css/enhanced-single.css', array(), '1.0.2' );
-        wp_enqueue_script( 'enhanced-single-script', get_template_directory_uri() . '/js/enhanced-single.js', array(), '1.0.2', true );
+        wp_enqueue_style( 'enhanced-single-style', get_template_directory_uri() . '/css/enhanced-single.css', array(), '1.0.3' );
+        wp_enqueue_script( 'enhanced-single-script', get_template_directory_uri() . '/js/enhanced-single.js', array(), '1.0.3', true );
     }
 
     // Enqueue comment reply script
