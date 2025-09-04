@@ -27,6 +27,14 @@
         initReadingTimeEstimate();
         initTooltips();
         initAnimations();
+        
+        // Force mobile actions visibility on mobile devices
+        const mobileActions = document.getElementById('mobile-actions-bar');
+        if (mobileActions && window.innerWidth <= 768) {
+            mobileActions.style.display = 'flex';
+            mobileActions.style.visibility = 'visible';
+            console.log('Mobile actions bar initialized');
+        }
     });
 
     /**
