@@ -424,9 +424,9 @@ body.font-xlarge .article-body {
     align-items: center;
     gap: 8px;
     padding: 12px 24px;
-    background: rgba(255,255,255,0.15);
+    background: rgba(0,0,0,0.4);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.3);
     border-radius: 30px;
     color: white;
     font-size: 14px;
@@ -436,7 +436,7 @@ body.font-xlarge .article-body {
 }
 
 .action-btn:hover {
-    background: rgba(255,255,255,0.25);
+    background: rgba(0,0,0,0.6);
     transform: translateY(-2px);
 }
 
