@@ -1733,36 +1733,8 @@ body.font-xlarge .article-body {
     }
 }
 
-@media (max-width: 480px) {
-    .meta-stats {
-        display: none;
-    }
-    
-    .quick-actions {
-        width: 100%;
-    }
-    
-    .action-btn {
-        flex: 1;
-        padding: 10px;
-    }
-    
-    .action-btn span {
-        display: none;
-    }
-    
-    .floating-tools {
-        flex-direction: row;
-        padding: 5px;
-        gap: 8px;
-    }
-    
-    .tool-btn {
-        width: 35px;
-        height: 35px;
-    }
-    
-    /* Mobile action buttons */
+@media (max-width: 768px) {
+    /* Mobile action buttons - show on tablets and phones */
     .mobile-actions {
         display: flex;
         position: fixed;
@@ -1801,5 +1773,35 @@ body.font-xlarge .article-body {
     .mobile-action-btn.active {
         background: var(--primary-gradient);
         border-color: transparent;
+    }
+}
+
+@media (max-width: 480px) {
+    .meta-stats {
+        display: none;
+    }
+    
+    .quick-actions {
+        width: 100%;
+    }
+    
+    .action-btn {
+        flex: 1;
+        padding: 10px;
+    }
+    
+    .action-btn span {
+        display: none;
+    }
+    
+    .floating-tools {
+        flex-direction: row;
+        padding: 5px;
+        gap: 8px;
+    }
+    
+    .tool-btn {
+        width: 35px;
+        height: 35px;
     }
 }
