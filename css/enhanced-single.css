@@ -1797,7 +1797,8 @@ body.font-xlarge .article-body {
     }
     
     .action-btn span {
-        display: none;
+        display: inline-block;
+        font-size: 14px;
     }
     
     .floating-tools {
