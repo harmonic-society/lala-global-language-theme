@@ -476,7 +476,7 @@
      * Share Buttons
      */
     function initShareButtons() {
-        const shareButtons = document.querySelectorAll('.share-btn, .share-article');
+        const shareButtons = document.querySelectorAll('.share-btn, .share-article, .share-mobile');
         const shareModal = document.getElementById('share-modal');
         
         shareButtons.forEach(button => {
@@ -618,7 +618,7 @@
      * Bookmarks
      */
     function initBookmarks() {
-        const bookmarkButtons = document.querySelectorAll('.bookmark-btn, .bookmark-article');
+        const bookmarkButtons = document.querySelectorAll('.bookmark-btn, .bookmark-article, .bookmark-mobile');
         
         bookmarkButtons.forEach(button => {
             const postId = button.dataset.postId;
