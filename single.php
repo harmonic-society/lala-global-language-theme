@@ -439,14 +439,35 @@ get_header(); ?>
                 <div class="related-carousel">
                     <div class="carousel-track">
                         <?php
-                        $related_posts = get_posts( array(
-                            'category__in' => wp_get_post_categories( get_the_ID() ),
-                            'numberposts' => 6,
-                            'post__not_in' => array( get_the_ID() )
-                        ) );
+                        // まずカテゴリーベースで関連記事を取得
+                        $categories = wp_get_post_categories( get_the_ID() );
+                        $related_posts = array();
                         
-                        foreach ( $related_posts as $post ) :
-                            setup_postdata( $post );
+                        if ( !empty( $categories ) ) {
+                            $related_posts = get_posts( array(
+                                'category__in' => $categories,
+                                'numberposts' => 6,
+                                'post__not_in' => array( get_the_ID() ),
+                                'post_status' => 'publish',
+                                'orderby' => 'date',
+                                'order' => 'DESC'
+                            ) );
+                        }
+                        
+                        // カテゴリーで記事が見つからない場合は最新記事を取得
+                        if ( empty( $related_posts ) ) {
+                            $related_posts = get_posts( array(
+                                'numberposts' => 6,
+                                'post__not_in' => array( get_the_ID() ),
+                                'post_status' => 'publish',
+                                'orderby' => 'date',
+                                'order' => 'DESC'
+                            ) );
+                        }
+                        
+                        if ( !empty( $related_posts ) ) :
+                            foreach ( $related_posts as $post ) :
+                                setup_postdata( $post );
                         ?>
                             <article class="related-item">
                                 <a href="<?php the_permalink(); ?>" class="related-link">
@@ -469,8 +490,16 @@ get_header(); ?>
                                 </a>
                             </article>
                         <?php
-                        endforeach;
-                        wp_reset_postdata();
+                            endforeach;
+                            wp_reset_postdata();
+                        else :
+                            // 記事が全くない場合のメッセージ
+                            ?>
+                            <div class="no-related-posts">
+                                <p>現在、おすすめの記事はありません。</p>
+                            </div>
+                            <?php
+                        endif;
                         ?>
                     </div>
                 </div>

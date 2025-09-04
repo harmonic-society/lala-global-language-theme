@@ -1254,6 +1254,19 @@ body.font-xlarge .article-body {
     margin: 100px 0;
 }
 
+.no-related-posts {
+    text-align: center;
+    padding: 60px 20px;
+    background: #f8f9fa;
+    border-radius: var(--border-radius-lg);
+}
+
+.no-related-posts p {
+    font-size: 18px;
+    color: #6c757d;
+    margin: 0;
+}
+
 .section-header {
     display: flex;
     justify-content: space-between;
