@@ -549,9 +549,8 @@ get_header(); ?>
 
 <!-- Mobile Action Buttons (visible only on mobile) -->
 <?php 
-global $post;
-if ( $post && is_singular( 'post' ) ) : 
-    $post_id = $post->ID;
+// This file is single.php, so we're always on a single post
+$post_id = get_the_ID();
 ?>
 <div class="mobile-actions" id="mobile-actions-bar">
     <button class="mobile-action-btn bookmark-mobile" data-post-id="<?php echo esc_attr( $post_id ); ?>" aria-label="保存">
@@ -612,7 +611,6 @@ if ( $post && is_singular( 'post' ) ) :
         border-color: transparent !important;
     }
 }</style>
-<?php endif; ?>
 
 <!-- Toast Notification -->
 <div class="toast" id="toast">
