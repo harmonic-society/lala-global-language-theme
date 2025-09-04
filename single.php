@@ -548,8 +548,13 @@ get_header(); ?>
 </div>
 
 <!-- Mobile Action Buttons (visible only on mobile) -->
-<div class="mobile-actions" id="mobile-actions-bar" style="display: none;">
-    <button class="mobile-action-btn bookmark-mobile" data-post-id="<?php the_ID(); ?>" aria-label="保存">
+<?php 
+global $post;
+if ( $post && is_singular( 'post' ) ) : 
+    $post_id = $post->ID;
+?>
+<div class="mobile-actions" id="mobile-actions-bar">
+    <button class="mobile-action-btn bookmark-mobile" data-post-id="<?php echo esc_attr( $post_id ); ?>" aria-label="保存">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
         </svg>
@@ -607,6 +612,7 @@ get_header(); ?>
         border-color: transparent !important;
     }
 }</style>
+<?php endif; ?>
 
 <!-- Toast Notification -->
 <div class="toast" id="toast">

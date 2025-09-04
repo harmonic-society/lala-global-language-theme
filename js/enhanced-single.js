@@ -30,6 +30,8 @@
         
         // Force mobile actions visibility on mobile devices with enhanced styling
         const mobileActions = document.getElementById('mobile-actions-bar');
+        console.log('Mobile actions element found:', !!mobileActions);
+        console.log('Window width:', window.innerWidth);
         if (mobileActions) {
             if (window.innerWidth <= 768) {
                 // Apply all styles directly via JavaScript
