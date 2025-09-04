@@ -66,9 +66,16 @@ body.dark-mode {
     box-shadow: var(--shadow-md);
 }
 
-/* Mobile actions - hidden on desktop */
+/* Mobile actions - hidden on desktop by default */
 .mobile-actions {
     display: none;
+}
+
+/* Show mobile actions only on mobile devices */
+@media (max-width: 768px) {
+    .mobile-actions {
+        display: flex !important;
+    }
 }
 
 .floating-tools {
@@ -1732,9 +1739,8 @@ body.font-xlarge .article-body {
         padding: 30px 20px;
     }
     
-    /* Mobile action buttons - show on tablets and phones */
+    /* Mobile action buttons styling */
     .mobile-actions {
-        display: flex !important;
         position: fixed;
         bottom: 20px;
         left: 50%;
