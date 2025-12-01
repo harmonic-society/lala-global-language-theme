@@ -1,6 +1,6 @@
 # LaLa Global Language WordPress Theme
 
-楽しくわくわくする雰囲気の語学学習サイト用WordPressテーマです。
+🌍 楽しくわくわくする雰囲気の語学学習サイト用WordPressテーマです。
 
 ## 機能
 
