@@ -44,3 +44,7 @@ GPL v2 or later
 ## 作者
 
 LaLa Global Language Team
+
+---
+
+Last updated: 2025-12-01
