@@ -278,6 +278,54 @@ get_header(); ?>
                         </div>
                     <?php endif; ?>
                     
+                    <!-- CTA Section -->
+                    <div class="article-cta-section">
+                        <div class="cta-content">
+                            <div class="cta-icon">
+                                <span class="cta-emoji">🌍</span>
+                            </div>
+                            <h3 class="cta-title">あなたの「話したい」を、カタチに。</h3>
+                            <p class="cta-description">
+                                世界35言語に対応したLaLa Global Languageで、<br class="pc-only">
+                                あなたの可能性を広げてみませんか？<br>
+                                <span class="cta-highlight">まずは無料体験レッスンから。</span>
+                            </p>
+                            <div class="cta-features">
+                                <span class="cta-feature">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"/>
+                                    </svg>
+                                    オンライン完結
+                                </span>
+                                <span class="cta-feature">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"/>
+                                    </svg>
+                                    ネイティブ講師
+                                </span>
+                                <span class="cta-feature">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"/>
+                                    </svg>
+                                    1回50分マンツーマン
+                                </span>
+                            </div>
+                            <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="cta-button">
+                                <span>無料体験に申し込む</span>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="5" y1="12" x2="19" y2="12"/>
+                                    <polyline points="12 5 19 12 12 19"/>
+                                </svg>
+                            </a>
+                            <p class="cta-note">お気軽にお問い合わせください</p>
+                        </div>
+                        <div class="cta-decoration">
+                            <div class="decoration-circle circle-1"></div>
+                            <div class="decoration-circle circle-2"></div>
+                            <div class="decoration-circle circle-3"></div>
+                        </div>
+                    </div>
+
                     <!-- Article Footer Actions -->
                     <div class="article-footer-actions">
                         <div class="action-group">
