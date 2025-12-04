@@ -286,7 +286,7 @@ get_header(); ?>
                             </div>
                             <h3 class="cta-title">あなたの「話したい」を、カタチに。</h3>
                             <p class="cta-description">
-                                世界35言語に対応したLaLa Global Languageで、<br class="pc-only">
+                                世界35言語に対応したLaLa GLOBAL LANGUAGEで、<br class="pc-only">
                                 あなたの可能性を広げてみませんか？<br>
                                 <span class="cta-highlight">まずは体験レッスンから始めよう。</span>
                             </p>
