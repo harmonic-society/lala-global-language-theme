@@ -228,40 +228,39 @@
         // Language item hover effects
         $('.language-item').hover(
             function() {
-                $(this).siblings().css('opacity', '0.6');
+                // リンク内の場合は親のaタグの兄弟要素を対象にする
+                var $siblings = $(this).parent('.language-item-link').length
+                    ? $(this).parent('.language-item-link').siblings()
+                    : $(this).siblings();
+                $siblings.css('opacity', '0.6');
             },
             function() {
-                $(this).siblings().css('opacity', '1');
+                var $siblings = $(this).parent('.language-item-link').length
+                    ? $(this).parent('.language-item-link').siblings()
+                    : $(this).siblings();
+                $siblings.css('opacity', '1');
             }
         );
 
-        // Region card click to smooth scroll to contact
-        $('.language-region').click(function() {
-            var languageRegion = $(this).data('region');
-            console.log('Selected region: ' + languageRegion);
-            
-            // Scroll to courses section
-            var target = $('#courses');
-            if (target.length) {
-                $('html, body').animate({
-                    scrollTop: target.offset().top - 100
-                }, 800);
-            }
+        // Language item link click - prevent region card scroll
+        $('.language-item-link').click(function(e) {
+            e.stopPropagation();
         });
 
-        // Add ripple effect on language item click
+        // Add ripple effect on language item click (only for items without links)
         $('.language-item').click(function(e) {
+            // リンク内の場合はリップルエフェクトのみ追加（ナビゲーションは妨げない）
             var ripple = $('<span class="ripple"></span>');
             $(this).append(ripple);
-            
+
             var x = e.pageX - $(this).offset().left;
             var y = e.pageY - $(this).offset().top;
-            
+
             ripple.css({
                 left: x + 'px',
                 top: y + 'px'
             });
-            
+
             setTimeout(function() {
                 ripple.remove();
             }, 600);

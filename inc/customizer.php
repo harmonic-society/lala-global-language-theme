@@ -282,6 +282,72 @@ function lala_global_language_customize_register( $wp_customize ) {
         'type'     => 'url',
     ) );
 
+    // Language Links Section
+    $wp_customize->add_section( 'lala_language_links', array(
+        'title'       => __( '言語リンク設定', 'lala-global-language' ),
+        'description' => __( '各言語をクリックした時のリンク先URLを設定します。空欄の場合はリンクなしになります。', 'lala-global-language' ),
+        'panel'       => 'lala_theme_options',
+        'priority'    => 35,
+    ) );
+
+    // 言語リンク設定の配列
+    $language_links = array(
+        // 東アジア
+        'zh' => '中国語',
+        'tw' => '台湾華語',
+        'ko' => '韓国語',
+        'mn' => 'モンゴル語',
+        // 東南アジア
+        'id' => 'インドネシア語',
+        'kh' => 'カンボジア語',
+        'la' => 'ラオス語',
+        'mm' => 'ミャンマー語',
+        'my' => 'マレーシア語',
+        'ph' => 'フィリピン語',
+        'th' => 'タイ語',
+        'vn' => 'ベトナム語',
+        // 南アジア
+        'bn' => 'ベンガル語',
+        'hi' => 'ヒンディー語',
+        'np' => 'ネパール語',
+        'pa' => 'パンジャーブ語',
+        'si' => 'シンハラ語',
+        'ta' => 'タミル語',
+        'ur' => 'ウルドゥー語',
+        // ヨーロッパ
+        'en' => '英語',
+        'de' => 'ドイツ語',
+        'fr' => 'フランス語',
+        'it' => 'イタリア語',
+        'es' => 'スペイン語',
+        'pt' => 'ポルトガル語',
+        'nl' => 'オランダ語',
+        // 東欧・ロシア
+        'ru' => 'ロシア語',
+        'uk' => 'ウクライナ語',
+        'cs' => 'チェコ語',
+        'hu' => 'ハンガリー語',
+        // 中東・アフリカ
+        'ar' => 'アラビア語',
+        'fa' => 'ペルシャ語',
+        'he' => 'ヘブライ語',
+        'tr' => 'トルコ語',
+        'sw' => 'スワヒリ語',
+    );
+
+    foreach ( $language_links as $code => $name ) {
+        $wp_customize->add_setting( 'language_url_' . $code, array(
+            'default'           => '',
+            'sanitize_callback' => 'esc_url_raw',
+        ) );
+
+        $wp_customize->add_control( 'language_url_' . $code, array(
+            'label'   => $name . ' URL',
+            'section' => 'lala_language_links',
+            'type'    => 'url',
+        ) );
+    }
+
     // About Page Section
     $wp_customize->add_section( 'lala_about_page', array(
         'title'    => __( 'About Page Settings', 'lala-global-language' ),
