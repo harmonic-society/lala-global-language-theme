@@ -288,7 +288,7 @@ get_header(); ?>
                             <p class="cta-description">
                                 世界35言語に対応したLaLa Global Languageで、<br class="pc-only">
                                 あなたの可能性を広げてみませんか？<br>
-                                <span class="cta-highlight">まずは無料体験レッスンから。</span>
+                                <span class="cta-highlight">まずは体験レッスンから始めよう。</span>
                             </p>
                             <div class="cta-features">
                                 <span class="cta-feature">
@@ -311,7 +311,7 @@ get_header(); ?>
                                 </span>
                             </div>
                             <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="cta-button">
-                                <span>無料体験に申し込む</span>
+                                <span>体験レッスンに申し込む</span>
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <line x1="5" y1="12" x2="19" y2="12"/>
                                     <polyline points="12 5 19 12 12 19"/>
