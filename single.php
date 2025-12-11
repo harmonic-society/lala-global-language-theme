@@ -229,7 +229,7 @@ get_header(); ?>
                                     <a href="<?php the_permalink(); ?>" class="sidebar-post-item">
                                         <?php if ( has_post_thumbnail() ) : ?>
                                             <div class="sidebar-post-thumb">
-                                                <?php the_post_thumbnail( 'thumbnail' ); ?>
+                                                <?php the_post_thumbnail( 'medium' ); ?>
                                             </div>
                                         <?php else : ?>
                                             <div class="sidebar-post-thumb no-thumb">
@@ -278,7 +278,7 @@ get_header(); ?>
                                         <span class="popular-rank rank-<?php echo $rank; ?>"><?php echo $rank; ?></span>
                                         <?php if ( has_post_thumbnail() ) : ?>
                                             <div class="sidebar-post-thumb">
-                                                <?php the_post_thumbnail( 'thumbnail' ); ?>
+                                                <?php the_post_thumbnail( 'medium' ); ?>
                                             </div>
                                         <?php else : ?>
                                             <div class="sidebar-post-thumb no-thumb">
