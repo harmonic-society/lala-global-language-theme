@@ -81,16 +81,7 @@ get_header(); ?>
         ?>
         
         <!-- Enhanced Hero Section -->
-        <div class="post-hero-enhanced">
-            <?php if ( has_post_thumbnail() ) : ?>
-                <div class="hero-image-wrapper">
-                    <div class="hero-image" data-parallax>
-                        <?php the_post_thumbnail( 'full' ); ?>
-                    </div>
-                    <div class="hero-gradient"></div>
-                </div>
-            <?php endif; ?>
-            
+        <div class="post-hero-enhanced post-hero-stacked">
             <div class="hero-content-wrapper">
                 <div class="hero-meta-bar">
                     <div class="meta-categories">
@@ -124,9 +115,9 @@ get_header(); ?>
                         </span>
                     </div>
                 </div>
-                
+
                 <h1 class="hero-title-enhanced"><?php the_title(); ?></h1>
-                
+
                 <div class="hero-author-enhanced">
                     <div class="author-card">
                         <?php echo get_avatar( get_the_author_meta( 'ID' ), 80 ); ?>
@@ -146,7 +137,7 @@ get_header(); ?>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="quick-actions">
                         <button class="action-btn bookmark-btn" data-post-id="<?php the_ID(); ?>">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -167,6 +158,12 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
+
+            <?php if ( has_post_thumbnail() ) : ?>
+                <div class="hero-featured-image">
+                    <?php the_post_thumbnail( 'full' ); ?>
+                </div>
+            <?php endif; ?>
         </div>
         
         <div class="content-wrapper">
