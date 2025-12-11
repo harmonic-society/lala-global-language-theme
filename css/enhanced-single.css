@@ -920,7 +920,12 @@ body.font-xlarge .article-body {
 }
 
 .popular-rank.rank-4,
-.popular-rank.rank-5 {
+.popular-rank.rank-5,
+.popular-rank.rank-6,
+.popular-rank.rank-7,
+.popular-rank.rank-8,
+.popular-rank.rank-9,
+.popular-rank.rank-10 {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
 }

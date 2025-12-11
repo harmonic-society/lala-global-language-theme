@@ -221,7 +221,7 @@ get_header(); ?>
                             <div class="sidebar-posts-list">
                                 <?php
                                 $current_post_id = get_the_ID();
-                                $latest_posts = lala_get_latest_posts( 5, array( $current_post_id ) );
+                                $latest_posts = lala_get_latest_posts( 10, array( $current_post_id ) );
                                 if ( ! empty( $latest_posts ) ) :
                                     foreach ( $latest_posts as $post ) :
                                         setup_postdata( $post );
@@ -267,7 +267,7 @@ get_header(); ?>
                             </div>
                             <div class="sidebar-posts-list">
                                 <?php
-                                $popular_posts = lala_get_popular_posts( 5, array( $current_post_id ) );
+                                $popular_posts = lala_get_popular_posts( 10, array( $current_post_id ) );
                                 if ( ! empty( $popular_posts ) ) :
                                     $rank = 1;
                                     foreach ( $popular_posts as $post ) :
