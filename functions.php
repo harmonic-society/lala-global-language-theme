@@ -548,6 +548,86 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 /**
+ * Post View Counter - ページビューカウント機能
+ */
+
+/**
+ * 記事閲覧時にビューカウントを増加
+ */
+function lala_track_post_views() {
+    if ( is_single() && ! is_admin() ) {
+        global $post;
+        if ( ! isset( $post->ID ) ) {
+            return;
+        }
+
+        // 編集権限を持つユーザーはカウントしない（ボット対策）
+        if ( current_user_can( 'edit_posts' ) ) {
+            return;
+        }
+
+        $post_id = $post->ID;
+        $count = get_post_meta( $post_id, '_lala_post_views', true );
+        $count = $count ? (int) $count + 1 : 1;
+        update_post_meta( $post_id, '_lala_post_views', $count );
+    }
+}
+add_action( 'wp_head', 'lala_track_post_views' );
+
+/**
+ * ビュー数を取得
+ */
+function lala_get_post_views( $post_id ) {
+    $count = get_post_meta( $post_id, '_lala_post_views', true );
+    return $count ? (int) $count : 0;
+}
+
+/**
+ * 人気記事を取得（ビュー数順）
+ */
+function lala_get_popular_posts( $num = 5, $exclude = array() ) {
+    $args = array(
+        'posts_per_page' => $num,
+        'post_status'    => 'publish',
+        'post_type'      => 'post',
+        'meta_key'       => '_lala_post_views',
+        'orderby'        => 'meta_value_num',
+        'order'          => 'DESC',
+        'post__not_in'   => $exclude,
+    );
+
+    $popular_posts = get_posts( $args );
+
+    // ビュー数のある記事がない場合は最新記事にフォールバック
+    if ( empty( $popular_posts ) ) {
+        $popular_posts = get_posts( array(
+            'posts_per_page' => $num,
+            'post_status'    => 'publish',
+            'post_type'      => 'post',
+            'post__not_in'   => $exclude,
+            'orderby'        => 'date',
+            'order'          => 'DESC',
+        ) );
+    }
+
+    return $popular_posts;
+}
+
+/**
+ * 最新記事を取得
+ */
+function lala_get_latest_posts( $num = 5, $exclude = array() ) {
+    return get_posts( array(
+        'posts_per_page' => $num,
+        'post_status'    => 'publish',
+        'post_type'      => 'post',
+        'post__not_in'   => $exclude,
+        'orderby'        => 'date',
+        'order'          => 'DESC',
+    ) );
+}
+
+/**
  * Calculate reading time for posts
  */
 function reading_time() {
