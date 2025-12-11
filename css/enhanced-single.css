@@ -479,28 +479,7 @@ body.font-xlarge .article-body {
 }
 
 .sidebar-sticky-wrapper {
-    position: sticky;
-    top: 80px;
-    max-height: calc(100vh - 100px);
-    overflow-y: auto;
-}
-
-.sidebar-sticky-wrapper::-webkit-scrollbar {
-    width: 6px;
-}
-
-.sidebar-sticky-wrapper::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 10px;
-}
-
-.sidebar-sticky-wrapper::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 10px;
-}
-
-.sidebar-sticky-wrapper::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    /* No sticky positioning - sidebar flows with content */
 }
 
 /* Widgets */
