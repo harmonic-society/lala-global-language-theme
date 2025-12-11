@@ -808,17 +808,12 @@ body.font-xlarge .article-body {
 
 .sidebar-post-thumb {
     width: 100%;
-    aspect-ratio: 16 / 9;
-    background: #f8f9fa;
-    overflow: hidden;
 }
 
 .sidebar-post-thumb img {
     width: 100%;
-    height: 100%;
-    object-fit: contain;
+    height: auto;
     display: block;
-    background: #f8f9fa;
 }
 
 .sidebar-post-thumb.no-thumb {
