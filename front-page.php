@@ -32,7 +32,7 @@ get_header(); ?>
                 </p>
                 <div class="hero-buttons animate-fade-up" style="animation-delay: 0.6s;">
                     <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn-primary btn-large">
-                        <span class="btn-text">無料体験レッスンを予約する</span>
+                        <span class="btn-text">体験レッスン(50分1,100円)</span>
                         <span class="btn-icon">→</span>
                     </a>
                     <a href="#languages" class="btn btn-secondary btn-large">
@@ -422,7 +422,7 @@ get_header(); ?>
                                 <span class="btn-icon">→</span>
                             </a>
                             <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn-secondary btn-large">
-                                <span class="btn-text">詳細資料をダウンロード</span>
+                                <span class="btn-text">資料請求をする</span>
                                 <span class="btn-icon">📄</span>
                             </a>
                         </div>
@@ -563,8 +563,8 @@ get_header(); ?>
         <div class="container">
             <div class="cta-content">
                 <h2>今すぐ語学学習を始めよう！</h2>
-                <p>まずは無料体験レッスンから。<br>あなたにぴったりのコースがきっと見つかります。</p>
-                <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn-primary btn-large">無料体験レッスンを予約する</a>
+                <p>まずは体験レッスン(50分1,100円)から。<br>あなたにぴったりのコースがきっと見つかります。</p>
+                <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn-primary btn-large">体験レッスン(50分1,100円)</a>
             </div>
         </div>
     </section>

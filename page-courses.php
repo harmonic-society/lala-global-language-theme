@@ -666,7 +666,7 @@ get_header(); ?>
             
             <div class="schedule-cta">
                 <p>💡 人気の時間帯は早めのご予約がおすすめです！</p>
-                <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn-primary">無料体験レッスンを予約する</a>
+                <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn-primary">体験レッスン(50分1,100円)</a>
             </div>
         </div>
     </section>
@@ -678,7 +678,7 @@ get_header(); ?>
                 <h2>世界中のことばを、ここ日本で。</h2>
                 <p>英語はもちろん、欧米、アジア、アフリカのことばも。<br>
                 駅前留学？ホテル留学？LaLaなら "自宅留学"！</p>
-                <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn-primary btn-large">無料体験レッスンを予約する</a>
+                <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn-primary btn-large">体験レッスン(50分1,100円)</a>
             </div>
         </div>
     </section>

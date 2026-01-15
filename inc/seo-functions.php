@@ -16,14 +16,14 @@ function lala_add_meta_description() {
     $description = '';
     
     if ( is_front_page() ) {
-        $description = 'LaLa Global Languageは、35言語に対応したオンライン語学スクール。バイリンガル講師による質の高いレッスンで、英語・中国語・韓国語・フランス語など世界中の言語を自宅で学べます。無料体験レッスン実施中。';
+        $description = 'LaLa Global Languageは、35言語に対応したオンライン語学スクール。バイリンガル講師による質の高いレッスンで、英語・中国語・韓国語・フランス語など世界中の言語を自宅で学べます。体験レッスン(50分1,100円)実施中。';
     } elseif ( is_page() ) {
         $page_slug = get_post_field( 'post_name', get_the_ID() );
         $page_descriptions = array(
             'about' => 'LaLa Global Languageについて。世界35言語に対応した革新的な語学学習プラットフォーム。経験豊富なバイリンガル講師陣が、あなたの語学力向上を全力でサポートします。',
             'courses' => '英語・中国語・韓国語・フランス語など35言語のコース一覧。初心者から上級者まで、あなたのレベルに合わせた最適なカリキュラムをご提供。マンツーマン・グループレッスン対応。',
             'instructors' => '世界各国出身のバイリンガル講師陣をご紹介。ネイティブスピーカーによる本格的な語学レッスンで、実践的な会話力を身につけられます。',
-            'contact' => 'LaLa Global Languageへのお問い合わせ・無料体験レッスンのお申し込みはこちら。語学学習に関するご相談も承っております。',
+            'contact' => 'LaLa Global Languageへのお問い合わせ・体験レッスン(50分1,100円)のお申し込みはこちら。語学学習に関するご相談も承っております。',
             'faq' => 'よくある質問とその回答。料金・レッスン内容・予約方法など、LaLa Global Languageのサービスに関する疑問にお答えします。',
             'recruitment' => 'LaLa Global Language講師募集。あなたの語学力を活かして、世界中の生徒に言語の楽しさを伝えませんか？柔軟な勤務体制・充実した研修制度。',
             'privacy-policy' => 'LaLa Global Languageのプライバシーポリシー。お客様の個人情報の取り扱いについて詳しくご説明しています。',
@@ -423,10 +423,10 @@ function lala_add_structured_data() {
                 ),
                 array(
                     '@type' => 'Question',
-                    'name' => '無料体験レッスンはありますか？',
+                    'name' => '体験レッスン(50分1,100円)はありますか？',
                     'acceptedAnswer' => array(
                         '@type' => 'Answer',
-                        'text' => 'はい、初回30分の無料体験レッスンをご用意しています。'
+                        'text' => 'はい、体験レッスン(50分1,100円)をご用意しています。'
                     )
                 )
             )
