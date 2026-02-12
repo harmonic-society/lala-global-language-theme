@@ -487,61 +487,47 @@ get_header(); ?>
             <!-- Enhanced Author Bio -->
             <div class="author-section-enhanced">
                 <div class="author-bio-card">
-                    <div class="author-header">
+                    <div class="author-card-left">
                         <div class="author-avatar-large">
-                            <?php echo get_avatar( get_the_author_meta( 'ID' ), 150 ); ?>
-                            <span class="author-badge">✍️</span>
+                            <?php echo get_avatar( get_the_author_meta( 'ID' ), 120 ); ?>
                         </div>
-                        <div class="author-info">
-                            <h3 class="author-name">
-                                <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>">
-                                    <?php the_author(); ?>
+                        <div class="author-meta-compact">
+                            <span class="author-stat">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+                                </svg>
+                                <?php echo count_user_posts( get_the_author_meta( 'ID' ) ); ?> 記事
+                            </span>
+                            <?php if ( get_the_author_meta( 'user_url' ) ) : ?>
+                                <a href="<?php the_author_meta( 'user_url' ); ?>" class="social-link" target="_blank" rel="noopener">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"/>
+                                        <line x1="2" y1="12" x2="22" y2="12"/>
+                                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                                    </svg>
+                                    Website
                                 </a>
-                            </h3>
-                            <div class="author-stats">
-                                <div class="stat">
-                                    <span class="stat-value"><?php echo count_user_posts( get_the_author_meta( 'ID' ) ); ?></span>
-                                    <span class="stat-label">記事</span>
-                                </div>
-                                <div class="stat">
-                                    <span class="stat-value">
-                                        <?php
-                                        $author_posts = get_posts( array(
-                                            'author' => get_the_author_meta( 'ID' ),
-                                            'posts_per_page' => -1
-                                        ) );
-                                        $total_comments = 0;
-                                        foreach ( $author_posts as $post ) {
-                                            $total_comments += get_comments_number( $post->ID );
-                                        }
-                                        echo $total_comments;
-                                        ?>
-                                    </span>
-                                    <span class="stat-label">コメント</span>
-                                </div>
-                            </div>
-                            <?php if ( get_the_author_meta( 'description' ) ) : ?>
-                                <p class="author-bio"><?php the_author_meta( 'description' ); ?></p>
                             <?php endif; ?>
-                            <div class="author-social">
-                                <?php if ( get_the_author_meta( 'user_url' ) ) : ?>
-                                    <a href="<?php the_author_meta( 'user_url' ); ?>" class="social-link" target="_blank" rel="noopener">
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <circle cx="12" cy="12" r="10"/>
-                                            <line x1="2" y1="12" x2="22" y2="12"/>
-                                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                                        </svg>
-                                    </a>
-                                <?php endif; ?>
-                            </div>
                         </div>
                     </div>
-                    <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" class="author-more-link">
-                        この著者の他の記事を見る
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="9 18 15 12 9 6"/>
-                        </svg>
-                    </a>
+                    <div class="author-card-right">
+                        <span class="author-card-label">Written by</span>
+                        <h3 class="author-name">
+                            <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>">
+                                <?php the_author(); ?>
+                            </a>
+                        </h3>
+                        <?php if ( get_the_author_meta( 'description' ) ) : ?>
+                            <p class="author-bio"><?php the_author_meta( 'description' ); ?></p>
+                        <?php endif; ?>
+                        <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" class="author-more-link">
+                            この著者の他の記事を見る
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                                <polyline points="12 5 19 12 12 19"/>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </div>
             
