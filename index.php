@@ -27,7 +27,8 @@ get_header(); ?>
                     ?>
                 </span>
             </h1>
-            <p class="blog-hero-subtitle">Discover cultural perspectives, language learning tips, and global education insights</p>
+            <div class="blog-hero-divider"></div>
+            <p class="blog-hero-subtitle">異文化の視点、語学のヒント、グローバル教育の情報を発信</p>
         </div>
         <div class="hero-decoration">
             <div class="floating-bubble bubble-1"></div>
@@ -236,12 +237,24 @@ get_header(); ?>
     overflow-wrap: break-word;
 }
 
+.blog-hero-divider {
+    width: 60px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.5);
+    margin: 0 auto 24px;
+    border-radius: 2px;
+    animation: fadeInUp 0.8s ease 0.15s both;
+}
+
 .blog-hero-subtitle {
-    font-size: 1.25rem;
-    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.85);
     max-width: 600px;
     margin: 0 auto;
-    animation: fadeInUp 0.8s ease 0.2s both;
+    letter-spacing: 0.12em;
+    line-height: 1.9;
+    font-weight: 300;
+    animation: fadeInUp 0.8s ease 0.3s both;
 }
 
 /* Floating Decoration */
