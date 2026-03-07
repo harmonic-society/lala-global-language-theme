@@ -25,78 +25,102 @@ get_header(); ?>
     <section class="languages-section">
         <div class="container">
             <h2 class="section-title fade-in">LaLaの対応35言語リスト</h2>
-            
+
+            <?php
+            $course_language_regions = array(
+                array(
+                    'title' => '東アジア',
+                    'languages' => array(
+                        array( 'code' => 'zh', 'flag' => '🇨🇳', 'name' => '中国語（北京語）' ),
+                        array( 'code' => 'tw', 'flag' => '🇹🇼', 'name' => '台湾華語' ),
+                        array( 'code' => 'ko', 'flag' => '🇰🇷', 'name' => '韓国語' ),
+                        array( 'code' => 'mn', 'flag' => '🇲🇳', 'name' => 'モンゴル語' ),
+                    ),
+                ),
+                array(
+                    'title' => '東南アジア',
+                    'languages' => array(
+                        array( 'code' => 'id', 'flag' => '🇮🇩', 'name' => 'インドネシア語' ),
+                        array( 'code' => 'kh', 'flag' => '🇰🇭', 'name' => 'カンボジア語（クメール語）' ),
+                        array( 'code' => 'la', 'flag' => '🇱🇦', 'name' => 'ラオス語' ),
+                        array( 'code' => 'mm', 'flag' => '🇲🇲', 'name' => 'ミャンマー語（ビルマ語）' ),
+                        array( 'code' => 'my', 'flag' => '🇲🇾', 'name' => 'マレーシア語（マレー語）' ),
+                        array( 'code' => 'ph', 'flag' => '🇵🇭', 'name' => 'フィリピン語（タガログ語）' ),
+                        array( 'code' => 'th', 'flag' => '🇹🇭', 'name' => 'タイ語' ),
+                        array( 'code' => 'vn', 'flag' => '🇻🇳', 'name' => 'ベトナム語' ),
+                    ),
+                ),
+                array(
+                    'title' => '南アジア',
+                    'languages' => array(
+                        array( 'code' => 'bn', 'flag' => '🇧🇩', 'name' => 'ベンガル語' ),
+                        array( 'code' => 'hi', 'flag' => '🇮🇳', 'name' => 'ヒンディー語' ),
+                        array( 'code' => 'np', 'flag' => '🇳🇵', 'name' => 'ネパール語' ),
+                        array( 'code' => 'pa', 'flag' => '🇮🇳', 'name' => 'パンジャーブ語' ),
+                        array( 'code' => 'si', 'flag' => '🇱🇰', 'name' => 'シンハラ語' ),
+                        array( 'code' => 'ta', 'flag' => '🇮🇳', 'name' => 'タミル語' ),
+                        array( 'code' => 'ur', 'flag' => '🇵🇰', 'name' => 'ウルドゥー語' ),
+                    ),
+                ),
+                array(
+                    'title' => 'ヨーロッパ',
+                    'languages' => array(
+                        array( 'code' => 'en', 'flag' => '🇬🇧', 'name' => '英語' ),
+                        array( 'code' => 'de', 'flag' => '🇩🇪', 'name' => 'ドイツ語' ),
+                        array( 'code' => 'fr', 'flag' => '🇫🇷', 'name' => 'フランス語' ),
+                        array( 'code' => 'it', 'flag' => '🇮🇹', 'name' => 'イタリア語' ),
+                        array( 'code' => 'es', 'flag' => '🇪🇸', 'name' => 'スペイン語' ),
+                        array( 'code' => 'pt', 'flag' => '🇵🇹', 'name' => 'ポルトガル語' ),
+                        array( 'code' => 'nl', 'flag' => '🇳🇱', 'name' => 'オランダ語' ),
+                    ),
+                ),
+                array(
+                    'title' => '東欧・ロシア',
+                    'languages' => array(
+                        array( 'code' => 'ru', 'flag' => '🇷🇺', 'name' => 'ロシア語' ),
+                        array( 'code' => 'uk', 'flag' => '🇺🇦', 'name' => 'ウクライナ語' ),
+                        array( 'code' => 'cs', 'flag' => '🇨🇿', 'name' => 'チェコ語' ),
+                        array( 'code' => 'hu', 'flag' => '🇭🇺', 'name' => 'ハンガリー語' ),
+                    ),
+                ),
+                array(
+                    'title' => '中東・アフリカ',
+                    'languages' => array(
+                        array( 'code' => 'ar', 'flag' => '🇸🇦', 'name' => 'アラビア語' ),
+                        array( 'code' => 'fa', 'flag' => '🇮🇷', 'name' => 'ペルシャ語' ),
+                        array( 'code' => 'he', 'flag' => '🇮🇱', 'name' => 'ヘブライ語' ),
+                        array( 'code' => 'tr', 'flag' => '🇹🇷', 'name' => 'トルコ語' ),
+                        array( 'code' => 'sw', 'flag' => '🇰🇪', 'name' => 'スワヒリ語' ),
+                    ),
+                ),
+            );
+            ?>
+
             <div class="languages-grid">
+                <?php foreach ( $course_language_regions as $region ) : ?>
                 <div class="language-category fade-in">
-                    <h3>東アジア</h3>
+                    <h3><?php echo esc_html( $region['title'] ); ?></h3>
                     <ul>
-                        <li>🇨🇳 中国語（北京語）</li>
-                        <li>🇹🇼 台湾華語</li>
-                        <li>🇰🇷 韓国語</li>
-                        <li>🇲🇳 モンゴル語</li>
+                        <?php foreach ( $region['languages'] as $lang ) :
+                            $lang_url = get_theme_mod( 'language_url_' . $lang['code'], '' );
+                        ?>
+                        <?php if ( $lang_url ) : ?>
+                        <li class="has-link">
+                            <a href="<?php echo esc_url( $lang_url ); ?>" class="language-category-link">
+                                <span class="lang-label"><?php echo $lang['flag']; ?> <?php echo esc_html( $lang['name'] ); ?></span>
+                                <span class="lang-cta">
+                                    <span class="lang-cta-text">詳しく見る</span>
+                                    <span class="lang-cta-arrow">→</span>
+                                </span>
+                            </a>
+                        </li>
+                        <?php else : ?>
+                        <li><?php echo $lang['flag']; ?> <?php echo esc_html( $lang['name'] ); ?></li>
+                        <?php endif; ?>
+                        <?php endforeach; ?>
                     </ul>
                 </div>
-                
-                <div class="language-category fade-in">
-                    <h3>東南アジア</h3>
-                    <ul>
-                        <li>🇮🇩 インドネシア語</li>
-                        <li>🇰🇭 カンボジア語（クメール語）</li>
-                        <li>🇱🇦 ラオス語</li>
-                        <li>🇲🇲 ミャンマー語（ビルマ語）</li>
-                        <li>🇲🇾 マレーシア語（マレー語）</li>
-                        <li>🇵🇭 フィリピン語（タガログ語）</li>
-                        <li>🇹🇭 タイ語</li>
-                        <li>🇻🇳 ベトナム語</li>
-                    </ul>
-                </div>
-                
-                <div class="language-category fade-in">
-                    <h3>南アジア</h3>
-                    <ul>
-                        <li>🇧🇩 ベンガル語</li>
-                        <li>🇮🇳 ヒンディー語</li>
-                        <li>🇳🇵 ネパール語</li>
-                        <li>🇮🇳 パンジャーブ語</li>
-                        <li>🇱🇰 シンハラ語</li>
-                        <li>🇮🇳 タミル語</li>
-                        <li>🇵🇰 ウルドゥー語</li>
-                    </ul>
-                </div>
-                
-                <div class="language-category fade-in">
-                    <h3>ヨーロッパ</h3>
-                    <ul>
-                        <li>🇬🇧 英語</li>
-                        <li>🇩🇪 ドイツ語</li>
-                        <li>🇫🇷 フランス語</li>
-                        <li>🇮🇹 イタリア語</li>
-                        <li>🇪🇸 スペイン語</li>
-                        <li>🇵🇹 ポルトガル語</li>
-                        <li>🇳🇱 オランダ語</li>
-                    </ul>
-                </div>
-                
-                <div class="language-category fade-in">
-                    <h3>東欧・ロシア</h3>
-                    <ul>
-                        <li>🇷🇺 ロシア語</li>
-                        <li>🇺🇦 ウクライナ語</li>
-                        <li>🇨🇿 チェコ語</li>
-                        <li>🇭🇺 ハンガリー語</li>
-                    </ul>
-                </div>
-                
-                <div class="language-category fade-in">
-                    <h3>中東・アフリカ</h3>
-                    <ul>
-                        <li>🇸🇦 アラビア語</li>
-                        <li>🇮🇷 ペルシャ語</li>
-                        <li>🇮🇱 ヘブライ語</li>
-                        <li>🇹🇷 トルコ語</li>
-                        <li>🇰🇪 スワヒリ語</li>
-                    </ul>
-                </div>
+                <?php endforeach; ?>
             </div>
         </div>
     </section>
@@ -758,6 +782,86 @@ get_header(); ?>
 .language-category li {
     padding: 8px 0;
     font-size: 1.1rem;
+}
+
+/* Clickable language items in course page */
+.language-category li.has-link {
+    padding: 0;
+}
+
+.language-category-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    margin: 0 -15px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: inherit;
+    background: linear-gradient(135deg, #f0fafa 0%, #fef9f5 100%);
+    border: 1.5px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.language-category-link:hover,
+.language-category-link:focus,
+.language-category-link:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+.language-category-link:hover {
+    border-color: #008080;
+    background: white;
+    box-shadow: 0 3px 15px rgba(0, 128, 128, 0.15);
+    transform: translateX(5px);
+}
+
+.lang-label {
+    flex: 1;
+}
+
+.lang-cta {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+}
+
+.lang-cta-text {
+    font-size: 0.7rem;
+    color: #008080;
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: all 0.3s ease;
+}
+
+.lang-cta-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    background: #008080;
+    color: white;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 128, 128, 0.3);
+}
+
+.language-category-link:hover .lang-cta-text {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.language-category-link:hover .lang-cta-arrow {
+    background: #006666;
+    transform: translateX(3px);
+    box-shadow: 0 3px 12px rgba(0, 128, 128, 0.4);
 }
 
 /* Course Types Section */
@@ -1483,7 +1587,25 @@ get_header(); ?>
         font-size: 0.95rem;
         padding: 5px 0;
     }
-    
+
+    /* Mobile: always show CTA text for linked language items */
+    .lang-cta-text {
+        opacity: 1;
+        transform: translateX(0);
+        font-size: 0.6rem;
+    }
+
+    .lang-cta-arrow {
+        width: 22px;
+        height: 22px;
+        font-size: 0.7rem;
+    }
+
+    .language-category-link {
+        padding: 8px 12px;
+        margin: 0 -12px;
+    }
+
     /* Course types - stack on mobile */
     .course-types-grid {
         grid-template-columns: 1fr;
@@ -1745,7 +1867,18 @@ get_header(); ?>
     .languages-grid {
         grid-template-columns: 1fr;
     }
-    
+
+    /* Hide CTA text on very small screens, keep arrow only */
+    .lang-cta-text {
+        display: none;
+    }
+
+    .lang-cta-arrow {
+        width: 20px;
+        height: 20px;
+        font-size: 0.65rem;
+    }
+
     /* Even smaller text sizes */
     .courses-hero .page-title {
         font-size: 1.6rem;
