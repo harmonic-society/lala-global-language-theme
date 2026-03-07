@@ -2122,12 +2122,13 @@ body.font-xlarge .article-body {
 }
 
 .cta-title {
-    font-size: 2rem;
-    font-weight: 800;
+    font-size: 2.2rem;
+    font-weight: 900;
     color: #ffffff;
-    margin-bottom: 16px;
-    line-height: 1.5;
-    letter-spacing: 0.03em;
+    margin-bottom: 12px;
+    line-height: 1.4;
+    letter-spacing: 0.04em;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .cta-title .pc-only {
@@ -2141,11 +2142,11 @@ body.font-xlarge .article-body {
 }
 
 .cta-description {
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.85);
     line-height: 1.9;
     margin-bottom: 28px;
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: 0.02em;
 }
 
@@ -2171,14 +2172,14 @@ body.font-xlarge .article-body {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(255, 255, 255, 0.07);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
-    padding: 10px 18px;
+    padding: 11px 20px;
     border-radius: 30px;
-    font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.92);
-    font-weight: 500;
+    font-size: 0.88rem;
+    color: #ffffff;
+    font-weight: 600;
     letter-spacing: 0.02em;
     transition: background 0.3s ease, border-color 0.3s ease;
 }
@@ -2211,21 +2212,27 @@ body.font-xlarge .article-body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    background: linear-gradient(135deg, #F88379 0%, #e8605a 100%);
+    gap: 12px;
+    background: linear-gradient(135deg, #FF6B5A 0%, #F7444E 50%, #e8303a 100%);
     color: #ffffff;
-    font-size: 1.05rem;
-    font-weight: 700;
-    padding: 18px 44px;
+    font-size: 1.15rem;
+    font-weight: 800;
+    padding: 22px 52px;
     border-radius: 50px;
     text-decoration: none;
     transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow:
-        0 8px 24px rgba(248, 131, 121, 0.4),
-        0 0 0 0 rgba(248, 131, 121, 0);
+        0 8px 28px rgba(247, 68, 78, 0.45),
+        0 0 0 0 rgba(247, 68, 78, 0);
     position: relative;
     overflow: hidden;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.05em;
+    animation: cta-attention 3s ease-in-out infinite;
+}
+
+@keyframes cta-attention {
+    0%, 100% { transform: scale(1); box-shadow: 0 8px 28px rgba(247, 68, 78, 0.45), 0 0 0 0 rgba(247, 68, 78, 0); }
+    50% { transform: scale(1.03); box-shadow: 0 12px 36px rgba(247, 68, 78, 0.55), 0 0 0 6px rgba(247, 68, 78, 0.1); }
 }
 
 .cta-button::before {
@@ -2235,8 +2242,25 @@ body.font-xlarge .article-body {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
     transition: left 0.6s ease;
+}
+
+.cta-button::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(90deg, transparent 40%, rgba(255,255,255,0.15) 50%, transparent 60%);
+    animation: cta-shimmer 4s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes cta-shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
 }
 
 .cta-button:hover::before {
@@ -2244,12 +2268,13 @@ body.font-xlarge .article-body {
 }
 
 .cta-button:hover {
-    transform: translateY(-3px);
+    transform: translateY(-4px) scale(1.04);
     box-shadow:
-        0 14px 40px rgba(248, 131, 121, 0.5),
-        0 0 0 4px rgba(248, 131, 121, 0.15);
+        0 18px 48px rgba(247, 68, 78, 0.55),
+        0 0 0 5px rgba(247, 68, 78, 0.18);
     color: #ffffff;
     text-decoration: none;
+    animation: none;
 }
 
 .cta-button svg {
@@ -2257,13 +2282,28 @@ body.font-xlarge .article-body {
 }
 
 .cta-button:hover svg {
-    transform: translateX(5px);
+    transform: translateX(6px);
+}
+
+.cta-price-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(255, 215, 0, 0.15);
+    border: 1px solid rgba(255, 215, 0, 0.35);
+    color: #FFD700;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    letter-spacing: 0.03em;
 }
 
 .cta-note {
     margin-top: 18px;
-    font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.6);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2272,7 +2312,7 @@ body.font-xlarge .article-body {
 }
 
 .cta-note svg {
-    opacity: 0.6;
+    opacity: 0.7;
 }
 
 /* CTA Decoration */
@@ -2370,11 +2410,15 @@ body.font-xlarge .article-body {
         padding: 8px 14px;
     }
 
+    .cta-title {
+        font-size: 1.7rem;
+    }
+
     .cta-button {
         width: 100%;
-        max-width: 320px;
-        padding: 16px 32px;
-        font-size: 0.98rem;
+        max-width: 340px;
+        padding: 18px 32px;
+        font-size: 1.02rem;
     }
 
     .circle-1 {

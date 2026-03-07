@@ -350,10 +350,18 @@ get_header(); ?>
                                 </div>
                             </div>
                             <span class="cta-label">LaLa GLOBAL LANGUAGE</span>
-                            <h3 class="cta-title">あなたの「話したい」を、<br class="pc-only">カタチに。</h3>
+                            <h3 class="cta-title">体験レッスン受付中！</h3>
+                            <span class="cta-price-badge">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <line x1="12" y1="8" x2="12" y2="16"/>
+                                    <line x1="8" y1="12" x2="16" y2="12"/>
+                                </svg>
+                                50分 / 1,100円（税込）
+                            </span>
                             <p class="cta-description">
-                                世界35言語に対応したオンラインレッスンで、<br class="pc-only">
-                                あなたの可能性を広げてみませんか？
+                                ネイティブ講師とのマンツーマンレッスンを<br class="pc-only">
+                                お気軽にお試しいただけます。
                             </p>
                             <div class="cta-features">
                                 <span class="cta-feature">
@@ -362,28 +370,28 @@ get_header(); ?>
                                             <polyline points="20 6 9 17 4 12"/>
                                         </svg>
                                     </span>
+                                    50分マンツーマン
+                                </span>
+                                <span class="cta-feature">
+                                    <span class="cta-feature-icon">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                            <polyline points="20 6 9 17 4 12"/>
+                                        </svg>
+                                    </span>
+                                    1,100円（税込）
+                                </span>
+                                <span class="cta-feature">
+                                    <span class="cta-feature-icon">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                            <polyline points="20 6 9 17 4 12"/>
+                                        </svg>
+                                    </span>
                                     オンライン完結
-                                </span>
-                                <span class="cta-feature">
-                                    <span class="cta-feature-icon">
-                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                                            <polyline points="20 6 9 17 4 12"/>
-                                        </svg>
-                                    </span>
-                                    ネイティブ講師
-                                </span>
-                                <span class="cta-feature">
-                                    <span class="cta-feature-icon">
-                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                                            <polyline points="20 6 9 17 4 12"/>
-                                        </svg>
-                                    </span>
-                                    1回50分マンツーマン
                                 </span>
                             </div>
                             <div class="cta-button-wrapper">
-                                <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="cta-button">
-                                    <span>まずは体験レッスンから始めよう</span>
+                                <a href="https://taiken.lala-global-language.com/" class="cta-button" target="_blank" rel="noopener noreferrer">
+                                    <span>体験レッスンに申し込む</span>
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                                         <line x1="5" y1="12" x2="19" y2="12"/>
                                         <polyline points="12 5 19 12 12 19"/>
@@ -392,9 +400,9 @@ get_header(); ?>
                             </div>
                             <p class="cta-note">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                                 </svg>
-                                お気軽にお問い合わせください
+                                簡単30秒で予約完了
                             </p>
                         </div>
                         <div class="cta-decoration">
