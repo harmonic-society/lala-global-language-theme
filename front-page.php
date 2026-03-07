@@ -202,12 +202,16 @@ get_header(); ?>
                         ?>
                         <?php if ( $lang_url ) : ?>
                         <a href="<?php echo esc_url( $lang_url ); ?>" class="language-item-link">
-                            <div class="language-item" data-lang="<?php echo esc_attr( $lang['code'] ); ?>">
+                            <div class="language-item has-link" data-lang="<?php echo esc_attr( $lang['code'] ); ?>">
                                 <span class="flag-icon"><?php echo $lang['flag']; ?></span>
                                 <div class="language-info">
                                     <h4><?php echo esc_html( $lang['name'] ); ?></h4>
                                     <span class="language-native"><?php echo esc_html( $lang['native'] ); ?></span>
                                 </div>
+                                <span class="language-link-cta">
+                                    <span class="cta-text">詳しく見る</span>
+                                    <span class="cta-arrow">→</span>
+                                </span>
                             </div>
                         </a>
                         <?php else : ?>
@@ -759,9 +763,70 @@ get_header(); ?>
     background: #F8F9FA;
     border-radius: 15px;
     transition: all 0.3s ease;
-    cursor: pointer;
+    cursor: default;
     position: relative;
     overflow: hidden;
+}
+
+/* Clickable language items - visual distinction */
+.language-item.has-link {
+    cursor: pointer;
+    border: 1.5px solid transparent;
+    background: linear-gradient(135deg, #f0fafa 0%, #fef9f5 100%);
+}
+
+.language-item.has-link:hover {
+    border-color: #008080;
+    background: white;
+    box-shadow: 0 5px 25px rgba(0, 128, 128, 0.15);
+    transform: translateX(10px);
+}
+
+/* CTA label inside linked items */
+.language-link-cta {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.language-link-cta .cta-text {
+    font-size: 0.7rem;
+    color: #008080;
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: all 0.3s ease;
+}
+
+.language-link-cta .cta-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: #008080;
+    color: white;
+    border-radius: 50%;
+    font-size: 0.85rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 128, 128, 0.3);
+}
+
+.language-item.has-link:hover .cta-text {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.language-item.has-link:hover .cta-arrow {
+    background: #006666;
+    transform: translateX(3px);
+    box-shadow: 0 3px 12px rgba(0, 128, 128, 0.4);
 }
 
 .language-item::before {
@@ -780,7 +845,7 @@ get_header(); ?>
     width: 100%;
 }
 
-.language-item:hover {
+.language-item:not(.has-link):hover {
     transform: translateX(10px);
     background: white;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
@@ -942,9 +1007,19 @@ get_header(); ?>
     .language-item {
         padding: 10px 12px;
     }
-    
+
     .flag-icon {
         font-size: 1.8rem;
+    }
+
+    .language-link-cta .cta-text {
+        display: none;
+    }
+
+    .language-link-cta .cta-arrow {
+        width: 22px;
+        height: 22px;
+        font-size: 0.7rem;
     }
 }
 
@@ -1802,14 +1877,31 @@ get_header(); ?>
         font-size: 0.75rem;
     }
     
-    .language-item:hover {
+    .language-item:not(.has-link):hover {
         transform: translateX(5px);
     }
-    
+
+    .language-item.has-link:hover {
+        transform: translateX(5px);
+    }
+
+    /* Mobile: always show CTA text for linked items */
+    .language-link-cta .cta-text {
+        opacity: 1;
+        transform: translateX(0);
+        font-size: 0.65rem;
+    }
+
+    .language-link-cta .cta-arrow {
+        width: 24px;
+        height: 24px;
+        font-size: 0.75rem;
+    }
+
     .language-item[data-lang]::after {
         display: none;
     }
-    
+
     /* Course overview responsive */
     .course-overview-grid {
         grid-template-columns: 1fr;
