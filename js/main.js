@@ -209,15 +209,7 @@
             $(this).css('animation-delay', randomDelay + 's');
         });
 
-        // Parallax effect for hero section (only when background image is set)
-        var $heroSection = $('.hero-section');
-        var heroBgImage = $heroSection.css('background-image');
-        if (heroBgImage && heroBgImage !== 'none') {
-            $(window).scroll(function() {
-                var scrolled = $(window).scrollTop();
-                $heroSection.css('background-position', 'center ' + (scrolled * 0.5) + 'px');
-            });
-        }
+        // Parallax effect is handled by CSS background-attachment: fixed
 
         // Hero scroll indicator click
         $('.hero-scroll-indicator').click(function() {
