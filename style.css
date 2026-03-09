@@ -1116,7 +1116,7 @@ ul, ol, li, dl, dt, dd, blockquote, address {
     
     /* Header adjustments */
     .site-header {
-        padding: 10px 0;
+        padding: 6px 0;
         position: sticky;
     }
     
@@ -1435,9 +1435,9 @@ ul, ol, li, dl, dt, dd, blockquote, address {
     
     /* Header */
     .site-header {
-        padding: 12px 0;
+        padding: 8px 0;
     }
-    
+
     .site-title {
         font-size: 1.5rem;
     }

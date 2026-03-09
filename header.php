@@ -375,20 +375,26 @@
     /* Mobile Navigation */
     @media (max-width: 768px) {
         .site-header {
-            padding: 10px 0;
+            padding: 6px 0;
         }
-        
+
         .site-header .container {
             padding: 0 15px;
         }
-        
+
         .mobile-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             width: 100%;
         }
-        
+
+        .site-logo img,
+        .custom-logo {
+            max-height: 45px;
+            width: auto;
+        }
+
         .site-branding {
             flex: 1;
             animation: none;
