@@ -547,7 +547,7 @@ ul, ol, li, dl, dt, dd, blockquote, address {
     text-align: center;
     color: white;
     cursor: pointer;
-    animation: bounce 2s ease-in-out infinite;
+    animation: bounce 3s ease-in-out infinite;
 }
 
 .scroll-text {
@@ -568,14 +568,11 @@ ul, ol, li, dl, dt, dd, blockquote, address {
 }
 
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
+    0%, 100% {
         transform: translateX(-50%) translateY(0);
     }
-    40% {
-        transform: translateX(-50%) translateY(-10px);
-    }
-    60% {
-        transform: translateX(-50%) translateY(-5px);
+    50% {
+        transform: translateX(-50%) translateY(-8px);
     }
 }
 
@@ -1926,9 +1923,11 @@ ul, ol, li, dl, dt, dd, blockquote, address {
     }
     
     .hero-scroll-indicator {
-        bottom: 20px;
+        position: relative;
+        bottom: auto;
+        margin-top: 20px;
     }
-    
+
     /* Adjust background attachment for mobile */
     .hero-section {
         background-attachment: scroll;
