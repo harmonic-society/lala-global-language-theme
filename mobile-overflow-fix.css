@@ -37,14 +37,16 @@
         max-width: none !important;
     }
     
-    /* All text elements must wrap */
-    h1, h2, h3, h4, h5, h6,
-    p, li, td, th, dd, dt,
-    blockquote, figcaption,
+    /* All text elements must wrap (scoped to content areas) */
+    .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6,
     .entry-content p,
     .entry-content li,
     .entry-content td,
-    .entry-content th {
+    .entry-content th,
+    .post-content-area p,
+    .post-content-area li,
+    .post-content-area blockquote,
+    .post-content-area figcaption {
         word-wrap: break-word !important;
         overflow-wrap: break-word !important;
         word-break: break-word !important;
@@ -52,9 +54,9 @@
         max-width: 100% !important;
     }
     
-    /* Aggressive link breaking */
-    a, 
-    .entry-content a {
+    /* Aggressive link breaking (exclude hero and nav) */
+    .entry-content a,
+    .post-content-area a {
         word-break: break-all !important;
         overflow-wrap: break-word !important;
         display: inline-block !important;
@@ -110,8 +112,9 @@
         max-width: 100% !important;
     }
     
-    /* Long words in any context */
-    * {
+    /* Long words in content areas */
+    .entry-content *,
+    .post-content-area * {
         word-break: break-word !important;
     }
 }
