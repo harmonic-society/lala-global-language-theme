@@ -1936,7 +1936,15 @@ ul, ol, li, dl, dt, dd, blockquote, address {
     .hero-scroll-indicator {
         position: relative;
         bottom: auto;
+        left: auto;
+        transform: none;
         margin-top: 20px;
+        animation: bounceVertical 3s ease-in-out infinite;
+    }
+
+    @keyframes bounceVertical {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-8px); }
     }
 
     /* Adjust background attachment for mobile */
