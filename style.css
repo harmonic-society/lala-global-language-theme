@@ -305,7 +305,9 @@ ul, ol, li, dl, dt, dd, blockquote, address {
     overflow: hidden;
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .hero-animated-bg {
