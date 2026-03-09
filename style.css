@@ -2696,35 +2696,21 @@ ul, ol, li, dl, dt, dd, blockquote, address {
     }
 }
 
-/* Global Mobile Overflow Fixes */
+/* Global Mobile Overflow Fixes (scoped to content areas) */
 @media (max-width: 768px) {
-    /* Prevent horizontal overflow on all elements except fixed positioned */
-    * {
-        max-width: 100%;
-    }
-    
-    /* Exception for fixed/absolute positioned elements and navigation */
-    .menu-container,
-    .menu-toggle,
-    .main-navigation,
-    [style*="position: fixed"],
-    [style*="position: absolute"] {
-        max-width: none !important;
-    }
-    
-    /* Ensure all text content wraps properly */
-    h1, h2, h3, h4, h5, h6,
-    p, span, a, li, td, th,
-    blockquote, pre, code {
+    /* Ensure text content wraps properly in blog/post content */
+    .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6,
+    .entry-content p, .entry-content span, .entry-content a, .entry-content li, .entry-content td, .entry-content th,
+    .entry-content blockquote, .entry-content pre, .entry-content code {
         word-wrap: break-word !important;
         overflow-wrap: break-word !important;
         word-break: break-word !important;
         hyphens: auto;
         max-width: 100%;
     }
-    
-    /* Fix long URLs and strings */
-    a {
+
+    /* Fix long URLs and strings in content */
+    .entry-content a {
         word-break: break-all !important;
     }
     
