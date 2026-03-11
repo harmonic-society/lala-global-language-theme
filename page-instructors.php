@@ -249,7 +249,7 @@ get_header(); ?>
                             <span class="avail-item">平日夜OK</span>
                             <span class="avail-item">土日OK</span>
                         </div>
-                        <p class="instructor-style">楽しく学べるポルトガル語レッスン</p>
+                        <p class="instructor-style">伝わる発音と会話</p>
                         <div class="instructor-message">
                             <p>初めてでも大丈夫、安心して話せる雰囲気で進めます。日常・旅行・仕事でもそのまま使える会話と、伝わる発音を中心にロールプレイで練習します。目的に合わせて必要なフレーズを増やして、一緒に楽しくステップアップしましょう！</p>
                         </div>
