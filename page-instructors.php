@@ -587,30 +587,69 @@ get_header(); ?>
 /* ===========================================
    Responsive
    =========================================== */
+
+/* Protect instructor page elements from global overflow fixes */
+.instructors-page .instructor-card-inner,
+.instructors-page .instructor-info,
+.instructors-page .instructor-photo-area,
+.instructors-page .instructor-header,
+.instructors-page .instructor-tags,
+.instructors-page .instructor-availability,
+.instructors-page .instructor-message,
+.instructors-page .cta-buttons,
+.instructors-page h2,
+.instructors-page p,
+.instructors-page span,
+.instructors-page a {
+    max-width: none !important;
+    word-break: normal !important;
+    hyphens: none !important;
+}
+
+.instructors-page .instructor-photo img {
+    max-width: 100% !important;
+    height: 100% !important;
+}
+
 @media (max-width: 768px) {
+    .instructors-page {
+        overflow-x: hidden;
+    }
+
     .instructors-hero {
         padding: 60px 0 40px;
     }
 
     .instructors-hero-title {
         font-size: 2rem;
+        text-align: center;
     }
 
     .instructors-hero-subtitle {
         font-size: 1rem;
-        padding: 0 15px;
+        padding: 0 20px;
+        text-align: center;
     }
 
     .instructors-section {
-        padding: 40px 0;
+        padding: 30px 0;
+    }
+
+    .instructors-section > .container {
+        padding: 0 15px;
     }
 
     .instructor-card {
-        margin-bottom: 25px;
+        margin-bottom: 20px;
     }
 
     .instructor-card-inner {
         flex-direction: column;
+        border-radius: 16px;
+    }
+
+    .instructor-card-inner:hover {
+        transform: none;
     }
 
     .instructor-photo-area {
@@ -618,20 +657,62 @@ get_header(); ?>
     }
 
     .instructor-photo {
-        min-height: 250px;
-        max-height: 300px;
+        min-height: 240px;
+        max-height: 280px;
+    }
+
+    .instructor-flag {
+        bottom: 12px;
+        right: 12px;
+        width: 45px;
+        height: 45px;
+        font-size: 2rem;
     }
 
     .instructor-info {
-        padding: 25px 20px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .instructor-header {
+        justify-content: center;
+        gap: 10px;
     }
 
     .instructor-name {
         font-size: 1.3rem;
     }
 
+    .instructor-origin {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+    .instructor-tags {
+        justify-content: center;
+        gap: 6px;
+    }
+
+    .instructor-tags .tag {
+        font-size: 0.75rem;
+        padding: 3px 10px;
+    }
+
+    .instructor-availability {
+        justify-content: center;
+        gap: 6px;
+    }
+
+    .avail-item {
+        font-size: 0.75rem;
+        padding: 3px 10px;
+    }
+
     .instructor-style {
         font-size: 0.95rem;
+        text-align: left;
+        border-left: 3px solid var(--primary-color);
+        padding-left: 12px;
     }
 
     .instructor-message {
@@ -639,7 +720,9 @@ get_header(); ?>
     }
 
     .instructor-message p {
-        font-size: 0.9rem;
+        font-size: 0.88rem;
+        line-height: 1.7;
+        text-align: left;
     }
 
     .instructors-cta {
@@ -647,7 +730,13 @@ get_header(); ?>
     }
 
     .instructors-cta .cta-title {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+        padding: 0 15px;
+    }
+
+    .instructors-cta .cta-text {
+        font-size: 0.95rem;
+        padding: 0 15px;
     }
 
     .instructors-cta .cta-buttons {
@@ -662,23 +751,64 @@ get_header(); ?>
 }
 
 @media (max-width: 480px) {
+    .instructors-hero {
+        padding: 50px 0 30px;
+    }
+
     .instructors-hero-title {
-        font-size: 1.75rem;
+        font-size: 1.6rem;
+    }
+
+    .instructors-hero-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .instructors-section {
+        padding: 20px 0;
+    }
+
+    .instructor-card {
+        margin-bottom: 16px;
+    }
+
+    .instructor-card-inner {
+        border-radius: 14px;
     }
 
     .instructor-photo {
-        min-height: 220px;
-        max-height: 260px;
+        min-height: 200px;
+        max-height: 240px;
+    }
+
+    .instructor-info {
+        padding: 18px 15px;
     }
 
     .instructor-header {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         gap: 8px;
     }
 
-    .instructor-info {
-        padding: 20px 15px;
+    .instructor-name {
+        font-size: 1.2rem;
+    }
+
+    .instructor-language-badge {
+        font-size: 0.8rem;
+        padding: 4px 14px;
+    }
+
+    .instructor-style {
+        font-size: 0.9rem;
+    }
+
+    .instructor-message p {
+        font-size: 0.85rem;
+    }
+
+    .instructors-cta .cta-title {
+        font-size: 1.25rem;
     }
 }
 </style>
