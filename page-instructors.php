@@ -583,8 +583,15 @@ get_header(); ?>
 }
 
 .instructors-cta .btn-secondary {
-    border-color: white;
+    background: transparent;
+    border: 2px solid white;
     color: white;
+}
+
+.instructors-cta .btn-secondary:hover {
+    background: white;
+    color: var(--secondary-color);
+    transform: translateY(-2px);
 }
 
 /* ===========================================
