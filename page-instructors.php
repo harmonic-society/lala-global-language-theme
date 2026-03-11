@@ -156,7 +156,7 @@ get_header(); ?>
                 </div>
             </div>
 
-            <!-- スイエイ講師（広東語/マレーシア） -->
+            <!-- スイエイ講師（広東語・北京語/マレーシア） -->
             <div class="instructor-card fade-in">
                 <div class="instructor-card-inner">
                     <div class="instructor-photo-area">
@@ -168,7 +168,7 @@ get_header(); ?>
                     <div class="instructor-info">
                         <div class="instructor-header">
                             <h2 class="instructor-name">スイエイ講師</h2>
-                            <span class="instructor-language-badge">広東語 / マレー語</span>
+                            <span class="instructor-language-badge">広東語 / 北京語</span>
                         </div>
                         <p class="instructor-origin">マレーシア出身</p>
                         <div class="instructor-tags">
@@ -184,7 +184,7 @@ get_header(); ?>
                         </div>
                         <p class="instructor-style">初心者でも安心して話せる会話指導</p>
                         <div class="instructor-message">
-                            <p>受講生一人ひとりの目的に合わせて、実際の現場で使える広東語・マレー語の表現を丁寧にサポートします。初めての方も安心して話せる雰囲気づくりを大切にし、基礎から実践まで無理なく続けられるレッスンを心がけています。小さな一歩を一緒に積み重ねながら、楽しくステップアップしていきましょう。</p>
+                            <p>受講生一人ひとりの目的に合わせて、実際の現場で使える広東語・北京語の表現を丁寧にサポートします。初めての方も安心して話せる雰囲気づくりを大切にし、基礎から実践まで無理なく続けられるレッスンを心がけています。小さな一歩を一緒に積み重ねながら、楽しくステップアップしていきましょう。</p>
                         </div>
                     </div>
                 </div>
@@ -204,7 +204,7 @@ get_header(); ?>
                             <h2 class="instructor-name">ヤン講師</h2>
                             <span class="instructor-language-badge">北京語（中国語）</span>
                         </div>
-                        <p class="instructor-origin">中国（北京）出身</p>
+                        <p class="instructor-origin">中国出身</p>
                         <div class="instructor-tags">
                             <span class="tag">語学指導</span>
                             <span class="tag">官公庁研修</span>
@@ -287,7 +287,7 @@ get_header(); ?>
                         </div>
                         <p class="instructor-style">楽しく学べるポルトガル語レッスン</p>
                         <div class="instructor-message">
-                            <p>ブラジル出身のネイティブ講師として、実践的なポルトガル語をお教えします。日常会話から旅行で使えるフレーズまで、楽しみながら自然に身につくレッスンを心がけています。一緒にポルトガル語の世界を楽しみましょう！</p>
+                            <p>初めてでも大丈夫、安心して話せる雰囲気で進めます。日常・旅行・仕事でもそのまま使える会話と、伝わる発音を中心にロールプレイで練習します。目的に合わせて必要なフレーズを増やして、一緒に楽しくステップアップしていきましょう！</p>
                         </div>
                     </div>
                 </div>
