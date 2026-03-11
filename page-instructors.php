@@ -195,7 +195,7 @@ get_header(); ?>
                 <div class="instructor-card-inner">
                     <div class="instructor-photo-area">
                         <div class="instructor-photo">
-                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/yan-china.jpeg" alt="ヤン講師" style="object-position: center 15%;">
+                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/yan-china.jpeg" alt="ヤン講師" style="object-position: center 10%; transform: scale(1.5); transform-origin: center 20%;">
                         </div>
                         <div class="instructor-flag">🇨🇳</div>
                     </div>
