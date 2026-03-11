@@ -257,6 +257,41 @@ get_header(); ?>
                 </div>
             </div>
 
+            <!-- マリナ講師（ロシア語） -->
+            <div class="instructor-card fade-in">
+                <div class="instructor-card-inner">
+                    <div class="instructor-photo-area">
+                        <div class="instructor-photo">
+                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/marina-russian.JPEG" alt="マリナ講師" style="object-position: center 30%;">
+                        </div>
+                        <div class="instructor-flag">🇷🇺</div>
+                    </div>
+                    <div class="instructor-info">
+                        <div class="instructor-header">
+                            <h2 class="instructor-name">マリナ講師</h2>
+                            <span class="instructor-language-badge">ロシア語</span>
+                        </div>
+                        <p class="instructor-origin">ロシア出身</p>
+                        <div class="instructor-tags">
+                            <span class="tag">語学指導</span>
+                            <span class="tag">法人研修</span>
+                            <span class="tag">官公庁研修</span>
+                            <span class="tag">検定指導</span>
+                            <span class="tag">通訳業務</span>
+                            <span class="tag">翻訳業務</span>
+                        </div>
+                        <div class="instructor-availability">
+                            <span class="avail-item">平日昼OK</span>
+                            <span class="avail-item">土日OK</span>
+                        </div>
+                        <p class="instructor-style">基礎から会話まで、ロシア語と文化を楽しく学ぶレッスン</p>
+                        <div class="instructor-message">
+                            <p>文法の基礎を大切にしながら、日常の会話や仕事の会合で使えるロシア語を学び、言葉の背景にあるロシア文化にも触れていきます。初めての方にも分かりやすく丁寧に進め、一人ひとりの目的に合わせたレッスンをいたします。ロシア語の世界に触れてみたい方はお気軽にご連絡ください。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
