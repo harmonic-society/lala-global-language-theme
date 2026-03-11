@@ -2746,8 +2746,9 @@ ul, ol, li, dl, dt, dd, blockquote, address {
         box-sizing: border-box !important;
     }
     
-    /* Ensure images and media don't overflow */
-    img, video, iframe, embed, object {
+    /* Ensure images and media don't overflow (scoped to content) */
+    .entry-content img, .entry-content video, .entry-content iframe,
+    .post-content-area img, .post-content-area video {
         max-width: 100%;
         height: auto;
     }

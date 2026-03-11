@@ -76,15 +76,13 @@
         display: block !important;
     }
     
-    /* Images and media */
-    img, 
-    video, 
-    iframe, 
-    embed, 
-    object,
+    /* Images and media (scoped to content areas) */
     .entry-content img,
     .entry-content video,
-    .entry-content iframe {
+    .entry-content iframe,
+    .post-content-area img,
+    .post-content-area video,
+    .post-content-area iframe {
         max-width: 100% !important;
         height: auto !important;
     }
