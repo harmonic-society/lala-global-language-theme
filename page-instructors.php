@@ -45,7 +45,7 @@ get_header(); ?>
                             <span class="tag">通訳業務</span>
                         </div>
                         <div class="instructor-availability">
-                            <span class="avail-item">平日OK</span>
+                            <span class="avail-item">平日昼OK</span>
                             <span class="avail-item">平日夜OK</span>
                         </div>
                         <p class="instructor-style">ドラマ・仕事・日常会話を、初心者から丁寧に指導</p>
@@ -116,7 +116,7 @@ get_header(); ?>
                         </div>
                         <p class="instructor-style">楽しく実践で学ぶ会話レッスン</p>
                         <div class="instructor-message">
-                            <p>インドネシア語は、実際に使いながら覚えることで自然に身につきます。間違えても大丈夫。安心してたくさんしゃべってください。受講生一人ひとりの目的に合わせて、実際の会話で使える表現を丁寧にサポートします。一緒に楽しくやっていきましょう！</p>
+                            <p>インドネシア語は、実際に使いながら覚えることで自然に身につきます。間違えても大丈夫。安心してたくさん話してください。受講生一人ひとりの目的に合わせて、実際の会話で使える表現を丁寧にサポートします。一緒に楽しく学んでいきましょう！</p>
                         </div>
                     </div>
                 </div>
@@ -150,7 +150,7 @@ get_header(); ?>
                         </div>
                         <p class="instructor-style">初心者でも安心の実践語学レッスン</p>
                         <div class="instructor-message">
-                            <p>学生の方から社会人の方まで、それぞれの人の目的に合わせて丁寧にサポートします。初心者の方でも学べて、実際に使える語学力を身につけます。一緒に楽しく「ことば」を学びましょう！</p>
+                            <p>学生の方から社会人の方まで、それぞれのレベルや目的に合わせて丁寧にサポートします。初心者の方でも学べて、実際に使える語学力を身につけます。一緒に楽しく「ことば」を学びましょう！</p>
                         </div>
                     </div>
                 </div>
@@ -168,7 +168,7 @@ get_header(); ?>
                     <div class="instructor-info">
                         <div class="instructor-header">
                             <h2 class="instructor-name">スイエイ講師</h2>
-                            <span class="instructor-language-badge">広東語 / 北京語</span>
+                            <span class="instructor-language-badge">広東語 / 北京語（中国語）</span>
                         </div>
                         <p class="instructor-origin">マレーシア出身</p>
                         <div class="instructor-tags">
@@ -184,7 +184,7 @@ get_header(); ?>
                         </div>
                         <p class="instructor-style">初心者でも安心して話せる会話指導</p>
                         <div class="instructor-message">
-                            <p>受講生一人ひとりの目的に合わせて、実際の現場で使える広東語・北京語の表現を丁寧にサポートします。初めての方も安心して話せる雰囲気づくりを大切にし、基礎から実践まで無理なく続けられるレッスンを心がけています。小さな一歩を一緒に積み重ねながら、楽しくステップアップしていきましょう。</p>
+                            <p>受講生一人ひとりの目的に合わせて、実際の現場で使える広東語・北京語の表現を丁寧にサポートします。初めての方も安心して話せる雰囲気づくりを大切にし、基礎から実践まで無理なく続けられるレッスンを心がけています。小さな一歩を一緒に積み重ねながら、楽しくステップアップしていきましょう！</p>
                         </div>
                     </div>
                 </div>
@@ -214,12 +214,11 @@ get_header(); ?>
                         </div>
                         <div class="instructor-availability">
                             <span class="avail-item">平日夜OK</span>
-                            <span class="avail-item">平日昼OK</span>
                             <span class="avail-item">土日OK</span>
                         </div>
                         <p class="instructor-style">楽しみながら上達する会話レッスン</p>
                         <div class="instructor-message">
-                            <p>ネイティブ講師と一緒に、楽しく安心して学べる中国語レッスンです。発音・会話重視で、初心者でも自然に話せるよう、受講生のペースに合わせてサポートしますので、安心して一緒に練習していきましょう！</p>
+                            <p>ネイティブ講師と一緒に、楽しく安心して学べる中国語レッスンです。発音・会話重視で、初心者でも自然に話せるよう、受講生のペースに合わせて丁寧にサポートしますので、安心して一緒に練習していきましょう！</p>
                         </div>
                     </div>
                 </div>
@@ -242,11 +241,12 @@ get_header(); ?>
                         <p class="instructor-origin">ブラジル出身</p>
                         <div class="instructor-tags">
                             <span class="tag">語学指導</span>
+                            <span class="tag">法人研修</span>
                             <span class="tag">通訳業務</span>
                             <span class="tag">翻訳業務</span>
                         </div>
                         <div class="instructor-availability">
-                            <span class="avail-item">平日OK</span>
+                            <span class="avail-item">平日夜OK</span>
                             <span class="avail-item">土日OK</span>
                         </div>
                         <p class="instructor-style">楽しく学べるポルトガル語レッスン</p>
