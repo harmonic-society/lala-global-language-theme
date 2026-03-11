@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: Instructors Page
- * Description: 講師紹介ページ（Coming Soon）
+ * Description: 講師紹介ページ
  *
  * @package LaLa_Global_Language
  */
@@ -10,314 +10,675 @@ get_header(); ?>
 
 <?php lala_breadcrumbs(); ?>
 
-<main id="primary" class="site-main coming-soon-page">
-    <section class="coming-soon-section">
+<main id="primary" class="site-main instructors-page">
+    <!-- Hero Section -->
+    <section class="instructors-hero">
         <div class="container">
-            <div class="coming-soon-content">
-                <div class="coming-soon-icon">👩‍🏫</div>
-                <h1 class="coming-soon-title">COMING SOON</h1>
-                <p class="coming-soon-subtitle">講師紹介ページ準備中</p>
-                
-                <div class="coming-soon-message">
-                    <p>LaLa GLOBAL LANGUAGEの素晴らしい講師陣を<br>
-                    ご紹介するページを準備しています。</p>
-                    <p>35言語を教える個性豊かな講師たちの<br>
-                    プロフィールをお楽しみに！</p>
-                </div>
-                
-                <div class="language-icons">
-                    <span class="icon-item">🇯🇵</span>
-                    <span class="icon-item">🇺🇸</span>
-                    <span class="icon-item">🇨🇳</span>
-                    <span class="icon-item">🇰🇷</span>
-                    <span class="icon-item">🇪🇸</span>
-                    <span class="icon-item">🇫🇷</span>
-                    <span class="icon-item">🇩🇪</span>
-                    <span class="icon-item">🇮🇹</span>
-                </div>
-                
-                <div class="cta-buttons">
-                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="btn btn-primary">ホームに戻る</a>
-                    <a href="<?php echo esc_url( home_url( '/courses/' ) ); ?>" class="btn btn-secondary">コース一覧を見る</a>
+            <h1 class="instructors-hero-title fade-in">講師紹介</h1>
+            <p class="instructors-hero-subtitle fade-in">世界各国出身のバイリンガル講師が、あなたの「学びたい」を全力サポート！</p>
+        </div>
+    </section>
+
+    <!-- Instructors Grid Section -->
+    <section class="instructors-section">
+        <div class="container">
+
+            <!-- ギフト講師 -->
+            <div class="instructor-card fade-in">
+                <div class="instructor-card-inner">
+                    <div class="instructor-photo-area">
+                        <div class="instructor-photo">
+                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/ギフト講師(タイ).jpeg" alt="ギフト講師">
+                        </div>
+                        <div class="instructor-flag">🇹🇭</div>
+                    </div>
+                    <div class="instructor-info">
+                        <div class="instructor-header">
+                            <h2 class="instructor-name">ギフト講師</h2>
+                            <span class="instructor-language-badge">タイ語</span>
+                        </div>
+                        <p class="instructor-origin">タイ（バンコク）出身</p>
+                        <div class="instructor-tags">
+                            <span class="tag">語学指導</span>
+                            <span class="tag">法人研修</span>
+                            <span class="tag">検定指導</span>
+                            <span class="tag">通訳業務</span>
+                        </div>
+                        <div class="instructor-availability">
+                            <span class="avail-item">平日OK</span>
+                            <span class="avail-item">平日夜OK</span>
+                        </div>
+                        <p class="instructor-style">ドラマ・仕事・日常会話を、初心者から丁寧に指導</p>
+                        <div class="instructor-message">
+                            <p>タイ語が初めての方もどうぞ安心ください。日常会話からビジネス交渉、ドラマのセリフまで、ご要望に合わせて幅広くサポートいたします。基礎から一歩ずつ、丁寧に指導いたしますので、私と一緒に生きたタイ語を身につけていきましょう！</p>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <!-- ジュン講師 -->
+            <div class="instructor-card fade-in">
+                <div class="instructor-card-inner">
+                    <div class="instructor-photo-area">
+                        <div class="instructor-photo">
+                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/ジュン講師(ベトナム).jpg" alt="ジュン講師">
+                        </div>
+                        <div class="instructor-flag">🇻🇳</div>
+                    </div>
+                    <div class="instructor-info">
+                        <div class="instructor-header">
+                            <h2 class="instructor-name">ジュン講師</h2>
+                            <span class="instructor-language-badge">ベトナム語</span>
+                        </div>
+                        <p class="instructor-origin">ベトナム（ハノイ）出身</p>
+                        <div class="instructor-tags">
+                            <span class="tag">語学指導</span>
+                            <span class="tag">法人研修</span>
+                            <span class="tag">検定指導</span>
+                            <span class="tag">通訳業務</span>
+                            <span class="tag">翻訳業務</span>
+                        </div>
+                        <div class="instructor-availability">
+                            <span class="avail-item">平日夜OK</span>
+                            <span class="avail-item">土日OK</span>
+                        </div>
+                        <p class="instructor-style">楽しく話せる実践ベトナム語</p>
+                        <div class="instructor-message">
+                            <p>ベトナムは北部・中部・南部で方言の違いが大きい国ですが、私はハノイ出身で標準的なベトナム語の発音を分かりやすくお伝えします。通訳経験もあり、日常会話からビジネスまで対応可能です。「聞き取れる・話せる」実践的なベトナム語を、皆さんの目的やレベルに合わせて身につけていきましょう！</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- アレク講師 -->
+            <div class="instructor-card fade-in">
+                <div class="instructor-card-inner">
+                    <div class="instructor-photo-area">
+                        <div class="instructor-photo instructor-photo-placeholder">
+                            <span class="placeholder-icon">👨‍🏫</span>
+                        </div>
+                        <div class="instructor-flag">🇮🇩</div>
+                    </div>
+                    <div class="instructor-info">
+                        <div class="instructor-header">
+                            <h2 class="instructor-name">アレク講師</h2>
+                            <span class="instructor-language-badge">インドネシア語</span>
+                        </div>
+                        <p class="instructor-origin">インドネシア出身</p>
+                        <div class="instructor-tags">
+                            <span class="tag">語学指導</span>
+                            <span class="tag">官公庁研修</span>
+                            <span class="tag">通訳業務</span>
+                        </div>
+                        <div class="instructor-availability">
+                            <span class="avail-item">平日夜OK</span>
+                            <span class="avail-item">土日OK</span>
+                        </div>
+                        <p class="instructor-style">楽しく実践で学ぶ会話レッスン</p>
+                        <div class="instructor-message">
+                            <p>インドネシア語は、実際に使いながら覚えることで自然に身につきます。間違えても大丈夫。安心してたくさんしゃべってください。受講生一人ひとりの目的に合わせて、実際の会話で使える表現を丁寧にサポートします。一緒に楽しくやっていきましょう！</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ユカ講師 -->
+            <div class="instructor-card fade-in">
+                <div class="instructor-card-inner">
+                    <div class="instructor-photo-area">
+                        <div class="instructor-photo">
+                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/ユカ講師(タガログ)jpg.jpg" alt="ユカ講師">
+                        </div>
+                        <div class="instructor-flag">🇵🇭</div>
+                    </div>
+                    <div class="instructor-info">
+                        <div class="instructor-header">
+                            <h2 class="instructor-name">ユカ講師</h2>
+                            <span class="instructor-language-badge">フィリピン語 / 英語</span>
+                        </div>
+                        <p class="instructor-origin">フィリピン出身</p>
+                        <div class="instructor-tags">
+                            <span class="tag">語学指導</span>
+                            <span class="tag">官公庁研修</span>
+                            <span class="tag">検定指導</span>
+                            <span class="tag">通訳業務</span>
+                            <span class="tag">翻訳業務</span>
+                        </div>
+                        <div class="instructor-availability">
+                            <span class="avail-item">平日昼OK</span>
+                            <span class="avail-item">土日OK</span>
+                        </div>
+                        <p class="instructor-style">初心者でも安心の実践語学レッスン</p>
+                        <div class="instructor-message">
+                            <p>学生の方から社会人の方まで、それぞれの人の目的に合わせて丁寧にサポートします。初心者の方でも学べて、実際に使える語学力を身につけます。一緒に楽しく「ことば」を学びましょう！</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- スイエイ講師（広東語/マレーシア） -->
+            <div class="instructor-card fade-in">
+                <div class="instructor-card-inner">
+                    <div class="instructor-photo-area">
+                        <div class="instructor-photo">
+                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/スイエイ講師(広東語).jpeg" alt="スイエイ講師">
+                        </div>
+                        <div class="instructor-flag">🇲🇾</div>
+                    </div>
+                    <div class="instructor-info">
+                        <div class="instructor-header">
+                            <h2 class="instructor-name">スイエイ講師</h2>
+                            <span class="instructor-language-badge">広東語 / マレー語</span>
+                        </div>
+                        <p class="instructor-origin">マレーシア出身</p>
+                        <div class="instructor-tags">
+                            <span class="tag">語学指導</span>
+                            <span class="tag">官公庁研修</span>
+                            <span class="tag">検定指導</span>
+                            <span class="tag">通訳業務</span>
+                            <span class="tag">翻訳業務</span>
+                        </div>
+                        <div class="instructor-availability">
+                            <span class="avail-item">平日昼OK</span>
+                            <span class="avail-item">土日OK</span>
+                        </div>
+                        <p class="instructor-style">初心者でも安心して話せる会話指導</p>
+                        <div class="instructor-message">
+                            <p>受講生一人ひとりの目的に合わせて、実際の現場で使える広東語・マレー語の表現を丁寧にサポートします。初めての方も安心して話せる雰囲気づくりを大切にし、基礎から実践まで無理なく続けられるレッスンを心がけています。小さな一歩を一緒に積み重ねながら、楽しくステップアップしていきましょう。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ヤン講師 -->
+            <div class="instructor-card fade-in">
+                <div class="instructor-card-inner">
+                    <div class="instructor-photo-area">
+                        <div class="instructor-photo">
+                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/ヤン講師(北京語).jpeg" alt="ヤン講師">
+                        </div>
+                        <div class="instructor-flag">🇨🇳</div>
+                    </div>
+                    <div class="instructor-info">
+                        <div class="instructor-header">
+                            <h2 class="instructor-name">ヤン講師</h2>
+                            <span class="instructor-language-badge">北京語（中国語）</span>
+                        </div>
+                        <p class="instructor-origin">中国（北京）出身</p>
+                        <div class="instructor-tags">
+                            <span class="tag">語学指導</span>
+                            <span class="tag">官公庁研修</span>
+                            <span class="tag">検定指導</span>
+                            <span class="tag">通訳業務</span>
+                            <span class="tag">翻訳業務</span>
+                        </div>
+                        <div class="instructor-availability">
+                            <span class="avail-item">平日夜OK</span>
+                            <span class="avail-item">平日昼OK</span>
+                            <span class="avail-item">土日OK</span>
+                        </div>
+                        <p class="instructor-style">楽しみながら上達する会話レッスン</p>
+                        <div class="instructor-message">
+                            <p>ネイティブ講師と一緒に、楽しく安心して学べる中国語レッスンです。発音・会話重視で、初心者でも自然に話せるよう、受講生のペースに合わせてサポートしますので、安心して一緒に練習していきましょう！</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- チョン講師 -->
+            <div class="instructor-card fade-in">
+                <div class="instructor-card-inner">
+                    <div class="instructor-photo-area">
+                        <div class="instructor-photo instructor-photo-placeholder">
+                            <span class="placeholder-icon">👩‍🏫</span>
+                        </div>
+                        <div class="instructor-flag">🇰🇷</div>
+                    </div>
+                    <div class="instructor-info">
+                        <div class="instructor-header">
+                            <h2 class="instructor-name">チョン講師</h2>
+                            <span class="instructor-language-badge">韓国語</span>
+                        </div>
+                        <p class="instructor-origin">韓国出身</p>
+                        <div class="instructor-tags">
+                            <span class="tag">語学指導</span>
+                            <span class="tag">法人研修</span>
+                            <span class="tag">官公庁研修</span>
+                            <span class="tag">検定指導</span>
+                            <span class="tag">通訳業務</span>
+                            <span class="tag">翻訳業務</span>
+                        </div>
+                        <div class="instructor-availability">
+                            <span class="avail-item">平日昼OK</span>
+                            <span class="avail-item">平日夜OK</span>
+                            <span class="avail-item">土日OK</span>
+                        </div>
+                        <p class="instructor-style">基礎からしっかり学べる韓国語レッスン</p>
+                        <div class="instructor-message">
+                            <p>韓国語を基礎からしっかり身につけたい方へ。文法・発音・会話をバランスよく学べるレッスンを心がけています。K-POPやドラマが好きな方も、ビジネスで使いたい方も、一人ひとりの目標に合わせてサポートします。一緒に楽しく韓国語を学びましょう！</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ラモン講師（ポルトガル語） -->
+            <div class="instructor-card fade-in">
+                <div class="instructor-card-inner">
+                    <div class="instructor-photo-area">
+                        <div class="instructor-photo">
+                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/ラモン講師(ポルトガル) .png" alt="ラモン講師">
+                        </div>
+                        <div class="instructor-flag">🇧🇷</div>
+                    </div>
+                    <div class="instructor-info">
+                        <div class="instructor-header">
+                            <h2 class="instructor-name">ラモン講師</h2>
+                            <span class="instructor-language-badge">ポルトガル語</span>
+                        </div>
+                        <p class="instructor-origin">ブラジル出身</p>
+                        <div class="instructor-tags">
+                            <span class="tag">語学指導</span>
+                            <span class="tag">通訳業務</span>
+                            <span class="tag">翻訳業務</span>
+                        </div>
+                        <div class="instructor-availability">
+                            <span class="avail-item">平日OK</span>
+                            <span class="avail-item">土日OK</span>
+                        </div>
+                        <p class="instructor-style">楽しく学べるポルトガル語レッスン</p>
+                        <div class="instructor-message">
+                            <p>ブラジル出身のネイティブ講師として、実践的なポルトガル語をお教えします。日常会話から旅行で使えるフレーズまで、楽しみながら自然に身につくレッスンを心がけています。一緒にポルトガル語の世界を楽しみましょう！</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
-        
-        <!-- Background decoration -->
-        <div class="bg-decoration">
-            <div class="circle circle-1"></div>
-            <div class="circle circle-2"></div>
-            <div class="circle circle-3"></div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="instructors-cta">
+        <div class="container">
+            <div class="cta-content fade-in">
+                <h2 class="cta-title">まずは体験レッスンから始めてみませんか？</h2>
+                <p class="cta-text">50分 1,100円で、お好きな言語の体験レッスンを受講いただけます。</p>
+                <div class="cta-buttons">
+                    <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="btn btn-primary btn-large">
+                        <span class="btn-text">体験レッスンに申し込む</span>
+                        <span class="btn-icon">→</span>
+                    </a>
+                    <a href="<?php echo esc_url( home_url( '/courses/' ) ); ?>" class="btn btn-secondary btn-large">
+                        <span class="btn-text">コース一覧を見る</span>
+                        <span class="btn-icon">📚</span>
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 </main>
 
 <style>
-/* Coming Soon Page Styles */
-.coming-soon-page {
-    min-height: calc(100vh - 200px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+/* ===========================================
+   Instructors Page Styles
+   =========================================== */
+
+/* Hero */
+.instructors-hero {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #006666 100%);
+    padding: 80px 0 60px;
+    text-align: center;
     position: relative;
     overflow: hidden;
 }
 
-.coming-soon-section {
-    width: 100%;
-    padding: 80px 0;
-    position: relative;
-    z-index: 1;
+.instructors-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+    animation: heroGlow 15s ease-in-out infinite;
 }
 
-.coming-soon-content {
-    text-align: center;
-    background: rgba(255, 255, 255, 0.95);
-    padding: 80px 60px;
-    border-radius: 30px;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
-    margin: 0 auto;
-    backdrop-filter: blur(10px);
+@keyframes heroGlow {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(5%, 5%); }
 }
 
-.coming-soon-icon {
-    font-size: 5rem;
-    margin-bottom: 30px;
-    animation: bounce 2s infinite;
-}
-
-.coming-soon-title {
-    font-size: 4rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 20px;
+.instructors-hero-title {
+    font-size: 3rem;
+    color: white;
     font-weight: 800;
-    letter-spacing: 2px;
+    margin-bottom: 15px;
+    position: relative;
 }
 
-.coming-soon-subtitle {
-    font-size: 1.5rem;
-    color: var(--secondary-color);
-    margin-bottom: 40px;
-    font-weight: 600;
-}
-
-.coming-soon-message {
+.instructors-hero-subtitle {
     font-size: 1.2rem;
-    line-height: 1.8;
-    color: var(--text-color);
-    margin-bottom: 50px;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+    position: relative;
 }
 
-.coming-soon-message p {
-    margin-bottom: 20px;
+/* Instructors Section */
+.instructors-section {
+    padding: 80px 0;
+    background: #f8f9fa;
 }
 
-.language-icons {
+/* Instructor Card */
+.instructor-card {
+    margin-bottom: 40px;
+}
+
+.instructor-card-inner {
     display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-bottom: 50px;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.icon-item {
+.instructor-card-inner:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Photo Area */
+.instructor-photo-area {
+    position: relative;
+    flex-shrink: 0;
+    width: 280px;
+}
+
+.instructor-photo {
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+    overflow: hidden;
+}
+
+.instructor-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.instructor-photo-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #e8f5f5 0%, #d4edec 100%);
+}
+
+.placeholder-icon {
+    font-size: 5rem;
+}
+
+.instructor-flag {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
     font-size: 2.5rem;
-    filter: grayscale(0%);
-    transition: all 0.3s ease;
-    animation: fadeInUp 0.6s ease-out forwards;
-    opacity: 0;
+    background: white;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
 }
 
-.icon-item:nth-child(1) { animation-delay: 0.1s; }
-.icon-item:nth-child(2) { animation-delay: 0.2s; }
-.icon-item:nth-child(3) { animation-delay: 0.3s; }
-.icon-item:nth-child(4) { animation-delay: 0.4s; }
-.icon-item:nth-child(5) { animation-delay: 0.5s; }
-.icon-item:nth-child(6) { animation-delay: 0.6s; }
-.icon-item:nth-child(7) { animation-delay: 0.7s; }
-.icon-item:nth-child(8) { animation-delay: 0.8s; }
-
-.icon-item:hover {
-    transform: scale(1.2) rotate(10deg);
-    filter: grayscale(0%);
+/* Info Area */
+.instructor-info {
+    padding: 35px 40px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
-.cta-buttons {
+.instructor-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+
+.instructor-name {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #333;
+    margin: 0;
+}
+
+.instructor-language-badge {
+    background: linear-gradient(135deg, var(--primary-color), #006666);
+    color: white;
+    padding: 5px 16px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.instructor-origin {
+    color: #888;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+/* Tags */
+.instructor-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.instructor-tags .tag {
+    background: #f0f7f7;
+    color: var(--primary-color);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: 1px solid rgba(0, 128, 128, 0.15);
+}
+
+/* Availability */
+.instructor-availability {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.avail-item {
+    background: #fff8f0;
+    color: #e67e22;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: 1px solid rgba(230, 126, 34, 0.2);
+}
+
+/* Style */
+.instructor-style {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    padding-left: 15px;
+    border-left: 3px solid var(--primary-color);
+}
+
+/* Message */
+.instructor-message {
+    background: #f9fafb;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: auto;
+}
+
+.instructor-message p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* CTA Section */
+.instructors-cta {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, #e66a5e 100%);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.instructors-cta .cta-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.instructors-cta .cta-title {
+    font-size: 2rem;
+    color: white;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.instructors-cta .cta-text {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    margin-bottom: 35px;
+}
+
+.instructors-cta .cta-buttons {
     display: flex;
     gap: 20px;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.cta-buttons .btn {
-    padding: 18px 40px;
-    font-size: 1.1rem;
+.instructors-cta .btn-primary {
+    background: white;
+    color: var(--secondary-color);
 }
 
-/* Background decoration */
-.bg-decoration {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    pointer-events: none;
-    z-index: 0;
+.instructors-cta .btn-primary:hover {
+    background: #f0f0f0;
+    transform: translateY(-2px);
 }
 
-.circle {
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
+.instructors-cta .btn-secondary {
+    border-color: white;
+    color: white;
 }
 
-.circle-1 {
-    width: 300px;
-    height: 300px;
-    top: -150px;
-    left: -150px;
-    animation: float 20s ease-in-out infinite;
-}
-
-.circle-2 {
-    width: 200px;
-    height: 200px;
-    bottom: -100px;
-    right: -100px;
-    animation: float 15s ease-in-out infinite reverse;
-}
-
-.circle-3 {
-    width: 150px;
-    height: 150px;
-    top: 50%;
-    right: 10%;
-    animation: float 25s ease-in-out infinite;
-}
-
-/* Animations */
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-20px);
-    }
-    60% {
-        transform: translateY(-10px);
-    }
-}
-
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-}
-
-@keyframes float {
-    0%, 100% {
-        transform: translate(0, 0) scale(1);
-    }
-    33% {
-        transform: translate(30px, -30px) scale(1.1);
-    }
-    66% {
-        transform: translate(-20px, 20px) scale(0.9);
-    }
-}
-
-/* Responsive Design */
+/* ===========================================
+   Responsive
+   =========================================== */
 @media (max-width: 768px) {
-    .coming-soon-content {
-        padding: 60px 30px;
+    .instructors-hero {
+        padding: 60px 0 40px;
     }
-    
-    .coming-soon-icon {
-        font-size: 4rem;
-    }
-    
-    .coming-soon-title {
-        font-size: 2.5rem;
-    }
-    
-    .coming-soon-subtitle {
-        font-size: 1.2rem;
-    }
-    
-    .coming-soon-message {
-        font-size: 1rem;
-    }
-    
-    .language-icons {
-        gap: 15px;
-    }
-    
-    .icon-item {
+
+    .instructors-hero-title {
         font-size: 2rem;
     }
-    
-    .cta-buttons {
+
+    .instructors-hero-subtitle {
+        font-size: 1rem;
+        padding: 0 15px;
+    }
+
+    .instructors-section {
+        padding: 40px 0;
+    }
+
+    .instructor-card {
+        margin-bottom: 25px;
+    }
+
+    .instructor-card-inner {
+        flex-direction: column;
+    }
+
+    .instructor-photo-area {
+        width: 100%;
+    }
+
+    .instructor-photo {
+        min-height: 250px;
+        max-height: 300px;
+    }
+
+    .instructor-info {
+        padding: 25px 20px;
+    }
+
+    .instructor-name {
+        font-size: 1.3rem;
+    }
+
+    .instructor-style {
+        font-size: 0.95rem;
+    }
+
+    .instructor-message {
+        padding: 15px;
+    }
+
+    .instructor-message p {
+        font-size: 0.9rem;
+    }
+
+    .instructors-cta {
+        padding: 50px 0;
+    }
+
+    .instructors-cta .cta-title {
+        font-size: 1.5rem;
+    }
+
+    .instructors-cta .cta-buttons {
         flex-direction: column;
         align-items: center;
     }
-    
-    .cta-buttons .btn {
+
+    .instructors-cta .btn {
         width: 100%;
-        max-width: 280px;
-    }
-    
-    /* Disable animations on mobile */
-    .coming-soon-icon,
-    .icon-item,
-    .circle {
-        animation: none !important;
-    }
-    
-    .icon-item {
-        opacity: 1;
+        max-width: 300px;
     }
 }
 
 @media (max-width: 480px) {
-    .coming-soon-content {
-        padding: 40px 20px;
+    .instructors-hero-title {
+        font-size: 1.75rem;
     }
-    
-    .coming-soon-title {
-        font-size: 2rem;
-    }
-    
-    .coming-soon-subtitle {
-        font-size: 1rem;
-    }
-    
-    .language-icons {
-        gap: 10px;
-    }
-    
-    .icon-item {
-        font-size: 1.5rem;
-    }
-}
 
-/* Reduced motion preference */
-@media (prefers-reduced-motion: reduce) {
-    * {
-        animation: none !important;
-        transition: none !important;
+    .instructor-photo {
+        min-height: 220px;
+        max-height: 260px;
     }
-    
-    .icon-item {
-        opacity: 1;
+
+    .instructor-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .instructor-info {
+        padding: 20px 15px;
     }
 }
 </style>
