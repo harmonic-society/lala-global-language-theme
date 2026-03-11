@@ -408,7 +408,7 @@ get_header(); ?>
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center top;
+    object-position: center center;
 }
 
 .instructor-photo-placeholder {
@@ -657,8 +657,8 @@ get_header(); ?>
     }
 
     .instructor-photo {
-        min-height: 240px;
-        max-height: 280px;
+        min-height: 280px;
+        max-height: 340px;
     }
 
     .instructor-flag {
@@ -776,8 +776,8 @@ get_header(); ?>
     }
 
     .instructor-photo {
-        min-height: 200px;
-        max-height: 240px;
+        min-height: 250px;
+        max-height: 300px;
     }
 
     .instructor-info {
