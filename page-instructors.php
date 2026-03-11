@@ -28,7 +28,7 @@ get_header(); ?>
                 <div class="instructor-card-inner">
                     <div class="instructor-photo-area">
                         <div class="instructor-photo">
-                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/ギフト講師(タイ).jpeg" alt="ギフト講師">
+                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/gift-thai.jpeg" alt="ギフト講師">
                         </div>
                         <div class="instructor-flag">🇹🇭</div>
                     </div>
@@ -61,7 +61,7 @@ get_header(); ?>
                 <div class="instructor-card-inner">
                     <div class="instructor-photo-area">
                         <div class="instructor-photo">
-                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/ジュン講師(ベトナム).jpg" alt="ジュン講師">
+                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/jun-vietnam.jpg" alt="ジュン講師">
                         </div>
                         <div class="instructor-flag">🇻🇳</div>
                     </div>
@@ -95,7 +95,7 @@ get_header(); ?>
                 <div class="instructor-card-inner">
                     <div class="instructor-photo-area">
                         <div class="instructor-photo">
-                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/アレク講師(インドネシア).jpeg" alt="アレク講師">
+                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/alek-indonesia.jpeg" alt="アレク講師">
                         </div>
                         <div class="instructor-flag">🇮🇩</div>
                     </div>
@@ -127,7 +127,7 @@ get_header(); ?>
                 <div class="instructor-card-inner">
                     <div class="instructor-photo-area">
                         <div class="instructor-photo">
-                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/ユカ講師(タガログ)jpg.jpg" alt="ユカ講師">
+                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/yuka-philippines.jpg" alt="ユカ講師">
                         </div>
                         <div class="instructor-flag">🇵🇭</div>
                     </div>
@@ -161,7 +161,7 @@ get_header(); ?>
                 <div class="instructor-card-inner">
                     <div class="instructor-photo-area">
                         <div class="instructor-photo">
-                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/スイエイ講師(広東語).jpeg" alt="スイエイ講師">
+                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/suiei-malaysia.jpeg" alt="スイエイ講師">
                         </div>
                         <div class="instructor-flag">🇲🇾</div>
                     </div>
@@ -195,7 +195,7 @@ get_header(); ?>
                 <div class="instructor-card-inner">
                     <div class="instructor-photo-area">
                         <div class="instructor-photo">
-                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/ヤン講師(北京語).jpeg" alt="ヤン講師">
+                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/yan-china.jpeg" alt="ヤン講師">
                         </div>
                         <div class="instructor-flag">🇨🇳</div>
                     </div>
@@ -266,7 +266,7 @@ get_header(); ?>
                 <div class="instructor-card-inner">
                     <div class="instructor-photo-area">
                         <div class="instructor-photo">
-                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/ラモン講師(ポルトガル) .png" alt="ラモン講師">
+                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/ramon-portugal.png" alt="ラモン講師">
                         </div>
                         <div class="instructor-flag">🇧🇷</div>
                     </div>
