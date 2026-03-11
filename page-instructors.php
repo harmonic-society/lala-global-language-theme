@@ -398,13 +398,16 @@ get_header(); ?>
 }
 
 .instructor-photo {
+    position: relative;
     width: 100%;
-    height: 100%;
-    min-height: 320px;
+    height: 380px;
     overflow: hidden;
 }
 
 .instructor-photo img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -607,8 +610,13 @@ get_header(); ?>
 }
 
 .instructors-page .instructor-photo img {
-    max-width: 100% !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
     height: 100% !important;
+    max-width: none !important;
+    object-fit: cover !important;
 }
 
 @media (max-width: 768px) {
@@ -657,8 +665,7 @@ get_header(); ?>
     }
 
     .instructor-photo {
-        min-height: 280px;
-        max-height: 340px;
+        height: 300px;
     }
 
     .instructor-flag {
@@ -776,8 +783,7 @@ get_header(); ?>
     }
 
     .instructor-photo {
-        min-height: 250px;
-        max-height: 300px;
+        height: 260px;
     }
 
     .instructor-info {
