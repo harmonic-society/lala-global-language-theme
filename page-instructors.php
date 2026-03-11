@@ -94,8 +94,8 @@ get_header(); ?>
             <div class="instructor-card fade-in">
                 <div class="instructor-card-inner">
                     <div class="instructor-photo-area">
-                        <div class="instructor-photo instructor-photo-placeholder">
-                            <span class="placeholder-icon">👨‍🏫</span>
+                        <div class="instructor-photo">
+                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/アレク講師(インドネシア).jpeg" alt="アレク講師">
                         </div>
                         <div class="instructor-flag">🇮🇩</div>
                     </div>
