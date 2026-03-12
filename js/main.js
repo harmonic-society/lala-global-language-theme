@@ -287,6 +287,16 @@
             $(this).removeClass('error');
         });
 
+        // GA4 conversion tracking for Contact Form 7
+        document.addEventListener('wpcf7mailsent', function(event) {
+            if (typeof gtag === 'function') {
+                gtag('event', 'form_submission', {
+                    event_category: 'contact',
+                    event_label: 'contact_form_submission'
+                });
+            }
+        }, false);
+
         // Add hover effect to feature cards
         $('.feature-card').hover(
             function() {
