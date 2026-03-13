@@ -262,7 +262,7 @@ get_header(); ?>
                 <div class="instructor-card-inner">
                     <div class="instructor-photo-area">
                         <div class="instructor-photo">
-                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/chon_korean.jpeg" alt="チョン講師" style="object-position: center 15%; transform: scale(1.4); transform-origin: 40% 20%;">
+                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/chon_korean.jpeg" alt="チョン講師" style="object-position: 30% 15%; transform: scale(1.5); transform-origin: 30% 20%;">
                         </div>
                         <div class="instructor-flag">🇰🇷</div>
                     </div>
