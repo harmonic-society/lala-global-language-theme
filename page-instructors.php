@@ -257,6 +257,41 @@ get_header(); ?>
                 </div>
             </div>
 
+            <!-- チョン講師（韓国語） -->
+            <div class="instructor-card fade-in">
+                <div class="instructor-card-inner">
+                    <div class="instructor-photo-area">
+                        <div class="instructor-photo">
+                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/chon_korean.jpeg" alt="チョン講師" style="object-position: center 20%;">
+                        </div>
+                        <div class="instructor-flag">🇰🇷</div>
+                    </div>
+                    <div class="instructor-info">
+                        <div class="instructor-header">
+                            <h2 class="instructor-name">チョン講師</h2>
+                            <span class="instructor-language-badge">韓国語</span>
+                        </div>
+                        <p class="instructor-origin">韓国出身</p>
+                        <div class="instructor-tags">
+                            <span class="tag">語学指導</span>
+                            <span class="tag">法人研修</span>
+                            <span class="tag">官公庁研修</span>
+                            <span class="tag">検定指導</span>
+                            <span class="tag">通訳業務</span>
+                            <span class="tag">翻訳業務</span>
+                        </div>
+                        <div class="instructor-availability">
+                            <span class="avail-item">平日昼OK</span>
+                            <span class="avail-item">平日夜OK</span>
+                        </div>
+                        <p class="instructor-style">ドラマや音楽と一緒に、楽しく学ぶ韓国語レッスン</p>
+                        <div class="instructor-message">
+                            <p>韓国語はちょっと難しそうに見えるけど、一緒に楽しく学んでみませんか？初心者から上級者までわかりやすくていねいに教えます。ドラマや音楽など好きなものでもっと身近に感じられるはずです。一緒にがんばりましょう！</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- マリナ講師（ロシア語） -->
             <div class="instructor-card fade-in">
                 <div class="instructor-card-inner">
