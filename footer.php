@@ -57,17 +57,22 @@
             </div>
 
             <div class="footer-bottom">
-                <div class="footer-info">
-                    <p class="tax-notice-footer">※当サイトの表示価格はすべて税込です</p>
-                    <p class="made-with-love">語学を学ぶすべての人へ <span class="heart-animation">❤️</span></p>
+                <div class="footer-bottom-left">
+                    <div class="footer-info">
+                        <p class="tax-notice-footer">※当サイトの表示価格はすべて税込です</p>
+                        <p class="made-with-love">語学を学ぶすべての人へ <span class="heart-animation">❤️</span></p>
+                    </div>
+                    <div class="footer-legal">
+                        <a href="<?php echo esc_url( home_url( '/terms/' ) ); ?>" class="footer-legal-link">利用規約</a>
+                        <span class="footer-separator">｜</span>
+                        <a href="<?php echo esc_url( home_url( '/privacy-policy/' ) ); ?>" class="footer-legal-link">プライバシーポリシー</a>
+                    </div>
+                    <div class="footer-copyright">
+                        <p>&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>. All rights reserved.</p>
+                    </div>
                 </div>
-                <div class="footer-legal">
-                    <a href="<?php echo esc_url( home_url( '/terms/' ) ); ?>" class="footer-legal-link">利用規約</a>
-                    <span class="footer-separator">｜</span>
-                    <a href="<?php echo esc_url( home_url( '/privacy-policy/' ) ); ?>" class="footer-legal-link">プライバシーポリシー</a>
-                </div>
-                <div class="footer-copyright">
-                    <p>&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>. All rights reserved.</p>
+                <div class="footer-bottom-right">
+                    <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/nintei_logo_page-0001.jpg" alt="令和7年度 事業継続力強化計画 認定 経済産業省" class="footer-nintei-logo">
                 </div>
             </div>
         </div>
@@ -194,9 +199,26 @@
     
     .footer-bottom {
         display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 20px;
+        padding-top: 30px;
+    }
+
+    .footer-bottom-left {
+        display: flex;
         flex-direction: column;
         gap: 15px;
-        padding-top: 30px;
+        flex: 1;
+    }
+
+    .footer-bottom-right {
+        flex-shrink: 0;
+    }
+
+    .footer-nintei-logo {
+        width: 120px;
+        height: auto;
     }
     
     .footer-info {
@@ -324,18 +346,32 @@
         }
         
         .footer-bottom {
+            flex-direction: column;
+            align-items: center;
             padding-top: 20px;
             gap: 10px;
         }
-        
+
+        .footer-bottom-left {
+            align-items: center;
+        }
+
+        .footer-bottom-right {
+            margin-top: 10px;
+        }
+
+        .footer-nintei-logo {
+            width: 100px;
+        }
+
         .footer-info {
             text-align: center;
         }
-        
+
         .footer-legal {
             justify-content: center;
         }
-        
+
         .footer-copyright {
             padding-top: 12px;
             margin-top: 8px;
