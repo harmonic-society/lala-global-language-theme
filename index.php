@@ -51,8 +51,8 @@ get_header(); ?>
                     while ( have_posts() ) :
                         the_post();
                         $post_count++;
-                        
-                        // Make first post featured
+
+                        // Make first post featured (only on first page)
                         if ( $post_count === 1 && ! is_paged() ) :
                         ?>
                             <div class="featured-post-container">
@@ -66,7 +66,7 @@ get_header(); ?>
                                             </a>
                                         </div>
                                     <?php endif; ?>
-                                    
+
                                     <div class="featured-content">
                                         <div class="featured-meta">
                                             <?php
@@ -85,13 +85,13 @@ get_header(); ?>
                                                 <?php echo reading_time(); ?> min read
                                             </span>
                                         </div>
-                                        
+
                                         <?php the_title( '<h2 class="featured-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
-                                        
+
                                         <div class="featured-excerpt">
                                             <?php the_excerpt(); ?>
                                         </div>
-                                        
+
                                         <div class="featured-footer">
                                             <div class="author-info">
                                                 <?php echo get_avatar( get_the_author_meta( 'ID' ), 40 ); ?>
@@ -110,9 +110,16 @@ get_header(); ?>
                                     </div>
                                 </article>
                             </div>
-                            
+                        <?php
+                        endif;
+
+                        // Open grid wrapper before the first grid card
+                        if ( ( ! is_paged() && $post_count === 2 ) || ( is_paged() && $post_count === 1 ) ) :
+                        ?>
                             <div class="posts-grid modern-grid">
-                        <?php else : ?>
+                        <?php endif; ?>
+
+                        <?php if ( ! ( $post_count === 1 && ! is_paged() ) ) : ?>
                             <article id="post-<?php the_ID(); ?>" <?php post_class( 'post-card modern-card' ); ?>>
                                 <div class="card-inner">
                                     <?php if ( has_post_thumbnail() ) : ?>
@@ -131,20 +138,20 @@ get_header(); ?>
                                             <?php endif; ?>
                                         </div>
                                     <?php endif; ?>
-                                    
+
                                     <div class="card-content">
                                         <div class="card-meta">
                                             <span class="meta-date"><?php echo esc_html( get_the_date() ); ?></span>
                                             <span class="meta-divider">•</span>
                                             <span class="meta-reading"><?php echo reading_time(); ?> min</span>
                                         </div>
-                                        
+
                                         <?php the_title( '<h3 class="card-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' ); ?>
-                                        
+
                                         <div class="card-excerpt">
                                             <?php echo wp_trim_words( get_the_excerpt(), 20, '...' ); ?>
                                         </div>
-                                        
+
                                         <div class="card-footer">
                                             <div class="card-author">
                                                 <?php echo get_avatar( get_the_author_meta( 'ID' ), 30 ); ?>
@@ -159,10 +166,9 @@ get_header(); ?>
                                     </div>
                                 </div>
                             </article>
-                        <?php
-                        endif;
-                    endwhile;
-                    ?>
+                        <?php endif; ?>
+
+                    <?php endwhile; ?>
                     </div>
                 </div>
 
