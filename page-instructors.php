@@ -327,6 +327,38 @@ get_header(); ?>
                 </div>
             </div>
 
+            <!-- アンドレア講師（スペイン語） -->
+            <div class="instructor-card fade-in">
+                <div class="instructor-card-inner">
+                    <div class="instructor-photo-area">
+                        <div class="instructor-photo">
+                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/アンドレア講師(スペイン語).jpg" alt="アンドレア講師" style="object-position: center 20%;">
+                        </div>
+                        <div class="instructor-flag">🇪🇸</div>
+                    </div>
+                    <div class="instructor-info">
+                        <div class="instructor-header">
+                            <h2 class="instructor-name">アンドレア講師</h2>
+                            <span class="instructor-language-badge">スペイン語</span>
+                        </div>
+                        <p class="instructor-origin">スペイン（マドリード）出身</p>
+                        <div class="instructor-tags">
+                            <span class="tag">語学指導</span>
+                            <span class="tag">検定指導</span>
+                            <span class="tag">翻訳業務</span>
+                        </div>
+                        <div class="instructor-availability">
+                            <span class="avail-item">平日昼OK</span>
+                            <span class="avail-item">土日OK</span>
+                        </div>
+                        <p class="instructor-style">生徒の興味や希望に合わせる指導(初心者歓迎!)</p>
+                        <div class="instructor-message">
+                            <p>スペインのサッカーは好きですか?南米を巡って美味しい料理を食べてみたいですか？色んなスペイン語圏の人々と話してみたいですか？それなら、世界中で話されているスペイン語を一緒に学びませんか？初めての方でも安心できる雰囲気で、皆さんの興味や目的に合わせて一緒に楽しく勉強しましょう！</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
