@@ -786,6 +786,12 @@ body.font-xlarge .article-body {
     color: #667eea;
 }
 
+/* Featured Posts Widget - 注目記事の星アイコンはゴールド系で強調 */
+.sidebar-featured-posts .widget-header h3 svg {
+    color: #f59e0b;
+    fill: #f59e0b;
+}
+
 /* Tag Cloud Widget */
 .tag-cloud-content {
     display: flex;

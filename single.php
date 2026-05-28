@@ -204,6 +204,52 @@ get_header(); ?>
                             </div>
                         </div>
 
+                        <!-- Featured Posts Widget -->
+                        <?php
+                        $featured_posts = lala_get_featured_posts();
+                        if ( ! empty( $featured_posts ) ) :
+                        ?>
+                        <div class="sidebar-widget sidebar-featured-posts">
+                            <div class="widget-header">
+                                <h3>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                    </svg>
+                                    注目記事
+                                </h3>
+                            </div>
+                            <div class="sidebar-posts-list">
+                                <?php
+                                foreach ( $featured_posts as $post ) :
+                                    setup_postdata( $post );
+                                ?>
+                                    <a href="<?php the_permalink(); ?>" class="sidebar-post-item">
+                                        <?php if ( has_post_thumbnail() ) : ?>
+                                            <div class="sidebar-post-thumb">
+                                                <?php the_post_thumbnail( 'medium' ); ?>
+                                            </div>
+                                        <?php else : ?>
+                                            <div class="sidebar-post-thumb no-thumb">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                                                    <polyline points="21 15 16 10 5 21"/>
+                                                </svg>
+                                            </div>
+                                        <?php endif; ?>
+                                        <div class="sidebar-post-info">
+                                            <h4 class="sidebar-post-title"><?php the_title(); ?></h4>
+                                            <span class="sidebar-post-date"><?php echo get_the_date( 'Y.m.d' ); ?></span>
+                                        </div>
+                                    </a>
+                                <?php
+                                endforeach;
+                                wp_reset_postdata();
+                                ?>
+                            </div>
+                        </div>
+                        <?php endif; ?>
+
                         <!-- Latest Posts Widget -->
                         <div class="sidebar-widget sidebar-latest-posts">
                             <div class="widget-header">

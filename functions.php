@@ -628,6 +628,35 @@ function lala_get_latest_posts( $num = 5, $exclude = array() ) {
 }
 
 /**
+ * 注目記事を取得（Customizerで指定された最大3件）
+ *
+ * Customizerの設定順を保持し、公開済みの投稿のみを返す。
+ */
+function lala_get_featured_posts() {
+    $ids = array();
+    for ( $i = 1; $i <= 3; $i++ ) {
+        $id = (int) get_theme_mod( 'featured_post_' . $i, 0 );
+        if ( $id > 0 ) {
+            $ids[] = $id;
+        }
+    }
+
+    if ( empty( $ids ) ) {
+        return array();
+    }
+
+    $posts = get_posts( array(
+        'post__in'       => $ids,
+        'posts_per_page' => count( $ids ),
+        'post_status'    => 'publish',
+        'post_type'      => 'post',
+        'orderby'        => 'post__in',
+    ) );
+
+    return $posts;
+}
+
+/**
  * Calculate reading time for posts
  */
 function reading_time() {

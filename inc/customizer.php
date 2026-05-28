@@ -11,6 +11,9 @@
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function lala_global_language_customize_register( $wp_customize ) {
+    // 投稿の部分一致検索コントロールを読み込み
+    require_once get_template_directory() . '/inc/class-post-search-control.php';
+
     $wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
     $wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
     $wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
@@ -438,6 +441,41 @@ function lala_global_language_customize_register( $wp_customize ) {
         'settings'    => 'all_comrades_image',
         'description' => '「すべての仲間たちへ」セクションの下に表示される画像です。推奨サイズ: 1200x800px',
     ) ) );
+
+    // Featured Posts Section (ブログサイドバーの注目記事)
+    $wp_customize->add_section( 'lala_featured_posts', array(
+        'title'       => __( '注目記事（ブログサイドバー）', 'lala-global-language' ),
+        'description' => __( 'ブログ記事ページの左サイドバーに表示する「注目記事」を最大3つまで指定できます。記事タイトルの一部を入力すると候補が絞り込まれます。空欄にするとその枠は表示されません。', 'lala-global-language' ),
+        'panel'       => 'lala_theme_options',
+        'priority'    => 70,
+    ) );
+
+    // 検索対象の公開済み投稿リスト（ID => タイトル）
+    $featured_post_list  = array();
+    $all_published_posts = get_posts( array(
+        'posts_per_page' => 500,
+        'post_status'    => 'publish',
+        'post_type'      => 'post',
+        'orderby'        => 'date',
+        'order'          => 'DESC',
+    ) );
+    foreach ( $all_published_posts as $featured_choice_post ) {
+        $featured_post_list[ $featured_choice_post->ID ] = $featured_choice_post->post_title;
+    }
+
+    for ( $i = 1; $i <= 3; $i++ ) {
+        $wp_customize->add_setting( 'featured_post_' . $i, array(
+            'default'           => '',
+            'sanitize_callback' => 'absint',
+            'transport'         => 'refresh',
+        ) );
+
+        $wp_customize->add_control( new Lala_Post_Search_Control( $wp_customize, 'featured_post_' . $i, array(
+            'label'   => sprintf( __( '注目記事 %d', 'lala-global-language' ), $i ),
+            'section' => 'lala_featured_posts',
+            'posts'   => $featured_post_list,
+        ) ) );
+    }
 }
 add_action( 'customize_register', 'lala_global_language_customize_register' );
 
@@ -466,6 +504,14 @@ function lala_global_language_customize_preview_js() {
     wp_enqueue_script( 'lala-global-language-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '1.0.0', true );
 }
 add_action( 'customize_preview_init', 'lala_global_language_customize_preview_js' );
+
+/**
+ * Customizerコントロール画面（管理側）で投稿検索コントロール用スクリプトを読み込む
+ */
+function lala_global_language_customize_controls_js() {
+    wp_enqueue_script( 'lala-customizer-post-search', get_template_directory_uri() . '/js/customizer-post-search.js', array( 'customize-controls' ), '1.0.0', true );
+}
+add_action( 'customize_controls_enqueue_scripts', 'lala_global_language_customize_controls_js' );
 
 /**
  * Output custom CSS to live site
