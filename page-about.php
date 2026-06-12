@@ -42,6 +42,29 @@ get_header(); ?>
         </div>
     </section>
 
+    <!-- Movie Section -->
+    <section class="about-movie-section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>🎬 LaLaを動画で知る</h2>
+                <p class="movie-lead">LaLa GLOBAL LANGUAGEの雰囲気を、ぜひ動画でご覧ください。</p>
+            </div>
+            <div class="movie-frame fade-in">
+                <div class="movie-glow"></div>
+                <div class="movie-wrapper">
+                    <iframe
+                        src="https://www.youtube-nocookie.com/embed/-Iz628HTNec?rel=0"
+                        title="LaLa GLOBAL LANGUAGE 紹介動画"
+                        loading="lazy"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Philosophy Section -->
     <section class="philosophy-section">
         <div class="philosophy-universe">
@@ -322,6 +345,70 @@ get_header(); ?>
 .brand-core-image img:hover {
     transform: translateY(-5px);
     box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
+}
+
+/* Movie Section */
+.about-movie-section {
+    padding: 100px 0;
+    background: linear-gradient(180deg, #ffffff 0%, #f5f7ff 100%);
+    overflow: hidden;
+}
+
+.about-movie-section .section-header {
+    margin-bottom: 40px;
+}
+
+.movie-lead {
+    font-size: 1.1rem;
+    color: var(--dark-color, #333);
+    opacity: 0.8;
+    margin-top: 15px;
+}
+
+.movie-frame {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.movie-glow {
+    position: absolute;
+    inset: -30px;
+    background: radial-gradient(ellipse at center, rgba(102, 126, 234, 0.25) 0%, rgba(118, 75, 162, 0.15) 40%, transparent 70%);
+    filter: blur(20px);
+    z-index: 0;
+    animation: movieGlowPulse 5s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes movieGlowPulse {
+    0%, 100% { opacity: 0.7; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.03); }
+}
+
+.movie-wrapper {
+    position: relative;
+    z-index: 1;
+    aspect-ratio: 16 / 9;
+    border-radius: 24px;
+    overflow: hidden;
+    padding: 4px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #4facfe 100%);
+    box-shadow: 0 25px 70px rgba(102, 126, 234, 0.35);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.movie-wrapper:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 35px 90px rgba(102, 126, 234, 0.45);
+}
+
+.movie-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: 0;
+    border-radius: 20px;
 }
 
 /* Philosophy Section - Ultimate Design */
@@ -914,6 +1001,29 @@ get_header(); ?>
     /* Section spacing */
     .brand-core-section {
         padding: 60px 0;
+    }
+
+    /* Movie Section */
+    .about-movie-section {
+        padding: 60px 0;
+    }
+
+    .movie-lead {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    .movie-wrapper {
+        border-radius: 16px;
+        padding: 3px;
+    }
+
+    .movie-wrapper iframe {
+        border-radius: 13px;
+    }
+
+    .movie-wrapper:hover {
+        transform: none;
     }
     
     .philosophy-section,
